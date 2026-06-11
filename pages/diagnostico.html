@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexoLayers | Diagnóstico</title>
+    <meta name="description" content="Página independiente de diagnóstico visual para impresión 3D." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-theme="dark">
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand"><a href="../index.html" class="brand"><span class="brand-mark">NL</span><span><strong>NexoLayers</strong><small>Wiki de impresión 3D</small></span></a><button class="icon-button mobile-only" id="closeSidebar">✕</button></div>
+        <div class="search-shell"><label class="search-bar"><span>⌕</span><input type="search" placeholder="Buscar páginas..." data-search-input /><span class="search-shortcut">⌘ K</span></label></div>
+        <nav aria-label="Navegacion principal">
+          <div class="nav-group" data-group><button class="nav-group-toggle" aria-expanded="true"><span>Inicio</span><span>▾</span></button><ul><li><a href="../index.html" data-searchable>Portada</a></li><li><a href="mantenimiento-fdm.html" data-searchable>Mantenimiento FDM</a></li><li><a href="materiales-objetivos.html" data-searchable>Materiales y objetivos</a></li></ul></div>
+          <div class="nav-group" data-group><button class="nav-group-toggle" aria-expanded="true"><span>Herramientas</span><span>▾</span></button><ul><li><a href="calculadoras.html" data-searchable>Calculadoras</a></li><li><a href="diagnostico.html" class="is-current" data-searchable>Diagnóstico</a></li><li><a href="perfiles.html" data-searchable>Perfiles y checklists</a></li></ul></div>
+          <div class="nav-group" data-group><button class="nav-group-toggle" aria-expanded="false"><span>Decisión</span><span>▾</span></button><ul><li><a href="comparador-filamentos.html" data-searchable>Comparador de filamentos</a></li><li><a href="materiales-objetivos.html#objetivos" data-searchable>Guías por objetivo</a></li><li><a href="seguridad.html" data-searchable>Seguridad</a></li></ul></div>
+          <div class="nav-group" data-group><button class="nav-group-toggle" aria-expanded="false"><span>Ecosistema</span><span>▾</span></button><ul><li><a href="marcas.html" data-searchable>Wiki de marcas</a></li><li><a href="upgrades.html" data-searchable>Upgrades</a></li></ul></div>
+        </nav>
+      </aside>
+      <div class="page">
+        <header class="topbar">
+          <div class="topbar-left"><button class="icon-button mobile-only" id="openSidebar">☰</button><a href="../index.html" class="brand"><span class="brand-mark">NL</span><span><strong>NexoLayers</strong><small>Diagnóstico</small></span></a></div>
+          <label class="search-bar"><span>⌕</span><input type="search" placeholder="Buscar síntoma..." data-search-input /><span class="search-shortcut">⌘ K</span></label>
+          <div class="topbar-actions"><button class="ghost-button" id="themeToggle" type="button">Modo claro</button><button class="accent-button" type="button">Preguntar a la IA</button></div>
+        </header>
+        <main class="page-grid">
+          <div class="content-column">
+            <article class="doc-card" data-doc>
+              <nav class="breadcrumbs"><a href="../index.html">Inicio</a><span>/</span><span>Diagnóstico</span></nav>
+              <header class="doc-header"><div><p class="eyebrow">Asistente</p><h1>¿Qué problema tiene tu impresión?</h1><p class="hero-lead">Aquí vive el primer asistente de diagnóstico, separado de la home para que pueda crecer con fotos, árboles de decisión y rutas por defecto.</p></div></header>
+              <section id="asistente">
+                <h2>Asistente rápido</h2>
+                <div class="tool-card">
+                  <div class="diagnosis-options">
+                    <button class="ghost-button diagnosis-option" data-diagnosis="despega" type="button">Se despega</button>
+                    <button class="ghost-button diagnosis-option" data-diagnosis="hilos" type="button">Tiene hilos</button>
+                    <button class="ghost-button diagnosis-option" data-diagnosis="capas" type="button">Tiene capas desplazadas</button>
+                    <button class="ghost-button diagnosis-option" data-diagnosis="debil" type="button">Sale débil</button>
+                    <button class="ghost-button diagnosis-option" data-diagnosis="no-extruye" type="button">La boquilla no extruye</button>
+                    <button class="ghost-button diagnosis-option" data-diagnosis="primera-capa" type="button">La primera capa sale mal</button>
+                  </div>
+                  <div class="diagnosis-result" id="diagnosisResult">Elige un síntoma dominante para ver la ruta inicial recomendada.</div>
+                </div>
+              </section>
+              <section id="imagenes">
+                <h2>Errores con imagen</h2>
+                <p>De momento dejo marcadores visuales listos para sustituir por fotos reales. Esta sección debe crecer con imágenes de stringing, warping, mala primera capa, sobreextrusión y ringing.</p>
+                <div class="image-grid">
+                  <div class="placeholder-image">STRINGING</div>
+                  <div class="placeholder-image">WARPING</div>
+                  <div class="placeholder-image">PRIMERA CAPA</div>
+                  <div class="placeholder-image">SOBREEXTRUSIÓN</div>
+                  <div class="placeholder-image">UNDEREXTRUSIÓN</div>
+                  <div class="placeholder-image">RINGING</div>
+                </div>
+              </section>
+              <section id="flujo">
+                <h2>Orden de comprobación</h2>
+                <ul class="article-list">
+                  <li>Observa el síntoma principal antes de tocar parámetros.</li>
+                  <li>Descarta causas mecánicas y de material antes de culpar al slicer.</li>
+                  <li>Cambia una variable cada vez.</li>
+                  <li>Repite una pieza de prueba corta después de cada ajuste.</li>
+                </ul>
+              </section>
+            </article>
+          </div>
+          <aside class="toc-column"><div class="toc-card"><p class="toc-title">Diagnóstico</p><nav id="tableOfContents"></nav></div></aside>
+        </main>
+      </div>
+    </div>
+    <script src="../script.js"></script>
+  </body>
+</html>

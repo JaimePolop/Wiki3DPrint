@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexoLayers | Materiales y objetivos</title>
+    <meta name="description" content="Guías por objetivo de impresión 3D con enfoque por resultado." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-theme="dark">
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand"><a href="../index.html" class="brand"><span class="brand-mark">NL</span><span><strong>NexoLayers</strong><small>Wiki de impresión 3D</small></span></a><button class="icon-button mobile-only" id="closeSidebar">✕</button></div>
+        <div class="search-shell"><label class="search-bar"><span>⌕</span><input type="search" placeholder="Buscar páginas..." data-search-input /><span class="search-shortcut">⌘ K</span></label></div>
+        <nav aria-label="Navegacion principal">
+          <div class="nav-group" data-group><button class="nav-group-toggle" aria-expanded="true"><span>Inicio</span><span>▾</span></button><ul><li><a href="../index.html" data-searchable>Portada</a></li><li><a href="mantenimiento-fdm.html" data-searchable>Mantenimiento FDM</a></li><li><a href="materiales-objetivos.html" class="is-current" data-searchable>Materiales y objetivos</a></li></ul></div>
+          <div class="nav-group" data-group><button class="nav-group-toggle" aria-expanded="false"><span>Herramientas</span><span>▾</span></button><ul><li><a href="calculadoras.html" data-searchable>Calculadoras</a></li><li><a href="diagnostico.html" data-searchable>Diagnóstico</a></li><li><a href="perfiles.html" data-searchable>Perfiles y checklists</a></li></ul></div>
+          <div class="nav-group" data-group><button class="nav-group-toggle" aria-expanded="true"><span>Decisión</span><span>▾</span></button><ul><li><a href="comparador-filamentos.html" data-searchable>Comparador de filamentos</a></li><li><a href="#objetivos" class="is-current" data-searchable>Guías por objetivo</a></li><li><a href="seguridad.html" data-searchable>Seguridad</a></li></ul></div>
+          <div class="nav-group" data-group><button class="nav-group-toggle" aria-expanded="false"><span>Ecosistema</span><span>▾</span></button><ul><li><a href="marcas.html" data-searchable>Wiki de marcas</a></li><li><a href="upgrades.html" data-searchable>Upgrades</a></li></ul></div>
+        </nav>
+      </aside>
+      <div class="page">
+        <header class="topbar">
+          <div class="topbar-left"><button class="icon-button mobile-only" id="openSidebar">☰</button><a href="../index.html" class="brand"><span class="brand-mark">NL</span><span><strong>NexoLayers</strong><small>Materiales y objetivos</small></span></a></div>
+          <label class="search-bar"><span>⌕</span><input type="search" placeholder="Buscar objetivo..." data-search-input /><span class="search-shortcut">⌘ K</span></label>
+          <div class="topbar-actions"><button class="ghost-button" id="themeToggle" type="button">Modo claro</button><button class="accent-button" type="button">Preguntar a la IA</button></div>
+        </header>
+        <main class="page-grid">
+          <div class="content-column">
+            <article class="doc-card" data-doc>
+              <nav class="breadcrumbs"><a href="../index.html">Inicio</a><span>/</span><span>Materiales y objetivos</span></nav>
+              <header class="doc-header"><div><p class="eyebrow">Decisión por resultado</p><h1>Quiero imprimir...</h1><p class="hero-lead">Esta guía está escrita desde el objetivo final, no desde la taxonomía técnica del material.</p></div></header>
+              <section id="materiales"><h2>Mapa rápido de materiales</h2><div class="tag-row"><span>PLA</span><span>PETG</span><span>ABS</span><span>ASA</span><span>TPU</span><span>Nylon</span><span>PC</span></div></section>
+              <section id="objetivos"><h2>Guías por objetivo</h2><div class="card-grid"><article class="surface"><h3>Piezas resistentes</h3><p>PETG técnico, ABS, ASA o Nylon según calor, impacto y cámara disponible.</p></article><article class="surface"><h3>Piezas flexibles</h3><p>TPU 95A como base. 85A solo si la ruta del filamento está muy bien resuelta.</p></article><article class="surface"><h3>Exterior</h3><p>ASA es el candidato obvio si necesitas estabilidad UV y mejor aguante ambiental.</p></article><article class="surface"><h3>Miniaturas</h3><p>Resina para detalle fino. En FDM, boquilla pequeña y expectativas realistas.</p></article><article class="surface"><h3>Imprimir rápido</h3><p>PLA o PLA+ con hotend suficiente, flujo validado y vibraciones controladas.</p></article><article class="surface"><h3>Piezas translúcidas o alimentarias</h3><p>PETG natural para translucidez; la parte alimentaria exige enfoque sanitario separado.</p></article></div></section>
+              <section id="limites"><h2>Límites antes de cambiar de material</h2><ul class="article-list"><li>No cambies de material si el problema es claramente mecánico.</li><li>No pases a ABS o ASA sin pensar en ventilación y seguridad.</li><li>No pruebes flexibles blandos sin revisar el extrusor.</li></ul></section>
+            </article>
+          </div>
+          <aside class="toc-column"><div class="toc-card"><p class="toc-title">Objetivos</p><nav id="tableOfContents"></nav></div></aside>
+        </main>
+      </div>
+    </div>
+    <script src="../script.js"></script>
+  </body>
+</html>
