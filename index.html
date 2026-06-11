@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexoLayers | Wiki de impresion 3D</title>
+    <meta
+      name="description"
+      content="Wiki de impresion 3D en espanol con guias sobre materiales, calibracion, mantenimiento, slicers y solucion de problemas."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-theme="dark">
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+          <a href="#top" class="brand">
+            <span class="brand-mark">NL</span>
+            <span>
+              <strong>NexoLayers</strong>
+              <small>Wiki de impresion 3D</small>
+            </span>
+          </a>
+          <button class="icon-button mobile-only" id="closeSidebar" aria-label="Cerrar menu">
+            ✕
+          </button>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Navegacion principal">
+          <div class="nav-group" data-group>
+            <button class="nav-group-toggle" aria-expanded="true">
+              <span>Inicio</span>
+              <span>▾</span>
+            </button>
+            <ul>
+              <li><a href="#bienvenida">Bienvenida</a></li>
+              <li><a href="#que-es">Que es la impresion 3D</a></li>
+              <li><a href="#como-usar">Como usar esta wiki</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-group" data-group>
+            <button class="nav-group-toggle" aria-expanded="false">
+              <span>Lo basico</span>
+              <span>▾</span>
+            </button>
+            <ul>
+              <li><a href="#primeros-pasos">Introduccion a la impresion 3D</a></li>
+              <li><a href="#tipos-impresoras">Tipos de impresoras 3D</a></li>
+              <li><a href="#anatomia">Anatomia de una impresora FDM</a></li>
+              <li><a href="#diagrama">Diagrama de una impresora 3D</a></li>
+              <li><a href="#glosario">Glosario basico</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-group" data-group>
+            <button class="nav-group-toggle" aria-expanded="false">
+              <span>Materiales</span>
+              <span>▾</span>
+            </button>
+            <ul>
+              <li><a href="#materiales">Guia de filamentos</a></li>
+              <li><a href="#materiales">PLA</a></li>
+              <li><a href="#materiales">PETG</a></li>
+              <li><a href="#materiales">ABS</a></li>
+              <li><a href="#materiales">ASA</a></li>
+              <li><a href="#materiales">TPU</a></li>
+              <li><a href="#materiales">Nylon</a></li>
+              <li><a href="#materiales">Policarbonato</a></li>
+              <li><a href="#materiales">Filamentos tecnicos</a></li>
+              <li><a href="#materiales">Filamentos flexibles</a></li>
+              <li><a href="#materiales">Filamentos con fibra de carbono</a></li>
+              <li><a href="#materiales">Almacenamiento y secado</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-group" data-group>
+            <button class="nav-group-toggle" aria-expanded="true">
+              <span>Mantenimiento</span>
+              <span>▾</span>
+            </button>
+            <ul>
+              <li><a href="#mantenimiento-fdm" class="is-current">Mantenimiento general</a></li>
+              <li><a href="#limpieza-general">Limpieza</a></li>
+              <li><a href="#plataforma">Cuidado de la cama</a></li>
+              <li><a href="#extrusor">Mantenimiento del extrusor</a></li>
+              <li><a href="#extrusor">Boquillas</a></li>
+              <li><a href="#lubricacion">Lubricacion</a></li>
+              <li><a href="#correas">Correas</a></li>
+              <li><a href="#estructura">Tornilleria y estructura</a></li>
+              <li><a href="#firmware">Firmware</a></li>
+              <li><a href="#inspecciones">Checklist de mantenimiento</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-group" data-group>
+            <button class="nav-group-toggle" aria-expanded="false">
+              <span>Calibracion</span>
+              <span>▾</span>
+            </button>
+            <ul>
+              <li><a href="#calibracion">Nivelacion de cama</a></li>
+              <li><a href="#calibracion">Z-offset</a></li>
+              <li><a href="#calibracion">E-steps</a></li>
+              <li><a href="#calibracion">Flujo</a></li>
+              <li><a href="#calibracion">Torre de temperatura</a></li>
+              <li><a href="#calibracion">Retraccion</a></li>
+              <li><a href="#calibracion">Pressure advance</a></li>
+              <li><a href="#calibracion">Input shaping</a></li>
+              <li><a href="#calibracion">PID tuning</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-group" data-group>
+            <button class="nav-group-toggle" aria-expanded="false">
+              <span>Slicers</span>
+              <span>▾</span>
+            </button>
+            <ul>
+              <li><a href="#slicers">Que es un slicer</a></li>
+              <li><a href="#slicers">Cura</a></li>
+              <li><a href="#slicers">PrusaSlicer</a></li>
+              <li><a href="#slicers">OrcaSlicer</a></li>
+              <li><a href="#slicers">Bambu Studio</a></li>
+              <li><a href="#slicers">SuperSlicer</a></li>
+              <li><a href="#slicers">Perfiles recomendados</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-group" data-group>
+            <button class="nav-group-toggle" aria-expanded="false">
+              <span>Problemas comunes</span>
+              <span>▾</span>
+            </button>
+            <ul>
+              <li><a href="#problemas">Mala primera capa</a></li>
+              <li><a href="#problemas">Warping</a></li>
+              <li><a href="#problemas">Stringing</a></li>
+              <li><a href="#problemas">Under-extrusion</a></li>
+              <li><a href="#problemas">Over-extrusion</a></li>
+              <li><a href="#problemas">Layer shifting</a></li>
+              <li><a href="#problemas">Ghosting</a></li>
+              <li><a href="#problemas">Z banding</a></li>
+              <li><a href="#problemas">Boquilla atascada</a></li>
+              <li><a href="#problemas">Heat creep</a></li>
+              <li><a href="#problemas">Elephant foot</a></li>
+              <li><a href="#problemas">Diagnostico rapido</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-group" data-group>
+            <button class="nav-group-toggle" aria-expanded="false">
+              <span>Impresion con resina</span>
+              <span>▾</span>
+            </button>
+            <ul>
+              <li><a href="#resina">Introduccion a resina</a></li>
+              <li><a href="#resina">Seguridad</a></li>
+              <li><a href="#resina">Lavado y curado</a></li>
+              <li><a href="#resina">Soportes</a></li>
+              <li><a href="#resina">Mantenimiento</a></li>
+              <li><a href="#resina">Problemas comunes</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-group" data-group>
+            <button class="nav-group-toggle" aria-expanded="false">
+              <span>Diseno para impresion 3D</span>
+              <span>▾</span>
+            </button>
+            <ul>
+              <li><a href="#diseno">Tolerancias</a></li>
+              <li><a href="#diseno">Orientacion de piezas</a></li>
+              <li><a href="#diseno">Diseno sin soportes</a></li>
+              <li><a href="#diseno">Snap fits</a></li>
+              <li><a href="#diseno">Roscas</a></li>
+              <li><a href="#diseno">Piezas funcionales</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-group" data-group>
+            <button class="nav-group-toggle" aria-expanded="false">
+              <span>Posprocesado</span>
+              <span>▾</span>
+            </button>
+            <ul>
+              <li><a href="#posprocesado">Retirar soportes</a></li>
+              <li><a href="#posprocesado">Lijado</a></li>
+              <li><a href="#posprocesado">Pintura</a></li>
+              <li><a href="#posprocesado">Pegado</a></li>
+              <li><a href="#posprocesado">Insertos roscados</a></li>
+              <li><a href="#posprocesado">Acetone smoothing</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-group" data-group>
+            <button class="nav-group-toggle" aria-expanded="false">
+              <span>Guias de compra</span>
+              <span>▾</span>
+            </button>
+            <ul>
+              <li><a href="#compras">Impresoras para principiantes</a></li>
+              <li><a href="#compras">Impresoras cerradas</a></li>
+              <li><a href="#compras">Impresoras grandes</a></li>
+              <li><a href="#compras">Impresoras de resina</a></li>
+              <li><a href="#compras">Filamentos recomendados</a></li>
+              <li><a href="#compras">Herramientas necesarias</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-group" data-group>
+            <button class="nav-group-toggle" aria-expanded="false">
+              <span>Recursos</span>
+              <span>▾</span>
+            </button>
+            <ul>
+              <li><a href="#recursos">Calculadoras</a></li>
+              <li><a href="#recursos">STLs de calibracion</a></li>
+              <li><a href="#recursos">Checklists descargables</a></li>
+              <li><a href="#recursos">Perfiles de impresion</a></li>
+              <li><a href="#recursos">Comunidades</a></li>
+              <li><a href="#recursos">Preguntas frecuentes</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-group" data-group>
+            <button class="nav-group-toggle" aria-expanded="false">
+              <span>Herramientas</span>
+              <span>▾</span>
+            </button>
+            <ul>
+              <li><a href="#calculadoras">Calculadoras interactivas</a></li>
+              <li><a href="#diagnostico">Sistema de diagnostico</a></li>
+              <li><a href="#checklists">Checklists descargables</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-group" data-group>
+            <button class="nav-group-toggle" aria-expanded="false">
+              <span>Comparativas</span>
+              <span>▾</span>
+            </button>
+            <ul>
+              <li><a href="#comparador">PLA vs PETG</a></li>
+              <li><a href="#comparador">PETG vs ABS</a></li>
+              <li><a href="#comparador">ASA vs ABS</a></li>
+              <li><a href="#comparador">TPU 95A vs TPU 85A</a></li>
+              <li><a href="#comparador">Nylon vs policarbonato</a></li>
+              <li><a href="#comparador">PLA vs PLA+ vs PLA silk</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-group" data-group>
+            <button class="nav-group-toggle" aria-expanded="false">
+              <span>Seguridad</span>
+              <span>▾</span>
+            </button>
+            <ul>
+              <li><a href="#seguridad">Riesgo de incendio</a></li>
+              <li><a href="#seguridad">Ventilacion</a></li>
+              <li><a href="#seguridad">Resina toxica</a></li>
+              <li><a href="#seguridad">Humos de ABS y ASA</a></li>
+              <li><a href="#seguridad">Cables danados</a></li>
+              <li><a href="#seguridad">Fuentes baratas</a></li>
+              <li><a href="#seguridad">Impresion nocturna</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-group" data-group>
+            <button class="nav-group-toggle" aria-expanded="false">
+              <span>Marcas</span>
+              <span>▾</span>
+            </button>
+            <ul>
+              <li><a href="#marcas">Creality</a></li>
+              <li><a href="#marcas">Bambu Lab</a></li>
+              <li><a href="#marcas">Prusa</a></li>
+              <li><a href="#marcas">Anycubic</a></li>
+              <li><a href="#marcas">Elegoo</a></li>
+              <li><a href="#marcas">Qidi</a></li>
+              <li><a href="#marcas">Sovol</a></li>
+              <li><a href="#marcas">Artillery</a></li>
+              <li><a href="#marcas">Flashforge</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-group" data-group>
+            <button class="nav-group-toggle" aria-expanded="false">
+              <span>Upgrades</span>
+              <span>▾</span>
+            </button>
+            <ul>
+              <li><a href="#upgrades">Cambiar a direct drive</a></li>
+              <li><a href="#upgrades">Anadir sensor de filamento</a></li>
+              <li><a href="#upgrades">Anadir camara cerrada</a></li>
+              <li><a href="#upgrades">Instalar Klipper</a></li>
+              <li><a href="#upgrades">Cambiar hotend</a></li>
+              <li><a href="#upgrades">Cambiar extrusor</a></li>
+              <li><a href="#upgrades">Iluminacion LED</a></li>
+              <li><a href="#upgrades">Camara para timelapse</a></li>
+              <li><a href="#upgrades">Ventilacion de capa</a></li>
+            </ul>
+          </div>
+        </nav>
+      </aside>
+
+      <div class="page">
+        <header class="topbar" id="top">
+          <div class="topbar-left">
+            <button class="icon-button mobile-only" id="openSidebar" aria-label="Abrir menu">
+              ☰
+            </button>
+            <a href="#bienvenida" class="brand compact-brand">
+              <span class="brand-mark">NL</span>
+              <span>NexoLayers</span>
+            </a>
+          </div>
+
+          <label class="search-bar" aria-label="Buscar en la wiki">
+            <span class="search-icon">⌕</span>
+            <input
+              type="search"
+              id="searchInput"
+              placeholder="Buscar en la wiki..."
+              autocomplete="off"
+            />
+            <span class="search-shortcut">⌘ K</span>
+          </label>
+
+          <div class="topbar-actions">
+            <button class="ghost-button" id="themeToggle" type="button">Modo claro</button>
+            <button class="ghost-button" type="button">ES</button>
+            <button class="accent-button" type="button">Preguntar a la IA</button>
+          </div>
+        </header>
+
+        <main class="content-grid">
+          <div class="content-column">
+            <section class="hero-card" id="bienvenida">
+              <div class="hero-copy">
+                <p class="eyebrow">Documentacion tecnica para makers</p>
+                <h1>Wiki de Impresion 3D</h1>
+                <p class="hero-lead">
+                  Aprende, calibra, soluciona problemas y mejora tus impresiones 3D
+                  desde cero hasta nivel experto.
+                </p>
+                <label class="search-bar hero-search" aria-label="Buscar contenido principal">
+                  <span class="search-icon">⌕</span>
+                  <input
+                    type="search"
+                    id="heroSearch"
+                    placeholder="Buscar mantenimiento, PLA, warping, Z-offset..."
+                  />
+                </label>
+              </div>
+              <div class="hero-panel">
+                <p class="hero-kicker">Ruta recomendada</p>
+                <ol class="hero-steps">
+                  <li>Comprende tu impresora y su flujo de trabajo.</li>
+                  <li>Domina materiales, calibracion y mantenimiento.</li>
+                  <li>Diagnostica fallos antes de cambiar piezas al azar.</li>
+                </ol>
+              </div>
+            </section>
+
+            <section class="card-grid quick-nav" id="como-usar">
+              <a class="nav-card" href="#primeros-pasos">
+                <strong>Primeros pasos</strong>
+                <p>Conceptos clave para empezar sin errores de base.</p>
+              </a>
+              <a class="nav-card" href="#materiales">
+                <strong>Materiales</strong>
+                <p>Filamentos, humedad, temperaturas y casos de uso.</p>
+              </a>
+              <a class="nav-card" href="#mantenimiento-fdm">
+                <strong>Mantenimiento</strong>
+                <p>Rutinas practicas para cuidar una FDM de forma consistente.</p>
+              </a>
+              <a class="nav-card" href="#calibracion">
+                <strong>Calibracion</strong>
+                <p>Ajustes que tienen impacto real en calidad y repetibilidad.</p>
+              </a>
+              <a class="nav-card" href="#problemas">
+                <strong>Problemas comunes</strong>
+                <p>Diagnosticos rapidos para defectos frecuentes.</p>
+              </a>
+              <a class="nav-card" href="#slicers">
+                <strong>Slicers</strong>
+                <p>Flujos de trabajo y perfiles para laminar mejor.</p>
+              </a>
+              <a class="nav-card" href="#resina">
+                <strong>Resina</strong>
+                <p>Seguridad, lavado, curado y soportes.</p>
+              </a>
+              <a class="nav-card" href="#compras">
+                <strong>Guias de compra</strong>
+                <p>Que comprar segun nivel, espacio y objetivos.</p>
+              </a>
+              <a class="nav-card" href="#calculadoras">
+                <strong>Calculadoras</strong>
+                <p>Coste, consumo, tiempo, contraccion y caudal volumetrico.</p>
+              </a>
+              <a class="nav-card" href="#diagnostico">
+                <strong>Diagnostico</strong>
+                <p>Asistente rapido para aislar fallos visibles en la impresion.</p>
+              </a>
+              <a class="nav-card" href="#seguridad">
+                <strong>Seguridad</strong>
+                <p>Incendio, ventilacion, resina, cables y uso nocturno.</p>
+              </a>
+              <a class="nav-card" href="#marcas">
+                <strong>Marcas</strong>
+                <p>Mapas de ecosistema por fabricante y lineas recomendadas.</p>
+              </a>
+            </section>
+
+            <section class="overview-panels">
+              <article class="mini-panel" id="que-es">
+                <h2>Que es la impresion 3D</h2>
+                <p>
+                  Es un proceso de fabricacion aditiva en el que una pieza se crea
+                  capa a capa a partir de un modelo digital. En esta wiki priorizamos
+                  explicaciones accionables para FDM y resina.
+                </p>
+              </article>
+              <article class="mini-panel" id="primeros-pasos">
+                <h2>Como usar esta wiki</h2>
+                <p>
+                  Usa la barra lateral para navegar por temas, el buscador para filtrar
+                  articulos y el indice derecho para saltar dentro del contenido tecnico.
+                </p>
+              </article>
+            </section>
+
+            <article class="doc-article" id="mantenimiento-fdm">
+              <nav class="breadcrumbs" aria-label="Migas de pan">
+                <a href="#bienvenida">Inicio</a>
+                <span>/</span>
+                <a href="#mantenimiento-fdm">Mantenimiento</a>
+                <span>/</span>
+                <span>Mantenimiento de impresoras 3D FDM</span>
+              </nav>
+
+              <header class="article-header">
+                <div>
+                  <p class="eyebrow">Mantenimiento</p>
+                  <h1>Mantenimiento de impresoras 3D FDM</h1>
+                  <p class="article-summary">
+                    Mantener una impresora 3D FDM en buen estado es esencial para
+                    conseguir calidad constante, evitar fallos, reducir atascos y
+                    prolongar la vida util de la maquina.
+                  </p>
+                </div>
+                <p class="updated-at">Ultima actualizacion: 12 de junio de 2026</p>
+              </header>
+
+              <div class="callout tip">
+                <strong>Consejo</strong>
+                <p>
+                  Documenta cada cambio relevante en una libreta o perfil de mantenimiento.
+                  Sin historial, es dificil saber si una mejora viene de una calibracion,
+                  un material nuevo o una reparacion.
+                </p>
+              </div>
+
+              <section id="limpieza-general">
+                <h2>1. Limpieza general</h2>
+                <p>
+                  La higiene del area de trabajo afecta mas de lo que parece. El polvo,
+                  las hebras sueltas y la humedad terminan en la cama, en el ventilador,
+                  en el hotend o dentro del filamento.
+                </p>
+                <h3>Area de trabajo y control de residuos</h3>
+                <p>
+                  Retira restos de material, herramientas sueltas y residuos de soporte
+                  despues de cada sesion. Una zona despejada hace mas facil detectar una
+                  fuga de filamento o un cable rozando una parte movil.
+                </p>
+                <h3>Electronica, polvo y filamento</h3>
+                <p>
+                  Usa aire comprimido con moderacion para ventiladores, fuentes y placas,
+                  siempre con la impresora apagada. Guarda bobinas en cajas selladas con
+                  desecante para reducir humedad y polvo.
+                </p>
+                <div class="callout warning">
+                  <strong>Advertencia</strong>
+                  <p>
+                    No soples polvo hacia conectores o drivers. Si usas aire comprimido,
+                    manten distancia y evita girar ventiladores a gran velocidad.
+                  </p>
+                </div>
+              </section>
+
+              <section id="plataforma">
+                <h2>2. Cuidado de la plataforma de impresion</h2>
+                <p>
+                  La primera capa depende de una superficie limpia, una altura correcta y
+                  una preparacion coherente con el material.
+                </p>
+                <h3>Limpieza tras cada impresion</h3>
+                <p>
+                  El alcohol isopropilico funciona bien para retirar grasa ligera, pero
+                  no siempre elimina azucares, adhesivos o aceites persistentes. En esos
+                  casos, agua templada y jabon suave suelen recuperar mejor el agarre.
+                </p>
+                <h3>PEI, vidrio, texturizada y magnetica</h3>
+                <p>
+                  El PEI liso exige manos limpias y poca manipulacion; el vidrio premia la
+                  limpieza profunda; las superficies texturizadas toleran mejor marcas, pero
+                  acumulan residuos; las bases magneticas deben revisarse por deformacion o
+                  zonas despegadas.
+                </p>
+                <h3>Nivelacion, auto nivelacion y Z-offset</h3>
+                <p>
+                  La nivelacion manual ajusta el plano fisico. El sistema automatico compensa
+                  pequenas variaciones. El Z-offset termina de afinar la separacion real entre
+                  boquilla y superficie.
+                </p>
+                <div class="callout quickfix">
+                  <strong>Solucion rapida</strong>
+                  <p>
+                    Si la primera capa no pega, limpia la cama, recalienta, revisa Z-offset y
+                    repite una prueba corta antes de tocar diez parametros mas.
+                  </p>
+                </div>
+              </section>
+
+              <section id="extrusor">
+                <h2>3. Mantenimiento del extrusor</h2>
+                <p>
+                  El extrusor es un sistema de arrastre, fusion y salida. Un fallo pequeno en
+                  cualquiera de sus partes termina en subextrusion, atascos o inestabilidad.
+                </p>
+                <h3>Boquilla, cold pull y recambio</h3>
+                <p>
+                  Limpia la boquilla con cepillo adecuado en caliente y realiza cold pull cuando
+                  sospeches carbonizacion o contaminacion interna. Cambia boquillas desgastadas
+                  si imprimes con abrasivos o notas diametro de linea inconsistente.
+                </p>
+                <h3>Laton, acero endurecido y PTFE</h3>
+                <p>
+                  El laton calienta rapido y es suficiente para PLA, PETG y TPU. El acero
+                  endurecido resiste filamentos cargados con fibra, pero suele requerir algo
+                  mas de temperatura. Revisa el tubo PTFE si ves degradacion, holgura o marcas.
+                </p>
+                <h3>Engranaje de arrastre, E-steps y flujo</h3>
+                <p>
+                  Un engranaje sucio patina y muerde el filamento. Limpialo, ajusta la presion
+                  del brazo y recalibra E-steps cuando cambies hardware o sospeches error sistemico.
+                </p>
+                <div class="callout advanced">
+                  <strong>Avanzado</strong>
+                  <p>
+                    Si el flujo parece variable pero los E-steps son correctos, revisa presion de
+                    extrusor, diametro real del filamento, estado del nozzle y consistencia termica.
+                  </p>
+                </div>
+              </section>
+
+              <section id="lubricacion">
+                <h2>4. Lubricacion</h2>
+                <p>
+                  Varillas, husillos y guias lineales necesitan friccion controlada, no exceso de grasa.
+                </p>
+                <h3>Que lubricar</h3>
+                <p>
+                  Aplica lubricante compatible en varillas lisas, husillos y guias segun especificacion del
+                  fabricante. Una pelicula fina y uniforme suele ser suficiente.
+                </p>
+                <h3>Que no lubricar</h3>
+                <p>
+                  No lubriques correas, ruedas de goma ni superficies donde el lubricante atraiga polvo y
+                  genere una pasta abrasiva.
+                </p>
+                <div class="callout common-error">
+                  <strong>Error comun</strong>
+                  <p>
+                    Sobrelubricar el husillo pensando que mas grasa equivale a mas suavidad. En realidad
+                    acumula suciedad y empeora el movimiento con el tiempo.
+                  </p>
+                </div>
+              </section>
+
+              <section id="correas">
+                <h2>5. Tension de correas</h2>
+                <p>
+                  Una tension correcta mejora precision posicional y reduce artefactos. Demasiado flojas
+                  generan holgura; demasiado tensas castigan rodamientos y motores.
+                </p>
+                <h3>Senales de tension incorrecta</h3>
+                <p>
+                  Correas flojas suelen provocar layer shifting, esquinas blandas y resonancias. Correas
+                  demasiado tensas pueden producir zumbidos, vibracion y desgaste prematuro.
+                </p>
+                <h3>Relacion con ghosting y vibraciones</h3>
+                <p>
+                  El ghosting no siempre se arregla tensando mas. Tambien influyen aceleraciones, rigidez
+                  del marco, masa en movimiento e input shaping si usas firmware compatible.
+                </p>
+              </section>
+
+              <section id="estructura">
+                <h2>6. Revision de estructura y tornilleria</h2>
+                <p>
+                  El marco define el punto de partida geometrico. Si hay holguras o ruedas mal ajustadas,
+                  la impresora pierde repetibilidad.
+                </p>
+                <h3>Marco, escuadras y ruedas V-slot</h3>
+                <p>
+                  Comprueba que el chasis siga escuadrado y que las ruedas no bailen ni queden frenadas.
+                  Ajusta tuercas excentricas con criterio: la rueda debe rodar sin deslizar.
+                </p>
+                <h3>Poleas y cableado</h3>
+                <p>
+                  Revisa que las poleas esten fijadas al plano correcto y que los tornillos apoyen sobre la
+                  cara plana del eje. Inspecciona el cableado buscando rozaduras, conectores flojos o mallas
+                  tensadas en exceso.
+                </p>
+              </section>
+
+              <section id="firmware">
+                <h2>7. Firmware</h2>
+                <p>
+                  Actualizar firmware puede aportar mejoras reales, pero solo tiene sentido si resuelve un
+                  problema concreto, mejora seguridad o habilita funciones utiles.
+                </p>
+                <h3>Marlin, Klipper y firmware propietario</h3>
+                <p>
+                  Marlin sigue siendo una base robusta en muchas FDM. Klipper ofrece control avanzado y mejor
+                  diagnostico para maquinas compatibles. Los firmwares propietarios pueden simplificar la
+                  experiencia, aunque limitan acceso a ajustes profundos.
+                </p>
+                <h3>Riesgos y copias de seguridad</h3>
+                <p>
+                  Antes de actualizar, guarda configuraciones, perfiles, offsets y valores criticos. Si tu
+                  impresora funciona de forma estable, no actualices solo por novedad.
+                </p>
+                <div class="callout warning">
+                  <strong>Advertencia</strong>
+                  <p>
+                    Un firmware nuevo puede invalidar offsets, modificar aceleraciones o cambiar el comportamiento
+                    termico. Revalida primera capa y pruebas de movimiento despues de flashear.
+                  </p>
+                </div>
+              </section>
+
+              <section id="inspecciones">
+                <h2>8. Inspecciones rutinarias</h2>
+                <p>
+                  Las mejores rutinas son cortas, repetibles y vinculadas a senales observables.
+                </p>
+                <div class="checklist-grid">
+                  <div class="checklist-card">
+                    <h3>Antes de cada impresion</h3>
+                    <ul class="checklist">
+                      <li>Limpiar la superficie de impresion.</li>
+                      <li>Confirmar boquilla libre y filamento seco.</li>
+                      <li>Verificar que no haya tornillos ni herramientas sueltas.</li>
+                      <li>Revisar primera capa durante los primeros minutos.</li>
+                    </ul>
+                  </div>
+                  <div class="checklist-card">
+                    <h3>Semanal</h3>
+                    <ul class="checklist">
+                      <li>Quitar polvo del marco y ventiladores.</li>
+                      <li>Inspeccionar correas, poleas y ruedas.</li>
+                      <li>Comprobar desgaste del engranaje del extrusor.</li>
+                    </ul>
+                  </div>
+                  <div class="checklist-card">
+                    <h3>Mensual</h3>
+                    <ul class="checklist">
+                      <li>Lubricar puntos recomendados.</li>
+                      <li>Verificar escuadra del marco y tensiones mecanicas.</li>
+                      <li>Repetir prueba de flujo y Z-offset si hubo cambios.</li>
+                    </ul>
+                  </div>
+                  <div class="checklist-card">
+                    <h3>Cada 6 meses</h3>
+                    <ul class="checklist">
+                      <li>Inspeccion profunda del hotend y PTFE.</li>
+                      <li>Revisar conectores electricos y funda de cables.</li>
+                      <li>Evaluar recambio preventivo de boquilla.</li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              <section id="tipos-impresora">
+                <h2>9. Mantenimiento segun tipo de impresora</h2>
+                <p>
+                  No todas las arquitecturas fallan igual. Ajusta tus prioridades de mantenimiento al sistema
+                  de movimiento y a la ubicacion del extrusor.
+                </p>
+                <h3>Cartesiana, bedslinger y CoreXY</h3>
+                <p>
+                  Las cartesianas y bedslinger sufren mas por masas moviles en Y. En CoreXY conviene vigilar
+                  simetria de correas, alineacion de poleas y estabilidad del plano XY.
+                </p>
+                <h3>Delta, direct drive y Bowden</h3>
+                <p>
+                  Las delta exigen geometria fina y articulaciones consistentes. El direct drive simplifica
+                  retraccion pero suma peso al carro. El Bowden requiere vigilar PTFE, acoples y compresion.
+                </p>
+              </section>
+
+              <section id="tabla-frecuencia">
+                <h2>10. Tabla de frecuencia de mantenimiento</h2>
+                <div class="table-wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Tarea</th>
+                        <th>Frecuencia recomendada</th>
+                        <th>Herramientas necesarias</th>
+                        <th>Senales de que hace falta hacerlo</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Limpiar cama</td>
+                        <td>Despues de cada impresion</td>
+                        <td>Alcohol isopropilico, pano sin pelusa</td>
+                        <td>Primera capa irregular, zonas que no adhieren</td>
+                      </tr>
+                      <tr>
+                        <td>Revisar boquilla</td>
+                        <td>Semanal o tras material abrasivo</td>
+                        <td>Cepillo, aguja, boquilla de repuesto</td>
+                        <td>Subextrusion, lineas deformadas, goteo</td>
+                      </tr>
+                      <tr>
+                        <td>Lubricar husillos y guias</td>
+                        <td>Mensual</td>
+                        <td>Grasa PTFE o lubricante indicado</td>
+                        <td>Ruidos, capas irregulares, rozamiento</td>
+                      </tr>
+                      <tr>
+                        <td>Comprobar correas y poleas</td>
+                        <td>Mensual</td>
+                        <td>Llaves Allen, tension manual</td>
+                        <td>Ghosting, layer shifting, vibraciones</td>
+                      </tr>
+                      <tr>
+                        <td>Inspeccionar cableado</td>
+                        <td>Cada 3 a 6 meses</td>
+                        <td>Linterna, bridas, vista cercana</td>
+                        <td>Rozaduras, desconexiones, calentamiento</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+
+              <section id="herramientas">
+                <h2>11. Herramientas recomendadas</h2>
+                <div class="tag-grid">
+                  <span>Alcohol isopropilico</span>
+                  <span>Espatula</span>
+                  <span>Cepillo de laton</span>
+                  <span>Agujas de limpieza</span>
+                  <span>Boquillas de repuesto</span>
+                  <span>Grasa PTFE</span>
+                  <span>Llaves Allen</span>
+                  <span>Alicates</span>
+                  <span>Calibre</span>
+                  <span>Aire comprimido</span>
+                  <span>Desecante</span>
+                </div>
+              </section>
+
+              <section id="errores-comunes">
+                <h2>12. Errores comunes</h2>
+                <ul class="article-list">
+                  <li>Limpiar la cama y tocarla despues con los dedos.</li>
+                  <li>Usar demasiado adhesivo hasta ocultar el estado real de la superficie.</li>
+                  <li>Lubricar correas o ruedas que deben trabajar en seco.</li>
+                  <li>Apretar demasiado ruedas excentricas y generar puntos duros.</li>
+                  <li>Ignorar ruidos nuevos pensando que se corregiran solos.</li>
+                  <li>No revisar filamento humedo antes de tocar retraccion o temperatura.</li>
+                  <li>Cambiar la boquilla en frio y danar el bloque o la rosca.</li>
+                  <li>No revisar el Z-offset despues de tocar hotend, cama o sonda.</li>
+                </ul>
+              </section>
+
+              <section id="resumen-final">
+                <h2>13. Resumen final</h2>
+                <ul class="article-list emphasis-list">
+                  <li>La limpieza y el estado del filamento condicionan la mayoria de problemas diarios.</li>
+                  <li>La primera capa depende de superficie, nivelacion y Z-offset, no de un unico ajuste.</li>
+                  <li>Extrusor, boquilla y PTFE deben revisarse antes de culpar al slicer.</li>
+                  <li>Lubrica solo lo necesario y nunca correas o zonas no indicadas.</li>
+                  <li>Correas, estructura y poleas influyen directamente en precision y artefactos.</li>
+                  <li>Actualiza firmware con motivo claro y siempre con copia de seguridad.</li>
+                  <li>Las rutinas cortas y frecuentes funcionan mejor que mantenimientos improvisados.</li>
+                </ul>
+              </section>
+
+              <footer class="article-footer">
+                <div class="pager">
+                  <a class="pager-link" href="#plataforma">
+                    <span>Anterior</span>
+                    <strong>Cuidado de la cama</strong>
+                  </a>
+                  <a class="pager-link" href="#tabla-frecuencia">
+                    <span>Siguiente</span>
+                    <strong>Frecuencia de mantenimiento</strong>
+                  </a>
+                </div>
+
+                <section class="feedback-box">
+                  <div>
+                    <h2>¿Te fue util?</h2>
+                    <p>
+                      Tu respuesta ayuda a priorizar mejoras y ampliar los apartados que mas dudas generan.
+                    </p>
+                  </div>
+                  <div class="feedback-actions">
+                    <button class="ghost-button feedback-button" type="button">Si</button>
+                    <button class="ghost-button feedback-button" type="button">No</button>
+                    <button class="accent-button" type="button">Preguntar sobre esta pagina</button>
+                  </div>
+                </section>
+              </footer>
+            </article>
+
+            <section class="resource-grid">
+              <article class="mini-panel" id="materiales">
+                <h2>Materiales</h2>
+                <p>Guia comparativa de PLA, PETG, ABS, ASA, TPU, Nylon y materiales tecnicos.</p>
+              </article>
+              <article class="mini-panel" id="calibracion">
+                <h2>Calibracion</h2>
+                <p>Nivelacion, Z-offset, flujo, retraccion, PID tuning, input shaping y perfiles base.</p>
+              </article>
+              <article class="mini-panel" id="slicers">
+                <h2>Slicers</h2>
+                <p>Cura, PrusaSlicer, OrcaSlicer, Bambu Studio y estrategias para perfiles fiables.</p>
+              </article>
+              <article class="mini-panel" id="problemas">
+                <h2>Problemas comunes</h2>
+                <p>Warping, stringing, ghosting, shifting, boquilla atascada y diagnostico rapido.</p>
+              </article>
+              <article class="mini-panel" id="resina">
+                <h2>Impresion con resina</h2>
+                <p>Seguridad, soportes, lavado, curado y mantenimiento del sistema de resina.</p>
+              </article>
+              <article class="mini-panel" id="diseno">
+                <h2>Diseno para impresion 3D</h2>
+                <p>Tolerancias, orientacion, roscas, snap fits y piezas funcionales listas para fabricar.</p>
+              </article>
+              <article class="mini-panel" id="posprocesado">
+                <h2>Posprocesado</h2>
+                <p>Lijado, pintura, pegado, insertos roscados y acabados en piezas impresas.</p>
+              </article>
+              <article class="mini-panel" id="compras">
+                <h2>Guias de compra</h2>
+                <p>Recomendaciones por presupuesto, volumen, materiales y nivel de experiencia.</p>
+              </article>
+              <article class="mini-panel" id="recursos">
+                <h2>Recursos</h2>
+                <p>Checklists, perfiles, STLs de prueba, preguntas frecuentes y comunidades tecnicas.</p>
+              </article>
+              <article class="mini-panel" id="anatomia">
+                <h2>Anatomia de una impresora FDM</h2>
+                <p>Marco, ejes, extrusor, hotend, cama, sensores, ventiladores y electronica.</p>
+              </article>
+              <article class="mini-panel" id="diagrama">
+                <h2>Diagrama de una impresora 3D</h2>
+                <p>Mapa visual de componentes y recorrido del filamento para principiantes.</p>
+              </article>
+              <article class="mini-panel" id="glosario">
+                <h2>Glosario basico</h2>
+                <p>Terminos esenciales: brim, skirt, flow, retraction, nozzle, warping y mas.</p>
+              </article>
+            </section>
+
+            <section class="feature-section" id="calculadoras">
+              <div class="section-heading">
+                <p class="eyebrow">Herramientas</p>
+                <h2>Calculadoras interactivas</h2>
+                <p>
+                  Utilidades rapidas para estimar coste, consumo, tiempo, conversion de gramos
+                  a metros, contraccion de materiales tecnicos y velocidad volumetrica maxima.
+                </p>
+              </div>
+
+              <div class="calculator-grid">
+                <article class="tool-card">
+                  <h3>Coste por impresion</h3>
+                  <div class="form-grid">
+                    <label><span>Gramos usados</span><input id="costWeight" type="number" value="180" min="0" step="0.1" /></label>
+                    <label><span>Precio bobina (€)</span><input id="costSpoolPrice" type="number" value="24.9" min="0" step="0.01" /></label>
+                    <label><span>Peso bobina (g)</span><input id="costSpoolWeight" type="number" value="1000" min="1" step="1" /></label>
+                    <label><span>Electricidad (€)</span><input id="costPower" type="number" value="0.65" min="0" step="0.01" /></label>
+                  </div>
+                  <p class="tool-result">Coste estimado: <strong id="costResult">€0.00</strong></p>
+                </article>
+
+                <article class="tool-card">
+                  <h3>Consumo de filamento</h3>
+                  <div class="form-grid">
+                    <label><span>Volumen pieza (cm3)</span><input id="filamentVolume" type="number" value="62" min="0" step="0.1" /></label>
+                    <label><span>Densidad (g/cm3)</span><input id="filamentDensity" type="number" value="1.24" min="0" step="0.01" /></label>
+                  </div>
+                  <p class="tool-result">Peso estimado: <strong id="filamentResult">0 g</strong></p>
+                </article>
+
+                <article class="tool-card">
+                  <h3>Tiempo estimado</h3>
+                  <div class="form-grid">
+                    <label><span>Volumen extruido (mm3)</span><input id="timeVolume" type="number" value="62000" min="0" step="1" /></label>
+                    <label><span>Flujo medio (mm3/s)</span><input id="timeFlow" type="number" value="9.5" min="0.1" step="0.1" /></label>
+                    <label><span>Margen extra (%)</span><input id="timeOverhead" type="number" value="18" min="0" step="1" /></label>
+                  </div>
+                  <p class="tool-result">Tiempo estimado: <strong id="timeResult">0 h 0 min</strong></p>
+                </article>
+
+                <article class="tool-card">
+                  <h3>Gramos a metros</h3>
+                  <div class="form-grid">
+                    <label><span>Peso (g)</span><input id="gramsValue" type="number" value="250" min="0" step="0.1" /></label>
+                    <label><span>Diametro (mm)</span><input id="gramsDiameter" type="number" value="1.75" min="0.1" step="0.01" /></label>
+                    <label><span>Densidad (g/cm3)</span><input id="gramsDensity" type="number" value="1.24" min="0.1" step="0.01" /></label>
+                  </div>
+                  <p class="tool-result">Longitud aproximada: <strong id="gramsResult">0 m</strong></p>
+                </article>
+
+                <article class="tool-card">
+                  <h3>Contraccion por material</h3>
+                  <div class="form-grid">
+                    <label>
+                      <span>Material</span>
+                      <select id="shrinkMaterial">
+                        <option value="0.007">ABS</option>
+                        <option value="0.006">ASA</option>
+                        <option value="0.015">Nylon</option>
+                      </select>
+                    </label>
+                    <label><span>Medida objetivo (mm)</span><input id="shrinkDimension" type="number" value="120" min="0" step="0.1" /></label>
+                  </div>
+                  <p class="tool-result">Dimension compensada: <strong id="shrinkResult">0 mm</strong></p>
+                </article>
+
+                <article class="tool-card">
+                  <h3>Velocidad volumetrica maxima</h3>
+                  <div class="form-grid">
+                    <label><span>Ancho de linea (mm)</span><input id="flowWidth" type="number" value="0.42" min="0.1" step="0.01" /></label>
+                    <label><span>Altura de capa (mm)</span><input id="flowHeight" type="number" value="0.2" min="0.05" step="0.01" /></label>
+                    <label><span>Caudal maximo (mm3/s)</span><input id="flowMax" type="number" value="18" min="0.1" step="0.1" /></label>
+                  </div>
+                  <p class="tool-result">Velocidad lineal maxima: <strong id="flowResult">0 mm/s</strong></p>
+                </article>
+              </div>
+            </section>
+
+            <section class="feature-section" id="perfiles">
+              <div class="section-heading">
+                <p class="eyebrow">Base de datos</p>
+                <h2>Base de datos de perfiles</h2>
+                <p>Organiza perfiles por impresora, material y marca de filamento para evitar mezclar presets poco fiables.</p>
+              </div>
+              <div class="info-grid">
+                <article class="tool-card">
+                  <h3>Fabricantes cubiertos</h3>
+                  <ul class="article-list compact-list">
+                    <li>Bambu Lab</li>
+                    <li>Creality</li>
+                    <li>Prusa</li>
+                    <li>Anycubic</li>
+                    <li>Elegoo</li>
+                  </ul>
+                </article>
+                <article class="tool-card">
+                  <h3>Clasificacion recomendada</h3>
+                  <ul class="article-list compact-list">
+                    <li>Perfiles por boquilla y altura de capa.</li>
+                    <li>Perfiles por material base y fabricante.</li>
+                    <li>Perfiles validados por velocidad y calidad objetivo.</li>
+                    <li>Notas de compatibilidad con adhesivos y camara cerrada.</li>
+                  </ul>
+                </article>
+              </div>
+            </section>
+
+            <section class="feature-section" id="comparador">
+              <div class="section-heading">
+                <p class="eyebrow">Comparativas</p>
+                <h2>Comparador de filamentos</h2>
+                <p>Una capa de decision rapida para elegir material segun resistencia, facilidad de impresion, exterior, flexibilidad o acabado.</p>
+              </div>
+              <div class="comparison-grid">
+                <article class="mini-panel"><h3>PLA vs PETG</h3><p>PLA gana en facilidad y acabado; PETG en resistencia termica y tenacidad.</p></article>
+                <article class="mini-panel"><h3>PETG vs ABS</h3><p>PETG es mas simple de imprimir; ABS ofrece mejor mecanizado y posprocesado con entorno controlado.</p></article>
+                <article class="mini-panel"><h3>ASA vs ABS</h3><p>ASA destaca en exterior y estabilidad UV; ABS suele ser mas economico y comun.</p></article>
+                <article class="mini-panel"><h3>TPU 95A vs TPU 85A</h3><p>95A es mucho mas llevable en FDM comun; 85A exige trayectoria de filamento muy controlada.</p></article>
+                <article class="mini-panel"><h3>Nylon vs policarbonato</h3><p>Nylon absorbe humedad pero resiste impacto; PC rinde mejor en rigidez y temperatura.</p></article>
+                <article class="mini-panel"><h3>PLA vs PLA+ vs PLA silk</h3><p>PLA normal es la base; PLA+ mejora tenacidad; silk prioriza brillo sobre comportamiento tecnico.</p></article>
+              </div>
+            </section>
+
+            <section class="feature-section" id="objetivos">
+              <div class="section-heading">
+                <p class="eyebrow">Guias por objetivo</p>
+                <h2>Quiero imprimir...</h2>
+                <p>Accesos por resultado final para usuarios que no piensan en materiales o slicers, sino en la pieza que necesitan.</p>
+              </div>
+              <div class="comparison-grid">
+                <article class="mini-panel"><h3>Piezas resistentes</h3><p>PETG tecnico, ABS, ASA, Nylon y perimetros generosos.</p></article>
+                <article class="mini-panel"><h3>Piezas flexibles</h3><p>TPU 95A para empezar y 85A solo con ruta de filamento muy cerrada.</p></article>
+                <article class="mini-panel"><h3>Exterior</h3><p>ASA como base, con control de warping y buena ventilacion del entorno.</p></article>
+                <article class="mini-panel"><h3>Miniaturas</h3><p>Resina para detalle fino; en FDM, boquilla pequena y altura de capa baja.</p></article>
+                <article class="mini-panel"><h3>Impresion rapida</h3><p>PLA o PLA+ con hotend capaz, input shaping y perfiles afinados.</p></article>
+                <article class="mini-panel"><h3>Piezas transparentes o alimentarias</h3><p>PETG natural para translucidez; enfoque sanitario separado para piezas con contacto alimentario.</p></article>
+              </div>
+            </section>
+
+            <section class="feature-section" id="errores-imagenes">
+              <div class="section-heading">
+                <p class="eyebrow">Diagnostico visual</p>
+                <h2>Seccion de errores con imagenes</h2>
+                <p>Esta parte debe crecer con fotos claras por defecto: el defecto visual acelera el diagnostico mucho mas que una descripcion vaga.</p>
+              </div>
+              <div class="image-problem-grid">
+                <article class="image-problem-card"><div class="image-placeholder">Stringing</div><p>Hilos finos entre torres o cavidades.</p></article>
+                <article class="image-problem-card"><div class="image-placeholder">Warping</div><p>Esquinas levantadas y deformacion de base.</p></article>
+                <article class="image-problem-card"><div class="image-placeholder">Primera capa</div><p>Aplastada, separada o inconsistente.</p></article>
+                <article class="image-problem-card"><div class="image-placeholder">Sobreextrusion</div><p>Exceso de material y bordes abultados.</p></article>
+                <article class="image-problem-card"><div class="image-placeholder">Underextrusion</div><p>Huecos, capas debiles o lineas faltantes.</p></article>
+                <article class="image-problem-card"><div class="image-placeholder">Ringing</div><p>Ondas repetidas alrededor de detalles.</p></article>
+              </div>
+            </section>
+
+            <section class="feature-section" id="diagnostico">
+              <div class="section-heading">
+                <p class="eyebrow">Asistente</p>
+                <h2>Sistema de diagnostico</h2>
+                <p>Selecciona el sintoma dominante y la wiki te devuelve el primer bloque de comprobaciones recomendado.</p>
+              </div>
+              <div class="tool-card diagnosis-card">
+                <div class="diagnosis-options">
+                  <button class="ghost-button diagnosis-option" data-diagnosis="despega" type="button">Se despega</button>
+                  <button class="ghost-button diagnosis-option" data-diagnosis="hilos" type="button">Tiene hilos</button>
+                  <button class="ghost-button diagnosis-option" data-diagnosis="capas" type="button">Tiene capas desplazadas</button>
+                  <button class="ghost-button diagnosis-option" data-diagnosis="debil" type="button">Sale debil</button>
+                  <button class="ghost-button diagnosis-option" data-diagnosis="no-extruye" type="button">La boquilla no extruye</button>
+                  <button class="ghost-button diagnosis-option" data-diagnosis="primera-capa" type="button">La primera capa sale mal</button>
+                </div>
+                <div class="diagnosis-result" id="diagnosisResult">
+                  Elige un problema para ver la ruta de diagnostico inicial.
+                </div>
+              </div>
+            </section>
+
+            <section class="feature-section" id="checklists">
+              <div class="section-heading">
+                <p class="eyebrow">Rutinas</p>
+                <h2>Checklist descargables</h2>
+                <p>Bloques preparados para convertir en PDF o imprimir junto a la maquina.</p>
+              </div>
+              <div class="comparison-grid">
+                <article class="mini-panel"><h3>Checklist diaria</h3><p>Limpieza de cama, filamento, boquilla y primera capa.</p></article>
+                <article class="mini-panel"><h3>Checklist semanal</h3><p>Correas, ventiladores, polvo, ruedas y extrusor.</p></article>
+                <article class="mini-panel"><h3>Checklist mensual</h3><p>Lubricacion, estructura, poleas, offsets y flujo.</p></article>
+                <article class="mini-panel"><h3>Antes de imprimir</h3><p>Confirmaciones minimas antes de lanzar trabajos largos.</p></article>
+                <article class="mini-panel"><h3>Mantenimiento</h3><p>Rutina profunda con piezas y consumibles de revision.</p></article>
+                <article class="mini-panel"><h3>Cambio de material</h3><p>Temperatura, purga, perfil, secado y compatibilidad del nozzle.</p></article>
+              </div>
+            </section>
+
+            <section class="feature-section" id="seguridad">
+              <div class="section-heading">
+                <p class="eyebrow">Seguridad</p>
+                <h2>Zona de seguridad</h2>
+                <p>Una wiki seria de impresion 3D tiene que tratar riesgos reales sin maquillarlos ni reducirlos a un pie de pagina.</p>
+              </div>
+              <div class="info-grid">
+                <article class="tool-card">
+                  <h3>Riesgos que deben tener pagina propia</h3>
+                  <ul class="article-list compact-list">
+                    <li>Riesgo de incendio y supervisiones minimas.</li>
+                    <li>Ventilacion del entorno y renovacion de aire.</li>
+                    <li>Manipulacion de resina y EPI adecuados.</li>
+                    <li>Humos de ABS y ASA en espacios cerrados.</li>
+                    <li>Cables danados y conectores sobrecalentados.</li>
+                    <li>Fuentes de alimentacion de baja calidad.</li>
+                    <li>Impresoras funcionando por la noche sin control.</li>
+                  </ul>
+                </article>
+                <article class="tool-card">
+                  <h3>Enfoque editorial recomendado</h3>
+                  <p>
+                    Prioriza listas de verificacion, signos de alerta, acciones preventivas y limites claros.
+                    La seguridad no debe presentarse como opcion avanzada, sino como requisito operativo.
+                  </p>
+                </article>
+              </div>
+            </section>
+
+            <section class="feature-section" id="marcas">
+              <div class="section-heading">
+                <p class="eyebrow">Wiki de marcas</p>
+                <h2>Ecosistema por fabricante</h2>
+                <p>Cada marca merece una pagina con puntos fuertes, problemas tipicos, ecosistema de repuestos y compatibilidad de upgrades.</p>
+              </div>
+              <div class="comparison-grid">
+                <article class="mini-panel"><h3>Creality</h3><p>Gran base instalada, mucha comunidad y variedad de upgrades.</p></article>
+                <article class="mini-panel"><h3>Bambu Lab</h3><p>Flujo cerrado, automatizacion fuerte y altas velocidades de serie.</p></article>
+                <article class="mini-panel"><h3>Prusa</h3><p>Documentacion solida, perfiles maduros y mantenimiento bien resuelto.</p></article>
+                <article class="mini-panel"><h3>Anycubic</h3><p>Catalogo amplio con presencia fuerte en resina y FDM de entrada.</p></article>
+                <article class="mini-panel"><h3>Elegoo</h3><p>Muy relevante en resina y cada vez mas visible en FDM domestica.</p></article>
+                <article class="mini-panel"><h3>Qidi, Sovol, Artillery y Flashforge</h3><p>Marcas con enfoques distintos que piden guias separadas por hardware y soporte.</p></article>
+              </div>
+            </section>
+
+            <section class="feature-section" id="upgrades">
+              <div class="section-heading">
+                <p class="eyebrow">Mejoras</p>
+                <h2>Guias de upgrades</h2>
+                <p>Las mejoras utiles son las que resuelven un problema real, no las que anaden complejidad sin un objetivo medible.</p>
+              </div>
+              <div class="comparison-grid">
+                <article class="mini-panel"><h3>Direct drive</h3><p>Prioritario para TPU, retraccion corta y mejor control del extrusor.</p></article>
+                <article class="mini-panel"><h3>Sensor de filamento</h3><p>Interesante para impresiones largas, pero necesita integracion fiable en firmware.</p></article>
+                <article class="mini-panel"><h3>Camara cerrada</h3><p>Util para ABS, ASA y estabilidad termica de piezas tecnicas.</p></article>
+                <article class="mini-panel"><h3>Klipper</h3><p>Gran salto en control, pero exige criterio para medir antes y despues.</p></article>
+                <article class="mini-panel"><h3>Hotend y extrusor</h3><p>Mejoran rango de materiales y caudal si el cuello de botella es real.</p></article>
+                <article class="mini-panel"><h3>LED, timelapse y ventilacion</h3><p>Mejoras secundarias que suman usabilidad, observacion y calidad de capa.</p></article>
+              </div>
+            </section>
+          </div>
+
+          <aside class="toc-column">
+            <div class="toc-box">
+              <p class="toc-title">En esta pagina</p>
+              <nav id="tableOfContents" aria-label="Indice del articulo"></nav>
+            </div>
+          </aside>
+        </main>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
