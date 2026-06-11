@@ -37,6 +37,15 @@
 
         <nav aria-label="Navegacion principal">
           <div class="nav-group" data-group>
+            <button class="nav-group-toggle" aria-expanded="true"><span>Primeros pasos</span><span>▾</span></button>
+            <ul>
+              <li><a href="pages/primeros-pasos-bambu-a1.html" data-searchable>Empezar con Bambu A1</a></li>
+              <li><a href="pages/teoria-fdm.html" data-searchable>Teoría FDM</a></li>
+              <li><a href="pages/tipos-impresoras.html" data-searchable>Tipos de impresoras 3D</a></li>
+              <li><a href="pages/materiales.html" data-searchable>Guía de materiales</a></li>
+            </ul>
+          </div>
+          <div class="nav-group" data-group>
             <button class="nav-group-toggle" aria-expanded="true"><span>Inicio</span><span>▾</span></button>
             <ul>
               <li><a href="index.html" class="is-current" data-searchable>Portada</a></li>
@@ -95,21 +104,22 @@
             <section class="hero">
               <div class="hero-grid">
                 <div>
-                  <p class="eyebrow">Wiki multipágina</p>
-                  <h1>Documentación 3D mejor separada, más clara y más útil.</h1>
+                  <p class="eyebrow">Ruta inicial recomendada</p>
+                  <h1>Empieza con una Bambu A1, entiende la teoría y luego expande al resto.</h1>
                   <p class="hero-lead">
-                    La home ya no intenta explicarlo todo. Desde aquí entras a guías
-                    independientes con navegación consistente, índice lateral y contenido
-                    enfocado por tarea.
+                    La wiki ya no arranca en temas sueltos. El punto de entrada recomendado
+                    es una impresora FDM moderna y sencilla como la Bambu A1, pero el contenido
+                    sigue cubriendo materiales, teoría, mantenimiento, marcas, seguridad y decisiones
+                    para otras máquinas.
                   </p>
                 </div>
                 <div class="hero-panel">
-                  <p class="eyebrow">Rutas rápidas</p>
+                  <p class="eyebrow">Ruta de aprendizaje</p>
                   <ul>
-                    <li>Empieza por mantenimiento si tu máquina aún no es estable.</li>
-                    <li>Usa calculadoras y diagnóstico para problemas concretos.</li>
-                    <li>Consulta comparativas antes de cambiar de material.</li>
-                    <li>Revisa seguridad y marcas antes de comprar o modificar.</li>
+                    <li>Empieza por Bambu A1 si vienes completamente de cero.</li>
+                    <li>Después entra en teoría FDM para entender qué está haciendo la máquina.</li>
+                    <li>Luego revisa tipos de impresora y materiales antes de gastar más.</li>
+                    <li>Cuando ya imprimas de forma estable, usa diagnóstico, calculadoras y comparativas.</li>
                   </ul>
                 </div>
               </div>
@@ -117,11 +127,31 @@
 
             <section class="section-block">
               <div class="section-intro">
-                <p class="eyebrow">Estructura</p>
-                <h2>Páginas principales</h2>
-                <p>Cada bloque importante tiene ahora su propia página, en vez de quedar mezclado dentro de una sola landing.</p>
+                <p class="eyebrow">Base de conocimiento</p>
+                <h2>Empieza por aquí si estás arrancando</h2>
+                <p>Estas páginas llenan el vacío más importante que tenía la wiki: teoría, materiales e impresoras antes de pasar a herramientas o mantenimiento.</p>
               </div>
               <div class="card-grid cards-3">
+                <article class="feature-card" data-searchable>
+                  <h3>Primeros pasos con Bambu A1</h3>
+                  <p>Montaje mental y práctico para alguien que empieza con una FDM moderna, sin asumir experiencia previa.</p>
+                  <a class="card-link" href="pages/primeros-pasos-bambu-a1.html">Abrir ruta inicial →</a>
+                </article>
+                <article class="feature-card" data-searchable>
+                  <h3>Teoría FDM</h3>
+                  <p>Qué hace un slicer, cómo nace una capa, por qué importan temperatura, flujo y enfriamiento.</p>
+                  <a class="card-link" href="pages/teoria-fdm.html">Abrir teoría →</a>
+                </article>
+                <article class="feature-card" data-searchable>
+                  <h3>Tipos de impresoras</h3>
+                  <p>Bedslinger, CoreXY, delta, resina, direct drive y Bowden con ventajas y límites reales.</p>
+                  <a class="card-link" href="pages/tipos-impresoras.html">Ver impresoras →</a>
+                </article>
+                <article class="feature-card" data-searchable>
+                  <h3>Guía de materiales</h3>
+                  <p>PLA, PETG, ABS, ASA, TPU, Nylon, PC y filamentos especiales desde uso real, no solo lista técnica.</p>
+                  <a class="card-link" href="pages/materiales.html">Ver materiales →</a>
+                </article>
                 <article class="feature-card" data-searchable>
                   <h3>Mantenimiento FDM</h3>
                   <p>Artículo largo con índice, tablas, checklist y navegación anterior/siguiente.</p>
@@ -157,32 +187,33 @@
 
             <section class="section-block split-grid">
               <article class="surface">
-                <p class="eyebrow">Qué cambia</p>
-                <h2>Menos ruido en la portada</h2>
+                <p class="eyebrow">Enfoque editorial</p>
+                <h2>La Bambu A1 es la puerta de entrada, no el límite de la wiki</h2>
                 <p>
-                  La home pasa a ser una entrada editorial: orienta, prioriza y deriva.
-                  El contenido denso vive en páginas documento, no en tarjetas interminables.
+                  La idea es empezar desde una máquina muy fácil de recomendar a quien se inicia,
+                  pero sin convertir la wiki en una guía de una sola marca. Desde esa base se explican
+                  teoría, materiales, marcas, riesgos, mantenimiento y upgrades aplicables a más equipos.
                 </p>
                 <div class="tag-row">
-                  <span>Sidebar persistente</span>
-                  <span>Breadcrumbs</span>
-                  <span>TOC automático</span>
-                  <span>Buscador visual</span>
-                  <span>Tema oscuro y claro</span>
+                  <span>Bambu A1 como punto de partida</span>
+                  <span>Teoría FDM separada</span>
+                  <span>Materiales completos</span>
+                  <span>Marcas y ecosistema</span>
+                  <span>Herramientas y diagnóstico</span>
                 </div>
               </article>
               <div class="mini-stats">
                 <div class="mini-stat surface">
-                  <strong>8</strong>
-                  <span>Páginas separadas ya montadas</span>
+                  <strong>12</strong>
+                  <span>Páginas separadas después de ampliar la base</span>
                 </div>
                 <div class="mini-stat surface">
-                  <strong>1</strong>
-                  <span>Estilo compartido para toda la wiki</span>
+                  <strong>A1</strong>
+                  <span>Ruta de entrada recomendada para principiantes</span>
                 </div>
                 <div class="mini-stat surface">
-                  <strong>0</strong>
-                  <span>Secciones críticas mezcladas en la portada</span>
+                  <strong>FDM</strong>
+                  <span>Teoría, materiales e impresoras ya separados del resto</span>
                 </div>
               </div>
             </section>
@@ -193,6 +224,16 @@
                 <h2>Páginas que ya están preparadas para crecer</h2>
               </div>
               <div class="card-grid">
+                <article class="surface" data-searchable>
+                  <h3>Teoría e impresoras</h3>
+                  <p>Base conceptual para entender bedslingers, CoreXY, resina, flujo, capas y trayectorias.</p>
+                  <a class="card-link" href="pages/teoria-fdm.html">Ver teoría →</a>
+                </article>
+                <article class="surface" data-searchable>
+                  <h3>Materiales</h3>
+                  <p>Qué material usar según humedad, temperatura, exterior, flexibilidad y tipo de pieza.</p>
+                  <a class="card-link" href="pages/materiales.html">Ver materiales →</a>
+                </article>
                 <article class="surface" data-searchable>
                   <h3>Seguridad</h3>
                   <p>Riesgo de incendio, ventilación, resina, humos de ABS/ASA y operación nocturna.</p>
@@ -223,12 +264,13 @@
                 <p class="toc-title">Atajos</p>
               </div>
               <nav id="tableOfContents" aria-label="Atajos rápidos">
+                <a href="pages/primeros-pasos-bambu-a1.html">Empezar con Bambu A1</a>
+                <a href="pages/teoria-fdm.html">Teoría FDM</a>
+                <a href="pages/tipos-impresoras.html">Tipos de impresora</a>
+                <a href="pages/materiales.html">Materiales</a>
                 <a href="pages/mantenimiento-fdm.html">Mantenimiento FDM</a>
                 <a href="pages/calculadoras.html">Calculadoras</a>
                 <a href="pages/diagnostico.html">Diagnóstico</a>
-                <a href="pages/comparador-filamentos.html">Comparador</a>
-                <a href="pages/seguridad.html">Seguridad</a>
-                <a href="pages/marcas.html">Marcas</a>
               </nav>
             </div>
           </aside>
