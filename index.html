@@ -49,6 +49,12 @@
             <button class="nav-group-toggle" aria-expanded="true"><span>Inicio</span><span>▾</span></button>
             <ul>
               <li><a href="index.html" class="is-current" data-searchable>Portada</a></li>
+              <li><a href="#bienvenida" data-searchable>Bienvenida</a></li>
+              <li><a href="#rutas" data-searchable>Rutas</a></li>
+              <li><a href="#faq-rapida" data-searchable>FAQ rápida</a></li>
+              <li><a href="#descargables" data-searchable>Recursos descargables</a></li>
+              <li><a href="#comunidad" data-searchable>Comunidad</a></li>
+              <li><a href="#legal" data-searchable>Legal</a></li>
               <li><a href="pages/mantenimiento-fdm.html" data-searchable>Mantenimiento FDM</a></li>
               <li><a href="pages/materiales-objetivos.html" data-searchable>Materiales y objetivos</a></li>
             </ul>
@@ -101,7 +107,7 @@
 
         <main class="page-grid">
           <div class="content-column">
-            <section class="hero">
+            <section class="hero" id="bienvenida">
               <div class="hero-grid">
                 <div>
                   <p class="eyebrow">Ruta inicial recomendada</p>
@@ -126,6 +132,32 @@
             </section>
 
             <section class="section-block">
+              <div class="section-intro">
+                <p class="eyebrow">Inicio</p>
+                <h2>Qué es esta wiki y cómo se usa</h2>
+                <p>La portada ahora cubre el arranque editorial completo: qué es la wiki, para quién es, cómo navegarla y qué ruta seguir según tu nivel o tu objetivo.</p>
+              </div>
+              <div class="card-grid">
+                <article class="surface" data-searchable>
+                  <h3>Qué es esta wiki</h3>
+                  <p>Una base de conocimiento sobre impresión 3D pensada para pasar de conceptos básicos a diagnóstico, materiales, mantenimiento y decisiones de compra.</p>
+                </article>
+                <article class="surface" data-searchable>
+                  <h3>Para quién es esta wiki</h3>
+                  <p>Para principiantes absolutos, usuarios intermedios que ya imprimen y usuarios avanzados que quieren afinar materiales, flujo, mantenimiento o hardware.</p>
+                </article>
+                <article class="surface" data-searchable>
+                  <h3>Cómo usar la wiki</h3>
+                  <p>Empieza por una ruta guiada, entra luego en artículos por tema y usa comparadores, calculadoras y diagnóstico solo cuando ya tengas una duda concreta.</p>
+                </article>
+                <article class="surface" data-searchable>
+                  <h3>Buscador principal</h3>
+                  <p>El buscador superior filtra enlaces y páginas clave. Está pensado como punto de entrada rápido cuando ya sabes el problema o el tema.</p>
+                </article>
+              </div>
+            </section>
+
+            <section class="section-block" id="rutas">
               <div class="section-intro">
                 <p class="eyebrow">Base de conocimiento</p>
                 <h2>Empieza por aquí si estás arrancando</h2>
@@ -185,6 +217,45 @@
               </div>
             </section>
 
+            <section class="section-block">
+              <div class="section-intro">
+                <p class="eyebrow">Rutas por nivel</p>
+                <h2>Qué leer según tu experiencia</h2>
+              </div>
+              <div class="card-grid cards-3">
+                <article class="feature-card" data-searchable>
+                  <h3>Ruta para principiantes</h3>
+                  <p>Bambu A1, teoría FDM, tipos de impresora, materiales base y primera capa.</p>
+                  <a class="card-link" href="pages/primeros-pasos-bambu-a1.html">Seguir ruta →</a>
+                </article>
+                <article class="feature-card" data-searchable>
+                  <h3>Ruta para usuarios intermedios</h3>
+                  <p>Mantenimiento FDM, comparador de materiales, perfiles y diagnóstico visual.</p>
+                  <a class="card-link" href="pages/mantenimiento-fdm.html">Abrir ruta →</a>
+                </article>
+                <article class="feature-card" data-searchable>
+                  <h3>Ruta para usuarios avanzados</h3>
+                  <p>Caudal, materiales técnicos, upgrades, seguridad y decisiones por arquitectura.</p>
+                  <a class="card-link" href="pages/upgrades.html">Abrir ruta →</a>
+                </article>
+              </div>
+            </section>
+
+            <section class="section-block">
+              <div class="section-intro">
+                <p class="eyebrow">Rutas por tema</p>
+                <h2>Accesos directos por disciplina</h2>
+              </div>
+              <div class="card-grid cards-3">
+                <article class="feature-card" data-searchable><h3>Ruta para impresión FDM</h3><p>Ruta Bambu A1, teoría FDM, materiales, mantenimiento y diagnóstico.</p><a class="card-link" href="pages/teoria-fdm.html">Ver FDM →</a></article>
+                <article class="feature-card" data-searchable><h3>Ruta para impresión con resina</h3><p>Seguridad, manipulación química, soportes, lavado, curado y tipos de uso.</p><a class="card-link" href="pages/seguridad.html">Ver resina →</a></article>
+                <article class="feature-card" data-searchable><h3>Ruta para diseño 3D</h3><p>Materiales, objetivo de pieza, tolerancias y orientación antes de modelar.</p><a class="card-link" href="pages/materiales-objetivos.html">Ver diseño →</a></article>
+                <article class="feature-card" data-searchable><h3>Ruta para mantenimiento</h3><p>Rutinas diarias, mensuales, revisión de cama, boquilla, correas y firmware.</p><a class="card-link" href="pages/mantenimiento-fdm.html">Ver mantenimiento →</a></article>
+                <article class="feature-card" data-searchable><h3>Ruta para solucionar problemas</h3><p>Asistente por síntoma, defectos visuales y orden correcto de comprobación.</p><a class="card-link" href="pages/diagnostico.html">Ver diagnóstico →</a></article>
+                <article class="feature-card" data-searchable><h3>Ruta para elegir material</h3><p>Guía base, comparador y objetivos de uso antes de comprar bobinas al azar.</p><a class="card-link" href="pages/materiales.html">Ver materiales →</a></article>
+              </div>
+            </section>
+
             <section class="section-block split-grid">
               <article class="surface">
                 <p class="eyebrow">Enfoque editorial</p>
@@ -220,10 +291,26 @@
 
             <section class="section-block">
               <div class="section-intro">
-                <p class="eyebrow">Siguientes áreas</p>
-                <h2>Páginas que ya están preparadas para crecer</h2>
+                <p class="eyebrow">Descubrir contenido</p>
+                <h2>Artículos y guías que merecen prioridad</h2>
               </div>
               <div class="card-grid">
+                <article class="surface" data-searchable>
+                  <h3>Últimos artículos añadidos</h3>
+                  <p>Bambu A1, teoría FDM, tipos de impresoras y guía base de materiales son las últimas incorporaciones estructurales.</p>
+                </article>
+                <article class="surface" data-searchable>
+                  <h3>Artículos populares</h3>
+                  <p>Mantenimiento FDM, comparador de filamentos, diagnóstico y materiales suelen ser las entradas más útiles para casi cualquier usuario.</p>
+                </article>
+                <article class="surface" data-searchable>
+                  <h3>Artículos recomendados</h3>
+                  <p>Si vienes de cero: Bambu A1, teoría FDM y materiales. Si ya imprimes: mantenimiento, perfiles y seguridad.</p>
+                </article>
+                <article class="surface" data-searchable>
+                  <h3>Guías destacadas</h3>
+                  <p>Rutas ya separadas para empezar, entender materiales, mantener la máquina y diagnosticar fallos visibles.</p>
+                </article>
                 <article class="surface" data-searchable>
                   <h3>Teoría e impresoras</h3>
                   <p>Base conceptual para entender bedslingers, CoreXY, resina, flujo, capas y trayectorias.</p>
@@ -254,6 +341,82 @@
                   <p>Separación clara entre impresora, material, boquilla y objetivo de calidad o velocidad.</p>
                   <a class="card-link" href="pages/perfiles.html">Ver estructura →</a>
                 </article>
+              </div>
+            </section>
+
+            <section class="section-block" id="faq-rapida">
+              <div class="section-intro">
+                <p class="eyebrow">Ayuda rápida</p>
+                <h2>Preguntas frecuentes rápidas y glosario rápido</h2>
+              </div>
+              <div class="split-grid">
+                <article class="surface" data-searchable>
+                  <h3>Preguntas frecuentes rápidas</h3>
+                  <ul class="article-list">
+                    <li>¿Con qué material empiezo? PLA.</li>
+                    <li>¿Qué impresora usar para aprender? Una FDM simple y estable como A1.</li>
+                    <li>¿Qué hago si la primera capa sale mal? Cama, limpieza, Z-offset y observación.</li>
+                    <li>¿Cuándo pasar a PETG, TPU o ASA? Cuando ya tengas base estable en PLA.</li>
+                  </ul>
+                  <a class="card-link" href="pages/faq.html">Abrir FAQ completa →</a>
+                </article>
+                <article class="surface" data-searchable>
+                  <h3>Glosario rápido</h3>
+                  <div class="tag-row">
+                    <span>Boquilla</span>
+                    <span>Z-offset</span>
+                    <span>Flow</span>
+                    <span>Warping</span>
+                    <span>Stringing</span>
+                    <span>Brim</span>
+                    <span>Retraction</span>
+                  </div>
+                  <a class="card-link" href="pages/glosario.html">Abrir glosario →</a>
+                </article>
+              </div>
+            </section>
+
+            <section class="section-block" id="descargables">
+              <div class="section-intro">
+                <p class="eyebrow">Recursos</p>
+                <h2>Recursos descargables y enlaces útiles</h2>
+              </div>
+              <div class="card-grid">
+                <article class="surface" data-searchable>
+                  <h3>Recursos descargables</h3>
+                  <p>Checklists, estructuras de perfiles y material de trabajo para imprimir o convertir en PDF.</p>
+                  <a class="card-link" href="pages/recursos.html">Ver recursos →</a>
+                </article>
+                <article class="surface" data-searchable>
+                  <h3>Avisos de seguridad importantes</h3>
+                  <p>Antes de tocar ABS, ASA, resina o impresiones nocturnas, revisa la sección de seguridad.</p>
+                  <a class="card-link" href="pages/seguridad.html">Revisar seguridad →</a>
+                </article>
+              </div>
+            </section>
+
+            <section class="section-block" id="comunidad">
+              <div class="section-intro">
+                <p class="eyebrow">Proyecto</p>
+                <h2>Comunidad, contacto y contexto del proyecto</h2>
+              </div>
+              <div class="card-grid cards-3">
+                <article class="feature-card" data-searchable><h3>Comunidad</h3><p>Espacio para futuras aportaciones, lecturas sugeridas y feedback editorial.</p><a class="card-link" href="pages/comunidad.html">Ver comunidad →</a></article>
+                <article class="feature-card" data-searchable><h3>Contacto</h3><p>Página separada para proponer mejoras, corregir errores o sugerir nuevas secciones.</p><a class="card-link" href="pages/contacto.html">Ver contacto →</a></article>
+                <article class="feature-card" data-searchable><h3>Créditos</h3><p>Contexto editorial, estructura del proyecto y reconocimiento del trabajo base.</p><a class="card-link" href="pages/creditos.html">Ver créditos →</a></article>
+              </div>
+            </section>
+
+            <section class="section-block" id="legal">
+              <div class="section-intro">
+                <p class="eyebrow">Legal</p>
+                <h2>Políticas y páginas legales</h2>
+              </div>
+              <div class="card-grid cards-3">
+                <article class="feature-card" data-searchable><h3>Política de uso</h3><p>Cómo se debe usar el contenido de la wiki y qué límites tiene.</p><a class="card-link" href="pages/politica-uso.html">Abrir →</a></article>
+                <article class="feature-card" data-searchable><h3>Aviso legal</h3><p>Marco informativo básico del proyecto y limitaciones de responsabilidad.</p><a class="card-link" href="pages/aviso-legal.html">Abrir →</a></article>
+                <article class="feature-card" data-searchable><h3>Política de privacidad</h3><p>Tratamiento esperado de datos y formularios de contacto si se habilitan.</p><a class="card-link" href="pages/privacidad.html">Abrir →</a></article>
+                <article class="feature-card" data-searchable><h3>Cookies</h3><p>Referencia básica al uso de almacenamiento local o tecnologías similares.</p><a class="card-link" href="pages/cookies.html">Abrir →</a></article>
               </div>
             </section>
           </div>
