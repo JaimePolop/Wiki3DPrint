@@ -26,11 +26,21 @@
         <div class="search-shell">
           <label class="search-bar"><span>⌕</span><input type="search" placeholder="Buscar..." data-search-input /><span class="search-shortcut">⌘ K</span></label>
         </div>
-        <nav>
+        <nav aria-label="Secciones de la wiki">
+          <div class="nav-group" data-group>
+            <button class="nav-group-toggle" aria-expanded="true"><span>Inicio</span><span>▾</span></button>
+            <ul>
+              <li><a href="../index.html#bienvenida" data-searchable>Bienvenida</a></li>
+              <li><a href="../index.html#que-es" data-searchable>Qué es esta wiki</a></li>
+              <li><a href="../index.html#rutas" data-searchable>Rutas recomendadas</a></li>
+              <li><a href="../index.html#destacados" data-searchable>Guías destacadas</a></li>
+              <li><a href="../index.html#seguridad" data-searchable>Avisos de seguridad</a></li>
+            </ul>
+          </div>
           <div class="nav-group" data-group>
             <button class="nav-group-toggle" aria-expanded="true"><span>Materiales</span><span>▾</span></button>
             <ul>
-              <li><a href="index.html" data-searchable>Índice</a></li>
+              <li><a href="index.html" data-searchable>Índice de materiales</a></li>
               <li><a href="pla.html" class="is-current" data-searchable>PLA</a></li>
               <li><a href="petg.html" data-searchable>PETG</a></li>
               <li><a href="pet.html" data-searchable>PET</a></li>
@@ -76,6 +86,10 @@
                   </p>
                 </div>
               </header>
+              <figure class="material-hero-figure">
+                <img class="material-hero-image" src="../assets/materiales/material-hero.svg" alt="Ilustración de una bobina de filamento y una pieza de muestra para la ficha de PLA." />
+                <figcaption>Bloque visual para PLA. Puedes sustituir este archivo por una foto real del carrete, una muestra impresa o una macro de la textura del material.</figcaption>
+              </figure>
 
               <section id="resumen">
                 <h2>Resumen rápido</h2>

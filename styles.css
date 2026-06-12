@@ -873,6 +873,32 @@ thead th {
   margin-top: 0;
 }
 
+.material-hero-figure {
+  margin: 0 0 1.6rem;
+  padding: 0.9rem;
+  border-radius: 1.3rem;
+  border: 1px solid var(--line);
+  background: linear-gradient(145deg, rgba(65, 199, 255, 0.08), rgba(139, 92, 246, 0.05), var(--panel-alt));
+  box-shadow: var(--shadow);
+}
+
+.material-hero-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0b1320;
+}
+
+.material-hero-figure figcaption {
+  margin-top: 0.75rem;
+  color: var(--muted);
+  line-height: 1.65;
+  font-size: 0.94rem;
+}
+
 @media (max-width: 1220px) {
   .page-grid {
     grid-template-columns: 1fr;
