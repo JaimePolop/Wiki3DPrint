@@ -1,0 +1,32 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="36" fill="#0B1320"/>
+  <rect x="24" y="24" width="1152" height="672" rx="28" fill="url(#bg)"/>
+  <circle cx="240" cy="160" r="130" fill="url(#glow1)"/>
+  <circle cx="940" cy="520" r="170" fill="url(#glow2)"/>
+  <rect x="118" y="92" width="156" height="40" rx="20" fill="#17324C"/>
+  <text x="146" y="119" fill="#DDF6FF" font-family="Arial, sans-serif" font-size="22" font-weight="700">Wiki3DPrint</text>
+  <text x="120" y="612" fill="#ECF7F2" font-family="Arial, sans-serif" font-size="62" font-weight="700">PLA</text>
+  <text x="120" y="656" fill="#9BC0B7" font-family="Arial, sans-serif" font-size="26">Material base, fácil y visualmente limpio</text>
+  <ellipse cx="630" cy="430" rx="320" ry="72" fill="#091018"/>
+  <ellipse cx="630" cy="424" rx="278" ry="50" fill="#1C6B54"/>
+  <ellipse cx="630" cy="424" rx="206" ry="28" fill="#0D1722"/>
+  <path d="M450 286C450 241.817 485.817 206 530 206H730C774.183 206 810 241.817 810 286V388C810 432.183 774.183 468 730 468H530C485.817 468 450 432.183 450 388V286Z" fill="#E7F4EC"/>
+  <path d="M485 252C485 232.67 500.67 217 520 217H740C759.33 217 775 232.67 775 252V387C775 415.719 751.719 439 723 439H537C508.281 439 485 415.719 485 387V252Z" fill="#B6E6C9"/>
+  <path d="M542 174C542 151.909 559.909 134 582 134H678C700.091 134 718 151.909 718 174V246H542V174Z" fill="#122233"/>
+  <rect x="532" y="320" width="196" height="34" rx="17" fill="#3CA06F"/>
+  <rect x="510" y="372" width="240" height="22" rx="11" fill="#5ED49A" fill-opacity="0.5"/>
+  <defs>
+    <linearGradient id="bg" x1="88" y1="88" x2="1092" y2="664" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#132437"/>
+      <stop offset="1" stop-color="#10212E"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(240 160) rotate(90) scale(130)">
+      <stop stop-color="#5ED49A"/>
+      <stop offset="1" stop-color="#5ED49A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(940 520) rotate(90) scale(170)">
+      <stop stop-color="#41C7FF"/>
+      <stop offset="1" stop-color="#41C7FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

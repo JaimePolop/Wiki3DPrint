@@ -1,0 +1,30 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="36" fill="#111015"/>
+  <rect x="24" y="24" width="1152" height="672" rx="28" fill="url(#bg)"/>
+  <circle cx="236" cy="154" r="122" fill="url(#glow1)"/>
+  <circle cx="952" cy="532" r="186" fill="url(#glow2)"/>
+  <text x="120" y="612" fill="#FFF4F7" font-family="Arial, sans-serif" font-size="62" font-weight="700">PPS</text>
+  <text x="120" y="656" fill="#D4B7C3" font-family="Arial, sans-serif" font-size="26">Polímero de alto rendimiento y uso muy técnico</text>
+  <ellipse cx="630" cy="430" rx="320" ry="72" fill="#130F13"/>
+  <ellipse cx="630" cy="424" rx="278" ry="50" fill="#B9658C"/>
+  <ellipse cx="630" cy="424" rx="206" ry="28" fill="#1F1720"/>
+  <path d="M450 286C450 241.817 485.817 206 530 206H730C774.183 206 810 241.817 810 286V388C810 432.183 774.183 468 730 468H530C485.817 468 450 432.183 450 388V286Z" fill="#FFF0F5"/>
+  <path d="M486 250C486 231.775 500.775 217 519 217H741C761.987 217 779 234.013 779 255V386C779 415.271 755.271 439 726 439H539C509.729 439 486 415.271 486 386V250Z" fill="#F0BDD2"/>
+  <path d="M544 174C544 151.909 561.909 134 584 134H680C702.091 134 720 151.909 720 174V246H544V174Z" fill="#231925"/>
+  <rect x="532" y="320" width="196" height="34" rx="17" fill="#DB7FAA"/>
+  <rect x="510" y="372" width="240" height="22" rx="11" fill="#FFD3E4" fill-opacity="0.35"/>
+  <defs>
+    <linearGradient id="bg" x1="92" y1="68" x2="1096" y2="668" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2A2028"/>
+      <stop offset="1" stop-color="#18141B"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(236 154) rotate(90) scale(122)">
+      <stop stop-color="#DB7FAA"/>
+      <stop offset="1" stop-color="#DB7FAA" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(952 532) rotate(90) scale(186)">
+      <stop stop-color="#F39BBE"/>
+      <stop offset="1" stop-color="#F39BBE" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

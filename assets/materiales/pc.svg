@@ -1,0 +1,30 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="36" fill="#0D1017"/>
+  <rect x="24" y="24" width="1152" height="672" rx="28" fill="url(#bg)"/>
+  <circle cx="238" cy="152" r="124" fill="url(#glow1)"/>
+  <circle cx="948" cy="528" r="184" fill="url(#glow2)"/>
+  <text x="120" y="612" fill="#F7F8FF" font-family="Arial, sans-serif" font-size="62" font-weight="700">PC</text>
+  <text x="120" y="656" fill="#B5B9D3" font-family="Arial, sans-serif" font-size="26">Policarbonato, alto rendimiento y alta temperatura</text>
+  <ellipse cx="630" cy="430" rx="320" ry="72" fill="#0C1018"/>
+  <ellipse cx="630" cy="424" rx="278" ry="50" fill="#6E83D8"/>
+  <ellipse cx="630" cy="424" rx="206" ry="28" fill="#151B29"/>
+  <path d="M450 286C450 241.817 485.817 206 530 206H730C774.183 206 810 241.817 810 286V388C810 432.183 774.183 468 730 468H530C485.817 468 450 432.183 450 388V286Z" fill="#F2F4FF"/>
+  <path d="M486 250C486 231.775 500.775 217 519 217H741C761.987 217 779 234.013 779 255V386C779 415.271 755.271 439 726 439H539C509.729 439 486 415.271 486 386V250Z" fill="#C8D1FF"/>
+  <path d="M544 174C544 151.909 561.909 134 584 134H680C702.091 134 720 151.909 720 174V246H544V174Z" fill="#14192A"/>
+  <rect x="532" y="320" width="196" height="34" rx="17" fill="#8CA0F8"/>
+  <rect x="510" y="372" width="240" height="22" rx="11" fill="#E4E8FF" fill-opacity="0.35"/>
+  <defs>
+    <linearGradient id="bg" x1="96" y1="64" x2="1098" y2="668" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1A2238"/>
+      <stop offset="1" stop-color="#101526"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(238 152) rotate(90) scale(124)">
+      <stop stop-color="#8CA0F8"/>
+      <stop offset="1" stop-color="#8CA0F8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(948 528) rotate(90) scale(184)">
+      <stop stop-color="#5D79FF"/>
+      <stop offset="1" stop-color="#5D79FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
