@@ -4,10 +4,237 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wiki3DPrint | PLA</title>
+    <meta name="description" content="Guía completa de PLA en Wiki3DPrint." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../styles.css" />
   </head>
-  <body data-theme="dark"><div class="app-shell"><aside class="sidebar" id="sidebar"><div class="sidebar-brand"><a href="index.html" class="brand"><span class="brand-mark">W3</span><span><strong>Wiki3DPrint</strong><small>Materiales</small></span></a><button class="icon-button mobile-only" id="closeSidebar">✕</button></div><nav><div class="nav-group" data-group><button class="nav-group-toggle" aria-expanded="true"><span>Materiales</span><span>▾</span></button><ul><li><a href="index.html" data-searchable>Índice</a></li><li><a href="pla.html" class="is-current" data-searchable>PLA</a></li><li><a href="petg.html" data-searchable>PETG</a></li><li><a href="pet.html" data-searchable>PET</a></li><li><a href="abs.html" data-searchable>ABS</a></li><li><a href="asa.html" data-searchable>ASA</a></li><li><a href="tpu.html" data-searchable>TPU</a></li><li><a href="pa.html" data-searchable>PA / Nylon</a></li><li><a href="pc.html" data-searchable>PC</a></li><li><a href="pp.html" data-searchable>PP</a></li><li><a href="pps.html" data-searchable>PPS</a></li><li><a href="carbono.html" data-searchable>Fibra de carbono</a></li></ul></div></nav></aside><div class="page"><header class="topbar"><div class="topbar-left"><button class="icon-button mobile-only" id="openSidebar">☰</button><a href="../index.html" class="brand"><span class="brand-mark">W3</span><span><strong>Wiki3DPrint</strong><small>PLA</small></span></a></div><div class="topbar-actions"><button class="ghost-button" id="themeToggle" type="button">Modo claro</button></div></header><main class="page-grid"><div class="content-column"><article class="doc-card" data-doc><nav class="breadcrumbs"><a href="../index.html">Inicio</a><span>/</span><a href="index.html">Materiales</a><span>/</span><span>PLA</span></nav><header class="doc-header"><div><p class="eyebrow">Material base</p><h1>PLA</h1><p class="hero-lead">El PLA es el material más sencillo para empezar en FDM: fácil de imprimir, con buen acabado y poca fricción para aprender.</p></div></header><section id="que-es"><h2>Qué es</h2><p>Es la opción más habitual para piezas de aprendizaje, prototipado visual, organizadores y objetos decorativos.</p></section><section id="ventajas"><h2>Ventajas</h2><ul class="article-list"><li>Impresión fácil.</li><li>Buen acabado superficial.</li><li>Poca tendencia al warping.</li></ul></section><section id="limites"><h2>Límites</h2><p>No es el mejor material para calor, exterior o piezas funcionales exigentes.</p></section></article></div><aside class="toc-column"><div class="toc-card"><p class="toc-title">PLA</p><nav id="tableOfContents"></nav></div></aside></main></div></div><script src="../script.js"></script></body>
+  <body data-theme="dark">
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+          <a href="../index.html" class="brand">
+            <span class="brand-mark">W3</span>
+            <span><strong>Wiki3DPrint</strong><small>Materiales</small></span>
+          </a>
+          <button class="icon-button mobile-only" id="closeSidebar" aria-label="Cerrar menu">✕</button>
+        </div>
+        <div class="search-shell">
+          <label class="search-bar"><span>⌕</span><input type="search" placeholder="Buscar..." data-search-input /><span class="search-shortcut">⌘ K</span></label>
+        </div>
+        <nav>
+          <div class="nav-group" data-group>
+            <button class="nav-group-toggle" aria-expanded="true"><span>Materiales</span><span>▾</span></button>
+            <ul>
+              <li><a href="index.html" data-searchable>Índice</a></li>
+              <li><a href="pla.html" class="is-current" data-searchable>PLA</a></li>
+              <li><a href="petg.html" data-searchable>PETG</a></li>
+              <li><a href="pet.html" data-searchable>PET</a></li>
+              <li><a href="abs.html" data-searchable>ABS</a></li>
+              <li><a href="asa.html" data-searchable>ASA</a></li>
+              <li><a href="tpu.html" data-searchable>TPU</a></li>
+              <li><a href="pa.html" data-searchable>PA / Nylon</a></li>
+              <li><a href="pc.html" data-searchable>PC</a></li>
+              <li><a href="pp.html" data-searchable>PP</a></li>
+              <li><a href="pps.html" data-searchable>PPS</a></li>
+              <li><a href="carbono.html" data-searchable>Fibra de carbono</a></li>
+            </ul>
+          </div>
+        </nav>
+      </aside>
+
+      <div class="page">
+        <header class="topbar">
+          <div class="topbar-left">
+            <button class="icon-button mobile-only" id="openSidebar" aria-label="Abrir menu">☰</button>
+            <a href="../index.html" class="brand">
+              <span class="brand-mark">W3</span>
+              <span><strong>Wiki3DPrint</strong><small>PLA</small></span>
+            </a>
+          </div>
+          <div class="topbar-actions">
+            <button class="ghost-button" id="themeToggle" type="button">Modo claro</button>
+          </div>
+        </header>
+
+        <main class="page-grid">
+          <div class="content-column">
+            <article class="doc-card" data-doc>
+              <nav class="breadcrumbs"><a href="../index.html">Inicio</a><span>/</span><a href="index.html">Materiales</a><span>/</span><span>PLA</span></nav>
+              <header class="doc-header">
+                <div>
+                  <p class="eyebrow">Material base</p>
+                  <h1>PLA</h1>
+                  <p class="hero-lead">
+                    El PLA suele ser el primer filamento serio para FDM porque combina facilidad,
+                    buen acabado y poca tendencia al warping. No es el más resistente ni el más
+                    térmico, pero sí el más útil para aprender rápido.
+                  </p>
+                </div>
+              </header>
+
+              <section id="resumen">
+                <h2>Resumen rápido</h2>
+                <div class="info-table">
+                  <div class="info-box"><h3>Dificultad</h3><p>Baja. Es el material más agradecido para empezar en una impresora abierta.</p></div>
+                  <div class="info-box"><h3>Uso típico</h3><p>Prototipos visuales, piezas decorativas, organización, aprendizaje y validación de geometrías.</p></div>
+                  <div class="info-box"><h3>Punto fuerte</h3><p>Acabado limpio, detalle alto y baja necesidad de cámara cerrada.</p></div>
+                  <div class="info-box"><h3>Punto débil</h3><p>Resiste mal el calor, el sol continuo y la carga mecánica sostenida.</p></div>
+                </div>
+              </section>
+
+              <section id="que-es">
+                <h2>Qué es</h2>
+                <p>
+                  PLA significa ácido poliláctico. Dentro del mundo de escritorio es la referencia
+                  de entrada porque funde a temperaturas moderadas y su contracción al enfriar es
+                  baja, así que la pieza se mantiene más estable durante la impresión.
+                </p>
+                <p>
+                  También existen variantes como PLA+, tough PLA, high speed PLA, PLA silk,
+                  PLA mate, PLA cargado con madera, PLA con metal o PLA con fibra. Todas heredan
+                  parte del comportamiento base, pero no imprimen igual ni buscan lo mismo.
+                </p>
+              </section>
+
+              <section id="temperaturas">
+                <h2>Temperaturas orientativas</h2>
+                <div class="table-wrap">
+                  <table>
+                    <thead>
+                      <tr><th>Parámetro</th><th>Rango habitual</th><th>Comentario</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Boquilla</td><td>190-220 °C</td><td>Los PLA rápidos o duros suelen subir algo más.</td></tr>
+                      <tr><td>Cama</td><td>0-60 °C</td><td>Con PEI texturizado suele funcionar bien entre 45 y 60 °C.</td></tr>
+                      <tr><td>Ventilación de capa</td><td>Alta</td><td>Ayuda mucho a puentes, voladizos y detalle superficial.</td></tr>
+                      <tr><td>Cámara cerrada</td><td>No necesaria</td><td>Incluso puede perjudicar si la pieza se recalienta en zonas pequeñas.</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+
+              <section id="compatibilidad">
+                <h2>Compatibilidad y hardware</h2>
+                <ul class="article-list">
+                  <li>Muy compatible con impresoras abiertas como Bambu A1, Ender, Prusa MK o equivalentes.</li>
+                  <li>No exige boquilla endurecida salvo que sea una variante abrasiva con cargas minerales o fibra.</li>
+                  <li>Funciona bien con boquillas de 0.4 mm, aunque 0.6 mm reduce atascos con PLA madera o glitter.</li>
+                  <li>No suele requerir adhesivos especiales si la cama está limpia y el Z-offset es correcto.</li>
+                </ul>
+              </section>
+
+              <section id="humedad">
+                <h2>Humedad y almacenamiento</h2>
+                <p>
+                  El PLA absorbe menos humedad que PA o TPU, pero no es inmune. Un carrete abierto
+                  durante semanas en ambiente húmedo puede empezar a hacer chasquidos, stringing o
+                  acabado irregular. La mejora suele llegar antes secando el filamento que tocando
+                  retracciones sin parar.
+                </p>
+                <div class="callout quick">
+                  <strong>Secado orientativo</strong>
+                  <p>En muchos PLA basta con 40-50 °C durante varias horas, siempre respetando la ficha del fabricante para no deformar la bobina.</p>
+                </div>
+              </section>
+
+              <section id="ventajas">
+                <h2>Ventajas</h2>
+                <ul class="article-list">
+                  <li>Impresión sencilla y predecible para ajustar la máquina y aprender a detectar fallos reales.</li>
+                  <li>Buen acabado visual incluso con perfiles conservadores.</li>
+                  <li>Detalle alto en miniaturas, maquetas, prototipos de diseño y piezas decorativas.</li>
+                  <li>Menor warping que ABS, ASA, PA o PC.</li>
+                  <li>Amplísima oferta de colores, texturas y variantes comerciales.</li>
+                </ul>
+              </section>
+
+              <section id="limites">
+                <h2>Límites y compatibilidades reales</h2>
+                <p>
+                  El PLA falla cuando se le pide calor, esfuerzo continuo o uso exterior prolongado.
+                  Una pieza que dentro de casa parece sólida puede deformarse dentro de un coche, al
+                  sol o cerca de una fuente de calor moderada.
+                </p>
+                <ul class="article-list">
+                  <li>No es la mejor opción para piezas estructurales sometidas a flexión o impactos repetidos.</li>
+                  <li>No es buena base para exterior permanente si importa estabilidad UV y térmica.</li>
+                  <li>Roscas, clips y bisagras suelen durar menos que en PETG, ASA, PA o PP.</li>
+                </ul>
+              </section>
+
+              <section id="usos">
+                <h2>Usos recomendados</h2>
+                <div class="tag-row">
+                  <span>Prototipos visuales</span>
+                  <span>Organizadores</span>
+                  <span>Miniaturas grandes</span>
+                  <span>Soportes ligeros</span>
+                  <span>Maquetas</span>
+                  <span>Decoración</span>
+                </div>
+                <p>
+                  Si la prioridad es validar forma, montaje básico, ergonomía o estética, PLA suele
+                  ser la respuesta más eficiente. Si la prioridad es uso funcional sostenido, conviene
+                  pensar antes en PETG, ASA o un técnico de verdad.
+                </p>
+              </section>
+
+              <section id="problemas">
+                <h2>Problemas típicos</h2>
+                <h3>Stringing</h3>
+                <p>Muchas veces es combinación de temperatura algo alta, filamento húmedo y retracción insuficiente.</p>
+                <h3>Heat creep</h3>
+                <p>En hotends mal refrigerados o recintos calientes, el PLA puede ablandarse antes de tiempo y atascar la ruta.</p>
+                <h3>Primera capa inconsistente</h3>
+                <p>En PLA la causa suele ser más mecánica que química: cama sucia, mal offset, flujo o nivelación.</p>
+              </section>
+
+              <section id="bambu-a1">
+                <h2>PLA en una Bambu A1</h2>
+                <p>
+                  La A1 encaja muy bien con PLA. Es un material lógico para arrancar porque aprovecha
+                  la velocidad de la máquina sin exigir cámara cerrada. La prioridad aquí no es
+                  “forzar” temperatura, sino vigilar refrigeración, presión de avance y calidad del
+                  filamento cuando se sube mucho la velocidad.
+                </p>
+                <div class="callout tip">
+                  <strong>Consejo práctico</strong>
+                  <p>Empieza con PLA estándar de buena marca, perfil base conservador y piezas de calibración sencillas antes de meterte en silks, mates o compuestos.</p>
+                </div>
+              </section>
+
+              <section id="elegir">
+                <h2>Cuándo elegirlo y cuándo no</h2>
+                <p>Elige PLA si quieres aprender, iterar rápido, obtener buen acabado y evitar una guerra innecesaria con la impresora.</p>
+                <p>No lo elijas si la pieza va a vivir en exterior, dentro de un coche, cerca de motores, bajo carga fuerte o con función estructural real.</p>
+              </section>
+
+              <div class="pager">
+                <a class="pager-link" href="index.html"><span>Anterior</span>Índice de materiales</a>
+                <a class="pager-link" href="petg.html"><span>Siguiente</span>PETG</a>
+              </div>
+
+              <div class="feedback-box">
+                <p>Utilidad de la página</p>
+                <div class="feedback-actions">
+                  <button class="ghost-button feedback-button" type="button">Útil</button>
+                  <button class="ghost-button feedback-button" type="button">Le falta detalle</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <aside class="toc-column">
+            <div class="toc-card"><p class="toc-title">PLA</p><nav id="tableOfContents"></nav></div>
+          </aside>
+        </main>
+      </div>
+    </div>
+    <script src="../script.js"></script>
+  </body>
 </html>

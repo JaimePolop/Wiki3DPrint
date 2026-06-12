@@ -12,7 +12,7 @@ const feedbackButtons = document.querySelectorAll(".feedback-button");
 const diagnosisButtons = document.querySelectorAll(".diagnosis-option");
 const diagnosisResult = document.getElementById("diagnosisResult");
 
-const savedTheme = localStorage.getItem("nexolayers-theme");
+const savedTheme = localStorage.getItem("wiki3dprint-theme");
 if (savedTheme) {
   body.dataset.theme = savedTheme;
 }
@@ -20,7 +20,7 @@ syncThemeLabel();
 
 themeToggle?.addEventListener("click", () => {
   body.dataset.theme = body.dataset.theme === "dark" ? "light" : "dark";
-  localStorage.setItem("nexolayers-theme", body.dataset.theme);
+  localStorage.setItem("wiki3dprint-theme", body.dataset.theme);
   syncThemeLabel();
 });
 

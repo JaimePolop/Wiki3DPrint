@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wiki3DPrint | Materiales</title>
-    <meta name="description" content="Índice de materiales de impresión 3D en Wiki3DPrint." />
+    <meta
+      name="description"
+      content="Biblioteca de materiales de impresión 3D en Wiki3DPrint con páginas separadas por material."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,7 +24,7 @@
             <span class="brand-mark">W3</span>
             <span><strong>Wiki3DPrint</strong><small>Materiales</small></span>
           </a>
-          <button class="icon-button mobile-only" id="closeSidebar">✕</button>
+          <button class="icon-button mobile-only" id="closeSidebar" aria-label="Cerrar menu">✕</button>
         </div>
         <div class="search-shell">
           <label class="search-bar">
@@ -30,7 +33,7 @@
             <span class="search-shortcut">⌘ K</span>
           </label>
         </div>
-        <nav aria-label="Materiales">
+        <nav aria-label="Biblioteca de materiales">
           <div class="nav-group" data-group>
             <button class="nav-group-toggle" aria-expanded="true"><span>Materiales</span><span>▾</span></button>
             <ul>
@@ -45,15 +48,16 @@
               <li><a href="pc.html" data-searchable>PC</a></li>
               <li><a href="pp.html" data-searchable>PP</a></li>
               <li><a href="pps.html" data-searchable>PPS</a></li>
-              <li><a href="carbono.html" data-searchable>Fibra de carbono</a></li>
+              <li><a href="carbono.html" data-searchable>Compuestos con fibra de carbono</a></li>
             </ul>
           </div>
         </nav>
       </aside>
+
       <div class="page">
         <header class="topbar">
           <div class="topbar-left">
-            <button class="icon-button mobile-only" id="openSidebar">☰</button>
+            <button class="icon-button mobile-only" id="openSidebar" aria-label="Abrir menu">☰</button>
             <a href="../index.html" class="brand">
               <span class="brand-mark">W3</span>
               <span><strong>Wiki3DPrint</strong><small>Biblioteca de materiales</small></span>
@@ -68,39 +72,118 @@
             <button class="ghost-button" id="themeToggle" type="button">Modo claro</button>
           </div>
         </header>
+
         <main class="page-grid">
           <div class="content-column">
             <article class="doc-card" data-doc>
               <nav class="breadcrumbs"><a href="../index.html">Inicio</a><span>/</span><span>Materiales</span></nav>
+
               <header class="doc-header">
                 <div>
                   <p class="eyebrow">Biblioteca</p>
                   <h1>Materiales de impresión 3D</h1>
-                  <p class="hero-lead">Pulsa en cualquier material del menú o de esta lista para abrir su página específica.</p>
+                  <p class="hero-lead">
+                    Esta sección separa cada material en su propia página. La idea es usarla como
+                    documentación real: qué es, cómo se imprime, qué máquina pide, qué problemas
+                    trae y cuándo conviene elegirlo.
+                  </p>
                 </div>
               </header>
-              <section id="lista">
-                <h2>Listado principal</h2>
-                <div class="card-grid cards-3">
-                  <article class="feature-card"><h3>PLA</h3><p>Material base para empezar.</p><a class="card-link" href="pla.html">Abrir →</a></article>
-                  <article class="feature-card"><h3>PETG</h3><p>Más tenaz y más funcional.</p><a class="card-link" href="petg.html">Abrir →</a></article>
-                  <article class="feature-card"><h3>PET</h3><p>Familia menos habitual en escritorio.</p><a class="card-link" href="pet.html">Abrir →</a></article>
-                  <article class="feature-card"><h3>ABS</h3><p>Técnico y más exigente.</p><a class="card-link" href="abs.html">Abrir →</a></article>
-                  <article class="feature-card"><h3>ASA</h3><p>Buena opción para exterior.</p><a class="card-link" href="asa.html">Abrir →</a></article>
-                  <article class="feature-card"><h3>TPU</h3><p>Flexible para piezas deformables.</p><a class="card-link" href="tpu.html">Abrir →</a></article>
-                  <article class="feature-card"><h3>PA / Nylon</h3><p>Familia técnica sensible a humedad.</p><a class="card-link" href="pa.html">Abrir →</a></article>
-                  <article class="feature-card"><h3>PC</h3><p>Alto rendimiento y alta exigencia.</p><a class="card-link" href="pc.html">Abrir →</a></article>
-                  <article class="feature-card"><h3>PP</h3><p>Polipropileno para casos concretos.</p><a class="card-link" href="pp.html">Abrir →</a></article>
-                  <article class="feature-card"><h3>PPS</h3><p>Muy técnico y poco doméstico.</p><a class="card-link" href="pps.html">Abrir →</a></article>
-                  <article class="feature-card"><h3>Fibra de carbono</h3><p>Filamentos reforzados y abrasivos.</p><a class="card-link" href="carbono.html">Abrir →</a></article>
+
+              <section id="familias">
+                <h2>Familias principales</h2>
+                <div class="info-table">
+                  <div class="info-box">
+                    <h3>Materiales fáciles</h3>
+                    <p>PLA y parte del PETG encajan bien en impresoras abiertas y en usuarios que todavía están afinando primera capa, flujo y mantenimiento básico.</p>
+                  </div>
+                  <div class="info-box">
+                    <h3>Materiales funcionales</h3>
+                    <p>ABS, ASA, PA, PC y algunos compuestos buscan resistencia térmica, química o mecánica, pero piden entorno de impresión más estable.</p>
+                  </div>
+                </div>
+              </section>
+
+              <section id="como-leer">
+                <h2>Cómo leer estas fichas</h2>
+                <ul class="article-list">
+                  <li>Las temperaturas son rangos orientativos y siempre mandan la ficha del fabricante y la respuesta real de tu máquina.</li>
+                  <li>Compatibilidad no significa que imprima perfecto; significa que puede funcionar con el hardware y preparación correctos.</li>
+                  <li>Cuando se menciona la Bambu A1, la referencia es una impresora abierta de escritorio, no una máquina cerrada industrial.</li>
+                </ul>
+              </section>
+
+              <section id="indice">
+                <h2>Índice de materiales</h2>
+                <div class="material-index-grid">
+                  <a class="material-index-link" href="pla.html"><span><strong>PLA</strong><br />El punto de partida para FDM</span><span>→</span></a>
+                  <a class="material-index-link" href="petg.html"><span><strong>PETG</strong><br />Tenaz, versátil y más funcional</span><span>→</span></a>
+                  <a class="material-index-link" href="pet.html"><span><strong>PET</strong><br />Menos común, base de la familia PET</span><span>→</span></a>
+                  <a class="material-index-link" href="abs.html"><span><strong>ABS</strong><br />Técnico, rígido y sensible al entorno</span><span>→</span></a>
+                  <a class="material-index-link" href="asa.html"><span><strong>ASA</strong><br />Parecido al ABS pero mejor para exterior</span><span>→</span></a>
+                  <a class="material-index-link" href="tpu.html"><span><strong>TPU</strong><br />Flexible y delicado al alimentar</span><span>→</span></a>
+                  <a class="material-index-link" href="pa.html"><span><strong>PA / Nylon</strong><br />Muy resistente y muy sensible a humedad</span><span>→</span></a>
+                  <a class="material-index-link" href="pc.html"><span><strong>PC</strong><br />Alta temperatura y alta exigencia</span><span>→</span></a>
+                  <a class="material-index-link" href="pp.html"><span><strong>PP</strong><br />Ligero, químicamente resistente y difícil de fijar</span><span>→</span></a>
+                  <a class="material-index-link" href="pps.html"><span><strong>PPS</strong><br />Polímero técnico de gama muy alta</span><span>→</span></a>
+                  <a class="material-index-link" href="carbono.html"><span><strong>Compuestos con fibra de carbono</strong><br />Refuerzo, rigidez y abrasión</span><span>→</span></a>
+                </div>
+              </section>
+
+              <section id="criterios">
+                <h2>Criterios rápidos de elección</h2>
+                <div class="table-wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Necesidad</th>
+                        <th>Opciones iniciales</th>
+                        <th>Notas</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Aprender y prototipar</td>
+                        <td>PLA</td>
+                        <td>Menos guerra con warping, humedad y cámara cerrada.</td>
+                      </tr>
+                      <tr>
+                        <td>Pieza funcional general</td>
+                        <td>PETG, ASA, ABS</td>
+                        <td>PETG es el puente razonable antes de saltar a materiales más delicados.</td>
+                      </tr>
+                      <tr>
+                        <td>Exterior y sol</td>
+                        <td>ASA</td>
+                        <td>Mejor estabilidad UV que ABS y mucho mejor que PLA.</td>
+                      </tr>
+                      <tr>
+                        <td>Flexibilidad</td>
+                        <td>TPU</td>
+                        <td>Requiere una ruta de filamento bien controlada.</td>
+                      </tr>
+                      <tr>
+                        <td>Alta carga mecánica</td>
+                        <td>PA, PC, compuestos</td>
+                        <td>Ya entran secado, boquillas endurecidas y máquinas más preparadas.</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </section>
             </article>
           </div>
-          <aside class="toc-column"><div class="toc-card"><p class="toc-title">En esta página</p><nav id="tableOfContents"></nav></div></aside>
+
+          <aside class="toc-column">
+            <div class="toc-card">
+              <p class="toc-title">En esta página</p>
+              <nav id="tableOfContents"></nav>
+            </div>
+          </aside>
         </main>
       </div>
     </div>
+
     <script src="../script.js"></script>
   </body>
 </html>
