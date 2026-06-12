@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wiki3DPrint | Biblioteca de materiales</title>
+    <meta name="description" content="Biblioteca amplia de materiales y derivados para impresión 3D, una página por familia o variante principal." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-theme="dark">
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand"><a href="../index.html" class="brand"><span class="brand-mark">NL</span><span><strong>Wiki3DPrint</strong><small>Wiki de impresión 3D</small></span></a><button class="icon-button mobile-only" id="closeSidebar">✕</button></div>
+        <div class="search-shell"><label class="search-bar"><span>⌕</span><input type="search" placeholder="Buscar materiales..." data-search-input /><span class="search-shortcut">⌘ K</span></label></div>
+        <nav aria-label="Biblioteca de materiales">
+          <div class="nav-group" data-group><button class="nav-group-toggle" aria-expanded="true"><span>Biblioteca</span><span>▾</span></button><ul><li><a href="biblioteca-materiales.html" class="is-current" data-searchable>Índice de materiales</a></li><li><a href="material-pla.html" data-searchable>PLA</a></li><li><a href="material-pla-plus.html" data-searchable>PLA+</a></li><li><a href="material-pla-silk.html" data-searchable>PLA Silk</a></li><li><a href="material-pla-madera.html" data-searchable>PLA madera</a></li><li><a href="material-petg.html" data-searchable>PETG</a></li><li><a href="material-abs.html" data-searchable>ABS</a></li><li><a href="material-asa.html" data-searchable>ASA</a></li><li><a href="material-tpu.html" data-searchable>TPU</a></li><li><a href="material-nylon.html" data-searchable>Nylon</a></li><li><a href="material-policarbonato.html" data-searchable>Policarbonato</a></li><li><a href="material-compuestos.html" data-searchable>Compuestos y especiales</a></li></ul></div>
+        </nav>
+      </aside>
+      <div class="page">
+        <header class="topbar">
+          <div class="topbar-left"><button class="icon-button mobile-only" id="openSidebar">☰</button><a href="../index.html" class="brand"><span class="brand-mark">NL</span><span><strong>Wiki3DPrint</strong><small>Biblioteca de materiales</small></span></a></div>
+          <label class="search-bar"><span>⌕</span><input type="search" placeholder="Buscar PLA, TPU, ASA..." data-search-input /><span class="search-shortcut">⌘ K</span></label>
+          <div class="topbar-actions"><button class="ghost-button" id="themeToggle" type="button">Modo claro</button><button class="accent-button" type="button">Preguntar a la IA</button></div>
+        </header>
+        <main class="page-grid">
+          <div class="content-column">
+            <article class="doc-card" data-doc>
+              <nav class="breadcrumbs"><a href="../index.html">Inicio</a><span>/</span><span>Biblioteca de materiales</span></nav>
+              <header class="doc-header"><div><p class="eyebrow">Biblioteca</p><h1>Biblioteca amplia de materiales y derivados</h1><p class="hero-lead">Aquí tienes una estructura de una página por material o familia importante. No se limita a PLA y PETG: incluye variantes, derivados decorativos y compuestos habituales.</p></div></header>
+              <section id="entrada">
+                <h2>Cómo usar esta biblioteca</h2>
+                <p>Empieza por la familia base y luego baja a la variante concreta. Por ejemplo: primero `PLA`, después `PLA+`, `PLA Silk` o `PLA madera` según el objetivo de la pieza y el tipo de acabado.</p>
+              </section>
+              <section id="familias">
+                <h2>Familias principales</h2>
+                <div class="card-grid cards-3">
+                  <article class="feature-card"><h3>PLA y derivados</h3><p>Materiales sencillos, visuales y muy comunes para aprendizaje y prototipado.</p><a class="card-link" href="material-pla.html">Abrir PLA →</a></article>
+                  <article class="feature-card"><h3>PETG</h3><p>Más tenaz, más pegajoso y muy habitual cuando PLA se queda corto.</p><a class="card-link" href="material-petg.html">Abrir PETG →</a></article>
+                  <article class="feature-card"><h3>ABS y ASA</h3><p>Familias más serias para piezas técnicas y exterior, con exigencias de entorno.</p><a class="card-link" href="material-asa.html">Abrir ASA / ABS →</a></article>
+                  <article class="feature-card"><h3>TPU</h3><p>Flexibles para topes, agarres, juntas y piezas deformables.</p><a class="card-link" href="material-tpu.html">Abrir TPU →</a></article>
+                  <article class="feature-card"><h3>Nylon y PC</h3><p>Materiales técnicos con requisitos altos de secado, temperatura y hardware.</p><a class="card-link" href="material-nylon.html">Abrir técnicos →</a></article>
+                  <article class="feature-card"><h3>Compuestos y especiales</h3><p>Fibra de carbono, glow, soporte soluble, minerales, metalizados y variantes abrasivas.</p><a class="card-link" href="material-compuestos.html">Abrir especiales →</a></article>
+                </div>
+              </section>
+              <section id="lista">
+                <h2>Páginas disponibles ahora</h2>
+                <div class="tag-row">
+                  <span>PLA</span><span>PLA+</span><span>PLA Silk</span><span>PLA madera</span><span>PETG</span><span>ABS</span><span>ASA</span><span>TPU</span><span>Nylon</span><span>Policarbonato</span><span>Compuestos</span>
+                </div>
+              </section>
+            </article>
+          </div>
+          <aside class="toc-column"><div class="toc-card"><p class="toc-title">Biblioteca</p><nav id="tableOfContents"></nav></div></aside>
+        </main>
+      </div>
+    </div>
+    <script src="../script.js"></script>
+  </body>
+</html>
