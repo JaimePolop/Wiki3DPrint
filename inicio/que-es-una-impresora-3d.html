@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wiki3DPrint | Qué Es Una Impresora 3D</title>
+    <meta name="description" content="Introducción general a qué es una impresora 3D y para qué sirve." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-theme="dark">
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+          <a href="../index.html" class="brand">
+            <span class="brand-mark">W3</span>
+            <span><strong>Wiki3DPrint</strong><small>Fundamentos</small></span>
+          </a>
+          <button class="icon-button mobile-only" id="closeSidebar" aria-label="Cerrar menu">✕</button>
+        </div>
+        <div class="search-shell">
+          <label class="search-bar"><span>⌕</span><input type="search" placeholder="Buscar fundamentos..." data-search-input /><span class="search-shortcut">⌘ K</span></label>
+        </div>
+        <nav aria-label="Secciones de la wiki">
+          <div class="nav-group" data-group>
+            <button class="nav-group-toggle" aria-expanded="true"><span>Inicio</span><span>▾</span></button>
+            <ul>
+              <li><a href="../index.html" data-searchable>Portada</a></li>
+              <li><a href="que-es-una-impresora-3d.html" class="is-current" data-searchable>Qué es una impresora 3D</a></li>
+              <li><a href="tipos-de-impresoras-3d.html" data-searchable>Tipos de impresoras 3D</a></li>
+              <li><a href="partes-de-una-impresora-3d.html" data-searchable>Partes de una impresora 3D</a></li>
+              <li><a href="como-funciona-la-impresion-3d.html" data-searchable>Cómo funciona la impresión 3D</a></li>
+            </ul>
+          </div>
+          <div class="nav-group" data-group>
+            <button class="nav-group-toggle" aria-expanded="true"><span>Materiales</span><span>▾</span></button>
+            <ul>
+              <li><a href="../materiales/index.html" data-searchable>Índice de materiales</a></li>
+              <li><a href="../materiales/pla.html" data-searchable>PLA</a></li>
+              <li><a href="../materiales/petg.html" data-searchable>PETG</a></li>
+              <li><a href="../materiales/abs.html" data-searchable>ABS</a></li>
+              <li><a href="../materiales/tpu.html" data-searchable>TPU</a></li>
+              <li><a href="../materiales/pa.html" data-searchable>PA / Nylon</a></li>
+            </ul>
+          </div>
+        </nav>
+      </aside>
+      <div class="page">
+        <header class="topbar">
+          <div class="topbar-left">
+            <button class="icon-button mobile-only" id="openSidebar" aria-label="Abrir menu">☰</button>
+            <a href="../index.html" class="brand">
+              <span class="brand-mark">W3</span>
+              <span><strong>Wiki3DPrint</strong><small>Qué es una impresora 3D</small></span>
+            </a>
+          </div>
+          <div class="topbar-actions">
+            <button class="ghost-button" id="themeToggle" type="button">Modo claro</button>
+          </div>
+        </header>
+        <main class="page-grid">
+          <div class="content-column">
+            <article class="doc-card" data-doc>
+              <nav class="breadcrumbs"><a href="../index.html">Inicio</a><span>/</span><span>Qué es una impresora 3D</span></nav>
+              <header class="doc-header">
+                <div>
+                  <p class="eyebrow">Fundamentos</p>
+                  <h1>Qué es una impresora 3D</h1>
+                  <p class="hero-lead">Una impresora 3D es una máquina que fabrica objetos físicos a partir de un modelo digital, construyendo la pieza capa a capa en lugar de cortar material desde un bloque.</p>
+                </div>
+              </header>
+              <section id="definicion">
+                <h2>Definición simple</h2>
+                <p>Si una impresora de papel coloca tinta sobre una hoja, una impresora 3D deposita o solidifica material para crear volumen. El archivo 3D se convierte en miles de movimientos controlados por la máquina, y cada uno de ellos aporta una parte de la geometría final.</p>
+                <p>La idea clave es esta: la impresora no “entiende” el objeto como un todo; lo construye en capas finas, una encima de otra, siguiendo instrucciones muy precisas.</p>
+              </section>
+              <section id="para-que-sirve">
+                <h2>Para qué sirve</h2>
+                <ul class="article-list">
+                  <li>Crear prototipos rápidos antes de fabricar una pieza definitiva.</li>
+                  <li>Producir soportes, organizadores, carcasas y accesorios personalizados.</li>
+                  <li>Fabricar piezas funcionales en tiradas pequeñas.</li>
+                  <li>Hacer maquetas, miniaturas, utillaje o repuestos difíciles de encontrar.</li>
+                </ul>
+              </section>
+              <section id="que-necesita">
+                <h2>Qué necesita para funcionar</h2>
+                <div class="info-table">
+                  <div class="info-box"><h3>Modelo 3D</h3><p>Una pieza diseñada o descargada en formato digital.</p></div>
+                  <div class="info-box"><h3>Laminador</h3><p>Programa que convierte el modelo en capas y trayectorias de impresión.</p></div>
+                  <div class="info-box"><h3>Material</h3><p>Filamento, resina o polvo según la tecnología usada.</p></div>
+                  <div class="info-box"><h3>Máquina calibrada</h3><p>Nivelación, temperaturas y mecánica bajo control.</p></div>
+                </div>
+              </section>
+              <section id="ventajas">
+                <h2>Ventajas reales</h2>
+                <p>La mayor ventaja no es solo “imprimir cosas”, sino reducir la fricción entre idea y objeto físico. Puedes diseñar, cambiar, volver a imprimir y validar en horas. Eso la vuelve muy valiosa para aprender, iterar y fabricar piezas concretas sin depender de un proceso industrial.</p>
+              </section>
+              <section id="limites">
+                <h2>Límites reales</h2>
+                <p>No todo debe imprimirse en 3D. Hay piezas que salen más baratas, más fuertes o más limpias con corte, moldeo o mecanizado. Además, imprimir no elimina problemas: aparecen otros como tolerancias, adhesión entre capas, orientación, deformación, postprocesado y seguridad.</p>
+              </section>
+              <section id="mentalidad">
+                <h2>Cómo conviene pensarla</h2>
+                <p>La impresora 3D no es una máquina mágica ni una herramienta solo para decorar. Es una herramienta de fabricación digital. Cuanto antes se entienda eso, mejor se toman decisiones sobre materiales, diseño, mantenimiento y expectativas.</p>
+              </section>
+              <div class="pager">
+                <a class="pager-link" href="../index.html"><span>Anterior</span>Portada</a>
+                <a class="pager-link" href="tipos-de-impresoras-3d.html"><span>Siguiente</span>Tipos de impresoras 3D</a>
+              </div>
+            </article>
+          </div>
+          <aside class="toc-column">
+            <div class="toc-card"><p class="toc-title">En esta página</p><nav id="tableOfContents"></nav></div>
+          </aside>
+        </main>
+      </div>
+    </div>
+    <script src="../script.js"></script>
+  </body>
+</html>
