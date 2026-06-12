@@ -769,6 +769,51 @@ thead th {
   margin-top: 1rem;
 }
 
+.material-index-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.material-index-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.15rem 1.2rem;
+  border-radius: 1rem;
+  border: 1px solid var(--line);
+  background: var(--panel-strong);
+  box-shadow: var(--shadow);
+  font-size: 1.05rem;
+}
+
+.material-index-link strong {
+  font-size: 1.1rem;
+}
+
+.material-index-link span:last-child {
+  color: var(--muted);
+  font-size: 1.35rem;
+}
+
+.info-table {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.info-box {
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.info-box h3 {
+  margin-top: 0;
+}
+
 @media (max-width: 1220px) {
   .page-grid {
     grid-template-columns: 1fr;
@@ -815,6 +860,11 @@ thead th {
   .brand-grid,
   .checklist-grid,
   .image-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .material-index-grid,
+  .info-table {
     grid-template-columns: 1fr;
   }
 
