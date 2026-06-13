@@ -32,6 +32,13 @@ function syncThemeLabel() {
 navGroups.forEach((group) => {
   const button = group.querySelector(".nav-group-toggle");
   if (!button) return;
+  const groupName = button.querySelector("span")?.textContent?.trim().toLowerCase();
+  const storageKey = groupName ? `wiki3dprint-nav-${groupName}` : null;
+  const savedState = storageKey ? localStorage.getItem(storageKey) : null;
+
+  if (savedState) {
+    button.setAttribute("aria-expanded", String(savedState === "expanded"));
+  }
 
   if (button.getAttribute("aria-expanded") === "false") {
     group.classList.add("is-collapsed");
@@ -41,6 +48,9 @@ navGroups.forEach((group) => {
     const isExpanded = button.getAttribute("aria-expanded") === "true";
     button.setAttribute("aria-expanded", String(!isExpanded));
     group.classList.toggle("is-collapsed", isExpanded);
+    if (storageKey) {
+      localStorage.setItem(storageKey, isExpanded ? "collapsed" : "expanded");
+    }
   });
 });
 
