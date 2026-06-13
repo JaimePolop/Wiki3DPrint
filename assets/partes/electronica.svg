@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Electrónica</title>
+  <desc id="desc">Placa de control, drivers, conectores y fuente de alimentación.</desc>
+  <rect width="900" height="520" rx="34" fill="#0b1320"/>
+  <rect x="230" y="120" width="440" height="285" rx="24" fill="#10291f" stroke="#29d391" stroke-width="12"/>
+  <rect x="300" y="185" width="120" height="90" rx="14" fill="#131f2d" stroke="#41c7ff" stroke-width="8"/>
+  <rect x="480" y="178" width="105" height="105" rx="16" fill="#131f2d" stroke="#8b5cf6" stroke-width="8"/>
+  <path d="M260 330h380M260 360h380M230 155h-55M230 205h-55M670 165h55M670 215h55M670 265h55" stroke="#f6b44f" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="330" cy="335" r="12" fill="#ff8a5b"/><circle cx="380" cy="335" r="12" fill="#ff8a5b"/><circle cx="430" cy="335" r="12" fill="#ff8a5b"/>
+  <text x="450" y="72" text-anchor="middle" fill="#e8eef5" font-family="Manrope, Arial" font-size="34" font-weight="800">Electrónica</text>
+  <text x="450" y="465" text-anchor="middle" fill="#94a6bb" font-family="Manrope, Arial" font-size="24">Placa, drivers, sensores y alimentación</text>
+</svg>

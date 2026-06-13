@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Ventiladores</title>
+  <desc id="desc">Ventilador de capa y ventilador de hotend en una impresora FDM.</desc>
+  <rect width="900" height="520" rx="34" fill="#0b1320"/>
+  <circle cx="340" cy="255" r="120" fill="#131f2d" stroke="#41c7ff" stroke-width="12"/>
+  <circle cx="340" cy="255" r="28" fill="#e8eef5"/>
+  <path d="M340 135c48 30 60 67 33 111M458 255c-30 48-67 60-111 33M340 375c-48-30-60-67-33-111M222 255c30-48 67-60 111-33" fill="none" stroke="#29d391" stroke-width="26" stroke-linecap="round"/>
+  <path d="M530 190h145v130H530z" rx="18" fill="#18283a" stroke="#8b5cf6" stroke-width="10"/>
+  <path d="M565 255h180M705 220l40 35-40 35" stroke="#ff8a5b" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="450" y="72" text-anchor="middle" fill="#e8eef5" font-family="Manrope, Arial" font-size="34" font-weight="800">Ventiladores</text>
+  <text x="450" y="460" text-anchor="middle" fill="#94a6bb" font-family="Manrope, Arial" font-size="24">Capa, hotend, placa y fuente</text>
+</svg>

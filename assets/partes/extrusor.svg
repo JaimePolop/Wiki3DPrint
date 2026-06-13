@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Extrusor</title>
+  <desc id="desc">Engranajes del extrusor empujando filamento hacia el hotend.</desc>
+  <rect width="900" height="520" rx="34" fill="#0b1320"/>
+  <path d="M120 260h660" stroke="#29d391" stroke-width="22" stroke-linecap="round"/>
+  <circle cx="390" cy="230" r="82" fill="#131f2d" stroke="#41c7ff" stroke-width="12"/><circle cx="390" cy="290" r="82" fill="#131f2d" stroke="#8b5cf6" stroke-width="12"/>
+  <path d="M350 230h80M390 190v80M350 290h80M390 250v80" stroke="#e8eef5" stroke-width="12" stroke-linecap="round"/>
+  <path d="M570 205h100v110H570z" fill="#18283a" stroke="#ff8a5b" stroke-width="10" rx="18"/>
+  <text x="450" y="70" text-anchor="middle" fill="#e8eef5" font-family="Manrope, Arial" font-size="34" font-weight="800">Extrusor</text>
+  <text x="450" y="455" text-anchor="middle" fill="#94a6bb" font-family="Manrope, Arial" font-size="24">Muerde y empuja el filamento</text>
+</svg>

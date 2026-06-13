@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Cama de impresión</title>
+  <desc id="desc">Superficie calentada donde se pega la primera capa.</desc>
+  <rect width="900" height="520" rx="34" fill="#0b1320"/>
+  <path d="M180 335l140-115h400l-140 115z" fill="#131f2d" stroke="#41c7ff" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M260 305h360M300 270h360M340 235h360" stroke="#29d391" stroke-width="8" stroke-linecap="round" opacity=".75"/>
+  <path d="M335 205h230" stroke="#ff8a5b" stroke-width="14" stroke-linecap="round" stroke-dasharray="28 20"/>
+  <text x="450" y="80" text-anchor="middle" fill="#e8eef5" font-family="Manrope, Arial" font-size="34" font-weight="800">Cama de impresión</text>
+  <text x="450" y="435" text-anchor="middle" fill="#94a6bb" font-family="Manrope, Arial" font-size="24">Adhesión, temperatura y primera capa</text>
+</svg>

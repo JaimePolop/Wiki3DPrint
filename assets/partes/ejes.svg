@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Ejes X Y Z</title>
+  <desc id="desc">Representación de los ejes de movimiento X, Y y Z.</desc>
+  <rect width="900" height="520" rx="34" fill="#0b1320"/>
+  <path d="M250 370h420" stroke="#41c7ff" stroke-width="18" stroke-linecap="round"/><path d="M670 370l-42-28M670 370l-42 28" stroke="#41c7ff" stroke-width="18" stroke-linecap="round"/>
+  <path d="M250 370l160-150" stroke="#29d391" stroke-width="18" stroke-linecap="round"/><path d="M410 220l-48 10M410 220l-4 49" stroke="#29d391" stroke-width="18" stroke-linecap="round"/>
+  <path d="M250 370V120" stroke="#ff8a5b" stroke-width="18" stroke-linecap="round"/><path d="M250 120l-30 46M250 120l30 46" stroke="#ff8a5b" stroke-width="18" stroke-linecap="round"/>
+  <text x="695" y="385" fill="#41c7ff" font-family="Manrope, Arial" font-size="42" font-weight="800">X</text>
+  <text x="420" y="210" fill="#29d391" font-family="Manrope, Arial" font-size="42" font-weight="800">Y</text>
+  <text x="210" y="105" fill="#ff8a5b" font-family="Manrope, Arial" font-size="42" font-weight="800">Z</text>
+  <text x="450" y="70" text-anchor="middle" fill="#e8eef5" font-family="Manrope, Arial" font-size="34" font-weight="800">Ejes de movimiento</text>
+</svg>

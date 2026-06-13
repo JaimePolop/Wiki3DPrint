@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Sistema de movimiento</title>
+  <desc id="desc">Motores, correas, guías y husillos que mueven la impresora.</desc>
+  <rect width="900" height="520" rx="34" fill="#0b1320"/>
+  <path d="M150 150h600M150 330h600" stroke="#41c7ff" stroke-width="18" stroke-linecap="round"/>
+  <path d="M210 150l480 180M690 150L210 330" stroke="#29d391" stroke-width="12" stroke-dasharray="26 20" stroke-linecap="round"/>
+  <rect x="365" y="205" width="170" height="90" rx="22" fill="#131f2d" stroke="#8b5cf6" stroke-width="8"/>
+  <circle cx="150" cy="150" r="42" fill="#18283a" stroke="#ff8a5b" stroke-width="10"/><circle cx="750" cy="150" r="42" fill="#18283a" stroke="#ff8a5b" stroke-width="10"/>
+  <circle cx="150" cy="330" r="42" fill="#18283a" stroke="#ff8a5b" stroke-width="10"/><circle cx="750" cy="330" r="42" fill="#18283a" stroke="#ff8a5b" stroke-width="10"/>
+  <text x="450" y="72" text-anchor="middle" fill="#e8eef5" font-family="Manrope, Arial" font-size="34" font-weight="800">Movimiento</text>
+  <text x="450" y="470" text-anchor="middle" fill="#94a6bb" font-family="Manrope, Arial" font-size="24">Motores, correas, guías y husillos</text>
+</svg>

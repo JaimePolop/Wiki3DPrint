@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Hotend</title>
+  <desc id="desc">Conjunto de disipador, heatbreak, bloque calefactor y boquilla.</desc>
+  <rect width="900" height="520" rx="34" fill="#0b1320"/>
+  <path d="M450 90v330" stroke="#29d391" stroke-width="18" stroke-linecap="round"/>
+  <rect x="340" y="115" width="220" height="95" rx="18" fill="#18283a" stroke="#41c7ff" stroke-width="10"/>
+  <path d="M365 140h170M365 165h170M365 190h170" stroke="#94a6bb" stroke-width="9" stroke-linecap="round"/>
+  <rect x="375" y="260" width="150" height="95" rx="16" fill="#3a2418" stroke="#ff8a5b" stroke-width="10"/>
+  <path d="M410 355h80l-40 70z" fill="#f6b44f" stroke="#ff8a5b" stroke-width="8"/>
+  <text x="450" y="70" text-anchor="middle" fill="#e8eef5" font-family="Manrope, Arial" font-size="34" font-weight="800">Hotend</text>
+  <text x="450" y="470" text-anchor="middle" fill="#94a6bb" font-family="Manrope, Arial" font-size="24">Funde el plástico de forma controlada</text>
+</svg>
