@@ -4,43 +4,330 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aprende impresión 3D desde cero | Printpedia 3D</title>
-    <meta name="description" content="Guía completa para empezar en impresión 3D: tecnologías, flujo de trabajo, primera impresión, Benchy, errores típicos y checklist inicial." />
+    <meta
+      name="description"
+      content="Guía completa para empezar en impresión 3D: conceptos, tecnologías, flujo de trabajo, slicer, primera impresión, Benchy, errores típicos y checklist paso a paso."
+    />
     <meta property="og:title" content="Aprende impresión 3D desde cero | Printpedia 3D" />
-    <meta property="og:description" content="Guía completa para empezar en impresión 3D: tecnologías, flujo de trabajo, primera impresión, Benchy, errores típicos y checklist inicial." />
+    <meta
+      property="og:description"
+      content="Guía didáctica para empezar en impresión 3D con definiciones, pasos, checklist y explicaciones prácticas."
+    />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="assets/impresoras/bambu-a1.jpg" />
     <meta name="theme-color" content="#050816" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-theme="dark">
-    <div class="site-bg" aria-hidden="true"><span class="orb orb-a"></span><span class="orb orb-b"></span><span class="orb orb-c"></span><span class="grid-glow"></span></div>
+    <div class="site-bg" aria-hidden="true">
+      <span class="orb orb-a"></span><span class="orb orb-b"></span><span class="orb orb-c"></span><span class="grid-glow"></span>
+    </div>
+
     <header class="site-header" id="siteHeader">
-      <a class="brand" href="index.html" aria-label="Printpedia 3D inicio"><span class="brand-mark">P3D</span><span><strong>Printpedia 3D</strong><small>Academia maker</small></span></a>
-      <nav class="desktop-nav" aria-label="Navegación principal"><a href="index.html">Inicio</a><a href="aprender.html" class="active">Aprende</a><a href="fdm.html">FDM</a><a href="materiales.html">Materiales</a><a href="calibracion.html">Calibración</a><a href="problemas.html">Problemas</a><a href="mantenimiento.html">Mantenimiento</a><a href="herramientas.html">Herramientas</a><a href="guias.html">Guías</a><a href="resina.html">Resina</a><a href="diseno.html">Diseño</a><a href="seguridad.html">Seguridad</a><a href="calculadoras.html">Calculadoras</a><a href="glosario.html">Glosario</a></nav>
+      <a class="brand" href="index.html" aria-label="Printpedia 3D inicio">
+        <span class="brand-mark">P3D</span><span><strong>Printpedia 3D</strong><small>Academia maker</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a><a href="aprender.html" class="active">Aprende</a><a href="fdm.html">FDM</a><a href="materiales.html">Materiales</a><a href="calibracion.html">Calibración</a><a href="problemas.html">Problemas</a><a href="mantenimiento.html">Mantenimiento</a><a href="herramientas.html">Herramientas</a><a href="guias.html">Guías</a><a href="resina.html">Resina</a><a href="diseno.html">Diseño</a><a href="seguridad.html">Seguridad</a><a href="calculadoras.html">Calculadoras</a><a href="glosario.html">Glosario</a>
+      </nav>
       <div class="header-actions">
         <label class="global-search hide-sm"><span>Buscar</span><input id="siteSearch" type="search" placeholder="Buscar guía..." autocomplete="off" /></label>
         <button class="icon-btn" id="themeToggle" type="button" aria-label="Cambiar tema">◐</button>
         <button class="icon-btn menu-btn" id="menuToggle" type="button" aria-label="Abrir menú">☰</button>
       </div>
-      <nav class="mobile-nav" id="mobileNav" aria-label="Menú móvil"><a href="index.html">Inicio</a><a href="aprender.html" class="active">Aprende</a><a href="fdm.html">FDM</a><a href="materiales.html">Materiales</a><a href="calibracion.html">Calibración</a><a href="problemas.html">Problemas</a><a href="mantenimiento.html">Mantenimiento</a><a href="herramientas.html">Herramientas</a><a href="guias.html">Guías</a><a href="resina.html">Resina</a><a href="diseno.html">Diseño</a><a href="seguridad.html">Seguridad</a><a href="calculadoras.html">Calculadoras</a><a href="glosario.html">Glosario</a></nav>
+      <nav class="mobile-nav" id="mobileNav" aria-label="Menú móvil">
+        <a href="index.html">Inicio</a><a href="aprender.html" class="active">Aprende</a><a href="fdm.html">FDM</a><a href="materiales.html">Materiales</a><a href="calibracion.html">Calibración</a><a href="problemas.html">Problemas</a><a href="mantenimiento.html">Mantenimiento</a><a href="herramientas.html">Herramientas</a><a href="guias.html">Guías</a><a href="resina.html">Resina</a><a href="diseno.html">Diseño</a><a href="seguridad.html">Seguridad</a><a href="calculadoras.html">Calculadoras</a><a href="glosario.html">Glosario</a>
+      </nav>
       <div class="search-results" id="searchResults" aria-live="polite"></div>
     </header>
+
     <main>
       <section class="subhero section">
         <div class="subhero-copy reveal">
           <nav class="breadcrumbs"><a href="index.html">Inicio</a><span>/</span><span>Aprende</span></nav>
           <p class="badge">Aprende</p>
           <h1>Aprende impresión 3D desde cero</h1>
-          <p class="hero-lead">Una introducción clara para entender qué hace una impresora 3D, qué necesitas para empezar y cómo interpretar tus primeras piezas.</p>
-          <div class="hero-actions"><a class="button button-primary" href="#contenido">Leer guía</a><a class="button button-ghost" href="problemas.html">Diagnosticar problema</a></div>
+          <p class="hero-lead">
+            Una guía práctica para entender conceptos, preparar tu impresora, usar un slicer,
+            hacer la primera impresión y saber qué revisar cuando algo sale mal.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contenido">Leer guía</a>
+            <a class="button button-ghost" href="problemas.html">Diagnosticar problema</a>
+          </div>
         </div>
-        <figure class="subhero-media reveal"><img src="assets/impresoras/bambu-a1.jpg" alt="Aprende impresión 3D desde cero" /><figcaption>Guía completa para empezar en impresión 3D: tecnologías, flujo de trabajo, primera impresión, Benchy, errores típicos y checklist inicial.</figcaption></figure>
+        <figure class="subhero-media reveal">
+          <img src="assets/impresoras/bambu-a1.jpg" alt="Impresora 3D de escritorio preparada para una primera impresión" />
+          <figcaption>Empieza por entender el flujo completo: modelo, slicer, material, máquina, primera capa y revisión de la pieza.</figcaption>
+        </figure>
       </section>
-      <section class="section page-content" id="contenido"><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="que-es-la-impresion-3d">Qué es la impresión 3D</h2><p>La impresión 3D es fabricación aditiva: una pieza se construye añadiendo material capa a capa a partir de un modelo digital. En vez de retirar material como en mecanizado, la máquina deposita plástico, cura resina o sinteriza polvo solo donde hace falta.</p><p>Su valor está en prototipar rápido, fabricar repuestos, adaptar piezas, crear útiles de taller, validar diseños y producir series pequeñas sin moldes.</p></section><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="flujo-completo">Flujo completo</h2><div class="process-line"><span>Modelo 3D</span><span>Slicer</span><span>G-code</span><span>Impresión</span><span>Posprocesado</span></div><p>El modelo se prepara en un slicer. El slicer decide capas, paredes, relleno, velocidades, temperaturas y soportes. Después genera G-code, que es el conjunto de instrucciones que mueve la impresora.</p></section><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="tecnologias-principales">Tecnologías principales</h2><div class="table-wrap "><table><thead><tr><th>Tecnología</th><th>Cómo funciona</th><th>Ventajas</th><th>Limitaciones</th></tr></thead><tbody><tr><td>FDM/FFF</td><td>Funde filamento y lo deposita en capas.</td><td>Barata, versátil, ideal para piezas funcionales.</td><td>Capas visibles y anisotropía.</td></tr><tr><td>Resina SLA/MSLA/DLP</td><td>Cura resina líquida con luz.</td><td>Mucho detalle y superficie fina.</td><td>Química, lavado, curado y residuos.</td></tr><tr><td>SLS</td><td>Sinteriza polvo de nylon con láser.</td><td>Piezas fuertes sin soportes clásicos.</td><td>Equipo industrial y caro.</td></tr><tr><td>MJF</td><td>Fusiona polvo con agentes y calor.</td><td>Producción funcional precisa.</td><td>Servicio industrial, no doméstico.</td></tr></tbody></table></div></section><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="que-se-puede-imprimir">Qué se puede imprimir</h2><p>Prototipos, carcasas, soportes, organizadores, plantillas, utillaje, piezas decorativas, miniaturas, adaptadores, repuestos no críticos y piezas funcionales bien diseñadas. No conviene imprimir piezas sometidas a seguridad estructural, alta temperatura sin material adecuado, piezas alimentarias sin control o repuestos críticos sin validación.</p></section><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="primer-equipo-recomendado">Primer equipo recomendado</h2><div class="info-grid"><div><h3>Impresora</h3><p>Una FDM de escritorio con autolevel, cama PEI y comunidad activa.</p></div><div><h3>Material</h3><p>PLA o PLA+ para aprender; PETG cuando ya controles primera capa.</p></div><div><h3>Herramientas</h3><p>Calibre, IPA, alicates, boquillas, espátula flexible y almacenamiento seco.</p></div></div></section><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="benchy-y-primera-impresion">Benchy y primera impresión</h2><p>El Benchy es un modelo de prueba con voladizos, curvas, detalles, puentes, chimenea, paredes y dimensiones fáciles de leer. Si sale mal no significa que la impresora sea mala: te enseña qué calibrar.</p><div class="callout tip"><strong>Cómo interpretarlo</strong><p>Mira primero la primera capa, después paredes, esquinas, hilos, puentes y dimensiones. No calibres diez cosas a la vez.</p></div></section><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="errores-tipicos-al-empezar">Errores típicos al empezar</h2><ul class="rich-list"><li>Tocar demasiados parámetros sin entender causa y efecto.</li><li>Imprimir PETG, ABS o TPU antes de dominar PLA.</li><li>No limpiar la cama y culpar al slicer.</li><li>No secar filamentos higroscópicos.</li><li>Usar soportes para todo en vez de orientar mejor la pieza.</li></ul></section><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="checklist-para-empezar">Checklist para empezar</h2><div class="checklist-grid"><div class="check-card checklist-copy"><h3>Antes de la primera impresión</h3><label><input type="checkbox" /> Cama limpia</label><label><input type="checkbox" /> Filamento PLA seco</label><label><input type="checkbox" /> Boquilla sin residuos</label><label><input type="checkbox" /> Perfil correcto en slicer</label><label><input type="checkbox" /> Z-offset ajustado</label><label><input type="checkbox" /> Ventilador funcionando</label><label><input type="checkbox" /> Archivo revisado</label><button class="button button-ghost copy-checklist" type="button">Copiar checklist</button></div></div></section><section class="content-section reveal"><h2>Artículos relacionados</h2><div class="related-grid"><a class="related-card" href="fdm.html"><strong>FDM</strong><span>Entiende la máquina que vas a usar.</span></a><a class="related-card" href="calibracion.html"><strong>Calibración</strong><span>Ajusta primera capa, flujo y retracción.</span></a><a class="related-card" href="guias.html"><strong>Guías</strong><span>Sigue recetas prácticas por material.</span></a></div></section></section>
+
+      <section class="section page-content" id="contenido">
+        <section class="content-section reveal">
+          <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
+          <h2 id="que-es-la-impresion-3d">Qué es la impresión 3D</h2>
+          <p>
+            La impresión 3D es una forma de fabricación aditiva: crea objetos añadiendo material
+            capa a capa a partir de un modelo digital. En una impresora FDM el material suele ser
+            filamento plástico; en una impresora de resina se cura un líquido fotosensible con luz.
+          </p>
+          <p>
+            Lo importante es entender que la impresora no “sabe” fabricar una pieza por sí sola.
+            Necesita un archivo 3D, un programa que lo convierta en instrucciones y una máquina
+            calibrada para ejecutar esas instrucciones con un material concreto.
+          </p>
+          <div class="info-grid">
+            <div>
+              <h3>Modelo 3D</h3>
+              <p>Es la geometría de la pieza. Puede venir de diseño propio, escaneo o repositorios de modelos.</p>
+            </div>
+            <div>
+              <h3>Material</h3>
+              <p>Define temperatura, resistencia, flexibilidad, facilidad de impresión y límites de uso.</p>
+            </div>
+            <div>
+              <h3>Perfil</h3>
+              <p>Es la receta de impresión: capas, velocidades, temperaturas, ventilación, soportes y relleno.</p>
+            </div>
+            <div>
+              <h3>Calibración</h3>
+              <p>Es comprobar que la máquina deposita material donde debe, en la cantidad correcta.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section reveal">
+          <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
+          <h2 id="flujo-completo">Flujo completo: de idea a pieza</h2>
+          <div class="process-line"><span>Idea</span><span>Modelo 3D</span><span>Slicer</span><span>G-code</span><span>Pieza</span></div>
+          <p>
+            El flujo real empieza antes de pulsar imprimir. Primero eliges qué pieza necesitas,
+            después consigues o diseñas el modelo, lo abres en el slicer, configuras el perfil,
+            generas el G-code, preparas la impresora y finalmente revisas la pieza terminada.
+          </p>
+          <div class="info-grid">
+            <div>
+              <h3>1. Preparar el modelo</h3>
+              <p>Comprueba escala, orientación, unidades y si la pieza necesita soportes o puede rediseñarse para evitarlos.</p>
+            </div>
+            <div>
+              <h3>2. Laminar en el slicer</h3>
+              <p>El slicer divide el modelo en capas y decide rutas de boquilla, relleno, paredes, soportes y temperaturas.</p>
+            </div>
+            <div>
+              <h3>3. Preparar la máquina</h3>
+              <p>Limpia la cama, carga filamento, revisa boquilla, confirma temperaturas y observa la primera capa.</p>
+            </div>
+            <div>
+              <h3>4. Evaluar el resultado</h3>
+              <p>No mires solo si “salió”. Revisa adhesión, medidas, hilos, esquinas, superficie, resistencia y acabado.</p>
+            </div>
+          </div>
+          <div class="callout tip">
+            <strong>Regla práctica</strong>
+            <p>Si una impresión falla, cambia una cosa cada vez. Si modificas temperatura, retracción, flujo y velocidad a la vez, no sabrás qué arreglo funcionó.</p>
+          </div>
+        </section>
+
+        <section class="content-section reveal">
+          <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
+          <h2 id="tecnologias-principales">Tecnologías principales</h2>
+          <p>
+            Para empezar conviene distinguir tecnologías. Todas fabrican en 3D, pero no sirven para lo mismo ni tienen las mismas exigencias de seguridad, acabado y mantenimiento.
+          </p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Tecnología</th><th>Cómo funciona</th><th>Para qué destaca</th><th>Qué debes saber antes</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>FDM / FFF</td><td>Funde filamento y lo deposita capa a capa.</td><td>Piezas funcionales, prototipos, soportes, útiles de taller.</td><td>Se ven capas, la orientación afecta a resistencia y requiere calibración.</td></tr>
+                <tr><td>Resina SLA / MSLA / DLP</td><td>Cura resina líquida con luz UV.</td><td>Miniaturas, detalle fino, piezas pequeñas y superficies lisas.</td><td>Exige guantes, lavado, curado, ventilación y gestión de residuos.</td></tr>
+                <tr><td>SLS</td><td>Sinteriza polvo, normalmente nylon, con láser.</td><td>Piezas resistentes sin soportes tradicionales.</td><td>Suele ser industrial o de servicio externo.</td></tr>
+                <tr><td>MJF</td><td>Fusiona polvo con agentes y calor.</td><td>Producción funcional, series pequeñas y buena precisión.</td><td>No es habitual como máquina doméstica.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="content-section reveal">
+          <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
+          <h2 id="que-se-puede-imprimir">Qué se puede imprimir y qué evitar</h2>
+          <p>
+            Puedes imprimir prototipos, organizadores, carcasas, soportes, plantillas, piezas decorativas, adaptadores, repuestos no críticos y piezas funcionales diseñadas con criterio.
+          </p>
+          <div class="info-grid">
+            <div>
+              <h3>Buenos primeros proyectos</h3>
+              <p>Soportes de escritorio, cajas simples, calibradores, ganchos ligeros, organizadores, protectores y piezas que no soporten cargas críticas.</p>
+            </div>
+            <div>
+              <h3>Evita al principio</h3>
+              <p>Piezas de seguridad, piezas para comida, piezas sometidas a mucho calor, piezas estructurales críticas y repuestos donde un fallo pueda causar daño.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section reveal">
+          <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
+          <h2 id="primer-equipo-recomendado">Primer equipo recomendado</h2>
+          <div class="info-grid">
+            <div>
+              <h3>Impresora</h3>
+              <p>Una FDM de escritorio con cama PEI, autolevel, extrusor fiable, buena comunidad y repuestos fáciles de conseguir.</p>
+              <p><strong>Cómo comprobarlo:</strong> busca perfiles existentes, disponibilidad de boquillas, cama de repuesto y documentación clara.</p>
+            </div>
+            <div>
+              <h3>Material</h3>
+              <p>Empieza con PLA o PLA+. Es más tolerante, no exige cámara y permite aprender primera capa, flujo y temperatura sin pelear con warping.</p>
+              <p><strong>Cuándo cambiar:</strong> usa PETG cuando necesites más resistencia; TPU cuando necesites flexibilidad; ASA/ABS cuando entiendas ventilación y cámara.</p>
+            </div>
+            <div>
+              <h3>Herramientas</h3>
+              <p>Calibre digital, alcohol isopropílico o jabón, paño limpio, alicates, llaves Allen, boquillas de repuesto y una caja seca para bobinas.</p>
+              <p><strong>Prioridad:</strong> compra antes herramientas de mantenimiento que upgrades estéticos.</p>
+            </div>
+            <div>
+              <h3>Software</h3>
+              <p>Usa un slicer conocido como OrcaSlicer, PrusaSlicer, Cura o Bambu Studio según tu máquina.</p>
+              <p><strong>Clave:</strong> selecciona impresora, diámetro de filamento y material correctos antes de tocar parámetros avanzados.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section reveal">
+          <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
+          <h2 id="benchy-y-primera-impresion">Benchy y primera impresión</h2>
+          <p>
+            El Benchy es un modelo de prueba muy usado porque concentra muchos retos en una pieza pequeña:
+            primera capa, paredes, curvas, detalles, chimenea, puentes, voladizos, refrigeración y dimensiones.
+          </p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Zona del Benchy</th><th>Qué revisa</th><th>Qué significa si sale mal</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Base</td><td>Primera capa y adhesión</td><td>Z-offset, cama sucia, cama fría o mala nivelación.</td></tr>
+                <tr><td>Proa y esquinas</td><td>Vibraciones y refrigeración</td><td>Aceleración alta, ringing o ventilación insuficiente.</td></tr>
+                <tr><td>Cabina</td><td>Puentes y voladizos</td><td>Temperatura alta, poco ventilador o velocidad incorrecta.</td></tr>
+                <tr><td>Chimenea</td><td>Retracción y precisión</td><td>Stringing, flujo incorrecto o mala refrigeración en piezas pequeñas.</td></tr>
+                <tr><td>Paredes</td><td>Flujo y capas</td><td>Subextrusión, sobreextrusión, humedad o problema mecánico.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout tip">
+            <strong>Cómo interpretarlo</strong>
+            <p>Mira primero si la pieza se ha pegado bien. Después revisa hilos, esquinas, superficie, puentes y medidas. No intentes dejar perfecto el Benchy antes de entender qué falla.</p>
+          </div>
+        </section>
+
+        <section class="content-section reveal">
+          <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
+          <h2 id="errores-tipicos-al-empezar">Errores típicos al empezar</h2>
+          <div class="info-grid">
+            <div><h3>Tocar demasiados parámetros</h3><p>Cambia una variable por prueba: temperatura, retracción, velocidad o flujo. Si cambias todo, pierdes el diagnóstico.</p></div>
+            <div><h3>Ignorar la cama</h3><p>Muchas “malas calibraciones” son simplemente grasa, polvo o restos de adhesivo en la superficie.</p></div>
+            <div><h3>Elegir material difícil</h3><p>ABS, ASA, TPU o nylon pueden frustrar si todavía no controlas PLA y PETG.</p></div>
+            <div><h3>No observar la primera capa</h3><p>Los primeros minutos dicen si la pieza va a sobrevivir. No lances una impresión larga sin mirar esa fase.</p></div>
+          </div>
+        </section>
+
+        <section class="content-section reveal">
+          <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
+          <h2 id="checklist-para-empezar">Checklist para empezar: qué hacer en cada punto</h2>
+          <p>
+            Este checklist no es solo para marcar casillas. Cada punto incluye cómo hacerlo, cómo comprobarlo y qué problema evita.
+          </p>
+          <div class="checklist-grid">
+            <div class="check-card checklist-copy">
+              <h3>Antes de la primera impresión</h3>
+              <label><input type="checkbox" /> Cama limpia</label>
+              <label><input type="checkbox" /> Filamento PLA seco</label>
+              <label><input type="checkbox" /> Boquilla sin residuos</label>
+              <label><input type="checkbox" /> Perfil correcto en slicer</label>
+              <label><input type="checkbox" /> Z-offset ajustado</label>
+              <label><input type="checkbox" /> Ventilador funcionando</label>
+              <label><input type="checkbox" /> Archivo revisado</label>
+              <button class="button button-ghost copy-checklist" type="button">Copiar checklist</button>
+            </div>
+          </div>
+
+          <div class="info-grid">
+            <div>
+              <h3>Cama limpia</h3>
+              <p><strong>Cómo hacerlo:</strong> si es PEI, limpia con agua tibia y jabón cuando haya grasa; usa IPA para mantenimiento rápido.</p>
+              <p><strong>Cómo comprobarlo:</strong> la primera línea debe quedarse pegada sin arrastrarse ni formar gotas.</p>
+              <p><strong>Evita:</strong> mala adhesión, warping y piezas despegadas.</p>
+            </div>
+            <div>
+              <h3>Filamento PLA seco</h3>
+              <p><strong>Cómo hacerlo:</strong> guarda la bobina cerrada con desecante. Si sospechas humedad, seca PLA a baja temperatura controlada.</p>
+              <p><strong>Cómo comprobarlo:</strong> no debe sonar a vapor, burbujear ni dejar hilos exagerados.</p>
+              <p><strong>Evita:</strong> stringing, superficie rugosa y capas débiles.</p>
+            </div>
+            <div>
+              <h3>Boquilla sin residuos</h3>
+              <p><strong>Cómo hacerlo:</strong> calienta a temperatura de impresión y retira restos externos con cuidado. Si hay atasco, usa cold pull o cambia boquilla.</p>
+              <p><strong>Cómo comprobarlo:</strong> el filamento debe salir recto y continuo al extruir manualmente.</p>
+              <p><strong>Evita:</strong> subextrusión, clics del extrusor y líneas incompletas.</p>
+            </div>
+            <div>
+              <h3>Perfil correcto en slicer</h3>
+              <p><strong>Cómo hacerlo:</strong> selecciona tu modelo de impresora, boquilla, diámetro de filamento y material PLA.</p>
+              <p><strong>Cómo comprobarlo:</strong> revisa temperatura, cama, ventilador, altura de capa y que el tamaño de la pieza sea correcto.</p>
+              <p><strong>Evita:</strong> temperaturas incorrectas, piezas fuera de escala y movimientos incompatibles.</p>
+            </div>
+            <div>
+              <h3>Z-offset ajustado</h3>
+              <p><strong>Cómo hacerlo:</strong> usa la función de ajuste de primera capa de tu máquina o una prueba de líneas y baja/sube el offset poco a poco.</p>
+              <p><strong>Cómo comprobarlo:</strong> la línea debe quedar ligeramente aplastada, continua y pegada. Si es redonda, está alto; si raspa o transparenta, está bajo.</p>
+              <p><strong>Evita:</strong> mala primera capa, obstrucciones por boquilla demasiado baja y piezas que se despegan.</p>
+            </div>
+            <div>
+              <h3>Ventilador funcionando</h3>
+              <p><strong>Cómo hacerlo:</strong> revisa en el slicer cuándo se activa y mira físicamente si gira durante la impresión.</p>
+              <p><strong>Cómo comprobarlo:</strong> en PLA normalmente debe enfriar fuerte después de las primeras capas.</p>
+              <p><strong>Evita:</strong> puentes caídos, esquinas blandas, detalles deformados y mala calidad en piezas pequeñas.</p>
+            </div>
+            <div>
+              <h3>Archivo revisado</h3>
+              <p><strong>Cómo hacerlo:</strong> antes de imprimir, mira la previsualización capa por capa en el slicer.</p>
+              <p><strong>Cómo comprobarlo:</strong> confirma orientación, soportes, tiempo, cantidad de material, altura de capa y que no haya zonas flotando.</p>
+              <p><strong>Evita:</strong> fallos largos, soportes innecesarios, piezas mal orientadas y desperdicio de material.</p>
+            </div>
+            <div>
+              <h3>Primera capa observada</h3>
+              <p><strong>Cómo hacerlo:</strong> quédate mirando los primeros minutos. No te vayas hasta ver que las líneas se unen y no se levantan.</p>
+              <p><strong>Cómo comprobarlo:</strong> la capa debe verse uniforme, sin huecos grandes ni exceso de material acumulado.</p>
+              <p><strong>Evita:</strong> impresiones largas fallidas desde el minuto uno.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section reveal">
+          <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
+          <h2 id="siguiente-paso">Siguiente paso recomendado</h2>
+          <p>
+            Cuando ya hayas hecho una primera impresión estable, no saltes directamente a piezas complejas.
+            Haz una prueba de temperatura, una prueba de retracción y un cubo de calibración. Con eso tendrás
+            una base mucho mejor para entender problemas reales.
+          </p>
+          <div class="related-grid">
+            <a class="related-card" href="fdm.html"><strong>FDM</strong><span>Entiende cada parte de la máquina que estás usando.</span></a>
+            <a class="related-card" href="calibracion.html"><strong>Calibración</strong><span>Ajusta primera capa, flujo, temperatura y retracción.</span></a>
+            <a class="related-card" href="problemas.html"><strong>Problemas</strong><span>Aprende a diagnosticar fallos por síntoma.</span></a>
+          </div>
+        </section>
+      </section>
     </main>
+
     <footer class="site-footer">
       <div><a class="brand" href="index.html"><span class="brand-mark">P3D</span><span><strong>Printpedia 3D</strong><small>Impresión 3D visual</small></span></a><p>Plataforma educativa para aprender impresión 3D con criterio técnico, seguridad y resultados reales.</p></div>
       <div><h3>Guías</h3><a href="aprender.html">Aprender</a><a href="fdm.html">FDM</a><a href="materiales.html">Materiales</a><a href="calibracion.html">Calibración</a></div>
