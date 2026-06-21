@@ -634,6 +634,8 @@ body[data-theme="light"] .float-card {
 .basic-info-card {
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   padding: 24px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -648,6 +650,17 @@ body[data-theme="light"] .float-card {
   inset: 0 0 auto;
   height: 3px;
   background: linear-gradient(90deg, var(--blue), var(--green), var(--purple));
+}
+
+.basic-info-card .module-icon {
+  width: auto;
+  min-width: 48px;
+  max-width: max-content;
+  height: 48px;
+  padding: 0 12px;
+  font-size: 0.82rem;
+  white-space: nowrap;
+  align-self: flex-start;
 }
 
 .basic-info-card h3 {
@@ -666,18 +679,25 @@ body[data-theme="light"] .float-card {
   padding-left: 18px;
 }
 
+.basic-info-card .card-link {
+  margin-top: auto;
+  padding-top: 14px;
+}
+
 .basic-info-card-wide {
   grid-column: 1 / -1;
+  min-height: auto;
 }
 
 .parts-mini-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
-  margin-top: 18px;
+  margin: 18px 0 6px;
 }
 
 .parts-mini-grid div {
+  min-width: 0;
   padding: 16px;
   border: 1px solid var(--line);
   border-radius: 18px;
@@ -691,6 +711,11 @@ body[data-theme="light"] .float-card {
 
 .parts-mini-grid strong {
   margin-bottom: 6px;
+}
+
+.basic-info-card-wide .card-link {
+  align-self: flex-start;
+  margin-top: 8px;
 }
 
 .split-section,
