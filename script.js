@@ -23,6 +23,33 @@ document.querySelectorAll(".mobile-nav a").forEach((link) => {
   link.addEventListener("click", () => mobileNav?.classList.remove("is-open"));
 });
 
+document.querySelectorAll(".desktop-nav").forEach((nav) => {
+  if (nav.querySelector(".nav-more")) return;
+
+  const secondaryLabels = new Set(["Resina", "Diseño", "Seguridad", "Calculadoras", "Glosario"]);
+  const secondaryLinks = [...nav.querySelectorAll("a")].filter((link) => secondaryLabels.has(link.textContent.trim()));
+  if (!secondaryLinks.length) return;
+
+  const more = document.createElement("details");
+  more.className = "nav-more";
+  const summary = document.createElement("summary");
+  summary.textContent = "Más";
+  const menu = document.createElement("div");
+  menu.className = "nav-more-menu";
+
+  secondaryLinks.forEach((link) => {
+    if (link.classList.contains("active")) more.classList.add("active");
+    menu.appendChild(link);
+  });
+
+  more.append(summary, menu);
+  nav.appendChild(more);
+
+  document.addEventListener("click", (event) => {
+    if (!more.contains(event.target)) more.removeAttribute("open");
+  });
+});
+
 const onScroll = () => {
   const scrolled = window.scrollY > 30;
   header?.classList.toggle("is-scrolled", scrolled);
