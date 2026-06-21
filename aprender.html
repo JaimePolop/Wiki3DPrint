@@ -207,24 +207,74 @@
           <p>
             El Benchy es un modelo de prueba muy usado porque concentra muchos retos en una pieza pequeña:
             primera capa, paredes, curvas, detalles, chimenea, puentes, voladizos, refrigeración y dimensiones.
+            No sirve para “aprobar” o “suspender” una impresora; sirve para leer síntomas. Cada zona del barco
+            fuerza un comportamiento distinto de la máquina, por eso es útil como primera pieza de diagnóstico.
+          </p>
+          <p>
+            Lo importante es mirarlo con orden. Si la primera capa está mal, no tiene sentido analizar todavía
+            la chimenea o los puentes. Si el material está húmedo, puede parecer que la retracción está mal.
+            Si la mecánica vibra, puedes confundirlo con mala refrigeración. El Benchy te da pistas, pero hay
+            que interpretar esas pistas antes de tocar parámetros.
           </p>
           <div class="table-wrap">
             <table>
               <thead>
-                <tr><th>Zona del Benchy</th><th>Qué revisa</th><th>Qué significa si sale mal</th></tr>
+                <tr><th>Zona del Benchy</th><th>Qué revisa</th><th>Síntoma visible</th><th>Qué comprobar primero</th></tr>
               </thead>
               <tbody>
-                <tr><td>Base</td><td>Primera capa y adhesión</td><td>Z-offset, cama sucia, cama fría o mala nivelación.</td></tr>
-                <tr><td>Proa y esquinas</td><td>Vibraciones y refrigeración</td><td>Aceleración alta, ringing o ventilación insuficiente.</td></tr>
-                <tr><td>Cabina</td><td>Puentes y voladizos</td><td>Temperatura alta, poco ventilador o velocidad incorrecta.</td></tr>
-                <tr><td>Chimenea</td><td>Retracción y precisión</td><td>Stringing, flujo incorrecto o mala refrigeración en piezas pequeñas.</td></tr>
-                <tr><td>Paredes</td><td>Flujo y capas</td><td>Subextrusión, sobreextrusión, humedad o problema mecánico.</td></tr>
+                <tr><td>Base</td><td>Primera capa y adhesión</td><td>La base se despega, queda rugosa, transparente o con líneas separadas.</td><td>Z-offset, limpieza de cama, temperatura de cama, nivelación y velocidad de primera capa.</td></tr>
+                <tr><td>Proa y esquinas</td><td>Vibraciones, aceleración y refrigeración</td><td>Aparecen ondas repetidas después de las esquinas o bordes blandos/deformados.</td><td>Aceleración, jerk, input shaping, tensión de correas, ventilador de capa y temperatura.</td></tr>
+                <tr><td>Cabina</td><td>Puentes, voladizos y enfriamiento</td><td>Los techos cuelgan, las ventanas se deforman o los puentes quedan con hilos caídos.</td><td>Ventilador, temperatura de boquilla, velocidad de puente y orientación de la pieza.</td></tr>
+                <tr><td>Chimenea</td><td>Retracción, piezas pequeñas y precisión</td><td>Hay hilos, pegotes, chimenea deformada o capas pequeñas demasiado calientes.</td><td>Retracción, temperatura, tiempo mínimo de capa, humedad del filamento y flujo.</td></tr>
+                <tr><td>Paredes</td><td>Flujo, estabilidad de capas y extrusión</td><td>Se ven huecos, líneas irregulares, exceso de material o bandas repetidas.</td><td>Flujo, E-steps, boquilla, filamento húmedo, correas, eje Z y velocidad.</td></tr>
               </tbody>
             </table>
           </div>
+          <div class="info-grid">
+            <div>
+              <h3>1. Empieza por la base</h3>
+              <p>
+                Si la base no está bien pegada o las líneas no se unen, el problema principal está antes de la
+                impresión completa: cama, Z-offset o primera capa. Arregla eso antes de mirar stringing o acabado.
+              </p>
+            </div>
+            <div>
+              <h3>2. Mira la extrusión</h3>
+              <p>
+                Las paredes deben verse continuas. Huecos, líneas finas o zonas débiles suelen apuntar a
+                subextrusión, boquilla parcialmente atascada, flujo bajo o filamento húmedo.
+              </p>
+            </div>
+            <div>
+              <h3>3. Revisa temperatura y ventilación</h3>
+              <p>
+                Si los puentes cuelgan, las esquinas se ablandan o la chimenea sale derretida, puede haber
+                demasiada temperatura, poca ventilación o capas pequeñas sin tiempo para enfriar.
+              </p>
+            </div>
+            <div>
+              <h3>4. Comprueba movimiento</h3>
+              <p>
+                Ondas repetidas, esquinas con eco o capas desplazadas suelen venir de vibración, correas,
+                poleas, aceleraciones altas o una superficie donde la impresora se mueve demasiado.
+              </p>
+            </div>
+          </div>
           <div class="callout tip">
             <strong>Cómo interpretarlo</strong>
-            <p>Mira primero si la pieza se ha pegado bien. Después revisa hilos, esquinas, superficie, puentes y medidas. No intentes dejar perfecto el Benchy antes de entender qué falla.</p>
+            <p>
+              Mira primero si la pieza se ha pegado bien. Después revisa extrusión, hilos, esquinas,
+              superficie, puentes y medidas. Si detectas varios fallos, arregla primero el más básico:
+              adhesión, luego extrusión, luego temperatura/refrigeración y finalmente velocidad o aceleración.
+              No intentes dejar perfecto el Benchy antes de entender qué síntoma estás corrigiendo.
+            </p>
+          </div>
+          <div class="callout warning">
+            <strong>No ajustes todo a la vez</strong>
+            <p>
+              Si bajas temperatura, cambias retracción, subes ventilador y modificas flujo en la misma prueba,
+              quizá el siguiente Benchy mejore, pero no sabrás por qué. Haz una prueba, anota el cambio y compara.
+            </p>
           </div>
         </section>
 
