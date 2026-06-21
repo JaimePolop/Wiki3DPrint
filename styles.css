@@ -637,11 +637,17 @@ body[data-theme="light"] .float-card {
 
 .table-wrap {
   margin-top: 30px;
+  margin-bottom: 28px;
   overflow-x: auto;
   border: 1px solid var(--line);
   border-radius: 24px;
   background: var(--card);
   box-shadow: var(--shadow);
+}
+
+.table-wrap + .info-grid,
+.table-wrap + .callout {
+  margin-top: 28px;
 }
 
 table {
