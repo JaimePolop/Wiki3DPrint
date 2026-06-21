@@ -25,8 +25,76 @@ document.querySelectorAll(".mobile-nav a").forEach((link) => {
 
 document.querySelectorAll(".desktop-nav").forEach((nav) => {
   const current = location.pathname.split("/").pop() || "index.html";
-  nav.querySelectorAll("a").forEach((link) => {
-    link.classList.toggle("active", link.getAttribute("href") === current);
+  const groups = [
+    { label: "Inicio", href: "index.html" },
+    {
+      label: "Básico",
+      items: [
+        ["Aprende desde cero", "aprender.html"],
+        ["Impresoras FDM", "fdm.html"],
+        ["Materiales", "materiales.html"],
+        ["Resina", "resina.html"],
+        ["Diseño 3D", "diseno.html"]
+      ]
+    },
+    {
+      label: "Resolver",
+      items: [
+        ["Calibración", "calibracion.html"],
+        ["Problemas", "problemas.html"],
+        ["Mantenimiento", "mantenimiento.html"],
+        ["Seguridad", "seguridad.html"]
+      ]
+    },
+    {
+      label: "Recursos",
+      items: [
+        ["Herramientas", "herramientas.html"],
+        ["Guías", "guias.html"],
+        ["Calculadoras", "calculadoras.html"],
+        ["Glosario", "glosario.html"],
+        ["Secado de filamento", "secado-filamento.html"],
+        ["Slicers", "slicers.html"]
+      ]
+    }
+  ];
+
+  nav.innerHTML = "";
+
+  groups.forEach((group) => {
+    if (group.href) {
+      const link = document.createElement("a");
+      link.href = group.href;
+      link.textContent = group.label;
+      link.classList.toggle("active", current === group.href);
+      nav.appendChild(link);
+      return;
+    }
+
+    const details = document.createElement("details");
+    details.className = "nav-group-menu";
+    if (group.items.some(([, href]) => href === current)) details.classList.add("active");
+
+    const summary = document.createElement("summary");
+    summary.textContent = group.label;
+
+    const menu = document.createElement("div");
+    menu.className = "nav-group-panel";
+
+    group.items.forEach(([label, href]) => {
+      const link = document.createElement("a");
+      link.href = href;
+      link.textContent = label;
+      link.classList.toggle("active", current === href);
+      menu.appendChild(link);
+    });
+
+    details.append(summary, menu);
+    nav.appendChild(details);
+
+    document.addEventListener("click", (event) => {
+      if (!details.contains(event.target)) details.removeAttribute("open");
+    });
   });
 });
 
