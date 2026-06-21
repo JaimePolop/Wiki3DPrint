@@ -85,102 +85,146 @@
           </div>
         </header>
 
-        <main class="page-grid">
-          <div class="content-column">
-            <section class="hero" id="bienvenida">
-              <div class="hero-grid">
-                <div>
-                  <p class="eyebrow">Portada</p>
-                  <h1>Wiki3DPrint</h1>
-                  <p class="hero-lead">
-                    Wiki web sobre impresión 3D en español, pensada para organizar conocimiento
-                    técnico, rutas de aprendizaje, materiales, mantenimiento y resolución de problemas.
-                  </p>
+        <main class="page-grid home-layout">
+          <div class="content-column" data-doc>
+            <section class="home-hero" id="bienvenida" data-reveal>
+              <div class="home-hero-media" aria-hidden="true">
+                <img src="assets/impresoras/corexy-bambu-p1.jpg" alt="" />
+                <img src="assets/materiales/3dprinted-objects.jpg" alt="" />
+                <img src="assets/partes/hotend-real.png" alt="" />
+              </div>
+              <div class="home-hero-content">
+                <p class="eyebrow">Wiki técnica de impresión 3D</p>
+                <h1>Wiki3DPrint</h1>
+                <p class="hero-lead">
+                  Una base de conocimiento clara para aprender, elegir materiales, entender tu
+                  impresora y resolver problemas reales sin perderte entre consejos sueltos.
+                </p>
+                <div class="hero-actions">
+                  <a class="accent-button" href="materiales/index.html">Explorar materiales</a>
+                  <a class="ghost-button" href="inicio/que-es-una-impresora-3d.html">Empezar desde cero</a>
                 </div>
-                <div class="hero-panel">
-                  <p class="eyebrow">Rutas base</p>
-                  <ul>
-                    <li>Portada general para entrar a la wiki.</li>
-                    <li>Páginas separadas de fundamentos en la carpeta `inicio/`.</li>
-                    <li>Biblioteca de materiales independiente en `materiales/`.</li>
-                  </ul>
-                </div>
               </div>
-            </section>
-            <figure class="material-hero-figure">
-              <img class="material-hero-image" src="assets/materiales/3dprinted-objects.jpg" alt="Mesa con bobinas de filamento y varias piezas impresas en 3D." />
-              <figcaption>Imagen de referencia general para la portada de Wiki3DPrint.</figcaption>
-            </figure>
-
-            <section class="section-block" id="que-es">
-              <div class="section-intro">
-                <p class="eyebrow">Resumen</p>
-                <h2>Qué es esta wiki</h2>
-                <p>Una portada única que resume el propósito del proyecto sin depender de páginas internas.</p>
-              </div>
-              <div class="card-grid">
-                <article class="surface" data-searchable>
-                  <h3>Impresión 3D en español</h3>
-                  <p>Base para centralizar teoría, materiales, mantenimiento, diagnóstico y seguridad.</p>
-                </article>
-                <article class="surface" data-searchable>
-                  <h3>Enfoque práctico</h3>
-                  <p>La portada ya no intenta explicarlo todo: ahora funciona como punto de entrada a páginas más desarrolladas.</p>
-                </article>
+              <div class="hero-metrics" aria-label="Resumen de contenidos">
+                <div><strong>18+</strong><span>guías y fichas</span></div>
+                <div><strong>11</strong><span>materiales</span></div>
+                <div><strong>6</strong><span>rutas base</span></div>
               </div>
             </section>
 
-            <section class="section-block" id="rutas">
-              <div class="section-intro">
-                <p class="eyebrow">Rutas</p>
-                <h2>Rutas recomendadas</h2>
-              </div>
-              <div class="card-grid cards-3">
-                <article class="feature-card" data-searchable>
-                  <h3>Qué es una impresora 3D</h3>
-                  <p>Base conceptual para entender qué hace la máquina y por qué no es una caja mágica.</p>
-                  <a class="card-link" href="inicio/que-es-una-impresora-3d.html">Abrir guía →</a>
-                </article>
-                <article class="feature-card" data-searchable>
-                  <h3>Tipos de impresoras</h3>
-                  <p>FDM, resina y tecnologías más industriales con un enfoque de elección realista.</p>
-                  <a class="card-link" href="inicio/tipos-de-impresoras-3d.html">Abrir guía →</a>
-                </article>
-                <article class="feature-card" data-searchable>
-                  <h3>Partes de la impresora</h3>
-                  <p>Chasis, movimiento, extrusor, hotend, cama y electrónica explicados por función.</p>
-                  <a class="card-link" href="inicio/partes-de-una-impresora-3d.html">Abrir guía →</a>
-                </article>
-              </div>
-            </section>
-
-            <section class="section-block" id="destacados">
-              <div class="section-intro">
-                <p class="eyebrow">Guías destacadas</p>
-                <h2>Temas principales de la wiki</h2>
-              </div>
-              <div class="card-grid">
-                <article class="surface" data-searchable><h3>Cómo funciona la impresión 3D</h3><p>Modelo, laminador, instrucciones de máquina, capas y postprocesado dentro de un flujo completo.</p><a class="card-link" href="inicio/como-funciona-la-impresion-3d.html">Abrir guía →</a></article>
-                <article class="surface" data-searchable><h3>Materiales</h3><p>Biblioteca separada en carpeta propia, con un enlace por material para navegar de forma directa.</p><a class="card-link" href="materiales/index.html">Abrir materiales →</a></article>
-                <article class="surface" data-searchable><h3>Mantenimiento</h3><p>Rutinas de limpieza, cama, laca, extrusor, boquilla, correas, lubricación, seguridad y diagnóstico.</p><a class="card-link" href="inicio/mantenimiento.html">Abrir guía →</a></article>
-                <article class="surface" data-searchable><h3>Postprocesado</h3><p>Lijado, alisado, masilla, imprimación, pintura, barniz y protección para que el acabado dure.</p><a class="card-link" href="inicio/postprocesado.html">Abrir guía →</a></article>
-                <article class="surface" data-searchable><h3>Seguridad</h3><p>Ventilación, incendios, resina, cableado y uso nocturno siguen siendo parte central del proyecto.</p></article>
-              </div>
-            </section>
-
-            <section class="section-block" id="seguridad">
-              <div class="section-intro">
-                <p class="eyebrow">Seguridad</p>
-                <h2>Avisos importantes</h2>
-              </div>
-              <div class="callout warning">
-                <strong>Advertencia</strong>
+            <section class="section-block home-section" id="rutas" data-reveal>
+              <div class="section-intro wide-intro">
+                <p class="eyebrow">Rutas rápidas</p>
+                <h2>Entra por el punto que necesitas ahora</h2>
                 <p>
-                  La impresión 3D no es solo perfiles y boquillas: hay calor, electricidad,
-                  humos y materiales químicos. Cualquier versión futura de esta wiki debería
-                  tratar esa parte con prioridad real.
+                  La portada está organizada como un panel de acceso: fundamentos, materiales,
+                  mantenimiento y acabado final quedan separados para consultar sin fricción.
                 </p>
               </div>
+              <div class="path-grid">
+                <a class="path-card path-card-large" href="inicio/que-es-una-impresora-3d.html" data-searchable>
+                  <img src="assets/impresoras/bambu-a1.jpg" alt="Impresora 3D de escritorio." />
+                  <span class="path-label">Fundamentos</span>
+                  <strong>Qué es una impresora 3D</strong>
+                  <small>Conceptos básicos, usos y límites reales de la tecnología.</small>
+                </a>
+                <a class="path-card" href="inicio/tipos-de-impresoras-3d.html" data-searchable>
+                  <img src="assets/impresoras/resina-elegoo-mars.jpg" alt="Impresora 3D de resina." />
+                  <span class="path-label">Máquinas</span>
+                  <strong>Tipos de impresoras</strong>
+                  <small>FDM, resina y opciones industriales.</small>
+                </a>
+                <a class="path-card" href="inicio/partes-de-una-impresora-3d.html" data-searchable>
+                  <img src="assets/partes/extrusor-real.jpg" alt="Extrusor de impresora 3D." />
+                  <span class="path-label">Hardware</span>
+                  <strong>Partes de la impresora</strong>
+                  <small>Extrusor, hotend, cama, ejes y electrónica.</small>
+                </a>
+              </div>
+            </section>
+
+            <section class="section-block motion-band" id="proceso" data-reveal>
+              <div class="motion-copy">
+                <p class="eyebrow">Flujo de trabajo</p>
+                <h2>Del modelo digital a una pieza útil</h2>
+                <p>
+                  La impresión 3D funciona mejor cuando entiendes todo el recorrido: diseño,
+                  laminado, material, calibración, impresión, postprocesado y mantenimiento.
+                </p>
+                <a class="card-link" href="inicio/como-funciona-la-impresion-3d.html">Ver el proceso completo →</a>
+              </div>
+              <div class="process-rail" aria-hidden="true">
+                <span>Modelo 3D</span>
+                <span>Slicer</span>
+                <span>Material</span>
+                <span>Calibración</span>
+                <span>Impresión</span>
+                <span>Acabado</span>
+              </div>
+            </section>
+
+            <section class="section-block home-section" id="destacados" data-reveal>
+              <div class="section-intro">
+                <p class="eyebrow">Contenido destacado</p>
+                <h2>Guías principales</h2>
+              </div>
+              <div class="feature-list">
+                <article class="feature-row" data-searchable>
+                  <img src="assets/materiales/pla-real.jpg" alt="Filamento PLA para impresión 3D." />
+                  <div>
+                    <span class="path-label">Materiales</span>
+                    <h3>Biblioteca por material</h3>
+                    <p>PLA, PETG, ABS, ASA, TPU, nylon, PC, PP, PPS y compuestos con fibra de carbono.</p>
+                    <a class="card-link" href="materiales/index.html">Abrir biblioteca →</a>
+                  </div>
+                </article>
+                <article class="feature-row" data-searchable>
+                  <img src="assets/partes/cama-real.jpg" alt="Cama de impresión 3D." />
+                  <div>
+                    <span class="path-label">Diagnóstico</span>
+                    <h3>Mantenimiento y problemas frecuentes</h3>
+                    <p>Limpieza, primera capa, boquillas, correas, lubricación, seguridad y revisión eléctrica.</p>
+                    <a class="card-link" href="inicio/mantenimiento.html">Abrir mantenimiento →</a>
+                  </div>
+                </article>
+                <article class="feature-row" data-searchable>
+                  <img src="assets/materiales/abs-real.jpg" alt="Pieza impresa en ABS." />
+                  <div>
+                    <span class="path-label">Acabado</span>
+                    <h3>Postprocesado profesional</h3>
+                    <p>Lijado, masilla, imprimación, pintura, barnices y acabado funcional de piezas impresas.</p>
+                    <a class="card-link" href="inicio/postprocesado.html">Abrir postprocesado →</a>
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <section class="section-block materials-showcase" id="materiales" data-reveal>
+              <div class="section-intro wide-intro">
+                <p class="eyebrow">Materiales</p>
+                <h2>Elige el filamento por uso, no por moda</h2>
+                <p>Una selección rápida para saltar a la ficha adecuada según resistencia, facilidad y entorno de trabajo.</p>
+              </div>
+              <div class="material-strip">
+                <a href="materiales/pla.html" data-searchable><img src="assets/materiales/pla.svg" alt="" /><strong>PLA</strong><span>Fácil y limpio</span></a>
+                <a href="materiales/petg.html" data-searchable><img src="assets/materiales/petg.svg" alt="" /><strong>PETG</strong><span>Funcional diario</span></a>
+                <a href="materiales/asa.html" data-searchable><img src="assets/materiales/asa.svg" alt="" /><strong>ASA</strong><span>Exterior y sol</span></a>
+                <a href="materiales/tpu.html" data-searchable><img src="assets/materiales/tpu.svg" alt="" /><strong>TPU</strong><span>Flexible</span></a>
+                <a href="materiales/carbono.html" data-searchable><img src="assets/materiales/carbono.svg" alt="" /><strong>Carbono</strong><span>Rigidez</span></a>
+              </div>
+            </section>
+
+            <section class="section-block safety-band" id="seguridad" data-reveal>
+              <div>
+                <p class="eyebrow">Seguridad</p>
+                <h2>Calor, electricidad, humos y química importan</h2>
+                <p>
+                  La wiki trata la impresión 3D como una práctica técnica real: ventilación,
+                  supervisión, estado del cableado, resinas, boquillas calientes y materiales
+                  exigentes forman parte del aprendizaje.
+                </p>
+              </div>
+              <a class="ghost-button" href="inicio/mantenimiento.html">Revisar mantenimiento</a>
             </section>
           </div>
 

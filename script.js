@@ -109,6 +109,7 @@ function buildToc() {
   const links = [];
 
   headings.forEach((heading) => {
+    if (heading.closest(".feature-row, .path-card")) return;
     const section = heading.closest("section");
     if (!section?.id) return;
 
@@ -138,6 +139,54 @@ function buildToc() {
 }
 
 buildToc();
+
+function bindScrollEffects() {
+  const revealItems = document.querySelectorAll("[data-reveal]");
+  if (!revealItems.length) return;
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (prefersReducedMotion) {
+    revealItems.forEach((item) => item.classList.add("is-visible"));
+    return;
+  }
+
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { rootMargin: "0px 0px -12% 0px", threshold: 0.16 }
+  );
+
+  revealItems.forEach((item) => revealObserver.observe(item));
+
+  const heroMedia = document.querySelector(".home-hero-media");
+  const processRailItems = document.querySelectorAll(".process-rail span");
+
+  const updateMotion = () => {
+    const scrollY = window.scrollY || window.pageYOffset;
+    if (heroMedia) {
+      heroMedia.style.transform = `translateY(${Math.min(scrollY * 0.12, 72)}px)`;
+    }
+
+    processRailItems.forEach((item, index) => {
+      const rect = item.getBoundingClientRect();
+      const centerOffset = (window.innerHeight / 2 - rect.top) / window.innerHeight;
+      const shift = Math.max(-18, Math.min(18, centerOffset * 32 + index * 2));
+      item.style.setProperty("--rail-shift", `${shift}px`);
+    });
+  };
+
+  updateMotion();
+  window.addEventListener("scroll", updateMotion, { passive: true });
+  window.addEventListener("resize", updateMotion);
+}
+
+bindScrollEffects();
 
 feedbackButtons.forEach((button) => {
   button.addEventListener("click", () => {
