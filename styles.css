@@ -116,8 +116,8 @@ img {
   margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: 18px;
-  padding: 12px;
+  gap: 10px;
+  padding: 10px;
   border: 1px solid var(--line);
   border-radius: 24px;
   background: rgba(5, 8, 22, 0.66);
@@ -147,8 +147,8 @@ body[data-theme="light"] .site-header.is-scrolled {
 }
 
 .brand-mark {
-  width: 46px;
-  height: 46px;
+  width: 42px;
+  height: 42px;
   display: grid;
   place-items: center;
   border-radius: 16px;
@@ -174,55 +174,64 @@ body[data-theme="light"] .site-header.is-scrolled {
   flex: 1;
   display: flex;
   justify-content: center;
-  gap: 4px;
+  gap: 6px;
+  min-width: 0;
 }
 
 .desktop-nav a,
 .mobile-nav a {
-  padding: 10px 12px;
+  padding: 9px 11px;
   border-radius: 999px;
   color: var(--muted);
-  font-size: 0.92rem;
-  font-weight: 700;
+  font-size: 0.88rem;
+  font-weight: 800;
   transition: color 0.2s ease, background 0.2s ease;
 }
 
-.nav-more {
+.nav-more,
+.nav-dropdown {
   position: relative;
 }
 
-.nav-more summary {
+.nav-more summary,
+.nav-dropdown summary {
   list-style: none;
-  padding: 10px 12px;
+  padding: 9px 11px;
   border-radius: 999px;
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 800;
   cursor: pointer;
   user-select: none;
+  white-space: nowrap;
 }
 
-.nav-more summary::-webkit-details-marker {
+.nav-more summary::-webkit-details-marker,
+.nav-dropdown summary::-webkit-details-marker {
   display: none;
 }
 
-.nav-more summary::after {
+.nav-more summary::after,
+.nav-dropdown summary::after {
   content: "▾";
   margin-left: 6px;
   font-size: 0.75rem;
 }
 
 .nav-more[open] summary,
-.nav-more.active summary {
+.nav-more.active summary,
+.nav-dropdown[open] summary,
+.nav-dropdown.active summary {
   color: var(--text);
   background: linear-gradient(135deg, rgba(56, 189, 248, 0.16), rgba(139, 92, 246, 0.12));
 }
 
-.nav-more-menu {
+.nav-more-menu,
+.nav-dropdown-menu {
   position: absolute;
   top: calc(100% + 12px);
   right: 0;
-  min-width: 220px;
+  min-width: 230px;
   display: grid;
   gap: 6px;
   padding: 10px;
@@ -232,9 +241,11 @@ body[data-theme="light"] .site-header.is-scrolled {
   box-shadow: var(--shadow);
 }
 
-.desktop-nav .nav-more-menu a {
+.desktop-nav .nav-more-menu a,
+.desktop-nav .nav-dropdown-menu a {
   border-radius: 12px;
   white-space: nowrap;
+  padding: 11px 12px;
 }
 
 .desktop-nav a:hover,
@@ -1071,33 +1082,64 @@ body[data-theme="light"] .calc-card output {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 8px;
-  min-width: 210px;
-  padding: 8px 12px;
+  justify-content: center;
+  gap: 0;
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+  padding: 0;
   border: 1px solid var(--line);
   border-radius: 999px;
   color: var(--muted);
   background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  transition: width 0.24s ease, padding 0.24s ease, border-color 0.24s ease, background 0.24s ease;
+  cursor: text;
+}
+
+.global-search:focus-within {
+  width: 260px;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 8px 12px;
+  border-color: rgba(56, 189, 248, 0.38);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .global-search span {
-  font-size: 0.78rem;
+  width: 20px;
+  min-width: 20px;
+  font-size: 0;
   font-weight: 900;
   text-transform: uppercase;
 }
 
+.global-search span::before {
+  content: "⌕";
+  font-size: 1.08rem;
+}
+
 .global-search input {
-  width: 130px;
+  width: 0;
   border: 0;
   outline: 0;
   color: var(--text);
   background: transparent;
+  opacity: 0;
+  pointer-events: none;
+  transition: width 0.24s ease, opacity 0.18s ease;
+}
+
+.global-search:focus-within input {
+  width: 190px;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .search-results {
   position: absolute;
   top: calc(100% + 10px);
-  right: 90px;
+  right: 76px;
   width: min(430px, calc(100vw - 34px));
   display: none;
   padding: 10px;

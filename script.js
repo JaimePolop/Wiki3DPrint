@@ -24,29 +24,80 @@ document.querySelectorAll(".mobile-nav a").forEach((link) => {
 });
 
 document.querySelectorAll(".desktop-nav").forEach((nav) => {
-  if (nav.querySelector(".nav-more")) return;
+  const current = nav.querySelector("a.active")?.getAttribute("href") || location.pathname.split("/").pop() || "index.html";
+  const groups = [
+    { label: "Inicio", href: "index.html" },
+    {
+      label: "Aprender",
+      items: [
+        ["Aprende desde cero", "aprender.html"],
+        ["Impresoras FDM", "fdm.html"],
+        ["Diseño 3D", "diseno.html"],
+        ["Guías prácticas", "guias.html"]
+      ]
+    },
+    {
+      label: "Materiales",
+      items: [
+        ["Materiales", "materiales.html"],
+        ["Secado de filamento", "secado-filamento.html"],
+        ["Resina", "resina.html"]
+      ]
+    },
+    {
+      label: "Resolver",
+      items: [
+        ["Calibración", "calibracion.html"],
+        ["Problemas", "problemas.html"],
+        ["Mantenimiento", "mantenimiento.html"],
+        ["Seguridad", "seguridad.html"]
+      ]
+    },
+    {
+      label: "Recursos",
+      items: [
+        ["Herramientas", "herramientas.html"],
+        ["Calculadoras", "calculadoras.html"],
+        ["Glosario", "glosario.html"]
+      ]
+    }
+  ];
 
-  const secondaryLabels = new Set(["Resina", "Diseño", "Seguridad", "Calculadoras", "Glosario"]);
-  const secondaryLinks = [...nav.querySelectorAll("a")].filter((link) => secondaryLabels.has(link.textContent.trim()));
-  if (!secondaryLinks.length) return;
+  nav.innerHTML = "";
 
-  const more = document.createElement("details");
-  more.className = "nav-more";
-  const summary = document.createElement("summary");
-  summary.textContent = "Más";
-  const menu = document.createElement("div");
-  menu.className = "nav-more-menu";
+  groups.forEach((group) => {
+    if (group.href) {
+      const link = document.createElement("a");
+      link.href = group.href;
+      link.textContent = group.label;
+      link.classList.toggle("active", current === group.href);
+      nav.appendChild(link);
+      return;
+    }
 
-  secondaryLinks.forEach((link) => {
-    if (link.classList.contains("active")) more.classList.add("active");
-    menu.appendChild(link);
-  });
+    const details = document.createElement("details");
+    details.className = "nav-dropdown";
+    if (group.items.some(([, href]) => href === current)) details.classList.add("active");
 
-  more.append(summary, menu);
-  nav.appendChild(more);
+    const summary = document.createElement("summary");
+    summary.textContent = group.label;
+    const menu = document.createElement("div");
+    menu.className = "nav-dropdown-menu";
 
-  document.addEventListener("click", (event) => {
-    if (!more.contains(event.target)) more.removeAttribute("open");
+    group.items.forEach(([label, href]) => {
+      const link = document.createElement("a");
+      link.href = href;
+      link.textContent = label;
+      link.classList.toggle("active", current === href);
+      menu.appendChild(link);
+    });
+
+    details.append(summary, menu);
+    nav.appendChild(details);
+
+    document.addEventListener("click", (event) => {
+      if (!details.contains(event.target)) details.removeAttribute("open");
+    });
   });
 });
 
