@@ -4,6 +4,8 @@ const menuToggle = document.getElementById("menuToggle");
 const mobileNav = document.getElementById("mobileNav");
 const themeToggle = document.getElementById("themeToggle");
 const backTop = document.getElementById("backTop");
+const siteSearch = document.getElementById("siteSearch");
+const searchResults = document.getElementById("searchResults");
 
 const savedTheme = localStorage.getItem("printpedia-theme");
 if (savedTheme) body.dataset.theme = savedTheme;
@@ -63,6 +65,65 @@ document.querySelectorAll('[data-filter-group="materials"] .chip').forEach((butt
       card.classList.toggle("is-hidden", filter !== "all" && !types.includes(filter));
     });
   });
+});
+
+function bindFilterGroup(groupName, itemSelector) {
+  document.querySelectorAll(`[data-filter-group="${groupName}"] .chip`).forEach((button) => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.filter;
+      document.querySelectorAll(`[data-filter-group="${groupName}"] .chip`).forEach((item) => {
+        item.classList.toggle("active", item === button);
+      });
+      document.querySelectorAll(itemSelector).forEach((item) => {
+        const types = item.dataset.type || "";
+        item.classList.toggle("is-hidden", filter !== "all" && !types.includes(filter));
+      });
+    });
+  });
+}
+
+bindFilterGroup("problems", ".problem-card");
+bindFilterGroup("guides", ".guide-card");
+bindFilterGroup("glossary", ".glossary-item");
+
+const siteIndex = [
+  ["Inicio", "index.html", "Portada, rutas, diagnóstico rápido y recursos destacados."],
+  ["Aprende", "aprender.html", "Qué es impresión 3D, tecnologías, flujo, Benchy y primera impresión."],
+  ["FDM", "fdm.html", "Impresoras FDM, anatomía, hotend, extrusor, cama, movimiento y electrónica."],
+  ["Materiales", "materiales.html", "PLA, PETG, ABS, ASA, TPU, nylon, PC, resinas y abrasivos."],
+  ["Secado", "secado-filamento.html", "Humedad, stringing, burbujas, secador, dry box y almacenamiento."],
+  ["Calibración", "calibracion.html", "Z-offset, E-steps, flujo, temperatura, retracción, PA e input shaping."],
+  ["Problemas", "problemas.html", "Warping, stringing, heat creep, layer shifting, blobs y diagnóstico."],
+  ["Mantenimiento", "mantenimiento.html", "Limpieza, cama, hotend, boquilla, PTFE, correas, lubricación y firmware."],
+  ["Slicers", "slicers.html", "Cura, PrusaSlicer, OrcaSlicer, Bambu Studio, Lychee, Chitubox y perfiles."],
+  ["Resina", "resina.html", "SLA, MSLA, DLP, seguridad, VAT, FEP, lavado, curado y soportes."],
+  ["Diseño", "diseno.html", "Tolerancias, orientación, anisotropía, inserts, snap fits y resistencia."],
+  ["Seguridad", "seguridad.html", "Riesgos térmicos, eléctricos, humos, resina, filtros y checklists."],
+  ["Herramientas", "herramientas.html", "Kit básico, avanzado, resina, repuestos, secador y protección."],
+  ["Calculadoras", "calculadoras.html", "Costes, gramos, metros, venta, velocidad volumétrica, E-steps y amortización."],
+  ["Glosario", "glosario.html", "Términos FDM, resina, slicer, firmware, materiales y problemas."],
+  ["Guías", "guias.html", "Recetas prácticas para comprar, imprimir, calibrar y resolver fallos."]
+];
+
+siteSearch?.addEventListener("input", () => {
+  const query = siteSearch.value.trim().toLowerCase();
+  if (!searchResults) return;
+  if (!query) {
+    searchResults.classList.remove("is-open");
+    searchResults.innerHTML = "";
+    return;
+  }
+  const matches = siteIndex.filter((item) => item.join(" ").toLowerCase().includes(query)).slice(0, 7);
+  searchResults.innerHTML = matches.length
+    ? matches.map(([title, href, desc]) => `<a href="${href}"><strong>${title}</strong>${desc}</a>`).join("")
+    : `<a href="glosario.html"><strong>Sin coincidencias exactas</strong>Prueba en el glosario completo.</a>`;
+  searchResults.classList.add("is-open");
+});
+
+document.addEventListener("click", (event) => {
+  if (!event.target.closest(".global-search") && !event.target.closest(".search-results")) {
+    searchResults?.classList.remove("is-open");
+  }
 });
 
 const diagnosis = [
@@ -206,6 +267,13 @@ function updateCalculators() {
   const meters = area > 0 ? volumeMm3 / area / 1000 : 0;
   setText("gramsMetersResult", `${grams.toFixed(1)} g ≈ ${meters.toFixed(1)} m`);
 
+  const metersValue = numberValue("metersValue");
+  const metersDiameter = numberValue("metersDiameter");
+  const metersDensity = numberValue("metersDensity");
+  const metersArea = Math.PI * Math.pow(metersDiameter / 2, 2);
+  const gramsFromMeters = metersValue * 1000 * metersArea * metersDensity / 1000;
+  setText("metersGramsResult", `${metersValue.toFixed(1)} m ≈ ${gramsFromMeters.toFixed(1)} g`);
+
   const baseSale = numberValue("saleCost") + numberValue("saleHours") * numberValue("saleRate");
   const salePrice = baseSale * (1 + numberValue("saleMargin") / 100);
   setText("saleResult", `Precio recomendado: €${salePrice.toFixed(2)}`);
@@ -221,9 +289,23 @@ function updateCalculators() {
   const remaining = Math.max(numberValue("spoolCurrent") - numberValue("emptySpool"), 0);
   const pieces = numberValue("pieceWeight") > 0 ? remaining / numberValue("pieceWeight") : 0;
   setText("spoolResult", `${remaining.toFixed(0)} g restantes · ${Math.floor(pieces)} piezas aprox.`);
+
+  const hourlyMachine = numberValue("printerHours") > 0 ? numberValue("printerCost") / numberValue("printerHours") : 0;
+  const machinePiece = hourlyMachine * numberValue("machinePieceHours");
+  setText("machineResult", `Coste máquina: €${hourlyMachine.toFixed(2)}/h · Pieza: €${machinePiece.toFixed(2)}`);
 }
 
 document.querySelectorAll(".calc-card input").forEach((input) => input.addEventListener("input", updateCalculators));
+document.querySelectorAll(".calc-run").forEach((button) => button.addEventListener("click", updateCalculators));
+document.querySelectorAll(".calc-clear").forEach((button) => {
+  button.addEventListener("click", () => {
+    const form = button.closest(".calc-card");
+    form?.querySelectorAll("input").forEach((input) => {
+      input.value = "";
+    });
+    updateCalculators();
+  });
+});
 updateCalculators();
 
 const glossaryTerms = [
@@ -272,7 +354,7 @@ const glossaryTerms = [
 const glossaryGrid = document.getElementById("glossaryGrid");
 const glossarySearch = document.getElementById("glossarySearch");
 
-if (glossaryGrid) {
+if (glossaryGrid && glossaryGrid.children.length === 0) {
   glossaryTerms.forEach(([term, definition]) => {
     const item = document.createElement("article");
     item.className = "glossary-item";
@@ -286,5 +368,41 @@ glossarySearch?.addEventListener("input", () => {
   const query = glossarySearch.value.trim().toLowerCase();
   document.querySelectorAll(".glossary-item").forEach((item) => {
     item.classList.toggle("is-hidden", query !== "" && !item.dataset.search.includes(query));
+  });
+});
+
+const problemSearch = document.getElementById("problemSearch");
+problemSearch?.addEventListener("input", () => {
+  const query = problemSearch.value.trim().toLowerCase();
+  document.querySelectorAll(".problem-card").forEach((item) => {
+    const text = item.textContent.toLowerCase();
+    item.classList.toggle("is-hidden", query !== "" && !text.includes(query));
+  });
+});
+
+document.querySelectorAll(".copy-checklist").forEach((button) => {
+  button.addEventListener("click", async () => {
+    const card = button.closest(".checklist-copy");
+    const title = card?.querySelector("h3")?.textContent || "Checklist";
+    const items = [...(card?.querySelectorAll("label") || [])].map((label) => `- ${label.textContent.trim()}`);
+    await navigator.clipboard?.writeText(`${title}\n${items.join("\n")}`);
+    button.textContent = "Copiado";
+    setTimeout(() => {
+      button.textContent = "Copiar checklist";
+    }, 1400);
+  });
+});
+
+document.querySelectorAll(".copy-section").forEach((button) => {
+  button.addEventListener("click", async () => {
+    const section = button.closest(".content-section");
+    const heading = section?.querySelector("h2[id]");
+    if (!heading) return;
+    const url = `${location.origin}${location.pathname}#${heading.id}`;
+    await navigator.clipboard?.writeText(url);
+    button.textContent = "✓";
+    setTimeout(() => {
+      button.textContent = "#";
+    }, 1200);
   });
 });

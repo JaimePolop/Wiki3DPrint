@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secado de filamento y humedad | Printpedia 3D</title>
+    <meta name="description" content="Guía de humedad en filamentos: síntomas, secado de PLA, PETG, TPU, nylon, ABS, ASA y PC, dry box, desecante y almacenamiento." />
+    <meta property="og:title" content="Secado de filamento y humedad | Printpedia 3D" />
+    <meta property="og:description" content="Guía de humedad en filamentos: síntomas, secado de PLA, PETG, TPU, nylon, ABS, ASA y PC, dry box, desecante y almacenamiento." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/materiales/tpu-real.png" />
+    <meta name="theme-color" content="#050816" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-theme="dark">
+    <div class="site-bg" aria-hidden="true"><span class="orb orb-a"></span><span class="orb orb-b"></span><span class="orb orb-c"></span><span class="grid-glow"></span></div>
+    <header class="site-header" id="siteHeader">
+      <a class="brand" href="index.html" aria-label="Printpedia 3D inicio"><span class="brand-mark">P3D</span><span><strong>Printpedia 3D</strong><small>Academia maker</small></span></a>
+      <nav class="desktop-nav" aria-label="Navegación principal"><a href="index.html">Inicio</a><a href="aprender.html">Aprende</a><a href="fdm.html">FDM</a><a href="materiales.html" class="active">Materiales</a><a href="calibracion.html">Calibración</a><a href="problemas.html">Problemas</a><a href="mantenimiento.html">Mantenimiento</a><a href="herramientas.html">Herramientas</a><a href="guias.html">Guías</a><a href="resina.html">Resina</a><a href="diseno.html">Diseño</a><a href="seguridad.html">Seguridad</a><a href="calculadoras.html">Calculadoras</a><a href="glosario.html">Glosario</a></nav>
+      <div class="header-actions">
+        <label class="global-search hide-sm"><span>Buscar</span><input id="siteSearch" type="search" placeholder="Buscar guía..." autocomplete="off" /></label>
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Cambiar tema">◐</button>
+        <button class="icon-btn menu-btn" id="menuToggle" type="button" aria-label="Abrir menú">☰</button>
+      </div>
+      <nav class="mobile-nav" id="mobileNav" aria-label="Menú móvil"><a href="index.html">Inicio</a><a href="aprender.html">Aprende</a><a href="fdm.html">FDM</a><a href="materiales.html" class="active">Materiales</a><a href="calibracion.html">Calibración</a><a href="problemas.html">Problemas</a><a href="mantenimiento.html">Mantenimiento</a><a href="herramientas.html">Herramientas</a><a href="guias.html">Guías</a><a href="resina.html">Resina</a><a href="diseno.html">Diseño</a><a href="seguridad.html">Seguridad</a><a href="calculadoras.html">Calculadoras</a><a href="glosario.html">Glosario</a></nav>
+      <div class="search-results" id="searchResults" aria-live="polite"></div>
+    </header>
+    <main>
+      <section class="subhero section">
+        <div class="subhero-copy reveal">
+          <nav class="breadcrumbs"><a href="index.html">Inicio</a><span>/</span><span>Secado</span></nav>
+          <p class="badge">Secado</p>
+          <h1>Humedad y secado de filamento</h1>
+          <p class="hero-lead">La humedad es una causa invisible de stringing, burbujas, vapor, mala superficie y piezas débiles. Aprende a detectarla y controlarla.</p>
+          <div class="hero-actions"><a class="button button-primary" href="#contenido">Leer guía</a><a class="button button-ghost" href="problemas.html">Diagnosticar problema</a></div>
+        </div>
+        <figure class="subhero-media reveal"><img src="assets/materiales/tpu-real.png" alt="Humedad y secado de filamento" /><figcaption>Guía de humedad en filamentos: síntomas, secado de PLA, PETG, TPU, nylon, ABS, ASA y PC, dry box, desecante y almacenamiento.</figcaption></figure>
+      </section>
+      <section class="section page-content" id="contenido"><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="por-que-absorben-humedad">Por qué absorben humedad</h2><p>Muchos polímeros son higroscópicos: atraen agua del ambiente. Nylon, TPU, PETG y PC son especialmente sensibles. Al pasar por la boquilla, el agua se convierte en vapor y rompe la extrusión.</p></section><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="sintomas-de-filamento-humedo">Síntomas de filamento húmedo</h2><ul class="rich-list"><li>Stringing que no mejora con retracción.</li><li>Chasquidos, burbujas o sonido de vapor.</li><li>Superficie rugosa o mate irregular.</li><li>Capas débiles y mala adhesión.</li><li>Pegotes en PETG y TPU difícil de controlar.</li></ul></section><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="tabla-de-secado">Tabla de secado</h2><div class="table-wrap "><table><thead><tr><th>Material</th><th>Temperatura orientativa</th><th>Tiempo</th><th>Notas</th></tr></thead><tbody><tr><td>PLA</td><td>40-50 °C</td><td>4-6 h</td><td>No sobrecalentar: puede deformarse.</td></tr><tr><td>PETG</td><td>55-65 °C</td><td>4-8 h</td><td>Mejora hilos y superficie.</td></tr><tr><td>TPU</td><td>45-55 °C</td><td>4-8 h</td><td>Guardar en dry box.</td></tr><tr><td>Nylon</td><td>70-85 °C</td><td>8-12 h</td><td>Muy higroscópico.</td></tr><tr><td>ABS</td><td>65-75 °C</td><td>4-6 h</td><td>Ventilar.</td></tr><tr><td>ASA</td><td>70-80 °C</td><td>4-6 h</td><td>Ventilar.</td></tr><tr><td>PC</td><td>80-100 °C</td><td>6-12 h</td><td>Requiere control térmico.</td></tr></tbody></table></div></section><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="metodos-de-secado">Métodos de secado</h2><div class="info-grid"><div><h3>Secador de filamento</h3><p>La opción más cómoda y controlada para imprimir mientras se seca.</p></div><div><h3>Deshidratador</h3><p>Muy útil si controla temperatura y tiene ventilación estable.</p></div><div><h3>Horno</h3><p>Solo si es preciso; muchos hornos domésticos oscilan demasiado.</p></div><div><h3>Dry box</h3><p>Mantiene seco durante impresión y almacenamiento.</p></div></div></section><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="errores-peligrosos">Errores peligrosos</h2><div class="callout danger"><strong>Cuidado con hornos</strong><p>No metas bobinas en hornos sin verificar temperatura real. PLA y carretes pueden deformarse.</p></div><p>Bolsas al vacío y desecante ayudan a almacenar, pero no secan rápido un filamento ya saturado. Para largo plazo combina caja hermética, sílica regenerada y etiqueta de fecha.</p></section><section class="content-section reveal"><h2>Artículos relacionados</h2><div class="related-grid"><a class="related-card" href="materiales.html"><strong>Materiales</strong><span>Qué materiales absorben más humedad.</span></a><a class="related-card" href="problemas.html#filamento-humedo"><strong>Problemas</strong><span>Diagnostica síntomas relacionados.</span></a><a class="related-card" href="herramientas.html"><strong>Herramientas</strong><span>Secadores, cajas y desecante.</span></a></div></section></section>
+    </main>
+    <footer class="site-footer">
+      <div><a class="brand" href="index.html"><span class="brand-mark">P3D</span><span><strong>Printpedia 3D</strong><small>Impresión 3D visual</small></span></a><p>Plataforma educativa para aprender impresión 3D con criterio técnico, seguridad y resultados reales.</p></div>
+      <div><h3>Guías</h3><a href="aprender.html">Aprender</a><a href="fdm.html">FDM</a><a href="materiales.html">Materiales</a><a href="calibracion.html">Calibración</a></div>
+      <div><h3>Diagnóstico</h3><a href="problemas.html">Problemas</a><a href="mantenimiento.html">Mantenimiento</a><a href="seguridad.html">Seguridad</a><a href="glosario.html">Glosario</a></div>
+      <div><h3>Newsletter</h3><p>Recibe checklists, perfiles y guías nuevas.</p><form class="newsletter"><input type="email" placeholder="tu@email.com" /><button type="button">Enviar</button></form></div>
+      <p class="footer-bottom">© 2026 Printpedia 3D. Información educativa: revisa siempre el manual de tu máquina y trabaja con seguridad.</p>
+    </footer>
+    <button class="back-top" id="backTop" type="button" aria-label="Volver arriba">↑</button>
+    <script src="script.js"></script>
+  </body>
+</html>

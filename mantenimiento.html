@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mantenimiento de impresora 3D FDM | Printpedia 3D</title>
+    <meta name="description" content="Guía práctica de mantenimiento FDM: limpieza, cama, hotend, boquilla, PTFE, extrusor, correas, lubricación, electrónica, firmware y checklists." />
+    <meta property="og:title" content="Mantenimiento de impresora 3D FDM | Printpedia 3D" />
+    <meta property="og:description" content="Guía práctica de mantenimiento FDM: limpieza, cama, hotend, boquilla, PTFE, extrusor, correas, lubricación, electrónica, firmware y checklists." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/partes/hotend-real.png" />
+    <meta name="theme-color" content="#050816" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-theme="dark">
+    <div class="site-bg" aria-hidden="true"><span class="orb orb-a"></span><span class="orb orb-b"></span><span class="orb orb-c"></span><span class="grid-glow"></span></div>
+    <header class="site-header" id="siteHeader">
+      <a class="brand" href="index.html" aria-label="Printpedia 3D inicio"><span class="brand-mark">P3D</span><span><strong>Printpedia 3D</strong><small>Academia maker</small></span></a>
+      <nav class="desktop-nav" aria-label="Navegación principal"><a href="index.html">Inicio</a><a href="aprender.html">Aprende</a><a href="fdm.html">FDM</a><a href="materiales.html">Materiales</a><a href="calibracion.html">Calibración</a><a href="problemas.html">Problemas</a><a href="mantenimiento.html" class="active">Mantenimiento</a><a href="herramientas.html">Herramientas</a><a href="guias.html">Guías</a><a href="resina.html">Resina</a><a href="diseno.html">Diseño</a><a href="seguridad.html">Seguridad</a><a href="calculadoras.html">Calculadoras</a><a href="glosario.html">Glosario</a></nav>
+      <div class="header-actions">
+        <label class="global-search hide-sm"><span>Buscar</span><input id="siteSearch" type="search" placeholder="Buscar guía..." autocomplete="off" /></label>
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Cambiar tema">◐</button>
+        <button class="icon-btn menu-btn" id="menuToggle" type="button" aria-label="Abrir menú">☰</button>
+      </div>
+      <nav class="mobile-nav" id="mobileNav" aria-label="Menú móvil"><a href="index.html">Inicio</a><a href="aprender.html">Aprende</a><a href="fdm.html">FDM</a><a href="materiales.html">Materiales</a><a href="calibracion.html">Calibración</a><a href="problemas.html">Problemas</a><a href="mantenimiento.html" class="active">Mantenimiento</a><a href="herramientas.html">Herramientas</a><a href="guias.html">Guías</a><a href="resina.html">Resina</a><a href="diseno.html">Diseño</a><a href="seguridad.html">Seguridad</a><a href="calculadoras.html">Calculadoras</a><a href="glosario.html">Glosario</a></nav>
+      <div class="search-results" id="searchResults" aria-live="polite"></div>
+    </header>
+    <main>
+      <section class="subhero section">
+        <div class="subhero-copy reveal">
+          <nav class="breadcrumbs"><a href="index.html">Inicio</a><span>/</span><span>Mantenimiento</span></nav>
+          <p class="badge">Mantenimiento</p>
+          <h1>Mantenimiento completo de impresoras 3D</h1>
+          <p class="hero-lead">Una impresora estable no depende de suerte: depende de limpieza, revisión mecánica, piezas consumibles y señales de alerta.</p>
+          <div class="hero-actions"><a class="button button-primary" href="#contenido">Leer guía</a><a class="button button-ghost" href="problemas.html">Diagnosticar problema</a></div>
+        </div>
+        <figure class="subhero-media reveal"><img src="assets/partes/hotend-real.png" alt="Mantenimiento completo de impresoras 3D" /><figcaption>Guía práctica de mantenimiento FDM: limpieza, cama, hotend, boquilla, PTFE, extrusor, correas, lubricación, electrónica, firmware y checklists.</figcaption></figure>
+      </section>
+      <section class="section page-content" id="contenido"><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="introduccion">Introducción</h2><p>El mantenimiento evita fallos repetitivos. Una cama contaminada se parece a una mala nivelación; una boquilla gastada se parece a subextrusión; una correa floja se parece a un mal perfil.</p></section><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="cama-y-primera-capa">Cama y primera capa</h2><p>Limpia PEI con agua y jabón cuando IPA no baste. Vidrio tolera más limpieza, G10 necesita buena preparación, texturizada requiere no aplastar demasiado y adhesivos deben usarse con criterio.</p></section><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="extrusor-y-hotend">Extrusor y hotend</h2><p>Revisa boquilla, cold pull, cambio de boquilla en caliente con cuidado, tubo PTFE, engranaje, tensión del extrusor, E-steps y flujo. Los clics suelen indicar presión excesiva o atasco parcial.</p></section><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="movimiento-y-estructura">Movimiento y estructura</h2><p>Correas, poleas, motores, ruedas V-slot, tuercas excéntricas, varillas, guías lineales, husillos y tornillería definen la repetibilidad. No lubriques lo que no debe lubricarse y usa grasa adecuada donde sí aplica.</p></section><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="electronica-y-firmware">Electrónica y firmware</h2><p>Revisa cableado, conectores, fuente, ventiladores, termistores, cartucho calefactor, Marlin, Klipper y actualizaciones. Un conector caliente o ennegrecido es señal de parada inmediata.</p></section><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="tabla-de-frecuencia">Tabla de frecuencia</h2><div class="table-wrap "><table><thead><tr><th>Tarea</th><th>Frecuencia</th><th>Herramientas</th><th>Señales de alerta</th></tr></thead><tbody><tr><td>Limpiar cama</td><td>Antes de piezas críticas</td><td>IPA, jabón, paño</td><td>No adhiere</td></tr><tr><td>Revisar correas</td><td>Semanal</td><td>Llaves Allen</td><td>Layer shift o ringing</td></tr><tr><td>Limpiar extrusor</td><td>Semanal</td><td>Cepillo, pinzas</td><td>Clics</td></tr><tr><td>Boquilla/PTFE</td><td>Mensual o por síntoma</td><td>Llave, repuesto</td><td>Subextrusión</td></tr><tr><td>Lubricación</td><td>Mensual si aplica</td><td>Grasa adecuada</td><td>Ruido o roce</td></tr><tr><td>Cableado</td><td>Mensual</td><td>Inspección</td><td>Calor u olor</td></tr></tbody></table></div></section><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="checklists">Checklists</h2><div class="checklist-grid"><div class="check-card checklist-copy"><h3>Antes de imprimir</h3><label><input type="checkbox" /> Cama limpia</label><label><input type="checkbox" /> Filamento seco</label><label><input type="checkbox" /> Boquilla limpia</label><label><input type="checkbox" /> Z-offset correcto</label><label><input type="checkbox" /> Archivo correcto</label><label><input type="checkbox" /> Temperatura correcta</label><label><input type="checkbox" /> Sin cables sueltos</label><button class="button button-ghost copy-checklist" type="button">Copiar checklist</button></div><div class="check-card checklist-copy"><h3>Semanal</h3><label><input type="checkbox" /> Limpiar polvo</label><label><input type="checkbox" /> Revisar correas</label><label><input type="checkbox" /> Revisar ventiladores</label><label><input type="checkbox" /> Revisar tornillos</label><label><input type="checkbox" /> Revisar extrusor</label><label><input type="checkbox" /> Revisar cama</label><button class="button button-ghost copy-checklist" type="button">Copiar checklist</button></div><div class="check-card checklist-copy"><h3>Mensual/semestral</h3><label><input type="checkbox" /> Revisar boquilla</label><label><input type="checkbox" /> Revisar PTFE</label><label><input type="checkbox" /> Lubricar si aplica</label><label><input type="checkbox" /> Revisar ruedas</label><label><input type="checkbox" /> Revisar conectores</label><label><input type="checkbox" /> Test de impresión</label><button class="button button-ghost copy-checklist" type="button">Copiar checklist</button></div></div></section><section class="content-section reveal"><h2>Artículos relacionados</h2><div class="related-grid"><a class="related-card" href="materiales.html"><strong>Materiales</strong><span>Elige filamento según resistencia, temperatura y uso real.</span></a><a class="related-card" href="calibracion.html"><strong>Calibración</strong><span>Orden correcto para ajustar mecánica, primera capa y perfil.</span></a><a class="related-card" href="problemas.html"><strong>Problemas</strong><span>Diagnóstico visual para fallos frecuentes de FDM y resina.</span></a></div></section></section>
+    </main>
+    <footer class="site-footer">
+      <div><a class="brand" href="index.html"><span class="brand-mark">P3D</span><span><strong>Printpedia 3D</strong><small>Impresión 3D visual</small></span></a><p>Plataforma educativa para aprender impresión 3D con criterio técnico, seguridad y resultados reales.</p></div>
+      <div><h3>Guías</h3><a href="aprender.html">Aprender</a><a href="fdm.html">FDM</a><a href="materiales.html">Materiales</a><a href="calibracion.html">Calibración</a></div>
+      <div><h3>Diagnóstico</h3><a href="problemas.html">Problemas</a><a href="mantenimiento.html">Mantenimiento</a><a href="seguridad.html">Seguridad</a><a href="glosario.html">Glosario</a></div>
+      <div><h3>Newsletter</h3><p>Recibe checklists, perfiles y guías nuevas.</p><form class="newsletter"><input type="email" placeholder="tu@email.com" /><button type="button">Enviar</button></form></div>
+      <p class="footer-bottom">© 2026 Printpedia 3D. Información educativa: revisa siempre el manual de tu máquina y trabaja con seguridad.</p>
+    </footer>
+    <button class="back-top" id="backTop" type="button" aria-label="Volver arriba">↑</button>
+    <script src="script.js"></script>
+  </body>
+</html>

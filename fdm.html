@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Impresoras FDM: guía completa | Printpedia 3D</title>
+    <meta name="description" content="Guía completa de impresoras FDM/FFF: tipos, anatomía, hotend, extrusor, cama, movimiento, electrónica y consejos de compra." />
+    <meta property="og:title" content="Impresoras FDM: guía completa | Printpedia 3D" />
+    <meta property="og:description" content="Guía completa de impresoras FDM/FFF: tipos, anatomía, hotend, extrusor, cama, movimiento, electrónica y consejos de compra." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/impresoras/corexy-bambu-p1.jpg" />
+    <meta name="theme-color" content="#050816" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-theme="dark">
+    <div class="site-bg" aria-hidden="true"><span class="orb orb-a"></span><span class="orb orb-b"></span><span class="orb orb-c"></span><span class="grid-glow"></span></div>
+    <header class="site-header" id="siteHeader">
+      <a class="brand" href="index.html" aria-label="Printpedia 3D inicio"><span class="brand-mark">P3D</span><span><strong>Printpedia 3D</strong><small>Academia maker</small></span></a>
+      <nav class="desktop-nav" aria-label="Navegación principal"><a href="index.html">Inicio</a><a href="aprender.html">Aprende</a><a href="fdm.html" class="active">FDM</a><a href="materiales.html">Materiales</a><a href="calibracion.html">Calibración</a><a href="problemas.html">Problemas</a><a href="mantenimiento.html">Mantenimiento</a><a href="herramientas.html">Herramientas</a><a href="guias.html">Guías</a><a href="resina.html">Resina</a><a href="diseno.html">Diseño</a><a href="seguridad.html">Seguridad</a><a href="calculadoras.html">Calculadoras</a><a href="glosario.html">Glosario</a></nav>
+      <div class="header-actions">
+        <label class="global-search hide-sm"><span>Buscar</span><input id="siteSearch" type="search" placeholder="Buscar guía..." autocomplete="off" /></label>
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Cambiar tema">◐</button>
+        <button class="icon-btn menu-btn" id="menuToggle" type="button" aria-label="Abrir menú">☰</button>
+      </div>
+      <nav class="mobile-nav" id="mobileNav" aria-label="Menú móvil"><a href="index.html">Inicio</a><a href="aprender.html">Aprende</a><a href="fdm.html" class="active">FDM</a><a href="materiales.html">Materiales</a><a href="calibracion.html">Calibración</a><a href="problemas.html">Problemas</a><a href="mantenimiento.html">Mantenimiento</a><a href="herramientas.html">Herramientas</a><a href="guias.html">Guías</a><a href="resina.html">Resina</a><a href="diseno.html">Diseño</a><a href="seguridad.html">Seguridad</a><a href="calculadoras.html">Calculadoras</a><a href="glosario.html">Glosario</a></nav>
+      <div class="search-results" id="searchResults" aria-live="polite"></div>
+    </header>
+    <main>
+      <section class="subhero section">
+        <div class="subhero-copy reveal">
+          <nav class="breadcrumbs"><a href="index.html">Inicio</a><span>/</span><span>FDM</span></nav>
+          <p class="badge">FDM</p>
+          <h1>Impresoras FDM explicadas a fondo</h1>
+          <p class="hero-lead">Aprende qué partes forman una impresora FDM, qué diferencias hay entre diseños y cómo elegir una máquina para tu objetivo.</p>
+          <div class="hero-actions"><a class="button button-primary" href="#contenido">Leer guía</a><a class="button button-ghost" href="problemas.html">Diagnosticar problema</a></div>
+        </div>
+        <figure class="subhero-media reveal"><img src="assets/impresoras/corexy-bambu-p1.jpg" alt="Impresoras FDM explicadas a fondo" /><figcaption>Guía completa de impresoras FDM/FFF: tipos, anatomía, hotend, extrusor, cama, movimiento, electrónica y consejos de compra.</figcaption></figure>
+      </section>
+      <section class="section page-content" id="contenido"><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="que-es-fdm-fff">Qué es FDM/FFF</h2><p>FDM o FFF deposita filamento termoplástico fundido a través de una boquilla. La pieza se crea por capas y por eso la orientación afecta muchísimo a resistencia, acabado, soportes y tolerancias.</p></section><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="ventajas-y-limitaciones">Ventajas y limitaciones</h2><div class="info-grid"><div><h3>Ventajas</h3><p>Coste bajo, materiales variados, piezas grandes, reparación sencilla y excelente comunidad.</p></div><div><h3>Limitaciones</h3><p>Capas visibles, anisotropía, warping, soportes y dependencia fuerte de calibración.</p></div></div></section><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="tipos-de-impresoras-fdm">Tipos de impresoras FDM</h2><div class="table-wrap "><table><thead><tr><th>Diseño</th><th>Características</th><th>Ideal para</th><th>Cuidado</th></tr></thead><tbody><tr><td>Bedslinger</td><td>La cama se mueve en Y.</td><td>Bajo coste y aprendizaje.</td><td>Piezas altas pueden vibrar.</td></tr><tr><td>Cartesiana</td><td>Ejes separados X/Y/Z.</td><td>Sencilla de entender y mantener.</td><td>Puede ser menos rápida.</td></tr><tr><td>CoreXY</td><td>Cama suele moverse en Z y cabezal en XY.</td><td>Velocidad, cámara y precisión.</td><td>Más compleja de montar.</td></tr><tr><td>Delta</td><td>Tres torres y brazos.</td><td>Piezas altas y movimientos rápidos.</td><td>Calibración menos intuitiva.</td></tr><tr><td>IDEX</td><td>Dos cabezales independientes.</td><td>Duplicado, espejo y soportes solubles.</td><td>Precio y alineación.</td></tr></tbody></table></div></section><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="abierta-o-cerrada">Abierta o cerrada</h2><p>Una impresora abierta es cómoda para PLA, PETG y mantenimiento. Una cerrada ayuda con ABS, ASA, PC y nylon porque reduce corrientes y mantiene temperatura estable. Cerrar una máquina sin revisar electrónica puede ser mala idea si la fuente o placa quedan expuestas al calor.</p></section><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="anatomia-completa">Anatomía completa</h2><div class="spec-grid"><span>Marco</span><span>Cama caliente</span><span>PEI, vidrio, G10 y magnética</span><span>Hotend</span><span>Heat block</span><span>Heat break</span><span>Disipador</span><span>Cartucho calefactor</span><span>Termistor</span><span>Boquilla</span><span>Extrusor</span><span>Bowden</span><span>Direct drive</span><span>Tubo PTFE</span><span>Ventilador de capa</span><span>Ventilador de hotend</span><span>Motores</span><span>Correas</span><span>Poleas</span><span>Husillos</span><span>Guías lineales</span><span>Varillas</span><span>Ruedas V-slot</span><span>Placa base</span><span>Fuente</span><span>Sensores</span></div><p>Cada parte cumple una función concreta. Si hay subextrusión, no empieces por cambiar veinte parámetros: revisa boquilla, hotend, extrusor, ruta de filamento y temperatura real.</p></section><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="consejos-para-elegir-una-fdm">Consejos para elegir una FDM</h2><ul class="rich-list"><li>Para empezar: cama PEI, autolevel, extrusor fiable y comunidad activa.</li><li>Para ABS/ASA: cámara, hotend all-metal y buena ventilación.</li><li>Para TPU: direct drive y ruta de filamento corta.</li><li>Para velocidad: estructura rígida, input shaping y buen flujo volumétrico.</li></ul></section><section class="content-section reveal"><h2>Artículos relacionados</h2><div class="related-grid"><a class="related-card" href="materiales.html"><strong>Materiales</strong><span>Qué materiales encajan con cada máquina.</span></a><a class="related-card" href="mantenimiento.html"><strong>Mantenimiento</strong><span>Cómo mantener la mecánica estable.</span></a><a class="related-card" href="slicers.html"><strong>Slicers</strong><span>Cómo traducir el modelo en G-code.</span></a></div></section></section>
+    </main>
+    <footer class="site-footer">
+      <div><a class="brand" href="index.html"><span class="brand-mark">P3D</span><span><strong>Printpedia 3D</strong><small>Impresión 3D visual</small></span></a><p>Plataforma educativa para aprender impresión 3D con criterio técnico, seguridad y resultados reales.</p></div>
+      <div><h3>Guías</h3><a href="aprender.html">Aprender</a><a href="fdm.html">FDM</a><a href="materiales.html">Materiales</a><a href="calibracion.html">Calibración</a></div>
+      <div><h3>Diagnóstico</h3><a href="problemas.html">Problemas</a><a href="mantenimiento.html">Mantenimiento</a><a href="seguridad.html">Seguridad</a><a href="glosario.html">Glosario</a></div>
+      <div><h3>Newsletter</h3><p>Recibe checklists, perfiles y guías nuevas.</p><form class="newsletter"><input type="email" placeholder="tu@email.com" /><button type="button">Enviar</button></form></div>
+      <p class="footer-bottom">© 2026 Printpedia 3D. Información educativa: revisa siempre el manual de tu máquina y trabaja con seguridad.</p>
+    </footer>
+    <button class="back-top" id="backTop" type="button" aria-label="Volver arriba">↑</button>
+    <script src="script.js"></script>
+  </body>
+</html>
