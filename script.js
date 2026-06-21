@@ -1,291 +1,290 @@
 const body = document.body;
-const sidebar = document.getElementById("sidebar");
+const header = document.getElementById("siteHeader");
+const menuToggle = document.getElementById("menuToggle");
+const mobileNav = document.getElementById("mobileNav");
 const themeToggle = document.getElementById("themeToggle");
-const openSidebar = document.getElementById("openSidebar");
-const closeSidebar = document.getElementById("closeSidebar");
-const searchInputs = document.querySelectorAll("[data-search-input]");
-const navGroups = document.querySelectorAll("[data-group]");
-const searchableItems = document.querySelectorAll("[data-searchable]");
-const tableOfContents = document.getElementById("tableOfContents");
-const docRoot = document.querySelector("[data-doc]");
-const feedbackButtons = document.querySelectorAll(".feedback-button");
-const diagnosisButtons = document.querySelectorAll(".diagnosis-option");
-const diagnosisResult = document.getElementById("diagnosisResult");
+const backTop = document.getElementById("backTop");
 
-const savedTheme = localStorage.getItem("wiki3dprint-theme");
-if (savedTheme) {
-  body.dataset.theme = savedTheme;
-}
-syncThemeLabel();
+const savedTheme = localStorage.getItem("printpedia-theme");
+if (savedTheme) body.dataset.theme = savedTheme;
 
 themeToggle?.addEventListener("click", () => {
   body.dataset.theme = body.dataset.theme === "dark" ? "light" : "dark";
-  localStorage.setItem("wiki3dprint-theme", body.dataset.theme);
-  syncThemeLabel();
+  localStorage.setItem("printpedia-theme", body.dataset.theme);
 });
 
-function syncThemeLabel() {
-  if (!themeToggle) return;
-  themeToggle.textContent = body.dataset.theme === "dark" ? "Modo claro" : "Modo oscuro";
-}
-
-navGroups.forEach((group) => {
-  const button = group.querySelector(".nav-group-toggle");
-  if (!button) return;
-  const groupName = button.querySelector("span")?.textContent?.trim().toLowerCase();
-  const storageKey = groupName ? `wiki3dprint-nav-${groupName}` : null;
-  const savedState = storageKey ? localStorage.getItem(storageKey) : null;
-
-  if (savedState) {
-    button.setAttribute("aria-expanded", String(savedState === "expanded"));
-  }
-
-  if (button.getAttribute("aria-expanded") === "false") {
-    group.classList.add("is-collapsed");
-  }
-
-  button.addEventListener("click", () => {
-    const isExpanded = button.getAttribute("aria-expanded") === "true";
-    button.setAttribute("aria-expanded", String(!isExpanded));
-    group.classList.toggle("is-collapsed", isExpanded);
-    if (storageKey) {
-      localStorage.setItem(storageKey, isExpanded ? "collapsed" : "expanded");
-    }
-  });
+menuToggle?.addEventListener("click", () => {
+  mobileNav?.classList.toggle("is-open");
 });
 
-function applySearch(query) {
-  const term = query.trim().toLowerCase();
-
-  searchableItems.forEach((item) => {
-    const text = item.textContent.toLowerCase();
-    item.classList.toggle("search-match-hidden", term !== "" && !text.includes(term));
-  });
-
-  navGroups.forEach((group) => {
-    const visibleLink = [...group.querySelectorAll("[data-searchable]")].some(
-      (link) => !link.classList.contains("search-match-hidden")
-    );
-    group.classList.toggle("search-match-hidden", term !== "" && !visibleLink);
-  });
-}
-
-searchInputs.forEach((input) => {
-  input.addEventListener("input", (event) => {
-    const value = event.target.value;
-    searchInputs.forEach((other) => {
-      if (other !== input) other.value = value;
-    });
-    applySearch(value);
-  });
+document.querySelectorAll(".mobile-nav a").forEach((link) => {
+  link.addEventListener("click", () => mobileNav?.classList.remove("is-open"));
 });
 
-document.addEventListener("keydown", (event) => {
-  if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
-    event.preventDefault();
-    const primarySearch = document.querySelector("[data-search-input]");
-    primarySearch?.focus();
-  }
-});
+const onScroll = () => {
+  const scrolled = window.scrollY > 30;
+  header?.classList.toggle("is-scrolled", scrolled);
+  backTop?.classList.toggle("is-visible", window.scrollY > 700);
+};
 
-openSidebar?.addEventListener("click", () => {
-  sidebar?.classList.add("is-open");
-});
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll();
 
-closeSidebar?.addEventListener("click", () => {
-  sidebar?.classList.remove("is-open");
-});
+backTop?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
-document.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    sidebar?.classList.remove("is-open");
-  });
-});
+const revealItems = document.querySelectorAll(".reveal");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-function buildToc() {
-  if (!tableOfContents || !docRoot) return;
-
-  const headings = docRoot.querySelectorAll("section h2, section h3");
-  const links = [];
-
-  headings.forEach((heading) => {
-    if (heading.closest(".feature-row, .path-card")) return;
-    const section = heading.closest("section");
-    if (!section?.id) return;
-
-    const link = document.createElement("a");
-    link.href = `#${section.id}`;
-    link.textContent = heading.textContent;
-    link.className = heading.tagName === "H3" ? "toc-h3" : "toc-h2";
-    tableOfContents.appendChild(link);
-    links.push({ link, section });
-  });
-
-  const seenSections = [...new Set(links.map((item) => item.section))];
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        const match = links.find((item) => item.section === entry.target);
-        if (!match) return;
-        links.forEach((item) => item.link.classList.remove("is-active"));
-        match.link.classList.add("is-active");
-      });
-    },
-    { rootMargin: "-25% 0px -60% 0px", threshold: 0.1 }
-  );
-
-  seenSections.forEach((section) => observer.observe(section));
-}
-
-buildToc();
-
-function bindScrollEffects() {
-  const revealItems = document.querySelectorAll("[data-reveal]");
-  if (!revealItems.length) return;
-
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (prefersReducedMotion) {
-    revealItems.forEach((item) => item.classList.add("is-visible"));
-    return;
-  }
-
+if (prefersReducedMotion) {
+  revealItems.forEach((item) => item.classList.add("is-visible"));
+} else {
   const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          revealObserver.unobserve(entry.target);
-        }
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
       });
     },
-    { rootMargin: "0px 0px -12% 0px", threshold: 0.16 }
+    { threshold: 0.14, rootMargin: "0px 0px -10% 0px" }
   );
-
   revealItems.forEach((item) => revealObserver.observe(item));
-
-  const heroMedia = document.querySelector(".home-hero-media");
-  const processRailItems = document.querySelectorAll(".process-rail span");
-
-  const updateMotion = () => {
-    const scrollY = window.scrollY || window.pageYOffset;
-    if (heroMedia) {
-      heroMedia.style.transform = `translateY(${Math.min(scrollY * 0.12, 72)}px)`;
-    }
-
-    processRailItems.forEach((item, index) => {
-      const rect = item.getBoundingClientRect();
-      const centerOffset = (window.innerHeight / 2 - rect.top) / window.innerHeight;
-      const shift = Math.max(-18, Math.min(18, centerOffset * 32 + index * 2));
-      item.style.setProperty("--rail-shift", `${shift}px`);
-    });
-  };
-
-  updateMotion();
-  window.addEventListener("scroll", updateMotion, { passive: true });
-  window.addEventListener("resize", updateMotion);
 }
 
-bindScrollEffects();
-
-feedbackButtons.forEach((button) => {
+document.querySelectorAll('[data-filter-group="materials"] .chip').forEach((button) => {
   button.addEventListener("click", () => {
-    feedbackButtons.forEach((item) => item.classList.remove("is-current"));
-    button.classList.add("is-current");
+    const filter = button.dataset.filter;
+    document.querySelectorAll('[data-filter-group="materials"] .chip').forEach((item) => {
+      item.classList.toggle("active", item === button);
+    });
+
+    document.querySelectorAll(".material-card").forEach((card) => {
+      const types = card.dataset.type || "";
+      card.classList.toggle("is-hidden", filter !== "all" && !types.includes(filter));
+    });
   });
 });
 
-function bindCalculators() {
-  const calculatorIds = [
-    "costWeight",
-    "costSpoolPrice",
-    "costSpoolWeight",
-    "costPower",
-    "filamentVolume",
-    "filamentDensity",
-    "timeVolume",
-    "timeFlow",
-    "timeOverhead",
-    "gramsValue",
-    "gramsDiameter",
-    "gramsDensity",
-    "shrinkMaterial",
-    "shrinkDimension",
-    "flowWidth",
-    "flowHeight",
-    "flowMax",
-  ];
+const diagnosis = [
+  {
+    title: "La pieza se despega",
+    short: "Warping o mala adhesión",
+    probable: "Cama sucia, Z-offset alto, temperatura de cama baja o corrientes de aire.",
+    quick: "Lava la cama, ajusta Z-offset, añade brim y sube ligeramente la cama.",
+    advanced: "Usa cámara, adhesivo adecuado, superficie correcta y reduce ventilación inicial."
+  },
+  {
+    title: "Salen hilos",
+    short: "Stringing",
+    probable: "Filamento húmedo, temperatura alta o retracción mal ajustada.",
+    quick: "Baja 5-10 °C y seca el filamento.",
+    advanced: "Haz torre de retracción, ajusta velocidad de viaje y revisa pressure advance."
+  },
+  {
+    title: "No sale filamento",
+    short: "Atasco o extrusor saltando",
+    probable: "Boquilla obstruida, PTFE dañado, temperatura baja o engranaje lleno de polvo.",
+    quick: "Sube temperatura, limpia boquilla y revisa que el extrusor empuje.",
+    advanced: "Cold pull, cambio de boquilla, revisión de PTFE y calibración de tensión."
+  },
+  {
+    title: "Primera capa mal",
+    short: "Z-offset o nivelación",
+    probable: "Cama desnivelada, offset incorrecto o superficie contaminada.",
+    quick: "Repite nivelación y ajusta el Z en vivo.",
+    advanced: "Malla de cama, compensación térmica y prueba de primera capa completa."
+  },
+  {
+    title: "Capas se mueven",
+    short: "Layer shifting",
+    probable: "Correas flojas, poleas sueltas, aceleración alta o golpes mecánicos.",
+    quick: "Baja velocidad y revisa tensión de correas.",
+    advanced: "Aprieta poleas, revisa roces, corriente de motores e input shaping."
+  },
+  {
+    title: "Pieza débil",
+    short: "Mala adhesión entre capas",
+    probable: "Temperatura baja, ventilador alto, pocas paredes o mala orientación.",
+    quick: "Sube temperatura y aumenta paredes.",
+    advanced: "Rediseña orientación de capas y usa material más adecuado."
+  },
+  {
+    title: "Marcas en superficie",
+    short: "Ghosting, blobs o costura",
+    probable: "Vibración, presión mal compensada, humedad o costura visible.",
+    quick: "Baja aceleración y seca filamento.",
+    advanced: "Configura input shaping, pressure advance y posición de costura."
+  },
+  {
+    title: "Soportes muy pegados",
+    short: "Interfaz demasiado agresiva",
+    probable: "Distancia Z baja, densidad alta o patrón inadecuado.",
+    quick: "Aumenta distancia Z de soporte.",
+    advanced: "Usa soportes árbol, interfaz controlada o material soluble."
+  },
+  {
+    title: "Boquilla hace clics",
+    short: "Presión excesiva",
+    probable: "Atasco parcial, velocidad alta, temperatura baja o retracción excesiva.",
+    quick: "Sube temperatura y baja velocidad.",
+    advanced: "Limpia hotend, revisa extrusor y calibra flujo."
+  },
+  {
+    title: "Burbujas o vapor",
+    short: "Filamento húmedo",
+    probable: "El material absorbió humedad, especialmente PETG, TPU, nylon o PC.",
+    quick: "Seca la bobina.",
+    advanced: "Guarda en caja hermética con desecante e imprime desde drybox."
+  },
+  {
+    title: "Esquinas levantadas",
+    short: "Contracción térmica",
+    probable: "Material técnico, cama fría o ventilación excesiva.",
+    quick: "Añade brim y reduce ventilador.",
+    advanced: "Cámara cerrada, ASA/ABS bien ventilado y control térmico."
+  },
+  {
+    title: "La pieza no encaja",
+    short: "Tolerancias o flujo",
+    probable: "Agujeros pequeños, sobreextrusión o contracción del material.",
+    quick: "Añade holgura de 0.2-0.4 mm.",
+    advanced: "Calibra flujo, expansion horizontal y crea test de tolerancias."
+  }
+];
 
-  const hasAnyCalculator = calculatorIds.some((id) => document.getElementById(id));
-  if (!hasAnyCalculator) return;
+const diagnosisGrid = document.getElementById("diagnosisGrid");
+const diagnosisResult = document.getElementById("diagnosisResult");
 
-  const get = (id) => Number(document.getElementById(id)?.value || 0);
-
-  const update = () => {
-    const spoolWeight = get("costSpoolWeight");
-    const materialCost = spoolWeight > 0 ? (get("costWeight") / spoolWeight) * get("costSpoolPrice") : 0;
-    const totalCost = materialCost + get("costPower");
-    const costResult = document.getElementById("costResult");
-    if (costResult) costResult.textContent = `€${totalCost.toFixed(2)}`;
-
-    const filamentResult = document.getElementById("filamentResult");
-    if (filamentResult) filamentResult.textContent = `${(get("filamentVolume") * get("filamentDensity")).toFixed(1)} g`;
-
-    const flow = get("timeFlow");
-    const baseSeconds = flow > 0 ? get("timeVolume") / flow : 0;
-    const withOverhead = baseSeconds * (1 + get("timeOverhead") / 100);
-    const hours = Math.floor(withOverhead / 3600);
-    const minutes = Math.round((withOverhead % 3600) / 60);
-    const timeResult = document.getElementById("timeResult");
-    if (timeResult) timeResult.textContent = `${hours} h ${minutes} min`;
-
-    const diameter = get("gramsDiameter");
-    const density = get("gramsDensity");
-    const area = Math.PI * Math.pow(diameter / 2, 2);
-    const volumeMm3 = density > 0 ? (get("gramsValue") / density) * 1000 : 0;
-    const meters = area > 0 ? volumeMm3 / area / 1000 : 0;
-    const gramsResult = document.getElementById("gramsResult");
-    if (gramsResult) gramsResult.textContent = `${meters.toFixed(1)} m`;
-
-    const shrinkResult = document.getElementById("shrinkResult");
-    if (shrinkResult) shrinkResult.textContent = `${(get("shrinkDimension") * (1 + get("shrinkMaterial"))).toFixed(2)} mm`;
-
-    const sectionArea = get("flowWidth") * get("flowHeight");
-    const maxSpeed = sectionArea > 0 ? get("flowMax") / sectionArea : 0;
-    const flowResult = document.getElementById("flowResult");
-    if (flowResult) flowResult.textContent = `${maxSpeed.toFixed(1)} mm/s`;
-  };
-
-  calculatorIds.forEach((id) => {
-    document.getElementById(id)?.addEventListener("input", update);
+if (diagnosisGrid) {
+  diagnosis.forEach((item, index) => {
+    const button = document.createElement("button");
+    button.className = "diagnosis-card";
+    button.type = "button";
+    button.innerHTML = `<strong>${item.title}</strong><span>${item.short}</span>`;
+    button.addEventListener("click", () => {
+      document.querySelectorAll(".diagnosis-card").forEach((card) => card.classList.remove("active"));
+      button.classList.add("active");
+      if (diagnosisResult) {
+        diagnosisResult.innerHTML = `
+          <strong>${item.short}</strong>
+          <p><b>Problema probable:</b> ${item.probable}</p>
+          <p><b>Solución rápida:</b> ${item.quick}</p>
+          <p><b>Solución avanzada:</b> ${item.advanced}</p>
+        `;
+      }
+    });
+    diagnosisGrid.appendChild(button);
+    if (index === 0) button.click();
   });
-
-  update();
 }
 
-bindCalculators();
-
-const diagnosisMap = {
-  despega:
-    "Empieza por cama, Z-offset, limpieza y corrientes de aire. Si se levantan solo las esquinas, la prioridad es warping, no la extrusión.",
-  hilos:
-    "Revisa secado del filamento, temperatura de boquilla y retracción. En PETG o TPU, un filamento húmedo suele ser más importante que la retracción pura.",
-  capas:
-    "Inspecciona correas, poleas, ruedas, aceleraciones y roces mecánicos. Si el salto ocurre siempre a la misma altura, busca interferencias físicas.",
-  debil:
-    "Comprueba temperatura insuficiente, poco flujo, ventilación excesiva, baja densidad de pared y mala orientación de la pieza.",
-  "no-extruye":
-    "Prioridad: nozzle atascado, engranaje del extrusor, PTFE deformado, temperatura real y estado del filamento antes de tocar el slicer.",
-  "primera-capa":
-    "La ruta corta es limpiar la superficie, verificar nivelación, corregir Z-offset y observar el patrón de línea durante los primeros minutos."
+const numberValue = (id) => Number(document.getElementById(id)?.value || 0);
+const setText = (id, value) => {
+  const element = document.getElementById(id);
+  if (element) element.innerHTML = value;
 };
 
-diagnosisButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    diagnosisButtons.forEach((item) => item.classList.remove("is-current"));
-    button.classList.add("is-current");
-    if (diagnosisResult) {
-      diagnosisResult.textContent = diagnosisMap[button.dataset.diagnosis] || "Problema no reconocido.";
-    }
+function updateCalculators() {
+  const gramsUsed = numberValue("gramsUsed");
+  const spoolPrice = numberValue("spoolPrice");
+  const spoolWeight = numberValue("spoolWeight");
+  const printHours = numberValue("printHours");
+  const powerKw = numberValue("powerKw");
+  const kwhPrice = numberValue("kwhPrice");
+  const materialCost = spoolWeight > 0 ? (gramsUsed / spoolWeight) * spoolPrice : 0;
+  const electricCost = printHours * powerKw * kwhPrice;
+  setText(
+    "costResult",
+    `Material: €${materialCost.toFixed(2)}<br />Electricidad: €${electricCost.toFixed(2)}<br />Total estimado: €${(materialCost + electricCost).toFixed(2)}`
+  );
+
+  const grams = numberValue("gmGrams");
+  const diameter = numberValue("gmDiameter");
+  const density = numberValue("gmDensity");
+  const area = Math.PI * Math.pow(diameter / 2, 2);
+  const volumeMm3 = density > 0 ? (grams / density) * 1000 : 0;
+  const meters = area > 0 ? volumeMm3 / area / 1000 : 0;
+  setText("gramsMetersResult", `${grams.toFixed(1)} g ≈ ${meters.toFixed(1)} m`);
+
+  const baseSale = numberValue("saleCost") + numberValue("saleHours") * numberValue("saleRate");
+  const salePrice = baseSale * (1 + numberValue("saleMargin") / 100);
+  setText("saleResult", `Precio recomendado: €${salePrice.toFixed(2)}`);
+
+  const volumetric = numberValue("lineWidth") * numberValue("layerHeight") * numberValue("printSpeed");
+  setText("volumetricResult", `${volumetric.toFixed(2)} mm³/s`);
+
+  const requested = numberValue("estepsRequested");
+  const actual = numberValue("estepsActual");
+  const newEsteps = actual > 0 ? numberValue("estepsCurrent") * (requested / actual) : 0;
+  setText("estepsResult", `Nuevo valor: ${newEsteps.toFixed(2)} E-steps/mm`);
+
+  const remaining = Math.max(numberValue("spoolCurrent") - numberValue("emptySpool"), 0);
+  const pieces = numberValue("pieceWeight") > 0 ? remaining / numberValue("pieceWeight") : 0;
+  setText("spoolResult", `${remaining.toFixed(0)} g restantes · ${Math.floor(pieces)} piezas aprox.`);
+}
+
+document.querySelectorAll(".calc-card input").forEach((input) => input.addEventListener("input", updateCalculators));
+updateCalculators();
+
+const glossaryTerms = [
+  ["FDM", "Fabricación por deposición de material fundido capa a capa."],
+  ["FFF", "Nombre abierto equivalente a FDM."],
+  ["SLA", "Resina curada con láser o luz capa a capa."],
+  ["MSLA", "Resina curada mediante pantalla LCD y matriz LED."],
+  ["DLP", "Resina curada por proyección de luz."],
+  ["STL", "Formato de malla 3D muy usado."],
+  ["3MF", "Formato moderno que guarda más información que STL."],
+  ["G-code", "Instrucciones que ejecuta la impresora."],
+  ["Slicer", "Programa que convierte un modelo en G-code."],
+  ["Hotend", "Conjunto que funde el filamento."],
+  ["Extrusor", "Sistema que empuja el filamento."],
+  ["Bowden", "Extrusor separado del hotend por tubo PTFE."],
+  ["Direct drive", "Extrusor montado cerca del hotend."],
+  ["Nozzle", "Boquilla por donde sale el plástico fundido."],
+  ["PEI", "Superficie de impresión con buena adhesión."],
+  ["Z-offset", "Distancia entre boquilla y cama en primera capa."],
+  ["Retraction", "Retirada de filamento para reducir hilos."],
+  ["Flow", "Porcentaje de material extruido."],
+  ["E-steps", "Pasos del motor para extruir una longitud concreta."],
+  ["Infill", "Relleno interior de la pieza."],
+  ["Perimeters", "Paredes exteriores de la pieza."],
+  ["Brim", "Ala de adhesión alrededor de la pieza."],
+  ["Skirt", "Línea previa para purgar filamento."],
+  ["Raft", "Base completa bajo la pieza."],
+  ["Support", "Estructura temporal para voladizos."],
+  ["Warping", "Levantamiento por contracción térmica."],
+  ["Stringing", "Hilos finos entre movimientos."],
+  ["Ghosting", "Ondas por vibración tras esquinas."],
+  ["Ringing", "Patrón de vibración en la superficie."],
+  ["Layer shifting", "Desplazamiento de capas."],
+  ["Heat creep", "Calor subiendo por el disipador y ablandando filamento."],
+  ["PID", "Control de temperatura del hotend o cama."],
+  ["Pressure advance", "Compensación de presión en extrusión."],
+  ["Input shaping", "Compensación de resonancias."],
+  ["Klipper", "Firmware avanzado orientado a rendimiento."],
+  ["Marlin", "Firmware clásico y muy extendido."],
+  ["FEP", "Lámina transparente del tanque de resina."],
+  ["VAT", "Tanque donde se coloca la resina."],
+  ["Cure", "Curado UV de piezas de resina."],
+  ["Wash", "Lavado de piezas de resina antes del curado."]
+];
+
+const glossaryGrid = document.getElementById("glossaryGrid");
+const glossarySearch = document.getElementById("glossarySearch");
+
+if (glossaryGrid) {
+  glossaryTerms.forEach(([term, definition]) => {
+    const item = document.createElement("article");
+    item.className = "glossary-item";
+    item.dataset.search = `${term} ${definition}`.toLowerCase();
+    item.innerHTML = `<strong>${term}</strong><span>${definition}</span>`;
+    glossaryGrid.appendChild(item);
+  });
+}
+
+glossarySearch?.addEventListener("input", () => {
+  const query = glossarySearch.value.trim().toLowerCase();
+  document.querySelectorAll(".glossary-item").forEach((item) => {
+    item.classList.toggle("is-hidden", query !== "" && !item.dataset.search.includes(query));
   });
 });
