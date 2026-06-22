@@ -33,8 +33,14 @@ document.querySelectorAll(".desktop-nav").forEach((nav) => {
         ["Aprende desde cero", "aprender.html"],
         ["Impresoras FDM", "fdm.html"],
         ["Materiales", "materiales.html"],
-        ["Resina", "resina.html"],
-        ["Diseño 3D", "diseno.html"]
+        ["Resina", "resina.html"]
+      ]
+    },
+    {
+      label: "Diseño",
+      items: [
+        ["Diseño 3D", "diseno.html"],
+        ["Slicers", "slicers.html"]
       ]
     },
     {
@@ -53,8 +59,7 @@ document.querySelectorAll(".desktop-nav").forEach((nav) => {
         ["Guías", "guias.html"],
         ["Calculadoras", "calculadoras.html"],
         ["Glosario", "glosario.html"],
-        ["Secado de filamento", "secado-filamento.html"],
-        ["Slicers", "slicers.html"]
+        ["Secado de filamento", "secado-filamento.html"]
       ]
     }
   ];
