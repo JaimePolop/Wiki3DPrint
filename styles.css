@@ -177,18 +177,18 @@ body[data-theme="light"] .site-header.is-scrolled {
   flex: 1 1 auto;
   display: flex;
   justify-content: center;
-  gap: 5px;
+  gap: 8px;
   min-width: 0;
-  padding: 0 6px;
+  padding: 0 10px;
   overflow: visible;
 }
 
 .desktop-nav a,
 .mobile-nav a {
-  padding: 8px 10px;
+  padding: 10px 13px;
   border-radius: 999px;
   color: var(--muted);
-  font-size: 0.84rem;
+  font-size: 0.96rem;
   font-weight: 800;
   transition: color 0.2s ease, background 0.2s ease;
   white-space: nowrap;
@@ -200,10 +200,10 @@ body[data-theme="light"] .site-header.is-scrolled {
 
 .nav-group-menu summary {
   list-style: none;
-  padding: 8px 10px;
+  padding: 10px 13px;
   border-radius: 999px;
   color: var(--muted);
-  font-size: 0.84rem;
+  font-size: 0.96rem;
   font-weight: 900;
   cursor: pointer;
   user-select: none;
@@ -249,6 +249,7 @@ body[data-theme="light"] .site-header.is-scrolled {
   display: block;
   padding: 11px 12px;
   border-radius: 12px;
+  font-size: 0.92rem;
 }
 
 .desktop-nav a:hover,
@@ -739,10 +740,24 @@ body[data-theme="light"] .float-card {
 
 .route-card {
   display: grid;
-  grid-template-columns: 110px 260px minmax(0, 1fr);
+  grid-template-columns: 110px minmax(210px, 280px) minmax(0, 1fr) auto;
   align-items: center;
   gap: 22px;
   padding: 22px;
+}
+
+.route-card h3,
+.route-card p {
+  margin: 0;
+}
+
+.route-card .button {
+  min-width: 150px;
+  justify-self: end;
+  background:
+    linear-gradient(135deg, rgba(56, 189, 248, 0.16), rgba(139, 92, 246, 0.18)),
+    rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
 .route-card span,
@@ -1101,6 +1116,7 @@ body[data-theme="light"] .calc-card output {
     var(--card);
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
+  margin-bottom: 38px;
 }
 
 .final-cta > div {
@@ -1114,7 +1130,7 @@ body[data-theme="light"] .calc-card output {
 
 .site-footer {
   width: min(1320px, calc(100% - 36px));
-  margin: 0 auto 28px;
+  margin: 0 auto 32px;
   display: grid;
   grid-template-columns: 1.35fr 0.7fr 0.7fr 1fr;
   gap: 26px;
@@ -1196,12 +1212,12 @@ body[data-theme="light"] .calc-card output {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0;
-  width: 46px;
+  justify-content: flex-start;
+  gap: 8px;
+  width: 218px;
   height: 46px;
-  min-width: 46px;
-  padding: 0;
+  min-width: 170px;
+  padding: 8px 13px;
   border: 1px solid var(--line);
   border-radius: 999px;
   color: var(--muted);
@@ -1212,10 +1228,7 @@ body[data-theme="light"] .calc-card output {
 }
 
 .global-search:focus-within {
-  width: 260px;
-  justify-content: flex-start;
-  gap: 8px;
-  padding: 8px 12px;
+  width: 270px;
   border-color: rgba(56, 189, 248, 0.38);
   background: rgba(255, 255, 255, 0.08);
 }
@@ -1234,18 +1247,18 @@ body[data-theme="light"] .calc-card output {
 }
 
 .global-search input {
-  width: 0;
+  width: 155px;
   border: 0;
   outline: 0;
   color: var(--text);
   background: transparent;
-  opacity: 0;
-  pointer-events: none;
+  opacity: 1;
+  pointer-events: auto;
   transition: width 0.24s ease, opacity 0.18s ease;
 }
 
 .global-search:focus-within input {
-  width: 190px;
+  width: 205px;
   opacity: 1;
   pointer-events: auto;
 }
@@ -1691,6 +1704,11 @@ body[data-theme="light"] .calc-card output {
   .route-card {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+
+  .route-card .button {
+    justify-self: start;
+    margin-top: 8px;
   }
 
   .split-section,
