@@ -2243,6 +2243,319 @@ body[data-theme="light"] .float-card {
   50% { transform: translateX(84px); }
 }
 
+.print-sim-story {
+  min-height: 560vh;
+  --sim-cyan: #38bdf8;
+  --sim-violet: #8b5cf6;
+  --sim-pink: #ec4899;
+  --sim-green: #22c55e;
+  background:
+    radial-gradient(circle at 14% 12%, rgba(56, 189, 248, 0.18), transparent 30%),
+    radial-gradient(circle at 88% 18%, rgba(139, 92, 246, 0.18), transparent 32%),
+    radial-gradient(circle at 44% 96%, rgba(236, 72, 153, 0.14), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.025)),
+    var(--card);
+}
+
+.print-sim-story .flow-story-intro h2 {
+  max-width: 980px;
+}
+
+.print-sim-story .flow-sticky-stage {
+  grid-template-columns: 54px minmax(290px, 0.52fr) minmax(0, 1.48fr);
+  min-height: calc(100vh - 118px);
+}
+
+.print-sim-story .flow-copy-stack {
+  min-height: 520px;
+}
+
+.print-sim-story .flow-copy h3 {
+  font-size: clamp(1.75rem, 2.15vw, 2.8rem);
+}
+
+.print-sim-story .flow-copy p {
+  font-size: 0.98rem;
+}
+
+.print-sim-story .flow-copy ul {
+  grid-template-columns: 1fr;
+}
+
+.print-sim-story .flow-rail-fill {
+  height: var(--flow-percent, 0%);
+}
+
+.print-sim-story .flow-visual-stage {
+  min-height: 640px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 42% 24%, rgba(56, 189, 248, 0.2), transparent 32%),
+    radial-gradient(circle at 82% 76%, rgba(236, 72, 153, 0.15), transparent 34%),
+    rgba(3, 7, 18, 0.86);
+  background-size: 36px 36px, 36px 36px, auto, auto, auto;
+}
+
+.print-sim-story .flow-visual-stage::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 48% 48%, rgba(56, 189, 248, 0.12), transparent 36%),
+    linear-gradient(180deg, rgba(255,255,255,0.045), transparent);
+  pointer-events: none;
+}
+
+.flow-print-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.flow-phase-tabs {
+  position: absolute;
+  z-index: 9;
+  left: 22px;
+  top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: min(580px, calc(100% - 420px));
+}
+
+.flow-phase-tabs button {
+  min-height: 34px;
+  padding: 8px 11px;
+  border: 1px solid rgba(56, 189, 248, 0.26);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.86);
+  background: rgba(5, 8, 22, 0.62);
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 900;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.flow-phase-tabs button:hover,
+.flow-phase-tabs button.is-active,
+.flow-phase-tabs button[aria-current="step"] {
+  transform: translateY(-2px);
+  border-color: rgba(34, 197, 94, 0.48);
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.22), rgba(139, 92, 246, 0.2));
+}
+
+.print-sim-story .flow-hud-main {
+  z-index: 10;
+  top: 20px;
+  right: 20px;
+  width: min(390px, calc(100% - 40px));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  background: rgba(2, 6, 23, 0.78);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.print-sim-story .flow-hud span {
+  min-width: 0;
+  font-size: 0.66rem;
+}
+
+.print-sim-story .flow-hud strong {
+  font-size: clamp(0.76rem, 1.1vw, 0.95rem);
+  white-space: nowrap;
+}
+
+.flow-status-panel {
+  position: absolute;
+  z-index: 10;
+  left: 24px;
+  bottom: 24px;
+  width: min(360px, calc(100% - 48px));
+  padding: 14px;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 18px;
+  background: rgba(2, 6, 23, 0.76);
+  backdrop-filter: blur(14px);
+}
+
+.flow-status-panel span {
+  display: block;
+  margin-bottom: 10px;
+  color: white;
+  font-size: 0.84rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.flow-status-panel i {
+  display: block;
+  height: 8px;
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, var(--sim-cyan), var(--sim-violet), var(--sim-pink)) 0 0 / var(--flow-percent, 0%) 100% no-repeat,
+    rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 22px rgba(56, 189, 248, 0.22);
+}
+
+.flow-hotend-hit,
+.flow-bed-hit {
+  position: absolute;
+  z-index: 11;
+  border-radius: 999px;
+}
+
+.flow-hotend-hit {
+  left: 45%;
+  top: 31%;
+  width: 100px;
+  height: 110px;
+}
+
+.flow-bed-hit {
+  left: 17%;
+  right: 12%;
+  bottom: 13%;
+  height: 34%;
+  border-radius: 30px;
+}
+
+.print-sim-story .first-layer-lab {
+  z-index: 8;
+  left: 50%;
+  right: auto;
+  bottom: 24px;
+  width: min(460px, calc(100% - 48px));
+  transform: translateX(-50%) translateY(24px);
+  pointer-events: none;
+}
+
+.print-sim-story .first-layer-lab span {
+  min-height: 74px;
+  font-size: 0.78rem;
+}
+
+.print-sim-story[data-flow-step="3"] .first-layer-lab {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.print-sim-story[data-flow-step="5"] .first-layer-lab {
+  opacity: 0;
+  transform: translateX(-50%) translateY(24px);
+}
+
+.print-sim-story[data-flow-step="0"] .flow-status-panel,
+.print-sim-story[data-flow-step="1"] .flow-status-panel,
+.print-sim-story[data-flow-step="2"] .flow-status-panel,
+.print-sim-story[data-flow-step="3"] .flow-status-panel,
+.print-sim-story[data-flow-step="4"] .flow-status-panel,
+.print-sim-story[data-flow-step="5"] .flow-status-panel {
+  opacity: 1;
+}
+
+.print-sim-story .flow-diagnostics {
+  z-index: 9;
+  inset: auto 24px 96px auto;
+  width: min(390px, calc(100% - 48px));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  opacity: 0;
+  pointer-events: none;
+}
+
+.print-sim-story .flow-diagnostics button {
+  padding: 10px 12px;
+  background: rgba(2, 6, 23, 0.72);
+  backdrop-filter: blur(12px);
+}
+
+.print-sim-story[data-flow-step="5"] .flow-diagnostics,
+.print-sim-story[data-flow-step="5"] .flow-final-cta {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.print-sim-story .flow-final-cta {
+  z-index: 12;
+  right: 24px;
+  bottom: 24px;
+}
+
+.print-sim-story .flow-final-cta a {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.22), rgba(236, 72, 153, 0.2));
+  backdrop-filter: blur(12px);
+}
+
+@media (max-width: 1120px) {
+  .print-sim-story {
+    min-height: auto;
+  }
+
+  .print-sim-story .flow-sticky-stage {
+    grid-template-columns: 1fr;
+  }
+
+  .print-sim-story .flow-progress-rail {
+    display: none;
+  }
+
+  .print-sim-story .flow-visual-stage {
+    min-height: 560px;
+    order: -1;
+  }
+
+  .flow-phase-tabs {
+    max-width: calc(100% - 40px);
+    right: 20px;
+  }
+
+  .print-sim-story .flow-hud-main {
+    top: auto;
+    bottom: 86px;
+    left: 20px;
+    right: 20px;
+    width: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .print-sim-story .flow-visual-stage {
+    min-height: 480px;
+  }
+
+  .flow-phase-tabs {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    padding: 14px;
+    max-width: none;
+  }
+
+  .print-sim-story .flow-hud-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    bottom: 68px;
+    padding: 12px;
+  }
+
+  .flow-status-panel {
+    bottom: 12px;
+  }
+
+  .print-sim-story .first-layer-lab,
+  .print-sim-story .flow-diagnostics,
+  .print-sim-story .flow-final-cta {
+    display: none;
+  }
+}
+
 .printer-map {
   position: relative;
   min-height: 420px;
