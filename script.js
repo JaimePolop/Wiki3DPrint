@@ -134,6 +134,35 @@ if (prefersReducedMotion) {
   revealItems.forEach((item) => revealObserver.observe(item));
 }
 
+document.querySelectorAll(".first-piece-scroll").forEach((section) => {
+  const steps = [...section.querySelectorAll(".piece-step")];
+  if (!steps.length) return;
+
+  const setPieceStage = (activeStep) => {
+    const index = Number(activeStep.dataset.pieceStep || 0);
+    section.dataset.pieceStage = String(index);
+    section.style.setProperty("--piece-stage", index);
+    section.style.setProperty("--piece-progress", `${((index + 1) / steps.length) * 100}%`);
+    steps.forEach((step) => step.classList.toggle("is-active", step === activeStep));
+  };
+
+  setPieceStage(steps[0]);
+
+  if (prefersReducedMotion) return;
+
+  const pieceObserver = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible) setPieceStage(visible.target);
+    },
+    { threshold: [0.25, 0.45, 0.65], rootMargin: "-18% 0px -28% 0px" }
+  );
+
+  steps.forEach((step) => pieceObserver.observe(step));
+});
+
 document.querySelectorAll('[data-filter-group="materials"] .chip').forEach((button) => {
   button.addEventListener("click", () => {
     const filter = button.dataset.filter;
@@ -169,7 +198,7 @@ bindFilterGroup("glossary", ".glossary-item");
 
 const siteIndex = [
   ["Inicio", "index.html", "Portada, rutas, diagnóstico rápido y recursos destacados."],
-  ["Aprende", "aprender.html", "Qué es impresión 3D, tecnologías, flujo, Benchy y primera impresión."],
+  ["Aprende", "aprender.html", "Mi primera pieza, flujo de trabajo, tecnologías, Benchy y primera impresión."],
   ["FDM", "fdm.html", "Impresoras FDM, anatomía, hotend, extrusor, cama, movimiento y electrónica."],
   ["Materiales", "materiales.html", "PLA, PETG, ABS, ASA, TPU, nylon, PC, resinas y abrasivos."],
   ["Secado", "secado-filamento.html", "Humedad, stringing, burbujas, secador, dry box y almacenamiento."],

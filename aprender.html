@@ -69,105 +69,90 @@
       </section>
 
       <section class="section page-content" id="contenido">
-        <section class="content-section reveal">
+        <section class="content-section reveal first-piece-scroll" data-piece-stage="0">
           <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
-          <h2 id="que-es-la-impresion-3d">Qué es la impresión 3D</h2>
+          <p class="badge">START</p>
+          <h2 id="flujo-completo">Mi primera pieza: del diseño al objeto real</h2>
           <p>
-            La impresión 3D es una forma de fabricación aditiva: crea objetos añadiendo material
-            capa a capa a partir de un modelo digital. En una impresora FDM el material suele ser
-            filamento plástico; en una impresora de resina se cura un líquido fotosensible con luz.
+            Esta sección sigue el recorrido completo de una impresión. Al bajar, cada paso activa una parte
+            de la escena: primero aparece el diseño, después el slicer corta el modelo, se genera el G-code,
+            la impresora prepara la primera capa y finalmente la pieza sale terminada.
           </p>
-          <p>
-            Lo importante es entender que la impresora no “sabe” fabricar una pieza por sí sola.
-            Necesita un archivo 3D, un programa que lo convierta en instrucciones y una máquina
-            calibrada para ejecutar esas instrucciones con un material concreto.
-          </p>
-          <div class="info-grid">
-            <div>
-              <h3>Modelo 3D</h3>
-              <p>Es la geometría de la pieza. Puede venir de diseño propio, escaneo o repositorios de modelos.</p>
-            </div>
-            <div>
-              <h3>Material</h3>
-              <p>Define temperatura, resistencia, flexibilidad, facilidad de impresión y límites de uso.</p>
-            </div>
-            <div>
-              <h3>Perfil</h3>
-              <p>Es la receta de impresión: capas, velocidades, temperaturas, ventilación, soportes y relleno.</p>
-            </div>
-            <div>
-              <h3>Tests</h3>
-              <p>Es comprobar que la máquina deposita material donde debe, en la cantidad correcta.</p>
-            </div>
-          </div>
-        </section>
 
-        <section class="content-section reveal">
-          <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
-          <h2 id="flujo-completo">Flujo completo: de idea a pieza</h2>
-          <div class="process-line"><span>Idea</span><span>Modelo 3D</span><span>Slicer</span><span>G-code</span><span>Pieza</span></div>
-          <p>
-            El flujo real empieza antes de pulsar imprimir. Primero eliges qué pieza necesitas,
-            después consigues o diseñas el modelo, lo abres en el slicer, configuras el perfil,
-            generas el G-code, preparas la impresora y finalmente revisas la pieza terminada.
-          </p>
-          <div class="workflow-showcase" aria-label="Flujo visual de una impresión 3D">
-            <div class="workflow-animation" aria-hidden="true">
-              <span class="wf-node wf-model">3MF</span>
-              <span class="wf-line wf-line-a"></span>
-              <span class="wf-node wf-slicer">Slicer</span>
-              <span class="wf-line wf-line-b"></span>
-              <span class="wf-node wf-code">G-code</span>
-              <div class="wf-printer">
-                <span class="wf-spool"></span>
-                <span class="wf-filament"></span>
-                <span class="wf-head"></span>
-                <span class="wf-nozzle"></span>
-                <span class="wf-bed"></span>
-                <span class="wf-layer wf-layer-one"></span>
-                <span class="wf-layer wf-layer-two"></span>
-                <span class="wf-layer wf-layer-three"></span>
+          <div class="piece-scroll-layout">
+            <div class="piece-cinema" aria-hidden="true">
+              <div class="piece-orbit"></div>
+              <div class="piece-progress"><span></span></div>
+              <div class="piece-stage-labels">
+                <span>Diseño</span><span>Slicer</span><span>G-code</span><span>Máquina</span><span>Pieza</span>
               </div>
-              <span class="wf-result">Pieza</span>
-            </div>
-            <div class="workflow-copy">
-              <h3>Mi primera pieza</h3>
-              <p>Sigue el orden completo: modelo, slicer, material, perfil, soportes, laminado, vista previa, G-code, preparación de impresora, primera capa, retirada, soportes, acabado y revisión.</p>
-              <div class="workflow-pill-grid">
-                <span>Modelo</span>
-                <span>Slicer</span>
-                <span>Perfil</span>
-                <span>Soportes</span>
+              <div class="piece-scene">
+                <div class="piece-model">
+                  <span class="model-face model-a"></span>
+                  <span class="model-face model-b"></span>
+                  <span class="model-face model-c"></span>
+                </div>
+                <div class="slicer-plane plane-one"></div>
+                <div class="slicer-plane plane-two"></div>
+                <div class="slicer-plane plane-three"></div>
+                <div class="gcode-stream">
+                  <span>G1 X42 Y18 E0.8</span>
+                  <span>G1 Z0.20 F900</span>
+                  <span>M104 S210</span>
+                </div>
+                <div class="mini-printer">
+                  <span class="printer-frame"></span>
+                  <span class="printer-gantry"></span>
+                  <span class="printer-head"></span>
+                  <span class="printer-nozzle"></span>
+                  <span class="printer-bed"></span>
+                  <span class="printed-layer layer-a"></span>
+                  <span class="printed-layer layer-b"></span>
+                  <span class="printed-layer layer-c"></span>
+                  <span class="printed-layer layer-d"></span>
+                </div>
+                <div class="finished-piece">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+              <div class="piece-data">
+                <span>STL / 3MF</span>
+                <span>0.20 mm</span>
+                <span>PLA 210 °C</span>
                 <span>G-code</span>
-                <span>Primera capa</span>
-                <span>Postproceso</span>
-                <span>Revisión</span>
               </div>
             </div>
-          </div>
-          <div class="workflow-steps">
-            <div><strong>1. Modelo</strong><span>Busca o diseña una pieza y descarga STL/3MF. Revisa que no esté rota, que tenga escala correcta y que sea imprimible.</span></div>
-            <div><strong>2. Slicer</strong><span>Elige impresora, material y perfil. Orienta la pieza y añade soportes solo si hacen falta.</span></div>
-            <div><strong>3. Vista previa</strong><span>Lamina y revisa capas, soportes, tiempo, material, primera capa, puentes y zonas en el aire.</span></div>
-            <div><strong>4. Impresora</strong><span>Prepara cama, filamento, boquilla y Z-offset. Supervisa el inicio para validar la primera capa.</span></div>
-            <div><strong>5. Acabado</strong><span>Retira la pieza, quita soportes, limpia bordes, mide si hace falta y revisa qué mejorar.</span></div>
-          </div>
-          <div class="info-grid">
-            <div>
-              <h3>1. Preparar el modelo</h3>
-              <p>Comprueba escala, orientación, unidades y si la pieza necesita soportes o puede rediseñarse para evitarlos.</p>
-            </div>
-            <div>
-              <h3>2. Laminar en el slicer</h3>
-              <p>El slicer divide el modelo en capas y decide rutas de boquilla, relleno, paredes, soportes y temperaturas.</p>
-            </div>
-            <div>
-              <h3>3. Preparar la máquina</h3>
-              <p>Limpia la cama, carga filamento, revisa boquilla, confirma temperaturas y observa la primera capa.</p>
-            </div>
-            <div>
-              <h3>4. Evaluar el resultado</h3>
-              <p>No mires solo si “salió”. Revisa adhesión, medidas, hilos, esquinas, superficie, resistencia y acabado.</p>
+
+            <div class="piece-steps">
+              <article class="piece-step is-active" data-piece-step="0">
+                <span>01</span>
+                <h3>Elige o diseña el modelo</h3>
+                <p>Empieza con una pieza simple: soporte, llavero, caja pequeña o Benchy. Descarga STL/3MF o diséñalo en un CAD básico. Revisa escala, orientación y que el modelo esté cerrado.</p>
+              </article>
+              <article class="piece-step" data-piece-step="1">
+                <span>02</span>
+                <h3>Abre el slicer y orienta la pieza</h3>
+                <p>Selecciona impresora, boquilla y material. Coloca la cara más estable sobre la cama, evita soportes innecesarios y comprueba que la pieza cabe dentro del volumen de impresión.</p>
+              </article>
+              <article class="piece-step" data-piece-step="2">
+                <span>03</span>
+                <h3>Lamina y revisa la vista previa</h3>
+                <p>El slicer convierte el modelo en capas. Revisa primera capa, perímetros, relleno, puentes, soportes, tiempo y material. Si una zona empieza en el aire, todavía no está lista.</p>
+              </article>
+              <article class="piece-step" data-piece-step="3">
+                <span>04</span>
+                <h3>Prepara la impresora</h3>
+                <p>Limpia la cama, carga PLA seco, revisa boquilla y confirma Z-offset. Cuando empieza la impresión, quédate mirando la primera capa: debe pegarse, unirse y no rascar.</p>
+              </article>
+              <article class="piece-step" data-piece-step="4">
+                <span>05</span>
+                <h3>Retira, limpia y aprende del resultado</h3>
+                <p>Espera a que la cama enfríe, retira la pieza, quita soportes si los hay y revisa superficie, esquinas, hilos, medidas y resistencia. Anota qué cambiarías en la siguiente prueba.</p>
+              </article>
+              <div class="workflow-pill-grid piece-pill-grid">
+                <span>Modelo</span><span>Slicer</span><span>Soportes</span><span>G-code</span>
+                <span>Primera capa</span><span>Retirada</span><span>Acabado</span><span>Revisión</span>
+              </div>
             </div>
           </div>
           <div class="callout tip">
