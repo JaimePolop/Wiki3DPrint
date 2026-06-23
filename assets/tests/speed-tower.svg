@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" role="img" aria-label="Torre de velocidad">
-  <rect width="420" height="280" rx="28" fill="#071126"/>
-  <g transform="translate(92 52)" fill="none" stroke-linecap="round">
-    <path d="M0 0h110" stroke="#38bdf8" stroke-width="14"/><path d="M0 36h145" stroke="#60a5fa" stroke-width="14"/><path d="M0 72h180" stroke="#8b5cf6" stroke-width="14"/><path d="M0 108h215" stroke="#c084fc" stroke-width="14"/><path d="M0 144h250" stroke="#ec4899" stroke-width="14"/>
-  </g>
-  <path d="M335 50l30 32-30 32" fill="none" stroke="#facc15" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="64" y="246" fill="#e5e7eb" font-family="Inter,Arial" font-size="22" font-weight="800">SPEED / MAX FLOW</text>
-</svg>

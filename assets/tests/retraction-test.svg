@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" role="img" aria-label="Test de retraccion">
-  <rect width="420" height="280" rx="28" fill="#071126"/>
-  <g fill="#38bdf8" opacity=".9"><rect x="95" y="72" width="48" height="138" rx="18"/><rect x="277" y="72" width="48" height="138" rx="18"/></g>
-  <g stroke="#e5e7eb" stroke-width="2" opacity=".55"><path d="M143 104C190 82 232 126 277 104"/><path d="M143 136C190 112 232 158 277 136"/><path d="M143 168C190 143 232 190 277 168"/></g>
-  <circle cx="210" cy="136" r="38" fill="#8b5cf6" opacity=".22"/>
-  <text x="62" y="246" fill="#e5e7eb" font-family="Inter,Arial" font-size="22" font-weight="800">RETRACTION</text>
-</svg>

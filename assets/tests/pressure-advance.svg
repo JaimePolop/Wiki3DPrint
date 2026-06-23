@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" role="img" aria-label="Pressure advance">
-  <rect width="420" height="280" rx="28" fill="#071126"/>
-  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M74 86h120q26 0 26 26v16q0 26 26 26h100" stroke="#ef4444" stroke-width="16"/>
-    <path d="M74 132h120q18 0 18 18v8q0 18 18 18h116" stroke="#facc15" stroke-width="12"/>
-    <path d="M74 178h120q10 0 10 10v2q0 10 10 10h132" stroke="#22c55e" stroke-width="10"/>
-  </g>
-  <text x="58" y="246" fill="#e5e7eb" font-family="Inter,Arial" font-size="22" font-weight="800">PRESSURE ADVANCE</text>
-</svg>

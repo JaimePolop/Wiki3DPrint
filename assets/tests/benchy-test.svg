@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" role="img" aria-label="3DBenchy">
-  <rect width="420" height="280" rx="28" fill="#071126"/>
-  <g fill="#38bdf8" stroke="#e5e7eb" stroke-opacity=".2">
-    <path d="M82 170h236c-16 36-54 54-118 54s-100-18-118-54z"/>
-    <path d="M146 112h96v58h-96z"/><rect x="256" y="86" width="34" height="84" rx="10"/><path d="M126 170l38-82h44l-28 82z"/>
-  </g>
-  <circle cx="180" cy="140" r="14" fill="#071126"/><circle cx="220" cy="140" r="14" fill="#071126"/>
-  <text x="94" y="246" fill="#e5e7eb" font-family="Inter,Arial" font-size="22" font-weight="800">3DBENCHY</text>
-</svg>
