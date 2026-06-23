@@ -49,11 +49,11 @@
           <article class="basic-info-card reveal">
             <span class="module-icon">UV</span>
             <h3>Impresoras de resina</h3>
-            <p>Usan resina líquida fotosensible y luz UV para crear piezas con mucho detalle. Son muy buenas para miniaturas, figuras y piezas pequeñas precisas.</p>
+            <p>Usan resina líquida fotosensible que se cura con luz UV. En SLA, MSLA o DLP la pieza se forma boca abajo, capa a capa, subiendo desde una cubeta de resina.</p>
             <ul>
-              <li>Dan mejor detalle superficial que FDM.</li>
-              <li>Necesitan lavado, curado y soportes.</li>
-              <li>Exigen guantes, gafas, ventilación y gestión correcta de residuos.</li>
+              <li>Ideales para miniaturas, figuras, joyería, dental y piezas pequeñas con mucho detalle.</li>
+              <li>Necesitan orientación, soportes, lavado, curado UV y limpieza del VAT.</li>
+              <li>La resina líquida requiere guantes, gafas, ventilación y residuos bien gestionados.</li>
             </ul>
             <a class="card-link" href="resina.html">Ver guía de resina →</a>
           </article>
@@ -71,14 +71,100 @@
           <article class="basic-info-card basic-info-card-wide reveal">
             <span class="module-icon">PARTES</span>
             <h3>Partes principales de una impresora FDM</h3>
-            <p>Una FDM parece compleja, pero se entiende mejor separándola por sistemas: estructura, movimiento, extrusión, temperatura, electrónica y superficie de impresión.</p>
-            <div class="parts-mini-grid">
-              <div><strong>Hotend</strong><span>Funde el filamento y lo empuja por la boquilla.</span></div>
-              <div><strong>Extrusor</strong><span>Agarra el filamento y controla cuánto material entra.</span></div>
-              <div><strong>Cama</strong><span>Superficie donde se pega la primera capa.</span></div>
-              <div><strong>Ejes y correas</strong><span>Mueven el cabezal o la cama con precisión.</span></div>
-              <div><strong>Ventiladores</strong><span>Enfrían la pieza y protegen el hotend.</span></div>
-              <div><strong>Placa y fuente</strong><span>Controlan motores, temperaturas y sensores.</span></div>
+            <p>Una FDM se entiende mejor por sistemas. Cada sistema tiene una función concreta y provoca síntomas distintos cuando algo falla: extrusión, movimiento, cama, refrigeración, electrónica y estructura.</p>
+            <div class="printer-map" aria-label="Mapa interactivo de partes de impresora FDM">
+              <div class="printer-frame" aria-hidden="true">
+                <span class="frame-top"></span>
+                <span class="frame-left"></span>
+                <span class="frame-right"></span>
+                <span class="x-rail"></span>
+                <span class="z-rail z-left"></span>
+                <span class="z-rail z-right"></span>
+                <span class="print-head"></span>
+                <span class="nozzle"></span>
+                <span class="bed"></span>
+                <span class="control-box"></span>
+                <span class="part-cooling"></span>
+              </div>
+              <a class="map-pin pin-extrusion" href="#sistema-extrusion"><span>Extrusión</span></a>
+              <a class="map-pin pin-movement" href="#sistema-movimiento"><span>Movimiento</span></a>
+              <a class="map-pin pin-bed" href="#sistema-cama"><span>Cama</span></a>
+              <a class="map-pin pin-cooling" href="#sistema-refrigeracion"><span>Refrigeración</span></a>
+              <a class="map-pin pin-electronics" href="#sistema-electronico"><span>Electrónica</span></a>
+              <a class="map-pin pin-structure" href="#sistema-estructural"><span>Estructura</span></a>
+            </div>
+            <div class="parts-system-grid">
+              <section id="sistema-extrusion" class="parts-system-card">
+                <h4>Sistema de extrusión</h4>
+                <p>Es el sistema que agarra, empuja, funde y deposita el filamento. Cuando falla aparecen clics, subextrusión, atascos, hilos, goteo o mala calidad de paredes.</p>
+                <div class="parts-mini-grid">
+                  <div><strong>Extrusor</strong><span>Puede ser direct drive o Bowden. Los dual gear agarran mejor. La tensión incorrecta muerde el filamento o lo deja patinar.</span></div>
+                  <div><strong>Hotend</strong><span>Incluye heat block, heat break, disipador, cartucho calefactor, termistor y bloque de silicona.</span></div>
+                  <div><strong>Boquilla</strong><span>0.2 mm para detalle, 0.4 mm estándar, 0.6/0.8 mm para más flujo. Latón, acero endurecido, ruby o alto flujo.</span></div>
+                  <div><strong>Tubo PTFE</strong><span>Se desgasta con calor y rozamiento. Si está quemado o deformado causa atascos. All-metal aguanta más temperatura que hotend con PTFE.</span></div>
+                </div>
+              </section>
+              <section id="sistema-movimiento" class="parts-system-card">
+                <h4>Sistema de movimiento</h4>
+                <p>Coloca la boquilla y la cama con precisión. Incluye ejes X, Y, Z, correas, poleas, motores paso a paso, ruedas V-slot, guías lineales, varillas, husillos, rodamientos y tuercas excéntricas.</p>
+                <div class="parts-mini-grid">
+                  <div><strong>Layer shifting</strong><span>Capas desplazadas por correas flojas, poleas sueltas, golpe de la pieza, aceleración alta o motor perdiendo pasos.</span></div>
+                  <div><strong>Ghosting</strong><span>Sombras repetidas cerca de esquinas por vibraciones, estructura flexible o aceleración demasiado alta.</span></div>
+                  <div><strong>Z wobble</strong><span>Ondas verticales por husillos doblados, acoples mal montados, eje Z forzado o mala alineación.</span></div>
+                </div>
+              </section>
+              <section id="sistema-cama" class="parts-system-card">
+                <h4>Sistema de cama y adhesión</h4>
+                <p>Define si la pieza se pega bien desde la primera capa. Incluye cama caliente, placa magnética, PEI liso, PEI texturizado, vidrio, G10, adhesivos, nivelación manual, autolevel, malla de cama y Z-offset.</p>
+                <div class="parts-mini-grid">
+                  <div><strong>Primera capa</strong><span>Debe quedar aplastada lo justo: ni redonda y suelta, ni tan baja que la boquilla rasque.</span></div>
+                  <div><strong>Brim</strong><span>Añade borde alrededor de la pieza para mejorar adhesión y reducir warping.</span></div>
+                  <div><strong>Skirt / Raft</strong><span>Skirt purga antes de imprimir. Raft crea una base completa, útil en casos difíciles pero deja peor acabado.</span></div>
+                </div>
+              </section>
+              <section id="sistema-refrigeracion" class="parts-system-card">
+                <h4>Sistema de refrigeración</h4>
+                <p>Controla la temperatura del hotend y de la pieza. Incluye ventilador del hotend, ventilador de capa, conducto de aire o cooling duct.</p>
+                <div class="parts-mini-grid">
+                  <div><strong>Ventilador hotend</strong><span>Evita heat creep. Si se para o está sucio, el atasco suele aparecer tras unos minutos.</span></div>
+                  <div><strong>Ventilador de capa</strong><span>Mejora overhangs, bridging y detalles pequeños. Demasiado aire puede empeorar ABS/ASA.</span></div>
+                  <div><strong>Ruido y flujo</strong><span>Un ventilador puede girar pero mover poco aire si tiene polvo, aspas dañadas o duct mal diseñado.</span></div>
+                </div>
+              </section>
+              <section id="sistema-electronico" class="parts-system-card">
+                <h4>Sistema electrónico</h4>
+                <p>Controla motores, calentadores, sensores y firmware. Incluye placa base, drivers de motores, fuente, pantalla, sensor de filamento, finales de carrera, sensor de nivelación, termistores, cartuchos calefactores, fusibles y conectores de cama.</p>
+                <div class="parts-mini-grid">
+                  <div><strong>Firmware</strong><span>Marlin y Klipper interpretan movimientos, temperaturas, sensores, malla de cama, aceleración e input shaping.</span></div>
+                  <div><strong>Conectores</strong><span>Conectores flojos en cama o hotend pueden causar fallos intermitentes, calentamiento peligroso o errores térmicos.</span></div>
+                  <div><strong>Sensores</strong><span>Un sensor de nivelación mal calibrado o un Z-offset incorrecto arruina la primera capa.</span></div>
+                </div>
+              </section>
+              <section id="sistema-estructural" class="parts-system-card">
+                <h4>Sistema estructural</h4>
+                <p>Es la base física de la impresora: marco, perfiles de aluminio, escuadras, tornillería, paneles, puerta, cámara cerrada, filtros y mesa estable.</p>
+                <div class="parts-mini-grid">
+                  <div><strong>Rigidez</strong><span>Una estructura rígida reduce vibración, mejora medidas y permite más aceleración.</span></div>
+                  <div><strong>Mesa estable</strong><span>Una mesa que se mueve amplifica vibraciones y empeora ghosting en piezas rápidas.</span></div>
+                  <div><strong>Cámara cerrada</strong><span>Ayuda con ABS/ASA y materiales técnicos, pero requiere controlar temperatura y electrónica.</span></div>
+                </div>
+              </section>
+            </div>
+            <div class="table-wrap parts-failure-table">
+              <table>
+                <thead><tr><th>Parte</th><th>Función</th><th>Fallo típico</th><th>Síntoma</th></tr></thead>
+                <tbody>
+                  <tr><td>Hotend</td><td>Fundir filamento</td><td>Atasco o fuga</td><td>No extruye o gotea</td></tr>
+                  <tr><td>Extrusor</td><td>Empujar filamento</td><td>Engranaje sucio</td><td>Clics o subextrusión</td></tr>
+                  <tr><td>Boquilla</td><td>Depositar material</td><td>Desgaste o atasco</td><td>Líneas finas o mala calidad</td></tr>
+                  <tr><td>Cama</td><td>Sujetar la pieza</td><td>Sucia o desnivelada</td><td>Mala primera capa</td></tr>
+                  <tr><td>Correas</td><td>Mover ejes</td><td>Flojas</td><td>Capas desplazadas o ghosting</td></tr>
+                  <tr><td>Ventilador hotend</td><td>Evitar heat creep</td><td>Parado o sucio</td><td>Atasco tras minutos</td></tr>
+                  <tr><td>Ventilador capa</td><td>Enfriar pieza</td><td>Poco flujo</td><td>Malos puentes y overhangs</td></tr>
+                  <tr><td>Fuente</td><td>Alimentar sistema</td><td>Conector flojo</td><td>Fallos eléctricos</td></tr>
+                  <tr><td>Sensor nivelación</td><td>Medir cama</td><td>Offset incorrecto</td><td>Primera capa mala</td></tr>
+                </tbody>
+              </table>
             </div>
             <a class="card-link" href="fdm.html#anatomia-completa">Ver anatomía completa →</a>
           </article>

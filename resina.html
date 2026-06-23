@@ -39,7 +39,224 @@
         </div>
         <figure class="subhero-media reveal"><img src="assets/impresoras/resina-elegoo-mars.jpg" alt="Impresión 3D con resina" /><figcaption>Guía completa de impresión con resina: SLA, MSLA, DLP, seguridad, anatomía, VAT, FEP, soportes, orientación, lavado, curado y residuos.</figcaption></figure>
       </section>
-      <section class="section page-content" id="contenido"><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="sla-msla-y-dlp">SLA, MSLA y DLP</h2><p>Estas tecnologías curan resina fotosensible capa a capa. MSLA usa una pantalla LCD y LEDs UV; DLP proyecta una imagen; SLA clásico usa láser.</p></section><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="diferencias-con-fdm">Diferencias con FDM</h2><div class="table-wrap "><table><thead><tr><th>Aspecto</th><th>FDM</th><th>Resina</th></tr></thead><tbody><tr><td>Material</td><td>Filamento fundido</td><td>Resina líquida</td></tr><tr><td>Detalle</td><td>Medio/alto</td><td>Muy alto</td></tr><tr><td>Seguridad</td><td>Calor y humos</td><td>Química y UV</td></tr><tr><td>Postproceso</td><td>Soportes y acabado</td><td>Lavado, curado y residuos</td></tr></tbody></table></div></section><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="anatomia">Anatomía</h2><div class="spec-grid"><span>Pantalla LCD</span><span>Fuente UV</span><span>VAT</span><span>FEP/nFEP/ACF</span><span>Plataforma</span><span>Eje Z</span><span>Tornillo de fijación</span><span>Cubierta</span><span>Filtros</span><span>Estación de lavado</span></div></section><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="proceso-seguro">Proceso seguro</h2><p>Usa guantes de nitrilo, gafas, ventilación y zona dedicada. Orienta la pieza, genera soportes, considera hollowing y drain holes, imprime, lava, retira soportes, cura y gestiona residuos.</p><div class="callout danger"><strong>Resina líquida</strong><p>No debe tocar la piel. Cura residuos antes de desecharlos y no viertas resina por el desagüe.</p></div></section><section class="content-section reveal"><button class="copy-section" type="button" aria-label="Copiar enlace">#</button><h2 id="checklist-de-seguridad">Checklist de seguridad</h2><div class="checklist-grid"><div class="check-card checklist-copy"><h3>Antes de imprimir resina</h3><label><input type="checkbox" /> Guantes de nitrilo</label><label><input type="checkbox" /> Gafas</label><label><input type="checkbox" /> Ventilación</label><label><input type="checkbox" /> Superficie protegida</label><label><input type="checkbox" /> VAT revisado</label><label><input type="checkbox" /> FEP sin daños</label><label><input type="checkbox" /> Residuos preparados</label><button class="button button-ghost copy-checklist" type="button">Copiar checklist</button></div></div></section><section class="content-section reveal"><h2>Artículos relacionados</h2><div class="related-grid"><a class="related-card" href="seguridad.html"><strong>Seguridad</strong><span>Riesgos de resina y ventilación.</span></a><a class="related-card" href="slicers.html"><strong>Slicers</strong><span>Lychee y Chitubox.</span></a><a class="related-card" href="problemas.html"><strong>Problemas</strong><span>Fallos comunes.</span></a></div></section></section>
+      <section class="section page-content" id="contenido">
+        <section class="content-section reveal">
+          <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
+          <h2 id="resumen-rapido">Resumen rápido</h2>
+          <p>La impresión con resina usa un material líquido fotosensible que se endurece con luz UV. A diferencia de FDM, no funde plástico ni deposita líneas: cura capas completas o zonas concretas dentro de una cubeta de resina. El resultado puede tener muchísimo detalle, pero el flujo de trabajo es más químico, más sucio y exige más seguridad.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Tema</th><th>Explicación rápida</th></tr></thead>
+              <tbody>
+                <tr><td>Mejor para</td><td>Miniaturas, figuras, joyería, dental, moldes, prototipos pequeños y detalle fino.</td></tr>
+                <tr><td>Dificultad</td><td>Media. La impresión puede ser sencilla, pero soportes, limpieza y exposición requieren práctica.</td></tr>
+                <tr><td>Postprocesado</td><td>Obligatorio: escurrir, lavar, retirar soportes, curar y limpiar zona de trabajo.</td></tr>
+                <tr><td>Seguridad</td><td>Alta importancia: guantes de nitrilo, gafas, ventilación y gestión correcta de residuos.</td></tr>
+                <tr><td>Problemas típicos</td><td>Soportes rotos, fallo de adhesión, subexposición, sobreexposición, piezas pegajosas y FEP dañado.</td></tr>
+                <tr><td>Coste oculto</td><td>Resina, guantes, IPA o limpiador, filtros, FEP, espátulas, recipientes, estación de lavado y curado.</td></tr>
+                <tr><td>No recomendado para</td><td>Usuarios que no puedan ventilar, manipular químicos o separar bien zona limpia y zona contaminada.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="content-section reveal">
+          <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
+          <h2 id="sla-msla-y-dlp">Qué significa SLA, MSLA y DLP</h2>
+          <div class="info-grid">
+            <div><h3>SLA</h3><p>Es la estereolitografía clásica. Un láser UV dibuja cada capa punto a punto sobre resina líquida. Suele asociarse a máquinas profesionales o de alta precisión.</p></div>
+            <div><h3>MSLA</h3><p>Usa una matriz de LEDs UV y una pantalla LCD que actúa como máscara. La pantalla deja pasar luz solo donde debe curarse la capa. Es el sistema más habitual en impresoras de resina de escritorio.</p></div>
+            <div><h3>DLP</h3><p>Proyecta la imagen de cada capa con un proyector digital. Cura una capa completa de golpe, con buena repetibilidad y detalle según resolución óptica.</p></div>
+            <div><h3>Qué tienen en común</h3><p>Las tres curan resina fotosensible por capas. La pieza se forma normalmente boca abajo, pegada a la plataforma, mientras sube poco a poco desde el VAT.</p></div>
+          </div>
+        </section>
+
+        <section class="content-section reveal">
+          <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
+          <h2 id="como-funciona-resina">Cómo funciona una impresora de resina</h2>
+          <p>La cubeta o VAT contiene resina líquida. En el fondo hay una lámina transparente llamada FEP, nFEP o ACF. Debajo está la fuente de luz UV. La plataforma baja hasta dejar una capa muy fina de resina entre la plataforma y el film. La luz cura esa capa, la plataforma sube, entra resina nueva y se repite el proceso.</p>
+          <div class="process-line">
+            <span>Resina líquida</span>
+            <span>Luz UV</span>
+            <span>Capa curada</span>
+            <span>Plataforma sube</span>
+            <span>Pieza boca abajo</span>
+          </div>
+          <div class="visual-grid visual-grid-two">
+            <figure class="visual-card"><img src="assets/impresoras/resina-elegoo-mars.jpg" alt="Impresora 3D de resina MSLA" /><figcaption><strong>Máquina MSLA:</strong> pantalla, fuente UV, VAT, plataforma y eje Z trabajan juntos para formar la pieza por capas.</figcaption></figure>
+            <figure class="visual-card"><img src="assets/impresoras/sls-formlabs-fuse.jpg" alt="Máquina de fabricación aditiva profesional" /><figcaption><strong>Comparativa visual:</strong> las tecnologías de polvo, filamento y resina tienen flujos de trabajo muy distintos aunque todas sean impresión 3D.</figcaption></figure>
+          </div>
+        </section>
+
+        <section class="content-section reveal">
+          <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
+          <h2 id="diferencias-con-fdm">Diferencias con FDM</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Aspecto</th><th>FDM</th><th>Resina</th></tr></thead>
+              <tbody>
+                <tr><td>Material</td><td>Filamento sólido que se funde en un hotend.</td><td>Resina líquida fotosensible que se endurece con luz UV.</td></tr>
+                <tr><td>Forma de crear capas</td><td>La boquilla deposita líneas de plástico.</td><td>La pantalla, láser o proyector cura una capa en el VAT.</td></tr>
+                <tr><td>Detalle</td><td>Bueno, pero con líneas de capa visibles.</td><td>Muy alto, superficies suaves y detalle fino.</td></tr>
+                <tr><td>Tamaño de pieza</td><td>Mejor para piezas medianas o grandes.</td><td>Mejor para piezas pequeñas o medianas con mucho detalle.</td></tr>
+                <tr><td>Resistencia</td><td>Buena con material y orientación correctos.</td><td>Puede ser frágil si se usa resina estándar o mal curada.</td></tr>
+                <tr><td>Seguridad</td><td>Calor, piezas móviles, humos según material.</td><td>Química, contacto con piel, vapores, UV y residuos contaminados.</td></tr>
+                <tr><td>Postprocesado</td><td>Retirar soportes y quizá lijar.</td><td>Lavar, escurrir, retirar soportes, curar y gestionar líquidos contaminados.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="content-section reveal">
+          <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
+          <h2 id="ventajas-desventajas">Ventajas y desventajas</h2>
+          <div class="info-grid">
+            <div>
+              <h3>Ventajas</h3>
+              <ul class="rich-list">
+                <li>Mucho detalle en caras, texturas, ropa, dientes, letras pequeñas y relieves.</li>
+                <li>Superficie más lisa que FDM, con capas menos visibles.</li>
+                <li>Ideal para miniaturas, figuras, joyería, dental, moldes y piezas pequeñas precisas.</li>
+                <li>Buena precisión dimensional en piezas pequeñas si exposición y soportes están bien ajustados.</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Desventajas</h3>
+              <ul class="rich-list">
+                <li>La resina líquida es irritante o sensibilizante antes de curar.</li>
+                <li>Necesita guantes, gafas, ventilación, lavado y curado UV.</li>
+                <li>Huele más y genera residuos: papel, filtros, guantes, IPA contaminado y restos de resina.</li>
+                <li>Las piezas de resina estándar pueden ser frágiles frente a golpes o flexión.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="callout danger"><strong>No es una impresora para usar sin protección:</strong> evita tocar resina líquida, piezas recién impresas sin lavar o herramientas contaminadas.</div>
+        </section>
+
+        <section class="content-section reveal">
+          <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
+          <h2 id="usos-recomendados">Usos ideales y usos donde no conviene</h2>
+          <div class="info-grid">
+            <div>
+              <h3>Ideal para</h3>
+              <p>Miniaturas, figuras, bustos, joyería, dental, moldes, prototipos pequeños, piezas decorativas, detalles orgánicos y elementos que necesitan superficie fina sin marcas grandes de capa.</p>
+            </div>
+            <div>
+              <h3>No es lo mejor para</h3>
+              <p>Piezas grandes, piezas sometidas a golpes, piezas de exterior sin resina adecuada, piezas para niños sin curado perfecto, piezas alimentarias y trabajos donde no puedas ventilar o limpiar correctamente.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section reveal">
+          <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
+          <h2 id="materiales-de-resina">Tipos de resina</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Resina</th><th>Para qué sirve</th><th>Qué tener en cuenta</th></tr></thead>
+              <tbody>
+                <tr><td>Estándar</td><td>Figuras, pruebas visuales, piezas decorativas y aprendizaje.</td><td>Detalle alto, pero puede ser quebradiza.</td></tr>
+                <tr><td>ABS-like</td><td>Piezas algo más resistentes que una estándar.</td><td>No es ABS real, pero suele aguantar mejor pequeños golpes.</td></tr>
+                <tr><td>Tough</td><td>Prototipos funcionales pequeños y piezas que necesitan más tenacidad.</td><td>Más cara y requiere exposición bien ajustada.</td></tr>
+                <tr><td>Flexible</td><td>Piezas blandas, juntas, amortiguación y mezclas con otras resinas.</td><td>Puede ser difícil de soportar y lavar.</td></tr>
+                <tr><td>Lavable al agua</td><td>Usuarios que quieren evitar IPA en parte del proceso.</td><td>El agua queda contaminada: no va al desagüe.</td></tr>
+                <tr><td>Transparente</td><td>Piezas visuales, carcasas, lentes simples o efectos translúcidos.</td><td>Amarillea o se enturbia si se cura mal.</td></tr>
+                <tr><td>Dental</td><td>Aplicaciones dentales específicas.</td><td>Debe ser una resina certificada para ese uso, no una genérica.</td></tr>
+                <tr><td>Castable</td><td>Joyería y fundición a la cera perdida.</td><td>Requiere proceso de quemado compatible.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="content-section reveal">
+          <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
+          <h2 id="flujo-de-trabajo">Flujo de trabajo completo</h2>
+          <p>En resina, imprimir es solo una parte del trabajo. El postprocesado es obligatorio porque la pieza sale cubierta de resina sin curar.</p>
+          <div class="process-line">
+            <span>Preparar archivo</span>
+            <span>Orientar</span>
+            <span>Soportes</span>
+            <span>Imprimir</span>
+            <span>Lavar</span>
+          </div>
+          <div class="process-line">
+            <span>Escurrir</span>
+            <span>Retirar soportes</span>
+            <span>Curar UV</span>
+            <span>Limpiar VAT</span>
+            <span>Residuos</span>
+          </div>
+          <div class="info-grid">
+            <div><h3>Orientación</h3><p>Evita grandes secciones planas paralelas al FEP porque aumentan succión. Inclina la pieza para reducir fuerzas y mejorar superficie.</p></div>
+            <div><h3>Soportes</h3><p>Deben sujetar la pieza durante los tirones de cada capa. Soportes débiles producen piezas colgando del FEP o zonas deformadas.</p></div>
+            <div><h3>Lavado</h3><p>Elimina resina líquida de la superficie. Puede hacerse con IPA, limpiadores específicos o agua en resinas lavables al agua, gestionando siempre el líquido como contaminado.</p></div>
+            <div><h3>Curado</h3><p>La luz UV termina de endurecer la pieza. Curar poco deja piezas pegajosas; curar demasiado puede volverlas frágiles o amarillentas.</p></div>
+          </div>
+        </section>
+
+        <section class="content-section reveal">
+          <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
+          <h2 id="seguridad-basica">Seguridad básica</h2>
+          <ul class="rich-list">
+            <li>Usa guantes de nitrilo, no de látex si la ficha de seguridad no los recomienda.</li>
+            <li>Usa gafas para evitar salpicaduras al retirar piezas, filtrar resina o limpiar el VAT.</li>
+            <li>Trabaja con ventilación y evita usar la impresora en dormitorios, cocinas o zonas de comida.</li>
+            <li>No toques resina líquida, piezas sin lavar ni herramientas contaminadas con las manos desnudas.</li>
+            <li>No tires resina, IPA contaminado o agua de lavado por el desagüe.</li>
+            <li>Cura restos, papel, soportes y filtros contaminados antes de desecharlos según normativa local.</li>
+            <li>Mantén resina, alcohol y herramientas fuera del alcance de niños y mascotas.</li>
+          </ul>
+          <div class="callout danger"><strong>Importante:</strong> la resina curada correctamente es mucho más estable que la líquida, pero una pieza mal lavada o mal curada puede seguir dejando residuos en superficie.</div>
+        </section>
+
+        <section class="content-section reveal">
+          <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
+          <h2 id="problemas-comunes-resina">Problemas comunes</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Problema</th><th>Qué suele significar</th><th>Qué revisar</th></tr></thead>
+              <tbody>
+                <tr><td>Pieza pegada al FEP</td><td>La pieza no se ha mantenido en la plataforma o los soportes han fallado.</td><td>Nivelación, exposición inicial, limpieza de plataforma, soportes y estado del FEP.</td></tr>
+                <tr><td>Soportes rotos</td><td>Fuerzas de succión demasiado altas o soportes insuficientes.</td><td>Orientación, densidad de soportes, puntas, lift speed y huecos de drenaje.</td></tr>
+                <tr><td>Subexposición</td><td>La resina recibe poca luz y queda débil o blanda.</td><td>Tiempo de exposición, potencia UV, temperatura ambiente y resina bien mezclada.</td></tr>
+                <tr><td>Sobreexposición</td><td>La luz cura demasiado y engorda detalles.</td><td>Exposición normal, exposición inicial y pérdida de detalle en piezas pequeñas.</td></tr>
+                <tr><td>Piezas pegajosas</td><td>Lavado insuficiente, curado insuficiente o resina atrapada.</td><td>Lavado, curado UV, huecos de drenaje y resina dentro de piezas huecas.</td></tr>
+                <tr><td>Piezas deformadas</td><td>Soportes mal colocados, curado desigual o orientación incorrecta.</td><td>Orientación, soportes, grosor de pared y curado progresivo.</td></tr>
+                <tr><td>Fallos de adhesión</td><td>La primera capa no agarra bien a la plataforma.</td><td>Nivelación, exposición base, plataforma limpia y temperatura de resina.</td></tr>
+                <tr><td>Resina contaminada</td><td>Restos curados flotando o polvo dentro del VAT.</td><td>Filtrar resina, limpiar VAT, revisar FEP y no mezclar residuos con resina limpia.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="content-section reveal">
+          <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
+          <h2 id="checklist-de-seguridad">Checklist de seguridad</h2>
+          <div class="checklist-grid">
+            <div class="check-card checklist-copy">
+              <h3>Antes de imprimir resina</h3>
+              <label><input type="checkbox" /> Guantes de nitrilo puestos</label>
+              <label><input type="checkbox" /> Gafas preparadas</label>
+              <label><input type="checkbox" /> Ventilación activa</label>
+              <label><input type="checkbox" /> Superficie protegida</label>
+              <label><input type="checkbox" /> VAT y FEP revisados</label>
+              <label><input type="checkbox" /> Botella de resina agitada y cerrada después de usar</label>
+              <label><input type="checkbox" /> Recipiente de lavado preparado</label>
+              <label><input type="checkbox" /> Zona de residuos separada</label>
+              <button class="button button-ghost copy-checklist" type="button">Copiar checklist</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section reveal">
+          <h2>Artículos relacionados</h2>
+          <div class="related-grid">
+            <a class="related-card" href="seguridad.html"><strong>Seguridad</strong><span>Riesgos de resina, ventilación, químicos y residuos.</span></a>
+            <a class="related-card" href="slicers.html"><strong>Slicers</strong><span>Lychee, Chitubox, orientación, soportes y exposición.</span></a>
+            <a class="related-card" href="problemas.html"><strong>Problemas</strong><span>Fallos comunes de adhesión, exposición, soportes y acabado.</span></a>
+          </div>
+        </section>
+      </section>
     </main>
     <footer class="site-footer">
       <div><a class="brand" href="index.html"><span class="brand-mark">P3D</span><span><strong>Printpedia 3D</strong><small>Impresión 3D visual</small></span></a><p>Plataforma educativa para aprender impresión 3D con criterio técnico, seguridad y resultados reales.</p></div>
