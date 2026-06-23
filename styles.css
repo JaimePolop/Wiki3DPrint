@@ -2267,11 +2267,37 @@ body[data-theme="light"] .float-card {
 }
 
 .print-sim-story .flow-copy-stack {
+  height: calc(100vh - 250px);
   min-height: 520px;
+  max-height: 690px;
+  overflow-y: auto;
+  padding-right: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(56, 189, 248, 0.45) rgba(255, 255, 255, 0.08);
+}
+
+.print-sim-story .flow-copy-stack::-webkit-scrollbar {
+  width: 8px;
+}
+
+.print-sim-story .flow-copy-stack::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+}
+
+.print-sim-story .flow-copy-stack::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--sim-cyan), var(--sim-violet));
+  border-radius: 999px;
 }
 
 .print-sim-story .flow-copy h3 {
   font-size: clamp(1.75rem, 2.15vw, 2.8rem);
+}
+
+.print-sim-story .flow-copy {
+  inset: 0 8px auto 0;
+  min-height: max-content;
+  padding-bottom: 22px;
 }
 
 .print-sim-story .flow-copy p {
@@ -2280,6 +2306,18 @@ body[data-theme="light"] .float-card {
 
 .print-sim-story .flow-copy ul {
   grid-template-columns: 1fr;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.print-sim-story .flow-copy li {
+  padding: 9px 12px;
+}
+
+.print-sim-story .flow-error,
+.print-sim-story .flow-tip {
+  padding: 12px 14px;
+  margin-top: 12px;
 }
 
 .print-sim-story .flow-rail-fill {
