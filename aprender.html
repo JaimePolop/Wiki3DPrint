@@ -91,42 +91,41 @@
               <button class="flow-dot" type="button" data-flow-jump="5"><span>06</span></button>
               <button class="flow-dot" type="button" data-flow-jump="6"><span>07</span></button>
               <button class="flow-dot" type="button" data-flow-jump="7"><span>08</span></button>
-              <button class="flow-dot" type="button" data-flow-jump="8"><span>09</span></button>
             </aside>
 
             <div class="flow-narrative" aria-live="polite">
-              <p class="flow-kicker">Paso <span data-flow-current>01</span> / 09</p>
+              <p class="flow-kicker">Paso <span data-flow-current>01</span> / 08</p>
               <div class="flow-copy-stack">
                 <article class="flow-copy is-active" data-flow-copy="0">
-                  <h3>Diseña o elige el modelo</h3>
+                  <h3>Modelo digital</h3>
                   <p>Todo empieza con un archivo 3D: CAD propio, repositorio o diseño descargado. Antes de imprimir, revisa escala, geometría cerrada, orientación y tamaño real.</p>
                   <ul><li>Modelo cerrado</li><li>Escala correcta</li><li>Sin errores de malla</li><li>Tamaño compatible</li><li>Orientación pensada</li></ul>
                   <p class="flow-error"><strong>Error típico:</strong> descargar un STL y mandarlo a imprimir sin revisar escala ni geometría.</p>
                   <p class="flow-tip"><strong>Consejo:</strong> abre siempre el modelo en el slicer y revisa medidas antes de imprimir.</p>
                 </article>
                 <article class="flow-copy" data-flow-copy="1">
-                  <h3>Coloca la pieza en el slicer</h3>
+                  <h3>Slicer</h3>
                   <p>El slicer traduce el modelo en instrucciones para la impresora. Aquí eliges máquina, material, boquilla, altura de capa, orientación, soportes y perfil.</p>
                   <ul><li>Impresora correcta</li><li>Material correcto</li><li>Boquilla correcta</li><li>Orientación estable</li><li>Soportes revisados</li></ul>
                   <p class="flow-error"><strong>Error típico:</strong> usar un perfil de otra impresora o de otro material.</p>
                   <p class="flow-tip"><strong>Consejo:</strong> la mejor orientación no siempre es la más bonita; es la que imprime mejor y resiste mejor.</p>
                 </article>
                 <article class="flow-copy" data-flow-copy="2">
-                  <h3>El slicer convierte el modelo en capas</h3>
+                  <h3>Laminado por capas</h3>
                   <p>El laminado divide la pieza en cientos de capas. Cada capa contiene perímetros, relleno, movimientos, soportes, temperaturas, velocidades y retracciones.</p>
                   <ul><li>Primera capa revisada</li><li>Soportes no flotan</li><li>Puentes detectados</li><li>Tiempo/material razonable</li><li>Vista previa capa por capa</li></ul>
                   <p class="flow-error"><strong>Error típico:</strong> no mirar la vista previa y descubrir demasiado tarde que hay zonas flotando.</p>
                   <p class="flow-tip"><strong>Consejo:</strong> la previsualización del slicer es una radiografía de la impresión.</p>
                 </article>
                 <article class="flow-copy" data-flow-copy="3">
-                  <h3>El slicer genera G-code</h3>
+                  <h3>G-code</h3>
                   <p>El G-code son instrucciones que la impresora entiende: mover ejes, calentar boquilla, calentar cama, extruir, retraer y activar ventilador.</p>
                   <ul><li>Archivo correcto</li><li>Temperaturas correctas</li><li>Cama configurada</li><li>Inicio y final revisados</li><li>Formato compatible</li></ul>
                   <p class="flow-error"><strong>Error típico:</strong> enviar un G-code creado para otra máquina.</p>
                   <p class="flow-tip"><strong>Consejo:</strong> nombra archivos con material, boquilla, capa y versión.</p>
                 </article>
                 <article class="flow-copy" data-flow-copy="4">
-                  <h3>Prepara la máquina</h3>
+                  <h3>Preparación de máquina</h3>
                   <p>Antes de imprimir hay que limpiar cama, cargar filamento seco, revisar boquilla, comprobar perfil y esperar a que la impresora alcance temperatura.</p>
                   <ul><li>Cama limpia</li><li>Filamento seco</li><li>Boquilla sin restos</li><li>Z-offset correcto</li><li>Primera capa vigilada</li></ul>
                   <p class="flow-error"><strong>Error típico:</strong> lanzar una impresión larga sin mirar la primera capa.</p>
@@ -140,25 +139,18 @@
                   <p class="flow-tip"><strong>Consejo:</strong> primero adhesión, después extrusión, temperatura y velocidad.</p>
                 </article>
                 <article class="flow-copy" data-flow-copy="6">
-                  <h3>La pieza nace capa a capa</h3>
+                  <h3>Impresión capa a capa</h3>
                   <p>La impresora repite movimientos miles de veces. La calidad depende de temperatura, flujo, refrigeración, velocidad, mecánica y material.</p>
                   <ul><li>Sin esquinas levantadas</li><li>Extrusión continua</li><li>Sin ruidos raros</li><li>Sin hilos excesivos</li><li>Capas alineadas</li></ul>
                   <p class="flow-error"><strong>Error típico:</strong> subir velocidad sin saber si hotend, material y mecánica pueden soportarlo.</p>
                   <p class="flow-tip"><strong>Consejo:</strong> una impresión estable vale más que una rápida que falla al 80%.</p>
                 </article>
                 <article class="flow-copy" data-flow-copy="7">
-                  <h3>Retira, limpia y mejora</h3>
-                  <p>La impresión no termina cuando para la máquina. Espera a que enfríe, retira sin forzar, quita soportes, lija si hace falta y revisa dimensiones.</p>
-                  <ul><li>Cama fría</li><li>Pieza retirada sin doblar</li><li>Soportes quitados</li><li>Medidas revisadas</li><li>Fallos anotados</li></ul>
+                  <h3>Retirada y revisión final</h3>
+                  <p>La impresión no termina cuando para la máquina. Espera a que enfríe, retira sin forzar, quita soportes y revisa adhesión, superficie, dimensiones y resistencia.</p>
+                  <ul><li>Adhesión revisada</li><li>Superficie comprobada</li><li>Soportes quitados</li><li>Medidas revisadas</li><li>Siguiente ajuste anotado</li></ul>
                   <p class="flow-error"><strong>Error típico:</strong> forzar la pieza en caliente y dañar la cama o deformar la impresión.</p>
-                  <p class="flow-tip"><strong>Consejo:</strong> cada pieza fallida es información: anota qué pasó y qué cambiarás.</p>
-                </article>
-                <article class="flow-copy" data-flow-copy="8">
-                  <h3>Aprende del resultado</h3>
-                  <p>Una pieza terminada es una fuente de diagnóstico. Observa, compara, ajusta y mejora en la siguiente impresión.</p>
-                  <ul><li>¿Se pegó bien?</li><li>¿Hay hilos?</li><li>¿Capas alineadas?</li><li>¿Medidas correctas?</li><li>¿Resiste?</li></ul>
-                  <p class="flow-error"><strong>Error típico:</strong> repetir la misma impresión sin analizar el fallo.</p>
-                  <p class="flow-tip"><strong>Consejo:</strong> cambia una sola variable por prueba para saber qué mejora realmente.</p>
+                  <p class="flow-tip"><strong>Consejo:</strong> cada pieza te da información. Cambia una sola variable por prueba para saber qué mejora realmente.</p>
                 </article>
               </div>
             </div>
@@ -175,7 +167,7 @@
               </div>
 
               <div class="flow-chips">
-                <span>CAD</span><span>STL</span><span>3MF</span><span>Escala</span><span>Orientación</span>
+                <span data-flow-chip>CAD</span><span data-flow-chip>STL</span><span data-flow-chip>3MF</span><span data-flow-chip>Escala</span><span data-flow-chip>Orientación</span>
               </div>
 
               <div class="flow-model-3d">

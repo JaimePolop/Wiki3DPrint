@@ -1397,7 +1397,7 @@ body[data-theme="light"] .float-card {
 }
 
 .flow-story {
-  min-height: 720vh;
+  min-height: 650vh;
   overflow: visible;
   padding: clamp(22px, 4vw, 34px);
   background:
@@ -1534,7 +1534,7 @@ body[data-theme="light"] .float-card {
   position: absolute;
   inset: 0;
   display: grid;
-  align-content: center;
+  align-content: start;
   opacity: 0;
   transform: translateY(26px);
   transition: opacity 0.38s ease, transform 0.38s ease;
@@ -1548,14 +1548,17 @@ body[data-theme="light"] .float-card {
 }
 
 .flow-copy h3 {
-  max-width: 12ch;
+  max-width: 100%;
   margin-bottom: 16px;
-  font-size: clamp(2.05rem, 4.4vw, 4.3rem);
-  line-height: 0.94;
+  font-size: clamp(1.85rem, 2.75vw, 3.35rem);
+  line-height: 1.02;
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 
 .flow-copy p {
   max-width: 58ch;
+  overflow-wrap: anywhere;
 }
 
 .flow-copy ul {
@@ -1568,6 +1571,7 @@ body[data-theme="light"] .float-card {
 }
 
 .flow-copy li {
+  min-width: 0;
   padding: 10px 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 14px;
@@ -1575,6 +1579,7 @@ body[data-theme="light"] .float-card {
   color: var(--text);
   font-size: 0.88rem;
   font-weight: 800;
+  overflow-wrap: anywhere;
 }
 
 .flow-error,
@@ -1582,6 +1587,7 @@ body[data-theme="light"] .float-card {
   padding: 14px;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.055);
+  overflow-wrap: anywhere;
 }
 
 .flow-error {
@@ -1685,9 +1691,15 @@ body[data-theme="light"] .float-card {
 }
 
 .flow-chips span:hover,
-.flow-tools span:hover {
+.flow-tools span:hover,
+.flow-chips span.is-active {
   transform: translateY(-3px);
   background: rgba(56, 189, 248, 0.2);
+}
+
+.flow-chips span.is-active {
+  border-color: rgba(34, 197, 94, 0.42);
+  box-shadow: 0 0 22px rgba(34, 197, 94, 0.16);
 }
 
 .flow-model-3d,
@@ -2151,8 +2163,7 @@ body[data-theme="light"] .float-card {
 .flow-story[data-flow-step="4"] .flow-model-3d,
 .flow-story[data-flow-step="5"] .flow-model-3d,
 .flow-story[data-flow-step="6"] .flow-model-3d,
-.flow-story[data-flow-step="7"] .flow-model-3d,
-.flow-story[data-flow-step="8"] .flow-model-3d {
+.flow-story[data-flow-step="7"] .flow-model-3d {
   opacity: 0.22;
   transform: translate(-50%, -50%) rotateX(-24deg) rotateY(42deg) scale(0.82);
 }
@@ -2194,13 +2205,14 @@ body[data-theme="light"] .float-card {
   transform: translateY(0);
 }
 
-.flow-story[data-flow-step="8"] .flow-diagnostics,
-.flow-story[data-flow-step="8"] .flow-final-cta {
+.flow-story[data-flow-step="7"] .flow-tools,
+.flow-story[data-flow-step="7"] .flow-diagnostics,
+.flow-story[data-flow-step="7"] .flow-final-cta {
   opacity: 1;
   transform: translateY(0);
 }
 
-.flow-story[data-flow-step="8"] .flow-printer-machine {
+.flow-story[data-flow-step="7"] .flow-printer-machine {
   opacity: 0.28;
 }
 

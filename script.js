@@ -138,6 +138,7 @@ document.querySelectorAll("[data-flow-story]").forEach((section) => {
   const copies = [...section.querySelectorAll("[data-flow-copy]")];
   const dots = [...section.querySelectorAll("[data-flow-jump]")];
   const current = section.querySelector("[data-flow-current]");
+  const chips = [...section.querySelectorAll("[data-flow-chip]")];
   const hud = {
     material: section.querySelector('[data-flow-hud="material"]'),
     nozzle: section.querySelector('[data-flow-hud="nozzle"]'),
@@ -145,15 +146,24 @@ document.querySelectorAll("[data-flow-story]").forEach((section) => {
     progress: section.querySelector('[data-flow-hud="progress"]')
   };
   const hudValues = [
-    ["PLA", "0.4 mm", "Modelo", "0%"],
-    ["PLA", "0.4 mm", "0.20 mm", "12%"],
-    ["PLA", "0.4 mm", "1 / 186", "24%"],
-    ["G-code", "210 °C", "Rutas", "36%"],
-    ["PLA", "210 °C", "Z OK", "48%"],
-    ["PLA", "60 °C", "Capa 1", "60%"],
-    ["PLA", "80 mm/s", "78 / 186", "76%"],
-    ["Cama fría", "Soportes", "Acabado", "90%"],
+    ["Archivo", "STL/3MF", "Wireframe", "0%"],
+    ["PLA", "0.4 mm", "0.20 mm", "14%"],
+    ["38 g", "2h 14m", "1 / 186", "28%"],
+    ["G-code", "210 °C", "Rutas", "42%"],
+    ["PLA", "210 °C", "Z OK", "56%"],
+    ["PLA", "60 °C", "Capa 1", "70%"],
+    ["PLA", "80 mm/s", "78 / 186", "86%"],
     ["Revisión", "OK", "Ajuste", "100%"]
+  ];
+  const chipValues = [
+    ["CAD", "STL", "3MF", "Escala", "Orientación"],
+    ["Slicer", "PLA", "0.4 mm", "0.20 mm", "Soportes"],
+    ["Capas", "Perímetros", "Relleno", "Soportes", "Tiempo"],
+    ["G28", "M104", "M140", "G1", "Extrusión"],
+    ["Cama limpia", "PLA cargado", "Hotend", "Cama 60", "Z OK"],
+    ["Z alto", "Correcto", "Z bajo", "Adhesión", "Capa 1"],
+    ["Progreso", "78/186", "210 °C", "80 mm/s", "Fan 100%"],
+    ["Adhesión", "Superficie", "Hilos", "Medidas", "Ajuste"]
   ];
   let activeStep = -1;
   let ticking = false;
@@ -181,6 +191,11 @@ document.querySelectorAll("[data-flow-story]").forEach((section) => {
     if (hud.nozzle) hud.nozzle.textContent = values[1];
     if (hud.layer) hud.layer.textContent = values[2];
     if (hud.progress) hud.progress.textContent = values[3];
+    const activeChips = chipValues[bounded] || chipValues[0];
+    chips.forEach((chip, chipIndex) => {
+      chip.textContent = activeChips[chipIndex] || "";
+      chip.classList.toggle("is-active", chipIndex === bounded % Math.max(1, chips.length));
+    });
   };
 
   const updateFlow = () => {
