@@ -111,6 +111,47 @@
             después consigues o diseñas el modelo, lo abres en el slicer, configuras el perfil,
             generas el G-code, preparas la impresora y finalmente revisas la pieza terminada.
           </p>
+          <div class="workflow-showcase" aria-label="Flujo visual de una impresión 3D">
+            <div class="workflow-animation" aria-hidden="true">
+              <span class="wf-node wf-model">3MF</span>
+              <span class="wf-line wf-line-a"></span>
+              <span class="wf-node wf-slicer">Slicer</span>
+              <span class="wf-line wf-line-b"></span>
+              <span class="wf-node wf-code">G-code</span>
+              <div class="wf-printer">
+                <span class="wf-spool"></span>
+                <span class="wf-filament"></span>
+                <span class="wf-head"></span>
+                <span class="wf-nozzle"></span>
+                <span class="wf-bed"></span>
+                <span class="wf-layer wf-layer-one"></span>
+                <span class="wf-layer wf-layer-two"></span>
+                <span class="wf-layer wf-layer-three"></span>
+              </div>
+              <span class="wf-result">Pieza</span>
+            </div>
+            <div class="workflow-copy">
+              <h3>Mi primera pieza</h3>
+              <p>Sigue el orden completo: modelo, slicer, material, perfil, soportes, laminado, vista previa, G-code, preparación de impresora, primera capa, retirada, soportes, acabado y revisión.</p>
+              <div class="workflow-pill-grid">
+                <span>Modelo</span>
+                <span>Slicer</span>
+                <span>Perfil</span>
+                <span>Soportes</span>
+                <span>G-code</span>
+                <span>Primera capa</span>
+                <span>Postproceso</span>
+                <span>Revisión</span>
+              </div>
+            </div>
+          </div>
+          <div class="workflow-steps">
+            <div><strong>1. Modelo</strong><span>Busca o diseña una pieza y descarga STL/3MF. Revisa que no esté rota, que tenga escala correcta y que sea imprimible.</span></div>
+            <div><strong>2. Slicer</strong><span>Elige impresora, material y perfil. Orienta la pieza y añade soportes solo si hacen falta.</span></div>
+            <div><strong>3. Vista previa</strong><span>Lamina y revisa capas, soportes, tiempo, material, primera capa, puentes y zonas en el aire.</span></div>
+            <div><strong>4. Impresora</strong><span>Prepara cama, filamento, boquilla y Z-offset. Supervisa el inicio para validar la primera capa.</span></div>
+            <div><strong>5. Acabado</strong><span>Retira la pieza, quita soportes, limpia bordes, mide si hace falta y revisa qué mejorar.</span></div>
+          </div>
           <div class="info-grid">
             <div>
               <h3>1. Preparar el modelo</h3>
