@@ -1399,6 +1399,8 @@ body[data-theme="light"] .float-card {
 .flow-story {
   min-height: 650vh;
   overflow: visible;
+  opacity: 1;
+  transform: none;
   padding: clamp(22px, 4vw, 34px);
   background:
     radial-gradient(circle at 18% 8%, rgba(56, 189, 248, 0.18), transparent 28%),

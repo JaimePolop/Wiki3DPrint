@@ -225,8 +225,17 @@ document.querySelectorAll("[data-flow-story]").forEach((section) => {
 
   setFlowStep(0);
   updateFlow();
+  requestFlowUpdate();
   window.addEventListener("scroll", requestFlowUpdate, { passive: true });
   window.addEventListener("resize", requestFlowUpdate);
+  if (document.readyState === "complete") {
+    requestFlowUpdate();
+  } else {
+    window.addEventListener("load", requestFlowUpdate, { once: true });
+  }
+  if (document.fonts?.ready) {
+    document.fonts.ready.then(requestFlowUpdate).catch(() => {});
+  }
 });
 
 document.querySelectorAll('[data-filter-group="materials"] .chip').forEach((button) => {
