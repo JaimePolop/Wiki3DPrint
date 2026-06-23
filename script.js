@@ -38,11 +38,11 @@ document.querySelectorAll(".desktop-nav").forEach((nav) => {
       ]
     },
     {
-      label: "Diseño y calibraciones",
+      label: "Diseño y tests",
       items: [
         ["Diseño 3D", "diseno.html"],
         ["Slicers", "slicers.html"],
-        ["Calibración", "calibracion.html"]
+        ["Tests de impresora", "tests.html"]
       ]
     },
     {
@@ -173,7 +173,7 @@ const siteIndex = [
   ["FDM", "fdm.html", "Impresoras FDM, anatomía, hotend, extrusor, cama, movimiento y electrónica."],
   ["Materiales", "materiales.html", "PLA, PETG, ABS, ASA, TPU, nylon, PC, resinas y abrasivos."],
   ["Secado", "secado-filamento.html", "Humedad, stringing, burbujas, secador, dry box y almacenamiento."],
-  ["Calibración", "calibracion.html", "Z-offset, E-steps, flujo, temperatura, retracción, PA e input shaping."],
+  ["Tests de impresora", "tests.html", "Velocidad, color, flujo volumétrico, temperatura, retracción, tolerancias, Benchy, PA e input shaping."],
   ["Problemas", "problemas.html", "Warping, stringing, heat creep, layer shifting, blobs y diagnóstico."],
   ["Mantenimiento", "mantenimiento.html", "Limpieza, cama, hotend, boquilla, PTFE, correas, lubricación y firmware."],
   ["Slicers", "slicers.html", "Cura, PrusaSlicer, OrcaSlicer, Bambu Studio, Lychee, Chitubox y perfiles."],

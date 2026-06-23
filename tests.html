@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tests de impresora 3D: velocidad, color, flujo y calidad | Printpedia 3D</title>
+    <meta
+      name="description"
+      content="Guía completa de tests para impresora 3D FDM: velocidad, flujo volumétrico, color, retracción, temperatura, tolerancias, resonancias, Benchy y cálculos útiles."
+    />
+    <meta property="og:title" content="Tests de impresora 3D: velocidad, color, flujo y calidad | Printpedia 3D" />
+    <meta property="og:description" content="Pruebas prácticas para saber qué puede hacer tu impresora y cómo interpretar cada resultado." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/partes/cama-real.jpg" />
+    <meta name="theme-color" content="#050816" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-theme="dark">
+    <div class="site-bg" aria-hidden="true"><span class="orb orb-a"></span><span class="orb orb-b"></span><span class="orb orb-c"></span><span class="grid-glow"></span></div>
+
+    <header class="site-header" id="siteHeader">
+      <a class="brand" href="index.html" aria-label="Printpedia 3D inicio"><span class="brand-mark">P3D</span><span><strong>Printpedia 3D</strong><small>Academia maker</small></span></a>
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a><a href="aprender.html">Aprende</a><a href="fdm.html">FDM</a><a href="materiales.html">Materiales</a><a href="tests.html" class="active">Tests</a><a href="problemas.html">Problemas</a><a href="mantenimiento.html">Mantenimiento</a><a href="herramientas.html">Herramientas</a><a href="guias.html">Guías</a><a href="resina.html">Resina</a><a href="diseno.html">Diseño</a><a href="seguridad.html">Seguridad</a><a href="calculadoras.html">Calculadoras</a><a href="glosario.html">Glosario</a>
+      </nav>
+      <div class="header-actions">
+        <label class="global-search hide-sm"><span>Buscar</span><input id="siteSearch" type="search" placeholder="Buscar guía..." autocomplete="off" /></label>
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Cambiar tema">◐</button>
+        <button class="icon-btn menu-btn" id="menuToggle" type="button" aria-label="Abrir menú">☰</button>
+      </div>
+      <nav class="mobile-nav" id="mobileNav" aria-label="Menú móvil">
+        <a href="index.html">Inicio</a><a href="aprender.html">Aprende</a><a href="fdm.html">FDM</a><a href="materiales.html">Materiales</a><a href="tests.html" class="active">Tests</a><a href="problemas.html">Problemas</a><a href="mantenimiento.html">Mantenimiento</a><a href="herramientas.html">Herramientas</a><a href="guias.html">Guías</a><a href="resina.html">Resina</a><a href="diseno.html">Diseño</a><a href="seguridad.html">Seguridad</a><a href="calculadoras.html">Calculadoras</a><a href="glosario.html">Glosario</a>
+      </nav>
+      <div class="search-results" id="searchResults" aria-live="polite"></div>
+    </header>
+
+    <main>
+      <section class="subhero section">
+        <div class="subhero-copy reveal">
+          <nav class="breadcrumbs"><a href="index.html">Inicio</a><span>/</span><span>Tests de impresora</span></nav>
+          <p class="badge">Tests de impresora</p>
+          <h1>Tests de impresora 3D: velocidad, color, flujo y calidad</h1>
+          <p class="hero-lead">
+            No pruebes valores al azar. Cada test debe responder una pregunta concreta: cuánto plástico
+            puede fundir tu hotend, qué velocidad aguanta la máquina, qué retracción necesita y cómo se comporta el color.
+          </p>
+          <div class="hero-actions"><a class="button button-primary" href="#biblioteca-tests">Ver tests</a><a class="button button-ghost" href="#calculos">Ver cálculos</a></div>
+        </div>
+        <figure class="subhero-media reveal">
+          <img src="assets/partes/cama-real.jpg" alt="Cama de impresora 3D para calibración de primera capa" />
+          <figcaption>Una buena batería de tests separa problemas de material, perfil, mecánica y refrigeración.</figcaption>
+        </figure>
+      </section>
+
+      <section class="section page-content" id="contenido">
+        <section class="content-section reveal">
+          <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
+          <h2 id="orden-correcto">Orden recomendado de pruebas</h2>
+          <p>
+            Los tests tienen sentido si se hacen en orden. Primero elimina problemas de montaje y primera capa;
+            después mide material, extrusión y dinámica. Si haces un test de velocidad con la boquilla atascada
+            o el filamento húmedo, el resultado no sirve.
+          </p>
+          <div class="process-line test-flow">
+            <span>Mecánica</span><span>Primera capa</span><span>Material</span><span>Flujo</span><span>Dinámica</span><span>Validación</span>
+          </div>
+          <div class="info-grid">
+            <div><h3>1. Base física</h3><p>Correas, poleas, estructura, cama limpia, boquilla limpia, ventiladores y Z-offset. Sin esto, cualquier test da falsos positivos.</p></div>
+            <div><h3>2. Perfil de material</h3><p>Torre de temperatura, flujo, retracción y ventilación. Cada marca y color puede necesitar ajustes distintos.</p></div>
+            <div><h3>3. Capacidad real</h3><p>Velocidad máxima, flujo volumétrico, aceleración, resonancias, puentes y voladizos. Aquí descubres el límite de tu máquina.</p></div>
+            <div><h3>4. Validación final</h3><p>Cubo, tolerancias, test de color y Benchy. Sirven para confirmar que el perfil funciona en piezas reales.</p></div>
+          </div>
+        </section>
+
+        <section class="content-section reveal" id="biblioteca-tests">
+          <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
+          <h2>Biblioteca de tests principales</h2>
+          <p>
+            Esta es la parte práctica. Cada tarjeta indica qué modelo imprimir, qué problema aísla, cómo hacerlo
+            y cómo tomar la decisión. No cambies cinco parámetros a la vez: imprime, mide, cambia una cosa y repite.
+          </p>
+
+          <div class="test-library-grid">
+            <article class="test-card" id="test-primera-capa">
+              <div class="test-visual first-layer-visual" aria-hidden="true"><span></span><span></span><span></span></div>
+              <div>
+                <p class="test-tag">BASE</p>
+                <h3>Test de primera capa</h3>
+                <p><strong>Modelo:</strong> cuadrado grande de una capa o patrón de malla del slicer.</p>
+                <p><strong>Para qué sirve:</strong> comprobar Z-offset, nivelación, limpieza de cama y adhesión.</p>
+                <p><strong>Cómo hacerlo:</strong> imprime una sola capa lenta. Debe quedar continua, sin huecos y sin surcos excesivos.</p>
+                <p><strong>Lectura:</strong> líneas separadas = boquilla alta. Superficie arañada o transparente = boquilla baja.</p>
+              </div>
+            </article>
+
+            <article class="test-card" id="test-temperatura">
+              <div class="test-visual tower-visual" aria-hidden="true"><span>220</span><span>215</span><span>210</span><span>205</span><span>200</span></div>
+              <div>
+                <p class="test-tag">MATERIAL</p>
+                <h3>Torre de temperatura</h3>
+                <p><strong>Modelo:</strong> torre de temperatura de OrcaSlicer, Teaching Tech o modelo STL con cambios por altura.</p>
+                <p><strong>Para qué sirve:</strong> encontrar la temperatura con buena unión de capas, detalle, puentes y poco stringing.</p>
+                <p><strong>Cómo hacerlo:</strong> imprime tramos de 5 °C o 10 °C. Para PLA suele tener sentido probar entre 190 y 220 °C.</p>
+                <p><strong>Lectura:</strong> elige el tramo con mejor equilibrio, no solo el más bonito. Si las capas parten fácil, falta temperatura.</p>
+              </div>
+            </article>
+
+            <article class="test-card" id="test-retraccion">
+              <div class="test-visual stringing-visual" aria-hidden="true"><i></i><i></i><span></span><span></span></div>
+              <div>
+                <p class="test-tag">HILOS</p>
+                <h3>Test de retracción</h3>
+                <p><strong>Modelo:</strong> dos o más torres finas separadas.</p>
+                <p><strong>Para qué sirve:</strong> reducir hilos en movimientos en vacío sin provocar atascos o huecos.</p>
+                <p><strong>Cómo hacerlo:</strong> fija primero la temperatura. Después prueba distancia y velocidad de retracción en pasos pequeños.</p>
+                <p><strong>Lectura:</strong> pocos hilos sin clics del extrusor, sin marcas profundas y sin huecos al reiniciar la línea.</p>
+              </div>
+            </article>
+
+            <article class="test-card" id="test-flujo">
+              <div class="test-visual flow-visual" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+              <div>
+                <p class="test-tag">FLUJO</p>
+                <h3>Test de flujo o extrusion multiplier</h3>
+                <p><strong>Modelo:</strong> pared simple, placa de flujo o calibración integrada del slicer.</p>
+                <p><strong>Para qué sirve:</strong> ajustar cuánto material deposita realmente la impresora.</p>
+                <p><strong>Cómo hacerlo:</strong> imprime un patrón de flujo después de calibrar temperatura. Mide paredes o compara superficies superiores.</p>
+                <p><strong>Cálculo:</strong> nuevo flujo = flujo actual x medida objetivo / medida real. Si esperas 0,45 mm y mides 0,48: 100 x 0,45 / 0,48 = 93,75%.</p>
+              </div>
+            </article>
+
+            <article class="test-card" id="cubo-xyz">
+              <div class="test-visual cube-test-visual" aria-hidden="true"><span>X</span><span>Y</span><span>Z</span></div>
+              <div>
+                <p class="test-tag">DIMENSIONES</p>
+                <h3>Cubo XYZ</h3>
+                <p><strong>Modelo:</strong> cubo de 20 mm con letras X, Y y Z.</p>
+                <p><strong>Para qué sirve:</strong> comprobar dimensiones, esquinas, ringing, elephant foot y regularidad de capas.</p>
+                <p><strong>Cómo hacerlo:</strong> imprime con el perfil que quieres validar y mide cada eje con calibre sin apretar la pieza.</p>
+                <p><strong>Lectura:</strong> X/Y grandes suele ser flujo o expansión horizontal. Z raro apunta a primera capa, altura de capa o eje Z.</p>
+              </div>
+            </article>
+
+            <article class="test-card" id="test-rapidez">
+              <div class="test-visual speed-visual" aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></div>
+              <div>
+                <p class="test-tag">RAPIDEZ</p>
+                <h3>Test de velocidad y flujo volumétrico</h3>
+                <p><strong>Modelo:</strong> speed tower, max flow test o torre de flujo volumétrico.</p>
+                <p><strong>Para qué sirve:</strong> saber la velocidad máxima real antes de subextruir.</p>
+                <p><strong>Cómo hacerlo:</strong> sube velocidad por tramos y observa cuándo aparecen líneas finas, capas débiles, clics o pérdida de brillo.</p>
+                <p><strong>Cálculo:</strong> flujo volumétrico = ancho de línea x altura de capa x velocidad. Ejemplo: 0,45 x 0,20 x 120 = 10,8 mm³/s.</p>
+              </div>
+            </article>
+
+            <article class="test-card" id="test-aceleracion">
+              <div class="test-visual ringing-visual" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+              <div>
+                <p class="test-tag">DINÁMICA</p>
+                <h3>Test de aceleración, ringing e input shaping</h3>
+                <p><strong>Modelo:</strong> ringing tower, acceleration tower o prueba de resonancias de Klipper.</p>
+                <p><strong>Para qué sirve:</strong> encontrar aceleraciones rápidas sin ondas alrededor de esquinas ni desplazamientos de capa.</p>
+                <p><strong>Cómo hacerlo:</strong> imprime una torre subiendo aceleración por alturas. En Klipper, input shaping puede medirse con acelerómetro o test manual.</p>
+                <p><strong>Lectura:</strong> usa la aceleración más alta que no deje ecos visibles, vibraciones fuertes ni layer shifting.</p>
+              </div>
+            </article>
+
+            <article class="test-card" id="test-pressure-advance">
+              <div class="test-visual pa-visual" aria-hidden="true"><span></span><span></span><span></span></div>
+              <div>
+                <p class="test-tag">ESQUINAS</p>
+                <h3>Pressure advance / linear advance</h3>
+                <p><strong>Modelo:</strong> patrón de líneas, torre PA o calibración del slicer/firmware.</p>
+                <p><strong>Para qué sirve:</strong> compensar la presión interna del hotend en esquinas, frenadas y arranques.</p>
+                <p><strong>Cómo hacerlo:</strong> imprime valores progresivos y compara esquinas. Deben quedar cerradas, sin bultos y sin huecos.</p>
+                <p><strong>Lectura:</strong> valor bajo = esquinas gordas. Valor alto = huecos o esquinas débiles.</p>
+              </div>
+            </article>
+
+            <article class="test-card" id="test-puentes">
+              <div class="test-visual bridge-visual" aria-hidden="true"><span></span><i></i><i></i><i></i></div>
+              <div>
+                <p class="test-tag">REFRIGERACIÓN</p>
+                <h3>Test de puentes y voladizos</h3>
+                <p><strong>Modelo:</strong> bridge test y overhang test de 40 a 75 grados.</p>
+                <p><strong>Para qué sirve:</strong> comprobar ventilador de capa, temperatura, velocidad de puente y orientación de pieza.</p>
+                <p><strong>Cómo hacerlo:</strong> imprime con el perfil real. No uses soportes; el objetivo es ver hasta dónde llega la máquina sola.</p>
+                <p><strong>Lectura:</strong> puentes caídos = demasiado calor, poca ventilación o puente muy rápido. Voladizos rugosos = falta refrigeración o demasiada velocidad.</p>
+              </div>
+            </article>
+
+            <article class="test-card" id="test-tolerancias">
+              <div class="test-visual tolerance-visual" aria-hidden="true"><span>0.1</span><span>0.2</span><span>0.3</span><span>0.4</span></div>
+              <div>
+                <p class="test-tag">DISEÑO</p>
+                <h3>Test de tolerancias y encajes</h3>
+                <p><strong>Modelo:</strong> clearance test, agujeros calibrados, tuercas cautivas o piezas print-in-place.</p>
+                <p><strong>Para qué sirve:</strong> saber qué holgura necesitas para bisagras, ejes, tapas, tornillos e inserts.</p>
+                <p><strong>Cómo hacerlo:</strong> imprime una pieza con holguras de 0,1 a 0,5 mm y prueba qué parte se mueve sin fuerza.</p>
+                <p><strong>Lectura:</strong> si 0,2 mm no se mueve y 0,3 mm sí, diseña tus piezas funcionales con al menos 0,3 mm de holgura.</p>
+              </div>
+            </article>
+
+            <article class="test-card" id="test-color">
+              <div class="test-visual color-visual" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+              <div>
+                <p class="test-tag">COLOR</p>
+                <h3>Test de color, cambio de filamento y multimaterial</h3>
+                <p><strong>Modelo:</strong> placa con franjas de color, logo en dos colores, purge tower o modelo pequeño con cambios por capa.</p>
+                <p><strong>Para qué sirve:</strong> comprobar contaminación entre colores, purga, alineación, costura y cambios de material.</p>
+                <p><strong>Cómo hacerlo:</strong> imprime colores claros después de oscuros para ver contaminación. Ajusta purga en el slicer o el volumen de flush de AMS/MMU.</p>
+                <p><strong>Lectura:</strong> si el blanco sale gris, falta purga. Si la torre desperdicia mucho y el color sale limpio, puedes bajar purga poco a poco.</p>
+              </div>
+            </article>
+
+            <article class="test-card" id="test-benchy">
+              <div class="test-visual benchy-visual" aria-hidden="true"><span></span><i></i><b></b></div>
+              <div>
+                <p class="test-tag">VALIDACIÓN</p>
+                <h3>Benchy y pieza de control</h3>
+                <p><strong>Modelo:</strong> 3DBenchy y una pieza real que tú uses a menudo.</p>
+                <p><strong>Para qué sirve:</strong> confirmar primera capa, paredes, puentes, chimenea, curvas, refrigeración y dimensiones en una sola pieza.</p>
+                <p><strong>Cómo hacerlo:</strong> imprime después de los tests principales, no antes. Benchy es una validación, no una respuesta mágica.</p>
+                <p><strong>Lectura:</strong> base mala = cama/Z. Hilos = temperatura/retracción. Ondas = aceleración. Puentes caídos = refrigeración.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-section reveal" id="calculos">
+          <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
+          <h2>Cálculos útiles para tests</h2>
+          <p>
+            Los tests de rapidez y calidad no se interpretan solo mirando la pieza. Estos cálculos te ayudan
+            a saber si el límite viene del hotend, del movimiento, del material o del perfil.
+          </p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Cálculo</th><th>Fórmula</th><th>Ejemplo</th><th>Para qué sirve</th></tr></thead>
+              <tbody>
+                <tr><td>Flujo volumétrico</td><td>ancho de línea x altura de capa x velocidad</td><td>0,45 x 0,20 x 120 = 10,8 mm³/s</td><td>Saber si el hotend puede fundir suficiente plástico.</td></tr>
+                <tr><td>Velocidad máxima por flujo</td><td>flujo máximo / (ancho x altura)</td><td>12 / (0,45 x 0,20) = 133 mm/s</td><td>No pedir más velocidad de la que el hotend puede alimentar.</td></tr>
+                <tr><td>Corrección de flujo</td><td>flujo actual x medida objetivo / medida real</td><td>100 x 0,45 / 0,48 = 93,75%</td><td>Ajustar extrusion multiplier cuando las paredes salen gruesas o finas.</td></tr>
+                <tr><td>Error dimensional</td><td>medida real - medida objetivo</td><td>20,18 - 20 = +0,18 mm</td><td>Separar error de flujo, contracción, expansión horizontal o mecánica.</td></tr>
+                <tr><td>Holgura mínima</td><td>primer hueco que se mueve libre</td><td>0,3 mm funciona, 0,2 mm no</td><td>Diseñar encajes, bisagras y piezas print-in-place.</td></tr>
+                <tr><td>Purga de color</td><td>subir/bajar volumen por contaminación visible</td><td>+10% si queda color anterior; -5% si sobra torre limpia</td><td>Optimizar cambios de color sin tirar material de más.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout">
+            <strong>Regla práctica</strong>
+            <p>Si al subir velocidad aparecen líneas finas pero la mecánica no vibra, probablemente el límite es flujo volumétrico. Si aparecen ondas, ecos o capas desplazadas, el límite es dinámica.</p>
+          </div>
+        </section>
+
+        <section class="content-section reveal">
+          <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
+          <h2 id="modelos-recomendados">Modelos y recursos recomendados</h2>
+          <p>
+            Para no llenar la web de archivos duplicados, enlazo los recursos más útiles. Descarga siempre desde
+            la fuente original y revisa el G-code antes de imprimir tests generados automáticamente.
+          </p>
+          <div class="resource-strip">
+            <a href="https://www.3dbenchy.com/download/" target="_blank" rel="noopener"><strong>3DBenchy oficial</strong><span>Modelo clásico de validación general.</span></a>
+            <a href="https://teachingtechyt.github.io/calibration.html" target="_blank" rel="noopener"><strong>Teaching Tech Calibration</strong><span>Generador de tests: first layer, flow, speed, acceleration, linear advance y más.</span></a>
+            <a href="https://ellis3dp.com/Print-Tuning-Guide/" target="_blank" rel="noopener"><strong>Ellis Print Tuning Guide</strong><span>Orden avanzado para flujo, pressure advance, cooling, velocidades y aceleraciones.</span></a>
+            <a href="https://github.com/OrcaSlicer/OrcaSlicer/wiki/Calibration" target="_blank" rel="noopener"><strong>OrcaSlicer Calibration</strong><span>Tests integrados para temperatura, flujo, PA, VFA y retracción.</span></a>
+          </div>
+        </section>
+
+        <section class="content-section reveal">
+          <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
+          <h2 id="tabla-resumen">Resumen rápido de tests</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Test</th><th>Qué mide</th><th>Señal de problema</th><th>Ajuste típico</th></tr></thead>
+              <tbody>
+                <tr><td>Primera capa</td><td>Z-offset, cama y adhesión</td><td>Huecos, surcos, esquinas levantadas</td><td>Z-offset, limpieza, temperatura de cama</td></tr>
+                <tr><td>Temperatura</td><td>Comportamiento del material</td><td>Hilos, capas débiles, detalles blandos</td><td>Temperatura, ventilador, secado</td></tr>
+                <tr><td>Retracción</td><td>Hilos en viajes</td><td>Stringing o huecos al reiniciar</td><td>Distancia, velocidad, temperatura</td></tr>
+                <tr><td>Flujo</td><td>Cantidad de plástico</td><td>Paredes gruesas, top sólido irregular</td><td>Extrusion multiplier / flow</td></tr>
+                <tr><td>Velocidad</td><td>Límite real de impresión</td><td>Subextrusión, pérdida de detalle</td><td>Velocidad, ancho, altura, hotend</td></tr>
+                <tr><td>Aceleración</td><td>Dinámica de movimiento</td><td>Ringing, layer shift, vibración</td><td>Aceleración, jerk, input shaping</td></tr>
+                <tr><td>Puentes</td><td>Refrigeración y tensión del filamento</td><td>Puentes caídos o rugosos</td><td>Ventilador, velocidad, temperatura</td></tr>
+                <tr><td>Color</td><td>Purga y cambios de material</td><td>Color contaminado, torre excesiva</td><td>Flush volume, torre, orden de colores</td></tr>
+                <tr><td>Tolerancias</td><td>Encajes y piezas funcionales</td><td>Piezas pegadas o demasiado flojas</td><td>Holgura de diseño, flujo, expansión horizontal</td></tr>
+                <tr><td>Benchy</td><td>Validación general</td><td>Varios síntomas mezclados</td><td>Volver al test concreto que explique el fallo</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="content-section reveal">
+          <button class="copy-section" type="button" aria-label="Copiar enlace">#</button>
+          <h2 id="checklist-completa">Checklist de batería completa</h2>
+          <div class="checklist-grid single-checklist">
+            <div class="check-card checklist-copy">
+              <h3>Antes de dar un perfil por bueno</h3>
+              <label><input type="checkbox" /> Cama limpia y primera capa correcta</label>
+              <label><input type="checkbox" /> Torre de temperatura impresa y elegida</label>
+              <label><input type="checkbox" /> Flujo calibrado con cálculo o patrón visual</label>
+              <label><input type="checkbox" /> Retracción probada sin abusar de distancia</label>
+              <label><input type="checkbox" /> Flujo volumétrico máximo medido</label>
+              <label><input type="checkbox" /> Velocidad y aceleración validadas</label>
+              <label><input type="checkbox" /> Puentes, voladizos y tolerancias revisados</label>
+              <label><input type="checkbox" /> Cambio de color o multimaterial probado si lo usas</label>
+              <label><input type="checkbox" /> Benchy o pieza real final impresa</label>
+              <button class="button button-ghost copy-checklist" type="button">Copiar checklist</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section reveal">
+          <h2>Artículos relacionados</h2>
+          <div class="related-grid">
+            <a class="related-card" href="aprender.html#siguiente-paso"><strong>Primeras pruebas</strong><span>Vuelve al orden recomendado después de la primera impresión.</span></a>
+            <a class="related-card" href="problemas.html"><strong>Problemas</strong><span>Relaciona síntomas con causas y soluciones.</span></a>
+            <a class="related-card" href="slicers.html"><strong>Slicers</strong><span>Aprende dónde tocar temperatura, retracción y velocidad.</span></a>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div><a class="brand" href="index.html"><span class="brand-mark">P3D</span><span><strong>Printpedia 3D</strong><small>Impresión 3D visual</small></span></a><p>Plataforma educativa para aprender impresión 3D con criterio técnico, seguridad y resultados reales.</p></div>
+      <div><h3>Guías</h3><a href="aprender.html">Aprender</a><a href="fdm.html">FDM</a><a href="materiales.html">Materiales</a><a href="tests.html">Tests</a></div>
+      <div><h3>Diagnóstico</h3><a href="problemas.html">Problemas</a><a href="mantenimiento.html">Mantenimiento</a><a href="seguridad.html">Seguridad</a><a href="glosario.html">Glosario</a></div>
+      <div><h3>Newsletter</h3><p>Recibe checklists, perfiles y guías nuevas.</p><form class="newsletter"><input type="email" placeholder="tu@email.com" /><button type="button">Enviar</button></form></div>
+      <p class="footer-bottom">© 2026 Printpedia 3D. Información educativa: revisa siempre el manual de tu máquina y trabaja con seguridad.</p>
+    </footer>
+    <button class="back-top" id="backTop" type="button" aria-label="Volver arriba">↑</button>
+    <script src="script.js"></script>
+  </body>
+</html>
