@@ -31,10 +31,10 @@ document.querySelectorAll(".desktop-nav").forEach((nav) => {
       label: "Básico",
       items: [
         ["Aprende desde cero", "aprender.html"],
-        ["Mi primera pieza", "aprender.html#flujo-completo"],
         ["Impresoras FDM", "fdm.html"],
         ["Materiales", "materiales.html"],
-        ["Resina", "resina.html"]
+        ["Resina", "resina.html"],
+        ["Mi primera pieza", "aprender.html#flujo-completo"]
       ]
     },
     {
