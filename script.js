@@ -134,33 +134,84 @@ if (prefersReducedMotion) {
   revealItems.forEach((item) => revealObserver.observe(item));
 }
 
-document.querySelectorAll(".first-piece-scroll").forEach((section) => {
-  const steps = [...section.querySelectorAll(".piece-step")];
-  if (!steps.length) return;
+document.querySelectorAll("[data-flow-story]").forEach((section) => {
+  const copies = [...section.querySelectorAll("[data-flow-copy]")];
+  const dots = [...section.querySelectorAll("[data-flow-jump]")];
+  const current = section.querySelector("[data-flow-current]");
+  const hud = {
+    material: section.querySelector('[data-flow-hud="material"]'),
+    nozzle: section.querySelector('[data-flow-hud="nozzle"]'),
+    layer: section.querySelector('[data-flow-hud="layer"]'),
+    progress: section.querySelector('[data-flow-hud="progress"]')
+  };
+  const hudValues = [
+    ["PLA", "0.4 mm", "Modelo", "0%"],
+    ["PLA", "0.4 mm", "0.20 mm", "12%"],
+    ["PLA", "0.4 mm", "1 / 186", "24%"],
+    ["G-code", "210 °C", "Rutas", "36%"],
+    ["PLA", "210 °C", "Z OK", "48%"],
+    ["PLA", "60 °C", "Capa 1", "60%"],
+    ["PLA", "80 mm/s", "78 / 186", "76%"],
+    ["Cama fría", "Soportes", "Acabado", "90%"],
+    ["Revisión", "OK", "Ajuste", "100%"]
+  ];
+  let activeStep = -1;
+  let ticking = false;
 
-  const setPieceStage = (activeStep) => {
-    const index = Number(activeStep.dataset.pieceStep || 0);
-    section.dataset.pieceStage = String(index);
-    section.style.setProperty("--piece-stage", index);
-    section.style.setProperty("--piece-progress", `${((index + 1) / steps.length) * 100}%`);
-    steps.forEach((step) => step.classList.toggle("is-active", step === activeStep));
+  if (!copies.length) return;
+
+  const setFlowStep = (index) => {
+    const bounded = Math.max(0, Math.min(copies.length - 1, index));
+    if (bounded === activeStep) return;
+    activeStep = bounded;
+    section.dataset.flowStep = String(bounded);
+    section.style.setProperty("--flow-step", bounded);
+
+    copies.forEach((copy, copyIndex) => copy.classList.toggle("is-active", copyIndex === bounded));
+    dots.forEach((dot, dotIndex) => {
+      const isActive = dotIndex === bounded;
+      dot.classList.toggle("is-active", isActive);
+      if (isActive) dot.setAttribute("aria-current", "step");
+      else dot.removeAttribute("aria-current");
+    });
+
+    if (current) current.textContent = String(bounded + 1).padStart(2, "0");
+    const values = hudValues[bounded] || hudValues[0];
+    if (hud.material) hud.material.textContent = values[0];
+    if (hud.nozzle) hud.nozzle.textContent = values[1];
+    if (hud.layer) hud.layer.textContent = values[2];
+    if (hud.progress) hud.progress.textContent = values[3];
   };
 
-  setPieceStage(steps[0]);
+  const updateFlow = () => {
+    ticking = false;
+    const rect = section.getBoundingClientRect();
+    const maxScroll = Math.max(1, rect.height - window.innerHeight);
+    const progress = Math.max(0, Math.min(1, -rect.top / maxScroll));
+    const step = Math.min(copies.length - 1, Math.floor(progress * copies.length));
+    section.style.setProperty("--flow-progress", progress.toFixed(4));
+    setFlowStep(step);
+  };
 
-  if (prefersReducedMotion) return;
+  const requestFlowUpdate = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(updateFlow);
+  };
 
-  const pieceObserver = new IntersectionObserver(
-    (entries) => {
-      const visible = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-      if (visible) setPieceStage(visible.target);
-    },
-    { threshold: [0.25, 0.45, 0.65], rootMargin: "-18% 0px -28% 0px" }
-  );
+  dots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      const index = Number(dot.dataset.flowJump || 0);
+      const rect = section.getBoundingClientRect();
+      const target = window.scrollY + rect.top + ((section.offsetHeight - window.innerHeight) * (index / Math.max(1, copies.length - 1)));
+      window.scrollTo({ top: target, behavior: prefersReducedMotion ? "auto" : "smooth" });
+    });
+  });
 
-  steps.forEach((step) => pieceObserver.observe(step));
+  setFlowStep(0);
+  updateFlow();
+  window.addEventListener("scroll", requestFlowUpdate, { passive: true });
+  window.addEventListener("resize", requestFlowUpdate);
 });
 
 document.querySelectorAll('[data-filter-group="materials"] .chip').forEach((button) => {
