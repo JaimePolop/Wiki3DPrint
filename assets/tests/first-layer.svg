@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" role="img" aria-label="Test de primera capa">
+  <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#38bdf8"/><stop offset=".55" stop-color="#8b5cf6"/><stop offset="1" stop-color="#ec4899"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#020617" flood-opacity=".45"/></filter></defs>
+  <rect width="420" height="280" rx="28" fill="#071126"/>
+  <path d="M55 70h310v150H55z" fill="#0f172a" stroke="#38bdf8" stroke-opacity=".45" filter="url(#s)"/>
+  <g fill="none" stroke="url(#g)" stroke-width="12" stroke-linecap="round">
+    <path d="M82 102H338"/><path d="M82 132H338"/><path d="M82 162H338"/><path d="M82 192H338"/>
+  </g>
+  <text x="70" y="246" fill="#e5e7eb" font-family="Inter,Arial" font-size="22" font-weight="800">FIRST LAYER</text>
+</svg>

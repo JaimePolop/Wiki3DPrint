@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" role="img" aria-label="Cubo XYZ">
+  <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs>
+  <rect width="420" height="280" rx="28" fill="#071126"/>
+  <path d="M154 92l70-38 70 38-70 38z" fill="#60a5fa"/><path d="M154 92v88l70 44v-94z" fill="#38bdf8"/><path d="M294 92v88l-70 44v-94z" fill="#8b5cf6"/>
+  <text x="188" y="121" fill="#fff" font-family="Inter,Arial" font-size="30" font-weight="900">Z</text><text x="178" y="174" fill="#fff" font-family="Inter,Arial" font-size="30" font-weight="900">X</text><text x="246" y="174" fill="#fff" font-family="Inter,Arial" font-size="30" font-weight="900">Y</text>
+  <text x="76" y="246" fill="#e5e7eb" font-family="Inter,Arial" font-size="22" font-weight="800">XYZ CUBE 20mm</text>
+</svg>

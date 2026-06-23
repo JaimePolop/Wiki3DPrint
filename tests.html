@@ -88,7 +88,7 @@
 
           <div class="test-library-grid">
             <article class="test-card" id="test-primera-capa">
-              <div class="test-visual first-layer-visual" aria-hidden="true"><span></span><span></span><span></span></div>
+              <div class="test-visual first-layer-visual" aria-hidden="true"><img class="test-thumb" src="assets/tests/first-layer.svg" alt="" /><span></span><span></span><span></span></div>
               <div>
                 <p class="test-tag">BASE</p>
                 <h3>Test de primera capa</h3>
@@ -96,11 +96,12 @@
                 <p><strong>Para qué sirve:</strong> comprobar Z-offset, nivelación, limpieza de cama y adhesión.</p>
                 <p><strong>Cómo hacerlo:</strong> imprime una sola capa lenta. Debe quedar continua, sin huecos y sin surcos excesivos.</p>
                 <p><strong>Lectura:</strong> líneas separadas = boquilla alta. Superficie arañada o transparente = boquilla baja.</p>
+                <div class="test-links"><a href="https://teachingtechyt.github.io/calibration.html#firstlayer" target="_blank" rel="noopener">Abrir modelo/generador</a><a href="assets/tests/first-layer.svg" target="_blank">Ver imagen</a></div>
               </div>
             </article>
 
             <article class="test-card" id="test-temperatura">
-              <div class="test-visual tower-visual" aria-hidden="true"><span>220</span><span>215</span><span>210</span><span>205</span><span>200</span></div>
+              <div class="test-visual tower-visual" aria-hidden="true"><img class="test-thumb" src="assets/tests/temperature-tower.svg" alt="" /><span>220</span><span>215</span><span>210</span><span>205</span><span>200</span></div>
               <div>
                 <p class="test-tag">MATERIAL</p>
                 <h3>Torre de temperatura</h3>
@@ -108,11 +109,12 @@
                 <p><strong>Para qué sirve:</strong> encontrar la temperatura con buena unión de capas, detalle, puentes y poco stringing.</p>
                 <p><strong>Cómo hacerlo:</strong> imprime tramos de 5 °C o 10 °C. Para PLA suele tener sentido probar entre 190 y 220 °C.</p>
                 <p><strong>Lectura:</strong> elige el tramo con mejor equilibrio, no solo el más bonito. Si las capas parten fácil, falta temperatura.</p>
+                <div class="test-links"><a href="https://teachingtechyt.github.io/calibration.html#temp" target="_blank" rel="noopener">Abrir modelo/generador</a><a href="assets/tests/temperature-tower.svg" target="_blank">Ver imagen</a></div>
               </div>
             </article>
 
             <article class="test-card" id="test-retraccion">
-              <div class="test-visual stringing-visual" aria-hidden="true"><i></i><i></i><span></span><span></span></div>
+              <div class="test-visual stringing-visual" aria-hidden="true"><img class="test-thumb" src="assets/tests/retraction-test.svg" alt="" /><i></i><i></i><span></span><span></span></div>
               <div>
                 <p class="test-tag">HILOS</p>
                 <h3>Test de retracción</h3>
@@ -120,11 +122,12 @@
                 <p><strong>Para qué sirve:</strong> reducir hilos en movimientos en vacío sin provocar atascos o huecos.</p>
                 <p><strong>Cómo hacerlo:</strong> fija primero la temperatura. Después prueba distancia y velocidad de retracción en pasos pequeños.</p>
                 <p><strong>Lectura:</strong> pocos hilos sin clics del extrusor, sin marcas profundas y sin huecos al reiniciar la línea.</p>
+                <div class="test-links"><a href="https://teachingtechyt.github.io/calibration.html#retraction" target="_blank" rel="noopener">Abrir modelo/generador</a><a href="assets/tests/retraction-test.svg" target="_blank">Ver imagen</a></div>
               </div>
             </article>
 
             <article class="test-card" id="test-flujo">
-              <div class="test-visual flow-visual" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+              <div class="test-visual flow-visual" aria-hidden="true"><img class="test-thumb" src="assets/tests/flow-test.svg" alt="" /><span></span><span></span><span></span><span></span></div>
               <div>
                 <p class="test-tag">FLUJO</p>
                 <h3>Test de flujo o extrusion multiplier</h3>
@@ -132,11 +135,12 @@
                 <p><strong>Para qué sirve:</strong> ajustar cuánto material deposita realmente la impresora.</p>
                 <p><strong>Cómo hacerlo:</strong> imprime un patrón de flujo después de calibrar temperatura. Mide paredes o compara superficies superiores.</p>
                 <p><strong>Cálculo:</strong> nuevo flujo = flujo actual x medida objetivo / medida real. Si esperas 0,45 mm y mides 0,48: 100 x 0,45 / 0,48 = 93,75%.</p>
+                <div class="test-links"><a href="https://teachingtechyt.github.io/calibration.html#flow" target="_blank" rel="noopener">Abrir modelo/generador</a><a href="assets/tests/flow-test.svg" target="_blank">Ver imagen</a></div>
               </div>
             </article>
 
             <article class="test-card" id="cubo-xyz">
-              <div class="test-visual cube-test-visual" aria-hidden="true"><span>X</span><span>Y</span><span>Z</span></div>
+              <div class="test-visual cube-test-visual" aria-hidden="true"><img class="test-thumb" src="assets/tests/xyz-cube.svg" alt="" /><span>X</span><span>Y</span><span>Z</span></div>
               <div>
                 <p class="test-tag">DIMENSIONES</p>
                 <h3>Cubo XYZ</h3>
@@ -144,11 +148,12 @@
                 <p><strong>Para qué sirve:</strong> comprobar dimensiones, esquinas, ringing, elephant foot y regularidad de capas.</p>
                 <p><strong>Cómo hacerlo:</strong> imprime con el perfil que quieres validar y mide cada eje con calibre sin apretar la pieza.</p>
                 <p><strong>Lectura:</strong> X/Y grandes suele ser flujo o expansión horizontal. Z raro apunta a primera capa, altura de capa o eje Z.</p>
+                <div class="test-links"><a href="https://www.thingiverse.com/thing:1278865" target="_blank" rel="noopener">Abrir modelo 3D</a><a href="assets/tests/xyz-cube.svg" target="_blank">Ver imagen</a></div>
               </div>
             </article>
 
             <article class="test-card" id="test-rapidez">
-              <div class="test-visual speed-visual" aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></div>
+              <div class="test-visual speed-visual" aria-hidden="true"><img class="test-thumb" src="assets/tests/speed-tower.svg" alt="" /><b></b><b></b><b></b><b></b><b></b></div>
               <div>
                 <p class="test-tag">RAPIDEZ</p>
                 <h3>Test de velocidad y flujo volumétrico</h3>
@@ -156,11 +161,12 @@
                 <p><strong>Para qué sirve:</strong> saber la velocidad máxima real antes de subextruir.</p>
                 <p><strong>Cómo hacerlo:</strong> sube velocidad por tramos y observa cuándo aparecen líneas finas, capas débiles, clics o pérdida de brillo.</p>
                 <p><strong>Cálculo:</strong> flujo volumétrico = ancho de línea x altura de capa x velocidad. Ejemplo: 0,45 x 0,20 x 120 = 10,8 mm³/s.</p>
+                <div class="test-links"><a href="https://teachingtechyt.github.io/calibration.html#speed" target="_blank" rel="noopener">Abrir modelo/generador</a><a href="assets/tests/speed-tower.svg" target="_blank">Ver imagen</a></div>
               </div>
             </article>
 
             <article class="test-card" id="test-aceleracion">
-              <div class="test-visual ringing-visual" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+              <div class="test-visual ringing-visual" aria-hidden="true"><img class="test-thumb" src="assets/tests/ringing-test.svg" alt="" /><span></span><span></span><span></span><span></span></div>
               <div>
                 <p class="test-tag">DINÁMICA</p>
                 <h3>Test de aceleración, ringing e input shaping</h3>
@@ -168,11 +174,12 @@
                 <p><strong>Para qué sirve:</strong> encontrar aceleraciones rápidas sin ondas alrededor de esquinas ni desplazamientos de capa.</p>
                 <p><strong>Cómo hacerlo:</strong> imprime una torre subiendo aceleración por alturas. En Klipper, input shaping puede medirse con acelerómetro o test manual.</p>
                 <p><strong>Lectura:</strong> usa la aceleración más alta que no deje ecos visibles, vibraciones fuertes ni layer shifting.</p>
+                <div class="test-links"><a href="https://teachingtechyt.github.io/calibration.html#accel" target="_blank" rel="noopener">Abrir modelo/generador</a><a href="assets/tests/ringing-test.svg" target="_blank">Ver imagen</a></div>
               </div>
             </article>
 
             <article class="test-card" id="test-pressure-advance">
-              <div class="test-visual pa-visual" aria-hidden="true"><span></span><span></span><span></span></div>
+              <div class="test-visual pa-visual" aria-hidden="true"><img class="test-thumb" src="assets/tests/pressure-advance.svg" alt="" /><span></span><span></span><span></span></div>
               <div>
                 <p class="test-tag">ESQUINAS</p>
                 <h3>Pressure advance / linear advance</h3>
@@ -180,11 +187,12 @@
                 <p><strong>Para qué sirve:</strong> compensar la presión interna del hotend en esquinas, frenadas y arranques.</p>
                 <p><strong>Cómo hacerlo:</strong> imprime valores progresivos y compara esquinas. Deben quedar cerradas, sin bultos y sin huecos.</p>
                 <p><strong>Lectura:</strong> valor bajo = esquinas gordas. Valor alto = huecos o esquinas débiles.</p>
+                <div class="test-links"><a href="https://ellis3dp.com/Print-Tuning-Guide/articles/pressure_linear_advance/introduction.html" target="_blank" rel="noopener">Abrir modelo/generador</a><a href="assets/tests/pressure-advance.svg" target="_blank">Ver imagen</a></div>
               </div>
             </article>
 
             <article class="test-card" id="test-puentes">
-              <div class="test-visual bridge-visual" aria-hidden="true"><span></span><i></i><i></i><i></i></div>
+              <div class="test-visual bridge-visual" aria-hidden="true"><img class="test-thumb" src="assets/tests/bridge-overhang.svg" alt="" /><span></span><i></i><i></i><i></i></div>
               <div>
                 <p class="test-tag">REFRIGERACIÓN</p>
                 <h3>Test de puentes y voladizos</h3>
@@ -192,11 +200,12 @@
                 <p><strong>Para qué sirve:</strong> comprobar ventilador de capa, temperatura, velocidad de puente y orientación de pieza.</p>
                 <p><strong>Cómo hacerlo:</strong> imprime con el perfil real. No uses soportes; el objetivo es ver hasta dónde llega la máquina sola.</p>
                 <p><strong>Lectura:</strong> puentes caídos = demasiado calor, poca ventilación o puente muy rápido. Voladizos rugosos = falta refrigeración o demasiada velocidad.</p>
+                <div class="test-links"><a href="https://www.thingiverse.com/thing:2656594" target="_blank" rel="noopener">Abrir modelo 3D</a><a href="assets/tests/bridge-overhang.svg" target="_blank">Ver imagen</a></div>
               </div>
             </article>
 
             <article class="test-card" id="test-tolerancias">
-              <div class="test-visual tolerance-visual" aria-hidden="true"><span>0.1</span><span>0.2</span><span>0.3</span><span>0.4</span></div>
+              <div class="test-visual tolerance-visual" aria-hidden="true"><img class="test-thumb" src="assets/tests/tolerance-test.svg" alt="" /><span>0.1</span><span>0.2</span><span>0.3</span><span>0.4</span></div>
               <div>
                 <p class="test-tag">DISEÑO</p>
                 <h3>Test de tolerancias y encajes</h3>
@@ -204,11 +213,12 @@
                 <p><strong>Para qué sirve:</strong> saber qué holgura necesitas para bisagras, ejes, tapas, tornillos e inserts.</p>
                 <p><strong>Cómo hacerlo:</strong> imprime una pieza con holguras de 0,1 a 0,5 mm y prueba qué parte se mueve sin fuerza.</p>
                 <p><strong>Lectura:</strong> si 0,2 mm no se mueve y 0,3 mm sí, diseña tus piezas funcionales con al menos 0,3 mm de holgura.</p>
+                <div class="test-links"><a href="https://www.thingiverse.com/thing:2318105" target="_blank" rel="noopener">Abrir modelo 3D</a><a href="assets/tests/tolerance-test.svg" target="_blank">Ver imagen</a></div>
               </div>
             </article>
 
             <article class="test-card" id="test-color">
-              <div class="test-visual color-visual" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+              <div class="test-visual color-visual" aria-hidden="true"><img class="test-thumb" src="assets/tests/color-test.svg" alt="" /><span></span><span></span><span></span><span></span></div>
               <div>
                 <p class="test-tag">COLOR</p>
                 <h3>Test de color, cambio de filamento y multimaterial</h3>
@@ -216,11 +226,12 @@
                 <p><strong>Para qué sirve:</strong> comprobar contaminación entre colores, purga, alineación, costura y cambios de material.</p>
                 <p><strong>Cómo hacerlo:</strong> imprime colores claros después de oscuros para ver contaminación. Ajusta purga en el slicer o el volumen de flush de AMS/MMU.</p>
                 <p><strong>Lectura:</strong> si el blanco sale gris, falta purga. Si la torre desperdicia mucho y el color sale limpio, puedes bajar purga poco a poco.</p>
+                <div class="test-links"><a href="https://github.com/OrcaSlicer/OrcaSlicer/wiki/Calibration" target="_blank" rel="noopener">Abrir calibraciones</a><a href="assets/tests/color-test.svg" target="_blank">Ver imagen</a></div>
               </div>
             </article>
 
             <article class="test-card" id="test-benchy">
-              <div class="test-visual benchy-visual" aria-hidden="true"><span></span><i></i><b></b></div>
+              <div class="test-visual benchy-visual" aria-hidden="true"><img class="test-thumb" src="assets/tests/benchy-test.svg" alt="" /><span></span><i></i><b></b></div>
               <div>
                 <p class="test-tag">VALIDACIÓN</p>
                 <h3>Benchy y pieza de control</h3>
@@ -228,6 +239,7 @@
                 <p><strong>Para qué sirve:</strong> confirmar primera capa, paredes, puentes, chimenea, curvas, refrigeración y dimensiones en una sola pieza.</p>
                 <p><strong>Cómo hacerlo:</strong> imprime después de los tests principales, no antes. Benchy es una validación, no una respuesta mágica.</p>
                 <p><strong>Lectura:</strong> base mala = cama/Z. Hilos = temperatura/retracción. Ondas = aceleración. Puentes caídos = refrigeración.</p>
+                <div class="test-links"><a href="https://www.3dbenchy.com/download/" target="_blank" rel="noopener">Abrir modelo 3D</a><a href="assets/tests/benchy-test.svg" target="_blank">Ver imagen</a></div>
               </div>
             </article>
           </div>

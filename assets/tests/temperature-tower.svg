@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" role="img" aria-label="Torre de temperatura">
+  <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#22c55e"/><stop offset=".5" stop-color="#facc15"/><stop offset="1" stop-color="#ef4444"/></linearGradient></defs>
+  <rect width="420" height="280" rx="28" fill="#071126"/>
+  <g transform="translate(125 42)" fill="url(#g)" stroke="#e5e7eb" stroke-opacity=".22">
+    <rect x="0" y="0" width="170" height="34" rx="8"/><rect x="12" y="38" width="146" height="34" rx="8"/><rect x="24" y="76" width="122" height="34" rx="8"/><rect x="36" y="114" width="98" height="34" rx="8"/><rect x="48" y="152" width="74" height="34" rx="8"/>
+  </g>
+  <g fill="#fff" font-family="Inter,Arial" font-size="18" font-weight="900"><text x="314" y="67">220</text><text x="314" y="105">215</text><text x="314" y="143">210</text><text x="314" y="181">205</text><text x="314" y="219">200</text></g>
+  <text x="54" y="246" fill="#e5e7eb" font-family="Inter,Arial" font-size="22" font-weight="800">TEMP TOWER</text>
+</svg>
