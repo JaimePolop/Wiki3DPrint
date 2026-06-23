@@ -38,16 +38,16 @@ document.querySelectorAll(".desktop-nav").forEach((nav) => {
       ]
     },
     {
-      label: "Diseño",
+      label: "Diseño y calibraciones",
       items: [
         ["Diseño 3D", "diseno.html"],
-        ["Slicers", "slicers.html"]
+        ["Slicers", "slicers.html"],
+        ["Calibración", "calibracion.html"]
       ]
     },
     {
       label: "Resolver",
       items: [
-        ["Calibración", "calibracion.html"],
         ["Problemas", "problemas.html"],
         ["Mantenimiento", "mantenimiento.html"],
         ["Seguridad", "seguridad.html"]
