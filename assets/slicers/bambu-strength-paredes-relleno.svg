@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">Captura ilustrada del panel Strength de Bambu Studio</title>
+  <desc id="desc">Panel de fuerza con ajustes de paredes, tapas, relleno, patron de relleno y una vista previa de la pieza.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#020617"/>
+      <stop offset=".55" stop-color="#111827"/>
+      <stop offset="1" stop-color="#312e81"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#d946ef"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="18" flood-color="#020617" flood-opacity=".48"/>
+    </filter>
+  </defs>
+  <rect width="1280" height="760" rx="34" fill="url(#bg)"/>
+  <path d="M0 112h1280M0 224h1280M0 336h1280M0 448h1280M0 560h1280M0 672h1280M128 0v760M256 0v760M384 0v760M512 0v760M640 0v760M768 0v760M896 0v760M1024 0v760M1152 0v760" stroke="#94a3b8" stroke-opacity=".08"/>
+  <rect x="44" y="42" width="1192" height="676" rx="28" fill="#020617" opacity=".76" stroke="#334155"/>
+  <rect x="44" y="42" width="1192" height="64" rx="28" fill="#0f172a"/>
+  <circle cx="82" cy="74" r="10" fill="#ef4444"/>
+  <circle cx="112" cy="74" r="10" fill="#f59e0b"/>
+  <circle cx="142" cy="74" r="10" fill="#22c55e"/>
+  <text x="178" y="82" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="900">Bambu Studio - Strength / Fuerza</text>
+
+  <rect x="72" y="132" width="360" height="540" rx="24" fill="#111827" stroke="#334155" filter="url(#shadow)"/>
+  <text x="104" y="176" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="900">PROCESS / PROCESO</text>
+  <rect x="104" y="206" width="296" height="54" rx="16" fill="#0b1220" stroke="#334155"/>
+  <text x="126" y="240" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="900">0.20 mm Standard</text>
+
+  <rect x="104" y="286" width="296" height="336" rx="22" fill="#0b1220" stroke="#38bdf8" stroke-width="2"/>
+  <rect x="124" y="306" width="122" height="34" rx="12" fill="url(#accent)"/>
+  <text x="146" y="329" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="900">Strength</text>
+  <g font-family="Inter, Arial, sans-serif">
+    <rect x="124" y="366" width="254" height="44" rx="13" fill="#111827" stroke="#38bdf8" stroke-width="2"/>
+    <text x="142" y="394" fill="#f8fafc" font-size="16" font-weight="900">Wall loops: 4</text>
+    <rect x="124" y="424" width="254" height="44" rx="13" fill="#111827" stroke="#38bdf8" stroke-width="2"/>
+    <text x="142" y="452" fill="#f8fafc" font-size="16" font-weight="900">Top shell layers: 6</text>
+    <rect x="124" y="482" width="254" height="44" rx="13" fill="#111827" stroke="#38bdf8" stroke-width="2"/>
+    <text x="142" y="510" fill="#f8fafc" font-size="16" font-weight="900">Bottom shell layers: 5</text>
+    <rect x="124" y="540" width="122" height="44" rx="13" fill="#111827" stroke="#38bdf8" stroke-width="2"/>
+    <text x="142" y="568" fill="#f8fafc" font-size="16" font-weight="900">Infill: 25%</text>
+    <rect x="256" y="540" width="122" height="44" rx="13" fill="#111827" stroke="#38bdf8" stroke-width="2"/>
+    <text x="274" y="568" fill="#f8fafc" font-size="16" font-weight="900">Gyroid</text>
+  </g>
+
+  <rect x="478" y="132" width="460" height="540" rx="26" fill="#0b1220" stroke="#334155" filter="url(#shadow)"/>
+  <text x="520" y="180" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="900">Vista previa de seccion</text>
+  <text x="520" y="210" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">Paredes fuertes + relleno moderado</text>
+  <rect x="560" y="258" width="300" height="320" rx="38" fill="#111827" stroke="#38bdf8" stroke-width="12"/>
+  <rect x="588" y="286" width="244" height="264" rx="24" fill="#111827" stroke="#0ea5e9" stroke-width="8"/>
+  <path d="M620 520h180M620 492h180M620 464h180M620 436h180M620 408h180M620 380h180M620 352h180M620 324h180" stroke="#22c55e" stroke-width="7" stroke-linecap="round"/>
+  <path d="M616 516l184-184M616 472l148-148M654 524l146-146M616 428l104-104M698 524l102-102" stroke="#f59e0b" stroke-width="5" stroke-linecap="round" opacity=".9"/>
+  <path d="M560 590h300" stroke="#a855f7" stroke-width="10" stroke-linecap="round"/>
+  <text x="604" y="632" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="800">Azul = paredes | Verde = tapas | Naranja = relleno</text>
+
+  <rect x="972" y="132" width="222" height="540" rx="24" fill="#111827" stroke="#334155" filter="url(#shadow)"/>
+  <text x="1000" y="178" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="900">Que tocar</text>
+  <g font-family="Inter, Arial, sans-serif" font-size="15" font-weight="850">
+    <rect x="1000" y="214" width="164" height="56" rx="16" fill="#0b1220" stroke="#38bdf8"/>
+    <text x="1018" y="238" fill="#f8fafc">Wall loops</text><text x="1018" y="258" fill="#94a3b8">resistencia exterior</text>
+    <rect x="1000" y="290" width="164" height="56" rx="16" fill="#0b1220" stroke="#22c55e"/>
+    <text x="1018" y="314" fill="#f8fafc">Top / Bottom</text><text x="1018" y="334" fill="#94a3b8">cierre y rigidez</text>
+    <rect x="1000" y="366" width="164" height="56" rx="16" fill="#0b1220" stroke="#f59e0b"/>
+    <text x="1018" y="390" fill="#f8fafc">Infill density</text><text x="1018" y="410" fill="#94a3b8">peso y apoyo</text>
+    <rect x="1000" y="442" width="164" height="56" rx="16" fill="#0b1220" stroke="#d946ef"/>
+    <text x="1018" y="466" fill="#f8fafc">Infill pattern</text><text x="1018" y="486" fill="#94a3b8">tipo de carga</text>
+    <rect x="1000" y="536" width="164" height="72" rx="18" fill="#020617" stroke="#38bdf8"/>
+    <text x="1018" y="564" fill="#f8fafc">Para piezas reales:</text>
+    <text x="1018" y="586" fill="#94a3b8">sube paredes antes</text>
+    <text x="1018" y="606" fill="#94a3b8">que infill extremo</text>
+  </g>
+
+  <path d="M400 562C470 548 516 526 560 498" fill="none" stroke="#38bdf8" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="400" cy="562" r="13" fill="#38bdf8"/>
+  <rect x="472" y="92" width="388" height="46" rx="16" fill="#020617" stroke="#38bdf8"/>
+  <text x="494" y="122" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="900">Panel Strength: paredes, tapas y relleno</text>
+</svg>

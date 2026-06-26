@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 620" role="img" aria-labelledby="title desc">
+  <title id="title">Tipos de linea en la vista previa de laminacion</title>
+  <desc id="desc">Diagrama de colores para paredes exteriores, interiores, tapas, relleno, soportes, brim, travel y costura.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#020617"/>
+      <stop offset="1" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="15" flood-color="#020617" flood-opacity=".45"/>
+    </filter>
+  </defs>
+  <rect width="1280" height="620" rx="32" fill="url(#bg)"/>
+  <path d="M0 104h1280M0 208h1280M0 312h1280M0 416h1280M0 520h1280M128 0v620M256 0v620M384 0v620M512 0v620M640 0v620M768 0v620M896 0v620M1024 0v620M1152 0v620" stroke="#94a3b8" stroke-opacity=".08"/>
+  <text x="70" y="78" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="900">Menu de laminacion: Line type</text>
+  <text x="70" y="116" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">El objetivo es revisar si el G-code tiene paredes, relleno, soportes y adhesión donde toca antes de enviar a imprimir.</text>
+
+  <rect x="72" y="160" width="520" height="380" rx="28" fill="#0b1220" stroke="#334155" filter="url(#shadow)"/>
+  <path d="M158 490h350l-46-250H204z" fill="#111827" stroke="#38bdf8" stroke-width="8"/>
+  <path d="M196 456h278M190 426h292M184 396h304M178 366h316M172 336h328M166 306h340" stroke="#22c55e" stroke-width="7" stroke-linecap="round"/>
+  <path d="M206 476l236-218M238 486l232-214M176 462l206-190" stroke="#f59e0b" stroke-width="6" stroke-linecap="round"/>
+  <path d="M158 490l46-250M508 490l-46-250" stroke="#38bdf8" stroke-width="10" stroke-linecap="round"/>
+  <path d="M204 240h258" stroke="#0ea5e9" stroke-width="8" stroke-linecap="round"/>
+  <path d="M224 218h218" stroke="#ef4444" stroke-width="6" stroke-linecap="round" stroke-dasharray="18 14"/>
+  <path d="M140 514h388" stroke="#a855f7" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="462" cy="240" r="10" fill="#f43f5e"/>
+
+  <g font-family="Inter, Arial, sans-serif">
+    <rect x="640" y="160" width="260" height="78" rx="20" fill="#111827" stroke="#38bdf8"/>
+    <rect x="666" y="190" width="34" height="14" rx="7" fill="#38bdf8"/><text x="720" y="200" fill="#f8fafc" font-size="18" font-weight="900">Outer wall</text><text x="720" y="222" fill="#94a3b8" font-size="14">acabado y dimension exterior</text>
+    <rect x="934" y="160" width="260" height="78" rx="20" fill="#111827" stroke="#0ea5e9"/>
+    <rect x="960" y="190" width="34" height="14" rx="7" fill="#0ea5e9"/><text x="1014" y="200" fill="#f8fafc" font-size="18" font-weight="900">Inner wall</text><text x="1014" y="222" fill="#94a3b8" font-size="14">resistencia de la carcasa</text>
+
+    <rect x="640" y="260" width="260" height="78" rx="20" fill="#111827" stroke="#22c55e"/>
+    <rect x="666" y="290" width="34" height="14" rx="7" fill="#22c55e"/><text x="720" y="300" fill="#f8fafc" font-size="18" font-weight="900">Top / Bottom</text><text x="720" y="322" fill="#94a3b8" font-size="14">capas solidas y acabado</text>
+    <rect x="934" y="260" width="260" height="78" rx="20" fill="#111827" stroke="#f59e0b"/>
+    <rect x="960" y="290" width="34" height="14" rx="7" fill="#f59e0b"/><text x="1014" y="300" fill="#f8fafc" font-size="18" font-weight="900">Sparse infill</text><text x="1014" y="322" fill="#94a3b8" font-size="14">relleno interno</text>
+
+    <rect x="640" y="360" width="260" height="78" rx="20" fill="#111827" stroke="#e879f9"/>
+    <rect x="666" y="390" width="34" height="14" rx="7" fill="#e879f9"/><text x="720" y="400" fill="#f8fafc" font-size="18" font-weight="900">Support</text><text x="720" y="422" fill="#94a3b8" font-size="14">material de soporte</text>
+    <rect x="934" y="360" width="260" height="78" rx="20" fill="#111827" stroke="#a855f7"/>
+    <rect x="960" y="390" width="34" height="14" rx="7" fill="#a855f7"/><text x="1014" y="400" fill="#f8fafc" font-size="18" font-weight="900">Skirt / Brim</text><text x="1014" y="422" fill="#94a3b8" font-size="14">adhesion y purga</text>
+
+    <rect x="640" y="460" width="260" height="78" rx="20" fill="#111827" stroke="#ef4444"/>
+    <rect x="666" y="490" width="34" height="14" rx="7" fill="#ef4444"/><text x="720" y="500" fill="#f8fafc" font-size="18" font-weight="900">Travel</text><text x="720" y="522" fill="#94a3b8" font-size="14">movimientos sin extrusion</text>
+    <rect x="934" y="460" width="260" height="78" rx="20" fill="#111827" stroke="#f43f5e"/>
+    <circle cx="976" cy="497" r="10" fill="#f43f5e"/><text x="1014" y="500" fill="#f8fafc" font-size="18" font-weight="900">Seam</text><text x="1014" y="522" fill="#94a3b8" font-size="14">punto donde empieza/acaba pared</text>
+  </g>
+</svg>

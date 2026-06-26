@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">Flujo visual de calibracion de materiales</title>
+  <desc id="desc">Panel ilustrado con los pasos de calibracion de un filamento: secado, temperatura, flujo, retraccion, pressure advance, caudal, ventilacion y preset final.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071527"/>
+      <stop offset=".45" stop-color="#102236"/>
+      <stop offset="1" stop-color="#21142f"/>
+    </linearGradient>
+    <linearGradient id="cyanPink" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#39c6ff"/>
+      <stop offset=".5" stop-color="#7a6cff"/>
+      <stop offset="1" stop-color="#f04bb4"/>
+    </linearGradient>
+    <linearGradient id="greenCyan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2de077"/>
+      <stop offset="1" stop-color="#36c8ff"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0H0v44" fill="none" stroke="#ffffff" stroke-opacity=".07" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="760" rx="42" fill="url(#bg)"/>
+  <rect width="1280" height="760" rx="42" fill="url(#grid)"/>
+  <circle cx="220" cy="120" r="190" fill="#35c7ff" opacity=".14" filter="url(#glow)"/>
+  <circle cx="1030" cy="650" r="230" fill="#f04bb4" opacity=".12" filter="url(#glow)"/>
+
+  <rect x="54" y="48" width="1172" height="664" rx="34" fill="#08111f" opacity=".72" stroke="#31445f"/>
+  <text x="96" y="108" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800">Calibracion de materiales</text>
+  <text x="96" y="146" fill="#b7c0cc" font-family="Inter, Arial, sans-serif" font-size="18">Un preset por marca, color y material. Cambia un parametro, imprime un test, guarda el resultado.</text>
+
+  <g transform="translate(96 190)">
+    <rect x="0" y="0" width="330" height="458" rx="28" fill="#121d2e" stroke="#34465f"/>
+    <text x="30" y="48" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800">Preset del filamento</text>
+    <text x="30" y="84" fill="#7ddcff" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800">Bambu / Orca / PrusaSlicer</text>
+    <rect x="30" y="118" width="270" height="54" rx="16" fill="#0a1220" stroke="#304258"/>
+    <text x="50" y="151" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800">PLA Marca Color</text>
+    <g font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800">
+      <rect x="30" y="198" width="120" height="60" rx="14" fill="#172438" stroke="#42566d"/>
+      <text x="48" y="222" fill="#aeb8c6">Nozzle</text>
+      <text x="48" y="246" fill="#fff" font-size="20">210 C</text>
+      <rect x="180" y="198" width="120" height="60" rx="14" fill="#172438" stroke="#42566d"/>
+      <text x="198" y="222" fill="#aeb8c6">Bed</text>
+      <text x="198" y="246" fill="#fff" font-size="20">60 C</text>
+      <rect x="30" y="278" width="120" height="60" rx="14" fill="#172438" stroke="#42566d"/>
+      <text x="48" y="302" fill="#aeb8c6">Flow ratio</text>
+      <text x="48" y="326" fill="#fff" font-size="20">0.98</text>
+      <rect x="180" y="278" width="120" height="60" rx="14" fill="#172438" stroke="#42566d"/>
+      <text x="198" y="302" fill="#aeb8c6">Max flow</text>
+      <text x="198" y="326" fill="#fff" font-size="20">18 mm3/s</text>
+      <rect x="30" y="358" width="270" height="58" rx="16" fill="#07111f" stroke="#2ddf86"/>
+      <text x="50" y="393" fill="#c9ffdf">Guardar como preset nuevo</text>
+    </g>
+  </g>
+
+  <g transform="translate(490 190)" font-family="Inter, Arial, sans-serif">
+    <path d="M62 42 C210 42 220 140 360 140 S500 238 645 238" fill="none" stroke="url(#cyanPink)" stroke-width="8" stroke-linecap="round" opacity=".82" filter="url(#glow)"/>
+    <path d="M62 316 C210 316 220 414 360 414 S500 512 645 512" fill="none" stroke="url(#greenCyan)" stroke-width="8" stroke-linecap="round" opacity=".78" filter="url(#glow)"/>
+
+    <g>
+      <rect x="0" y="0" width="180" height="92" rx="24" fill="#142238" stroke="#3b506a"/>
+      <text x="22" y="34" fill="#fff" font-size="18" font-weight="800">01 Secado</text>
+      <text x="22" y="62" fill="#aeb8c6" font-size="13">Si hay humedad,</text>
+      <text x="22" y="80" fill="#aeb8c6" font-size="13">ningun test vale.</text>
+      <circle cx="164" cy="20" r="18" fill="#36c8ff" opacity=".9"/>
+    </g>
+    <g transform="translate(230 78)">
+      <rect x="0" y="0" width="180" height="92" rx="24" fill="#142238" stroke="#3b506a"/>
+      <text x="22" y="34" fill="#fff" font-size="18" font-weight="800">02 Torre temp.</text>
+      <text x="22" y="62" fill="#aeb8c6" font-size="13">Elige union, brillo,</text>
+      <text x="22" y="80" fill="#aeb8c6" font-size="13">hilos y detalle.</text>
+      <rect x="144" y="14" width="18" height="56" rx="8" fill="url(#cyanPink)"/>
+    </g>
+    <g transform="translate(460 156)">
+      <rect x="0" y="0" width="180" height="92" rx="24" fill="#142238" stroke="#3b506a"/>
+      <text x="22" y="34" fill="#fff" font-size="18" font-weight="800">03 Flow rate</text>
+      <text x="22" y="62" fill="#aeb8c6" font-size="13">Paredes reales,</text>
+      <text x="22" y="80" fill="#aeb8c6" font-size="13">top sin huecos.</text>
+      <path d="M136 65h34M136 47h34M136 29h34" stroke="#2de077" stroke-width="7" stroke-linecap="round"/>
+    </g>
+
+    <g transform="translate(0 274)">
+      <rect x="0" y="0" width="180" height="92" rx="24" fill="#142238" stroke="#3b506a"/>
+      <text x="22" y="34" fill="#fff" font-size="18" font-weight="800">04 Retraccion</text>
+      <text x="22" y="62" fill="#aeb8c6" font-size="13">Quita hilos sin</text>
+      <text x="22" y="80" fill="#aeb8c6" font-size="13">crear huecos.</text>
+      <path d="M132 35c20 0 20 28 40 28" fill="none" stroke="#f04bb4" stroke-width="5" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(230 352)">
+      <rect x="0" y="0" width="180" height="92" rx="24" fill="#142238" stroke="#3b506a"/>
+      <text x="22" y="34" fill="#fff" font-size="18" font-weight="800">05 Dynamics</text>
+      <text x="22" y="62" fill="#aeb8c6" font-size="13">Esquinas limpias,</text>
+      <text x="22" y="80" fill="#aeb8c6" font-size="13">sin bultos.</text>
+      <path d="M132 26h40v40h-40z" fill="none" stroke="#7a6cff" stroke-width="5"/>
+    </g>
+    <g transform="translate(460 430)">
+      <rect x="0" y="0" width="180" height="92" rx="24" fill="#142238" stroke="#3b506a"/>
+      <text x="22" y="34" fill="#fff" font-size="18" font-weight="800">06 Max flow</text>
+      <text x="22" y="62" fill="#aeb8c6" font-size="13">Limite de mm3/s</text>
+      <text x="22" y="80" fill="#aeb8c6" font-size="13">sin subextruir.</text>
+      <path d="M130 66h42" stroke="#36c8ff" stroke-width="8" stroke-linecap="round"/>
+      <path d="M130 44h30" stroke="#36c8ff" stroke-width="8" stroke-linecap="round" opacity=".65"/>
+      <path d="M130 22h18" stroke="#36c8ff" stroke-width="8" stroke-linecap="round" opacity=".4"/>
+    </g>
+  </g>
+
+  <g transform="translate(96 665)" font-family="Inter, Arial, sans-serif">
+    <rect x="0" y="0" width="1088" height="34" rx="17" fill="#0b1424" stroke="#2f4158"/>
+    <rect x="12" y="9" width="185" height="16" rx="8" fill="#36c8ff"/>
+    <rect x="207" y="9" width="185" height="16" rx="8" fill="#7a6cff"/>
+    <rect x="402" y="9" width="185" height="16" rx="8" fill="#f04bb4"/>
+    <rect x="597" y="9" width="185" height="16" rx="8" fill="#2de077"/>
+    <text x="820" y="23" fill="#dce7f5" font-size="14" font-weight="800">Resultado: preset fiable para esa bobina</text>
+  </g>
+</svg>

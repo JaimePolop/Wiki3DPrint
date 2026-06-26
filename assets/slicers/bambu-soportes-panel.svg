@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">Captura ilustrada del panel Support de Bambu Studio</title>
+  <desc id="desc">Panel de soportes con activar soporte, tipo normal o arbol, angulo, only on build plate, interface, distancia Z y XY.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#020617"/>
+      <stop offset=".55" stop-color="#111827"/>
+      <stop offset="1" stop-color="#3b0764"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#d946ef"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="18" flood-color="#020617" flood-opacity=".48"/>
+    </filter>
+  </defs>
+  <rect width="1280" height="760" rx="34" fill="url(#bg)"/>
+  <path d="M0 112h1280M0 224h1280M0 336h1280M0 448h1280M0 560h1280M0 672h1280M128 0v760M256 0v760M384 0v760M512 0v760M640 0v760M768 0v760M896 0v760M1024 0v760M1152 0v760" stroke="#94a3b8" stroke-opacity=".08"/>
+  <rect x="44" y="42" width="1192" height="676" rx="28" fill="#020617" opacity=".76" stroke="#334155"/>
+  <rect x="44" y="42" width="1192" height="64" rx="28" fill="#0f172a"/>
+  <circle cx="82" cy="74" r="10" fill="#ef4444"/>
+  <circle cx="112" cy="74" r="10" fill="#f59e0b"/>
+  <circle cx="142" cy="74" r="10" fill="#22c55e"/>
+  <text x="178" y="82" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="900">Bambu Studio - Support / Soportes</text>
+
+  <rect x="72" y="132" width="360" height="540" rx="24" fill="#111827" stroke="#334155" filter="url(#shadow)"/>
+  <text x="104" y="176" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="900">PROCESS / PROCESO</text>
+  <rect x="104" y="206" width="296" height="54" rx="16" fill="#0b1220" stroke="#334155"/>
+  <text x="126" y="240" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="900">0.20 mm Standard</text>
+  <rect x="104" y="286" width="296" height="340" rx="22" fill="#0b1220" stroke="#e879f9" stroke-width="2"/>
+  <rect x="124" y="306" width="116" height="34" rx="12" fill="url(#accent)"/>
+  <text x="148" y="329" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="900">Support</text>
+  <g font-family="Inter, Arial, sans-serif">
+    <rect x="124" y="364" width="254" height="38" rx="12" fill="#111827" stroke="#e879f9" stroke-width="2"/>
+    <text x="142" y="389" fill="#f8fafc" font-size="15" font-weight="900">Enable support: ON</text>
+    <rect x="124" y="414" width="254" height="38" rx="12" fill="#111827" stroke="#e879f9" stroke-width="2"/>
+    <text x="142" y="439" fill="#f8fafc" font-size="15" font-weight="900">Type: Tree / Organic</text>
+    <rect x="124" y="464" width="254" height="38" rx="12" fill="#111827" stroke="#e879f9" stroke-width="2"/>
+    <text x="142" y="489" fill="#f8fafc" font-size="15" font-weight="900">Threshold angle: 45°</text>
+    <rect x="124" y="514" width="254" height="38" rx="12" fill="#111827" stroke="#e879f9" stroke-width="2"/>
+    <text x="142" y="539" fill="#f8fafc" font-size="15" font-weight="900">On build plate only</text>
+    <rect x="124" y="564" width="122" height="38" rx="12" fill="#111827" stroke="#e879f9" stroke-width="2"/>
+    <text x="142" y="589" fill="#f8fafc" font-size="15" font-weight="900">Z gap</text>
+    <rect x="256" y="564" width="122" height="38" rx="12" fill="#111827" stroke="#e879f9" stroke-width="2"/>
+    <text x="274" y="589" fill="#f8fafc" font-size="15" font-weight="900">Interface</text>
+  </g>
+
+  <rect x="478" y="132" width="460" height="540" rx="26" fill="#0b1220" stroke="#334155" filter="url(#shadow)"/>
+  <text x="520" y="180" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="900">Modelo con voladizos</text>
+  <text x="520" y="210" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">Las zonas rosas necesitan soporte temporal</text>
+  <path d="M598 554h240l-44-270H642z" fill="#111827" stroke="#38bdf8" stroke-width="7"/>
+  <path d="M642 284h152l42 72H610z" fill="#38bdf8" opacity=".2" stroke="#38bdf8" stroke-width="6"/>
+  <path d="M610 356h226" stroke="#f472b6" stroke-width="10" stroke-linecap="round"/>
+  <path d="M630 424h186M638 456h170M646 488h154" stroke="#38bdf8" stroke-width="7" stroke-linecap="round"/>
+  <path d="M628 554c0-78 52-100 82-130 28-28 34-58 42-98" fill="none" stroke="#e879f9" stroke-width="10" stroke-linecap="round"/>
+  <path d="M760 554c0-68-34-96-60-126" fill="none" stroke="#e879f9" stroke-width="10" stroke-linecap="round"/>
+  <path d="M692 430l-30-18M716 408l28-22M736 452l38-16" stroke="#e879f9" stroke-width="7" stroke-linecap="round"/>
+  <rect x="582" y="584" width="286" height="20" rx="10" fill="#a855f7"/>
+  <text x="558" y="638" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="800">Rosa = soporte | Azul = pieza | Morado = brim/base del soporte</text>
+
+  <rect x="972" y="132" width="222" height="540" rx="24" fill="#111827" stroke="#334155" filter="url(#shadow)"/>
+  <text x="1000" y="178" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="900">Campos clave</text>
+  <g font-family="Inter, Arial, sans-serif" font-size="15" font-weight="850">
+    <rect x="1000" y="214" width="164" height="58" rx="16" fill="#0b1220" stroke="#e879f9"/>
+    <text x="1018" y="238" fill="#f8fafc">Support type</text><text x="1018" y="258" fill="#94a3b8">normal / arbol</text>
+    <rect x="1000" y="292" width="164" height="58" rx="16" fill="#0b1220" stroke="#e879f9"/>
+    <text x="1018" y="316" fill="#f8fafc">Overhang angle</text><text x="1018" y="336" fill="#94a3b8">cuando genera soporte</text>
+    <rect x="1000" y="370" width="164" height="58" rx="16" fill="#0b1220" stroke="#e879f9"/>
+    <text x="1018" y="394" fill="#f8fafc">Top Z distance</text><text x="1018" y="414" fill="#94a3b8">facil de retirar</text>
+    <rect x="1000" y="448" width="164" height="58" rx="16" fill="#0b1220" stroke="#e879f9"/>
+    <text x="1018" y="472" fill="#f8fafc">Interface</text><text x="1018" y="492" fill="#94a3b8">mejor acabado</text>
+    <rect x="1000" y="544" width="164" height="72" rx="18" fill="#020617" stroke="#38bdf8"/>
+    <text x="1018" y="572" fill="#f8fafc">Revisa Preview:</text>
+    <text x="1018" y="594" fill="#94a3b8">que soporte solo</text>
+    <text x="1018" y="614" fill="#94a3b8">donde hace falta</text>
+  </g>
+  <rect x="466" y="92" width="410" height="46" rx="16" fill="#020617" stroke="#e879f9"/>
+  <text x="488" y="122" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="900">Panel Support: tipo, angulo, contacto e interface</text>
+</svg>
