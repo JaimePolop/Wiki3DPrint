@@ -4398,6 +4398,16 @@ body[data-theme="light"] .calc-card output {
   color: var(--text);
 }
 
+.slicer-shot {
+  margin: 22px 0;
+}
+
+.slicer-shot img {
+  aspect-ratio: 1280 / 760;
+  object-fit: contain;
+  background: rgba(2, 6, 23, 0.84);
+}
+
 .component-layout {
   display: grid;
   grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
