@@ -23,7 +23,7 @@ document.querySelectorAll(".mobile-nav a").forEach((link) => {
   link.addEventListener("click", () => mobileNav?.classList.remove("is-open"));
 });
 
-document.querySelectorAll(".desktop-nav").forEach((nav) => {
+document.querySelectorAll(".desktop-nav, .mobile-nav").forEach((nav) => {
   const current = location.pathname.split("/").pop() || "index.html";
   const groups = [
     { label: "Inicio", href: "index.html" },
@@ -42,6 +42,7 @@ document.querySelectorAll(".desktop-nav").forEach((nav) => {
       items: [
         ["Diseño 3D", "diseno.html"],
         ["Slicers", "slicers.html"],
+        ["Rellenos y paredes", "rellenos.html"],
         ["Tests de impresora", "tests.html"]
       ]
     },
@@ -102,6 +103,10 @@ document.querySelectorAll(".desktop-nav").forEach((nav) => {
       if (!details.contains(event.target)) details.removeAttribute("open");
     });
   });
+});
+
+document.querySelectorAll(".mobile-nav a").forEach((link) => {
+  link.addEventListener("click", () => mobileNav?.classList.remove("is-open"));
 });
 
 const onScroll = () => {
@@ -590,6 +595,7 @@ const siteIndex = [
   ["Problemas", "problemas.html", "Warping, stringing, heat creep, layer shifting, blobs y diagnóstico."],
   ["Mantenimiento", "mantenimiento.html", "Limpieza, cama, hotend, boquilla, PTFE, correas, lubricación y firmware."],
   ["Slicers", "slicers.html", "Cura, PrusaSlicer, OrcaSlicer, Bambu Studio, Lychee, Chitubox y perfiles."],
+  ["Rellenos y paredes", "rellenos.html", "Infill, gyroid, cubic, grid, paredes, tapas, perímetros, resistencia y porcentaje de relleno."],
   ["Resina", "resina.html", "SLA, MSLA, DLP, seguridad, VAT, FEP, lavado, curado y soportes."],
   ["Diseño", "diseno.html", "Tolerancias, orientación, anisotropía, inserts, snap fits y resistencia."],
   ["Seguridad", "seguridad.html", "Riesgos térmicos, eléctricos, humos, resina, filtros y checklists."],

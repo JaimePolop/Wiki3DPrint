@@ -4490,6 +4490,8 @@ body[data-theme="light"] .calc-card output {
 
 .problem-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  margin-bottom: clamp(42px, 6vw, 76px);
 }
 
 .problem-card {
@@ -4564,6 +4566,160 @@ body[data-theme="light"] .calc-card output {
   font-weight: 900;
 }
 
+.infill-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.95fr);
+  gap: 24px;
+  align-items: center;
+}
+
+.infill-preview {
+  position: relative;
+  min-height: 360px;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(217, 70, 239, 0.1)),
+    rgba(15, 23, 42, 0.82);
+  box-shadow: var(--shadow);
+}
+
+.infill-preview::before {
+  content: "";
+  position: absolute;
+  inset: 44px;
+  border: 10px solid rgba(56, 189, 248, 0.62);
+  border-radius: 34px;
+  box-shadow: 0 0 38px rgba(56, 189, 248, 0.22);
+}
+
+.infill-core {
+  position: absolute;
+  inset: 78px;
+  border-radius: 22px;
+  background:
+    linear-gradient(45deg, rgba(34, 211, 238, 0.45) 12%, transparent 12% 38%, rgba(34, 211, 238, 0.45) 38% 50%, transparent 50% 88%, rgba(34, 211, 238, 0.45) 88%),
+    linear-gradient(-45deg, rgba(217, 70, 239, 0.4) 12%, transparent 12% 38%, rgba(217, 70, 239, 0.4) 38% 50%, transparent 50% 88%, rgba(217, 70, 239, 0.4) 88%);
+  background-size: 54px 54px;
+  animation: infillDrift 9s linear infinite;
+  opacity: 0.9;
+}
+
+.wall-stack {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.wall-stack span {
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 14px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.infill-pattern-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.infill-card {
+  padding: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 22px;
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035)),
+    var(--card);
+}
+
+.infill-card h3 {
+  margin-top: 14px;
+}
+
+.pattern-swatch {
+  min-height: 140px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 18px;
+  background-color: rgba(15, 23, 42, 0.75);
+  box-shadow: inset 0 0 24px rgba(56, 189, 248, 0.1);
+}
+
+.pattern-grid-lines {
+  background-image:
+    linear-gradient(90deg, rgba(56, 189, 248, 0.52) 4px, transparent 4px),
+    linear-gradient(rgba(56, 189, 248, 0.52) 4px, transparent 4px);
+  background-size: 30px 30px;
+}
+
+.pattern-triangles {
+  background-image:
+    linear-gradient(60deg, rgba(34, 211, 238, 0.55) 3px, transparent 3px),
+    linear-gradient(-60deg, rgba(139, 92, 246, 0.55) 3px, transparent 3px),
+    linear-gradient(0deg, rgba(217, 70, 239, 0.35) 3px, transparent 3px);
+  background-size: 36px 62px;
+}
+
+.pattern-gyroid {
+  background:
+    radial-gradient(circle at 20% 30%, transparent 16px, rgba(56, 189, 248, 0.58) 17px 20px, transparent 21px),
+    radial-gradient(circle at 80% 70%, transparent 16px, rgba(217, 70, 239, 0.52) 17px 20px, transparent 21px),
+    rgba(15, 23, 42, 0.75);
+  background-size: 52px 52px;
+}
+
+.pattern-cubic {
+  background-image:
+    linear-gradient(30deg, rgba(56, 189, 248, 0.52) 3px, transparent 3px),
+    linear-gradient(150deg, rgba(139, 92, 246, 0.52) 3px, transparent 3px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.28) 3px, transparent 3px);
+  background-size: 34px 34px;
+}
+
+.pattern-lines {
+  background-image: repeating-linear-gradient(90deg, rgba(56, 189, 248, 0.58) 0 5px, transparent 5px 24px);
+}
+
+.pattern-concentric {
+  background:
+    repeating-radial-gradient(circle at center, transparent 0 13px, rgba(56, 189, 248, 0.58) 14px 18px, transparent 19px 32px),
+    rgba(15, 23, 42, 0.75);
+}
+
+.decision-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.decision-strip div {
+  padding: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.decision-strip strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+@keyframes infillDrift {
+  to {
+    background-position: 54px 54px, -54px 54px;
+  }
+}
+
 .calc-actions {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -4632,6 +4788,27 @@ body[data-theme="light"] .calc-card output {
 
   .mobile-nav.is-open {
     display: grid;
+  }
+
+  .mobile-nav .nav-group-menu {
+    min-width: 0;
+  }
+
+  .mobile-nav .nav-group-menu summary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .mobile-nav .nav-group-panel {
+    position: static;
+    width: 100%;
+    margin-top: 8px;
+    transform: none;
+  }
+
+  .mobile-nav .nav-group-panel a {
+    display: block;
+    white-space: normal;
   }
 
   .header-actions {
@@ -5095,9 +5272,24 @@ body[data-theme="light"] .calc-card output {
   .spec-grid,
   .related-grid,
   .problem-grid,
+  .infill-hero-grid,
+  .infill-pattern-grid,
+  .decision-strip,
   .test-flow,
   .calc-actions {
     grid-template-columns: 1fr;
+  }
+
+  .infill-preview {
+    min-height: 300px;
+  }
+
+  .infill-preview::before {
+    inset: 34px;
+  }
+
+  .infill-core {
+    inset: 66px;
   }
 
   .test-card {
