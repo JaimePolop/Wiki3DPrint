@@ -594,7 +594,7 @@ const siteIndex = [
   ["Tests de impresora", "tests.html", "Velocidad, color, flujo volumétrico, temperatura, retracción, tolerancias, Benchy, PA e input shaping."],
   ["Problemas", "problemas.html", "Warping, stringing, heat creep, layer shifting, blobs y diagnóstico."],
   ["Mantenimiento", "mantenimiento.html", "Limpieza, cama, hotend, boquilla, PTFE, correas, lubricación y firmware."],
-  ["Slicers", "slicers.html", "Cura, PrusaSlicer, OrcaSlicer, Bambu Studio, calibración de materiales, soportes, brim y perfiles."],
+  ["Slicers", "slicers.html", "Cura, PrusaSlicer, OrcaSlicer, Bambu Studio, calibración de materiales, Bambu Calibration, valor K, VFA, soportes, brim y perfiles."],
   ["Rellenos y paredes", "rellenos.html", "Infill, gyroid, cubic, grid, paredes, tapas, perímetros, resistencia y porcentaje de relleno."],
   ["Resina", "resina.html", "SLA, MSLA, DLP, seguridad, VAT, FEP, lavado, curado y soportes."],
   ["Diseño", "diseno.html", "Tolerancias, orientación, anisotropía, inserts, snap fits y resistencia."],
