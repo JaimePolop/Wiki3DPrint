@@ -52,7 +52,7 @@
   <path d="M550 338h220M544 376h236M538 414h248M532 452h260" stroke="#d946ef" stroke-width="8" stroke-linecap="round" opacity=".8"/>
   <text x="520" y="568" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">El filamento define temperatura, cama, flujo, ventilador y limite volumetrico.</text>
 
-  <rect x="832" y="156" width="360" height="432" rx="24" fill="#111827" stroke="#38bdf8" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="832" y="156" width="360" height="500" rx="24" fill="#111827" stroke="#38bdf8" stroke-width="2" filter="url(#shadow)"/>
   <text x="862" y="204" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="900">Ajustes de filamento</text>
   <text x="862" y="232" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">Se abre al pulsar el lapiz del preset</text>
   <rect x="862" y="260" width="300" height="50" rx="14" fill="#0b1220" stroke="#38bdf8" stroke-width="2"/>
@@ -63,13 +63,13 @@
   <text x="882" y="424" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="900">Flow ratio: 0.98</text>
   <rect x="862" y="458" width="300" height="50" rx="14" fill="#0b1220" stroke="#38bdf8" stroke-width="2"/>
   <text x="882" y="490" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="900">Max volumetric speed</text>
+  <rect x="862" y="524" width="300" height="50" rx="14" fill="#0b1220" stroke="#38bdf8" stroke-width="2"/>
+  <text x="882" y="556" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="900">Fan + Retraction</text>
   <rect x="1034" y="238" width="160" height="34" rx="12" fill="#38bdf8"/>
   <text x="1053" y="261" fill="#020617" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="900">campos clave</text>
   <path d="M1036 272l-22 12" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
-  <rect x="1014" y="595" width="178" height="38" rx="13" fill="#020617" stroke="#38bdf8"/>
-  <text x="1032" y="620" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="900">tambien: Fan + Retraction</text>
-  <rect x="862" y="524" width="300" height="42" rx="14" fill="url(#accent)"/>
-  <text x="958" y="551" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="900">Guardar preset</text>
+  <rect x="862" y="590" width="300" height="42" rx="14" fill="url(#accent)"/>
+  <text x="958" y="617" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="900">Guardar preset</text>
 
   <path d="M342 382C504 340 650 220 832 210" fill="none" stroke="#38bdf8" stroke-width="5" stroke-linecap="round"/>
   <circle cx="340" cy="382" r="15" fill="#38bdf8"/>
@@ -77,6 +77,6 @@
   <rect x="430" y="196" width="324" height="54" rx="17" fill="#020617" stroke="#38bdf8"/>
   <text x="454" y="230" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="900">1. Pulsa el lapiz del filamento</text>
 
-  <rect x="790" y="622" width="402" height="52" rx="17" fill="#020617" stroke="#d946ef"/>
-  <text x="814" y="655" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="900">2. Ajusta valores del material, no del modelo</text>
+  <rect x="760" y="666" width="432" height="44" rx="16" fill="#020617" stroke="#d946ef"/>
+  <text x="784" y="694" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="900">2. Ajusta valores del material, no del modelo</text>
 </svg>

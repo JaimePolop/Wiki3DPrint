@@ -4408,6 +4408,40 @@ body[data-theme="light"] .calc-card output {
   background: rgba(2, 6, 23, 0.84);
 }
 
+.bambu-real-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin: 24px 0;
+}
+
+.bambu-real-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(10, 16, 30, 0.78);
+  box-shadow: var(--shadow-soft);
+}
+
+.bambu-real-card img {
+  display: block;
+  width: 100%;
+  height: clamp(220px, 28vw, 420px);
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  background: #050914;
+}
+
+.bambu-real-card figcaption {
+  padding: 14px 16px 16px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.bambu-real-card strong {
+  color: var(--text);
+}
+
 .component-layout {
   display: grid;
   grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
